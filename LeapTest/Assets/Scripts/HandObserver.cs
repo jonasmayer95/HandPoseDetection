@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class HandObserver : MonoBehaviour {
 
@@ -55,6 +56,7 @@ public class HandObserver : MonoBehaviour {
 		}
 
 		public float[] jointAngles = new float[4];
+        public sQuaternion mcp;
 
 		public string ToString()
 		{
@@ -63,8 +65,9 @@ public class HandObserver : MonoBehaviour {
 		public float euclidianDistance(AngleBasedFingerModel other)
 		{
 			float result = 0;
-			for (int i = 0; i < jointAngles.Length; i++)
+			for (int i = 0; i < jointAngles.Length-2; i++)
 				result += Mathf.Pow (jointAngles [i] - other.jointAngles [i], 2.0f);
+            result += Mathf.Pow(Quaternion.Angle(other.mcp, mcp),2.0f);
 			return Mathf.Sqrt (result);
 		}
 	}
@@ -77,6 +80,7 @@ public class HandObserver : MonoBehaviour {
 			IP = 0 , MP = 1, TMC_X = 2 , TMC_Y = 3, TMC_Z = 4
 		}
 		public float[] jointAngles = new float[5];
+        public sQuaternion tmc;
 		public string ToString()
 		{
 			return "Thumb: IP " + jointAngles [0] + ", MP " + jointAngles [1] + ", TMC_X " + jointAngles [2] + ", TMC_Y " + jointAngles [3]+ ", TMC_Z " + jointAngles [4];
@@ -84,14 +88,16 @@ public class HandObserver : MonoBehaviour {
 		public float euclidianDistance(AngleBasedThumbModel other)
 		{
 			float result = 0;
-			for (int i = 0; i < jointAngles.Length; i++)
+			for (int i = 0; i < jointAngles.Length-2; i++)
 				result += Mathf.Pow (jointAngles [i] - other.jointAngles [i], 2.0f);
+            result += Mathf.Pow(Quaternion.Angle(other.tmc, tmc), 2.0f);
 			return Mathf.Sqrt (result);
 		}
 	}
 	// Use this for initialization
 
 	public TrainingUnit.Posture currentPosture;
+    public Text poseText;
 	public Transform root, thumb1, thumb2, thumb3, index1, index2, index3, middle1, middle2, middle3, ring1, ring2, ring3, pinky1, pinky2, pinky3;
 	public AngleBasedHandModel hand;
 	ThreadedKNN knn = new ThreadedKNN();
@@ -106,6 +112,7 @@ public class HandObserver : MonoBehaviour {
 
 		hand.rotation = root.rotation;
 		hand.position = root.position;
+
 		Quaternion temp = thumb1.rotation * Quaternion.Inverse(root.rotation);
 		hand.thumb.jointAngles [(int)AngleBasedThumbModel.Fingerjoints.TMC_X] = temp.eulerAngles.x;
 		hand.thumb.jointAngles [(int)AngleBasedThumbModel.Fingerjoints.TMC_Y] = temp.eulerAngles.y;
@@ -144,7 +151,7 @@ public class HandObserver : MonoBehaviour {
 		} else if (Input.GetKeyDown ("s"))
 			DataHandler.instance.saveData ();
 		else
-			Debug.Log ("pose: "+ knn.detectPosture(hand));
+			poseText.text= "Posture: "+knn.detectPosture(hand);
 
 	}
 	void UpdateFinger(AngleBasedHandModel hand, int index)
