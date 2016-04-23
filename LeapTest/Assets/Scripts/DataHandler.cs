@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System;
 
 public class DataHandler{
 	
@@ -42,6 +43,7 @@ public class DataHandler{
 			trainingData = (List<TrainingUnit>) formatter.Deserialize (file);
 			file.Close ();
 			Debug.Log ("Loaded "+trainingData.Count+" Elements.");
+			debugPoseCounts ();
 		}
 	}
 
@@ -57,6 +59,7 @@ public class DataHandler{
 		formatter.Serialize (file, trainingData);
 		file.Close ();
 		Debug.Log ("Saved "+ trainingData.Count+" Elements.");
+		debugPoseCounts ();
 	}
 	public List<ThreadedKNN.poseCompareObject> getCompareList(HandObserver.AngleBasedHandModel hand)
 	{
@@ -70,5 +73,29 @@ public class DataHandler{
 	public int getK()
 	{
 		return (int) Mathf.Sqrt (trainingData.Count);
+	}
+
+	public int[] getPoseCounts()
+	{
+		int[] result = new int[Enum.GetNames(typeof(TrainingUnit.Posture)).Length];
+		foreach (TrainingUnit tu in trainingData)
+			result [(int)tu.posture]++;
+		return result;
+	}
+
+	public string getPoseCountsString()
+	{
+		int[] counts = getPoseCounts ();
+		string result = "Number of TrainingUnits: ";
+		string[] poses = Enum.GetNames(typeof(TrainingUnit.Posture));
+		for (int i = 0; i<counts.Length; i++) {
+			result += poses [i] + ": " + counts [i]+"; ";  
+		}
+		return result;
+	}
+
+	public void debugPoseCounts()
+	{
+		Debug.Log (getPoseCountsString ());
 	}
 }

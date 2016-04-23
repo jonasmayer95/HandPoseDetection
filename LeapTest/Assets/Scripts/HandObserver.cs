@@ -96,7 +96,7 @@ public class HandObserver : MonoBehaviour {
 	}
 	// Use this for initialization
 
-	public TrainingUnit.Posture currentPosture;
+	public TrainingUnit.Posture trainingPosture, currentPosture;
     public Text poseText;
 	public Transform root, thumb1, thumb2, thumb3, index1, index2, index3, middle1, middle2, middle3, ring1, ring2, ring3, pinky1, pinky2, pinky3;
 	public AngleBasedHandModel hand;
@@ -110,6 +110,7 @@ public class HandObserver : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		//TODO: this seems to not be correct; position values are funny
 		hand.rotation = root.rotation;
 		hand.position = root.position;
 
@@ -146,12 +147,14 @@ public class HandObserver : MonoBehaviour {
 
 		//Debug.Log (hand.ToString());
 		if (Input.GetKeyDown ("k")) {
-			DataHandler.instance.addTrainigData (new TrainingUnit (currentPosture, hand));
+			DataHandler.instance.addTrainigData (new TrainingUnit (trainingPosture, hand));
 			hand = new AngleBasedHandModel ();
 		} else if (Input.GetKeyDown ("s"))
 			DataHandler.instance.saveData ();
-		else
-			poseText.text= "Posture: "+knn.detectPosture(hand);
+		else {
+			currentPosture = knn.detectPosture (hand);
+			poseText.text = "Posture: " + currentPosture;
+		}
 
 	}
 	void UpdateFinger(AngleBasedHandModel hand, int index)
@@ -162,4 +165,5 @@ public class HandObserver : MonoBehaviour {
 	{
 		UpdateFinger (hand, (int)finger);
 	}
+
 }
