@@ -15,7 +15,7 @@ public class handleBarManipulator : MonoBehaviour {
 	private float to;
 	// Use this for initialization
 	void Start () {
-	
+		lr.SetColors (Color.gray, Color.gray);
 	}
 	
 	// Update is called once per frame
@@ -35,10 +35,7 @@ public class handleBarManipulator : MonoBehaviour {
 
 					initalDist = Vector3.Distance (left.root.position, right.root.position);
 
-					pivot.localScale = Vector3.one;
-					pivot.position = 0.5f * (left.root.position + right.root.position);
-					pivot.LookAt (left.root);
-
+					updatePivot ();
 					other.transform.parent = pivot;
 
 					lr.SetColors (Color.green, Color.green);
@@ -48,11 +45,8 @@ public class handleBarManipulator : MonoBehaviour {
 
 			} 
 			else 
-			{
-				pivot.localScale = (Vector3.Distance (left.root.position, right.root.position) / initalDist)*Vector3.one;
-				pivot.position = 0.5f * (left.root.position + right.root.position);
-				pivot.LookAt (left.root);
-			}
+				updatePivot ();
+
 		} 
 		else 
 		{
@@ -64,8 +58,20 @@ public class handleBarManipulator : MonoBehaviour {
 					other.transform.parent = null;
 					lr.SetColors (Color.gray, Color.gray);
 					grabbing = false;
+				} else 
+				{
+					updatePivot ();
 				}
 			}
 		}
+	}
+
+	void updatePivot()
+	{
+
+		Vector3 pivotUp = Vector3.Cross ((right.root.position) - left.root.position, right.root.forward + left.root.forward);
+		pivot.localScale = (Vector3.Distance (left.root.position, right.root.position) / initalDist)*Vector3.one;
+		pivot.position = 0.5f * (left.root.position + right.root.position);
+		pivot.LookAt (left.root, pivotUp);
 	}
 }
