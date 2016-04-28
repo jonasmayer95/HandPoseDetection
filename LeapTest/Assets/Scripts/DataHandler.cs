@@ -9,7 +9,7 @@ public class DataHandler{
 	
 	private static DataHandler _instance;
 	public string filePath;
-	public string fileName = "test";
+	public string fileName = "finger";
 	public string fileEnding = ".jns";
 	private List<TrainingUnit> trainingData;
 	BinaryFormatter formatter;
@@ -34,7 +34,7 @@ public class DataHandler{
 		loadData ();
 	}
 
-	void loadData()
+	public void loadData()
 	{
 		trainingData = new List<TrainingUnit> ();
 
@@ -97,5 +97,15 @@ public class DataHandler{
 	public void debugPoseCounts()
 	{
 		Debug.Log (getPoseCountsString ());
+	}
+
+	public List<TrainingUnit> getSublist(TrainingUnit.Posture current)
+	{
+		List<TrainingUnit> result = new List<TrainingUnit>();
+		foreach (TrainingUnit tu in trainingData) {
+			if (tu.posture == current)
+				result.Add (tu);
+		}
+		return result;
 	}
 }

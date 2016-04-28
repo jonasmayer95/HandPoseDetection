@@ -4,7 +4,7 @@ using System.Collections;
 [System.Serializable]
 public class TrainingUnit{
 
-	public enum Posture{idle, flat, fist, grab, pinch, point, bird, metal} ;
+	public enum Posture{idle, flat, fist, grab, pinch, point, bird, metal, crookedPoint} ;
 	public Posture posture; //Name of the posture
 	public HandObserver.AngleBasedHandModel hand; //actual training data
 
