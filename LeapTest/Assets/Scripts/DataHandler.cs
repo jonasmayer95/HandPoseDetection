@@ -9,7 +9,7 @@ public class DataHandler{
 	
 	private static DataHandler _instance;
 	public string filePath;
-	public string fileName = "finger";
+	public string fileName = "test";
 	public string fileEnding = ".jns";
 	private List<TrainingUnit> trainingData;
 	BinaryFormatter formatter;
@@ -107,5 +107,12 @@ public class DataHandler{
 				result.Add (tu);
 		}
 		return result;
+	}
+
+	public void deleteAll(TrainingUnit.Posture current)
+	{
+		trainingData.RemoveAll (x => x.posture == current);
+		Debug.Log("Deleted all "+current+" training data.");
+		saveData ();
 	}
 }

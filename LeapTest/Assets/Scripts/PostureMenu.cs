@@ -45,4 +45,8 @@ public class PostureMenu : MonoBehaviour {
 		index = 0;
 		Debug.Log("Got "+currentList.Count+" elements.");
 	}
+	public void onDeleteAll()
+	{
+		DataHandler.instance.deleteAll (current);
+	}
 }
