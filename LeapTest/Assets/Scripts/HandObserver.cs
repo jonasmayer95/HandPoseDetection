@@ -153,8 +153,7 @@ public class HandObserver : MonoBehaviour {
 		hand.fingers[(int)AngleBasedHandModel.FingerName.pinky].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.DIP] = Vector3.Angle (pinky2.forward, pinky3.forward);
 
 		if (Input.GetKeyDown ("k")) {
-			DataHandler.instance.addTrainigData (new TrainingUnit (trainingPosture, hand));
-			hand = new AngleBasedHandModel ();
+			saveCurrentAs (trainingPosture);
 		} else if (Input.GetKeyDown ("s"))
 			DataHandler.instance.saveData ();
 		else {
@@ -170,6 +169,12 @@ public class HandObserver : MonoBehaviour {
 	void UpdateFinger(AngleBasedHandModel hand, AngleBasedFingerModel.Fingerjoints finger)
 	{
 		UpdateFinger (hand, (int)finger);
+	}
+
+	public void saveCurrentAs(TrainingUnit.Posture posture)
+	{
+		DataHandler.instance.addTrainigData (new TrainingUnit (posture, hand));
+		hand = new AngleBasedHandModel ();
 	}
 
 }
