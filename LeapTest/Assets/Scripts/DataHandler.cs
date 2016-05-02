@@ -26,12 +26,12 @@ public class DataHandler{
 	}
 
 	public DataHandler()
-	{
+	{		
 		if (_instance != null)
 			return;
-		_instance = this;
 		formatter = new BinaryFormatter ();
 		loadData ();
+		_instance = this;
 	}
 
 	public void loadData()

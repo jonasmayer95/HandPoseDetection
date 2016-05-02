@@ -20,6 +20,7 @@ public class UserStudyIntro : MonoBehaviour {
 	public Vector3 rayOriginVec, rayDirectionVec;
 	bool playing =false;
 	public LineRenderer lr;
+	public InputField nameField;
 
 	void Start () {
 		poseDropDown.ClearOptions ();
@@ -50,6 +51,7 @@ public class UserStudyIntro : MonoBehaviour {
 		overridePosture = (TrainingUnit.Posture)poseDropDown.value;
 		devPanel.SetActive (false);
 		startPanel.SetActive (true);
+		saveData ();
 	}
 
 	IEnumerator numberCountdown()
@@ -83,6 +85,8 @@ public class UserStudyIntro : MonoBehaviour {
 		recordText.enabled = false;
 		playing = true;
 		lr.enabled = true;
+		yield return new WaitForSeconds (2);
+		Application.LoadLevel (1);
 	}
 
 	void updateRayCoords()
@@ -97,5 +101,13 @@ public class UserStudyIntro : MonoBehaviour {
 		rayDirectionVec.Normalize ();
 		rayOriginVec /= or;
 	}
-
+	void saveData()
+	{
+		UserStudyData.instance.Name = nameField.text;
+		UserStudyData.instance.posture = overridePosture;
+		for (int i = 0; i < rayReference.Length; i++) {
+			UserStudyData.instance.origins [i] = rayOrigin [i].isOn;
+			UserStudyData.instance.directions [i] = rayDirection [i].isOn;
+		}
+	}
 }

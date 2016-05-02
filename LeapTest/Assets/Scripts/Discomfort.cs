@@ -19,17 +19,26 @@ public class Discomfort{
 		
 	public Discomfort()
 	{
+		if (_instance != null)
+			return;
+		
 		idleStates = DataHandler.instance.getSublist (TrainingUnit.Posture.idle);
+
+		_instance = this;
 	}
 
-	public static float getDiscomfortAngled(HandObserver.AngleBasedHandModel otherHand)
+	public float getDiscomfortAngled(HandObserver.AngleBasedHandModel otherHand)
 	{
 		float result = 0.0f;
-
-		foreach (TrainingUnit tu in instance.idleStates) {
+		if (idleStates == null)
+			Debug.LogError ("Penis");
+		else
+		{
+		foreach (TrainingUnit tu in idleStates) {
 			result += otherHand.euclidianDistanceFingers (tu.hand);
 		}
-		result /= instance.idleStates.Count;
+		}
+		result /= idleStates.Count;
 
 		return result;
 

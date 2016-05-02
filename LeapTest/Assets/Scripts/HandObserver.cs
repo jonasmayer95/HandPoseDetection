@@ -93,6 +93,8 @@ public class HandObserver : MonoBehaviour {
 			for (int i = 0; i < jointAngles.Length-2; i++)
 				result += Mathf.Pow (jointAngles [i] - other.jointAngles [i], 2.0f);
             result += Mathf.Pow(Quaternion.Angle(other.tmc, tmc), 2.0f);
+		//	if (Quaternion.Angle (other.tmc, tmc) > 100)
+				//Debug.LogError ("Tumb Angle: "+Quaternion.Angle(other.tmc, tmc));
 			return Mathf.Sqrt (result);
 		}
 	}
@@ -152,13 +154,15 @@ public class HandObserver : MonoBehaviour {
 		hand.fingers[(int)AngleBasedHandModel.FingerName.pinky].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.PIP] = Vector3.Angle (pinky1.forward, pinky2.forward);
 		hand.fingers[(int)AngleBasedHandModel.FingerName.pinky].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.DIP] = Vector3.Angle (pinky2.forward, pinky3.forward);
 
+		//Debug.Log (Quaternion.Angle(hand.thumb.tmc,DataHandler.instance.getSublist(TrainingUnit.Posture.idle)[0].hand.thumb.tmc));
+
 		if (Input.GetKeyDown ("k")) {
 			saveCurrentAs (trainingPosture);
 		} else if (Input.GetKeyDown ("s"))
 			DataHandler.instance.saveData ();
 		else {
 			currentPosture = knn.detectPosture (hand);
-			poseText.text = "Posture: " + currentPosture + "; Discomfort: " + Discomfort.getDiscomfortAngled (hand);
+			poseText.text = "Posture: " + currentPosture + "; Discomfort: " + getDiscomfort();
 		}
 
 	}
@@ -175,6 +179,11 @@ public class HandObserver : MonoBehaviour {
 	{
 		DataHandler.instance.addTrainigData (new TrainingUnit (posture, hand));
 		hand = new AngleBasedHandModel ();
+	}
+
+	public float getDiscomfort()
+	{
+		return Discomfort.instance.getDiscomfortAngled (hand);
 	}
 
 }
