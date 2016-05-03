@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
+using UnityEngine.SceneManagement;
 
 public class UserStudyIntro : MonoBehaviour {
 
@@ -23,6 +24,7 @@ public class UserStudyIntro : MonoBehaviour {
 	public InputField nameField;
 
 	void Start () {
+        overridePosture = UserStudyData.instance.posture; 
 		poseDropDown.ClearOptions ();
 		List<Dropdown.OptionData> list = new List<Dropdown.OptionData> ();
 		foreach (string pose in Enum.GetNames(typeof(TrainingUnit.Posture))) {
@@ -30,6 +32,14 @@ public class UserStudyIntro : MonoBehaviour {
 		}
 		poseDropDown.AddOptions (list);
 		poseDropDown.value = (int)overridePosture;
+
+        for (int i = 0; i < UserStudyData.instance.origins.Length; i++)
+        {
+            rayOrigin[i].isOn = UserStudyData.instance.origins[i];
+            rayDirection[i].isOn = UserStudyData.instance.directions[i];
+        }
+        nameField.text = UserStudyData.instance.Name;
+
 	}
 	
 	// Update is called once per frame
@@ -86,7 +96,7 @@ public class UserStudyIntro : MonoBehaviour {
 		playing = true;
 		lr.enabled = true;
 		yield return new WaitForSeconds (2);
-		Application.LoadLevel (1);
+        SceneManager.LoadScene(1);
 	}
 
 	void updateRayCoords()
@@ -104,6 +114,8 @@ public class UserStudyIntro : MonoBehaviour {
 	void saveData()
 	{
 		UserStudyData.instance.Name = nameField.text;
+        if (UserStudyData.instance.Name == "")
+            UserStudyData.instance.Name = "Unnamed";
 		UserStudyData.instance.posture = overridePosture;
 		for (int i = 0; i < rayReference.Length; i++) {
 			UserStudyData.instance.origins [i] = rayOrigin [i].isOn;

@@ -38,7 +38,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
 
 	public Vector3 rayDirection{
 		get{
-			Vector3 result = Vector3.forward;
+			Vector3 result = Vector3.zero;
 			if (origins.Count > 0) {
 				for (int i = 0; i < origins.Count; i++)
 					result += origins [i].forward;
@@ -81,8 +81,8 @@ public class UserStudyTargetShooting : MonoBehaviour {
 			{
 				RaycastHit hit;
 				if (Physics.Raycast (rayOrigin, rayDirection, out hit, 10, mask)) {
-					File.AppendAllText (fileName," Hit at " + timer + " with precision: " + (hit.point - hit.collider.transform.position).magnitude +" at a discomfort of " + hand.getDiscomfort()+Environment.NewLine);
-					Debug.Log ("Hit at " + timer + " with precision: " + (hit.point - hit.collider.transform.position).magnitude +" at a discomfort of " + hand.getDiscomfort());
+                    File.AppendAllText(fileName, " Hit at " + timer + " with precision: " + (hit.point - hit.collider.transform.position).magnitude + " using posture " + hand.currentPosture + " at a discomfort of " + hand.getDiscomfort() + Environment.NewLine);
+					Debug.Log ("Hit at " + timer + " with precision: " + (hit.point - hit.collider.transform.position).magnitude +" using posture "+hand.currentPosture+" at a discomfort of " + hand.getDiscomfort());
 					remainingTargets--;
 					if (remainingTargets > 0) {
 						setRandTargetActive ();
@@ -137,4 +137,14 @@ public class UserStudyTargetShooting : MonoBehaviour {
 		endPanel.SetActive (true);
 		progress.enabled = false;
 	}
+
+    public void onEnd()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+
+    public void onOpenLog()
+    {
+        System.Diagnostics.Process.Start(fileName);
+    }
 }

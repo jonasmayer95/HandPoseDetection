@@ -23,7 +23,7 @@ public class HandObserver : MonoBehaviour {
 				fingers[i] = new AngleBasedFingerModel();
 		}
 
-		public string ToString()
+        public override string ToString()
 		{
 			string result = "Root: Rot" + ((Quaternion)rotation).eulerAngles.ToString() + ", Pos" + position.ToString();
 			result = result + " " + thumb.ToString();
@@ -59,7 +59,7 @@ public class HandObserver : MonoBehaviour {
 		public float[] jointAngles = new float[4];
         public sQuaternion mcp;
 
-		public string ToString()
+        public override string ToString()
 		{
 			return "Finger: DIP " + jointAngles [0] + ", PIP " + jointAngles [1] + ", MCP_UP " + jointAngles [2] + ", MCP_SIDE " + jointAngles [3];
 		}
@@ -83,24 +83,24 @@ public class HandObserver : MonoBehaviour {
 		}
 		public float[] jointAngles = new float[5];
         public sQuaternion tmc;
-		public string ToString()
+		public override string ToString()
 		{
 			return "Thumb: IP " + jointAngles [0] + ", MP " + jointAngles [1] + ", TMC_X " + jointAngles [2] + ", TMC_Y " + jointAngles [3]+ ", TMC_Z " + jointAngles [4];
 		}
 		public float euclidianDistance(AngleBasedThumbModel other)
 		{
 			float result = 0;
-			for (int i = 0; i < jointAngles.Length-2; i++)
+			for (int i = 0; i < jointAngles.Length-3; i++)
 				result += Mathf.Pow (jointAngles [i] - other.jointAngles [i], 2.0f);
             result += Mathf.Pow(Quaternion.Angle(other.tmc, tmc), 2.0f);
-		//	if (Quaternion.Angle (other.tmc, tmc) > 100)
-				//Debug.LogError ("Tumb Angle: "+Quaternion.Angle(other.tmc, tmc));
 			return Mathf.Sqrt (result);
 		}
+
 	}
 	// Use this for initialization
 
 	public TrainingUnit.Posture trainingPosture, currentPosture;
+    public bool rightHanded;
     public Text poseText;
 	public Transform root, thumb1, thumb2, thumb3, index1, index2, index3, middle1, middle2, middle3, ring1, ring2, ring3, pinky1, pinky2, pinky3;
 	public AngleBasedHandModel hand;
@@ -120,6 +120,8 @@ public class HandObserver : MonoBehaviour {
 
 		Quaternion temp = Quaternion.Inverse(root.rotation)* thumb1.rotation;
 		hand.thumb.tmc = temp;
+        if (rightHanded)
+            hand.thumb.tmc.mirrorX();
 		hand.thumb.jointAngles [(int)AngleBasedThumbModel.Fingerjoints.TMC_X] = temp.eulerAngles.x;
 		hand.thumb.jointAngles [(int)AngleBasedThumbModel.Fingerjoints.TMC_Y] = temp.eulerAngles.y;
 		hand.thumb.jointAngles [(int)AngleBasedThumbModel.Fingerjoints.TMC_Z] = temp.eulerAngles.z;
@@ -128,6 +130,8 @@ public class HandObserver : MonoBehaviour {
 
 		temp = Quaternion.Inverse(root.rotation)* index1.rotation;
 		hand.fingers [(int)AngleBasedHandModel.FingerName.index].mcp = temp;
+        if (rightHanded)
+            hand.fingers[(int)AngleBasedHandModel.FingerName.index].mcp.mirrorX();
 		hand.fingers[(int)AngleBasedHandModel.FingerName.index].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.MCP_SIDE] = temp.eulerAngles.y;
 		hand.fingers[(int)AngleBasedHandModel.FingerName.index].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.MCP_UP] = temp.eulerAngles.x;
 		hand.fingers[(int)AngleBasedHandModel.FingerName.index].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.PIP] = Vector3.Angle (index1.forward, index2.forward);
@@ -135,6 +139,8 @@ public class HandObserver : MonoBehaviour {
 
 		temp = Quaternion.Inverse(root.rotation)*middle1.rotation;
 		hand.fingers [(int)AngleBasedHandModel.FingerName.middle].mcp = temp;
+        if (rightHanded)
+            hand.fingers[(int)AngleBasedHandModel.FingerName.middle].mcp.mirrorX();
 		hand.fingers[(int)AngleBasedHandModel.FingerName.middle].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.MCP_SIDE] = temp.eulerAngles.y;
 		hand.fingers[(int)AngleBasedHandModel.FingerName.middle].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.MCP_UP] = temp.eulerAngles.x;
 		hand.fingers[(int)AngleBasedHandModel.FingerName.middle].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.PIP] = Vector3.Angle (middle1.forward, middle2.forward);
@@ -142,6 +148,8 @@ public class HandObserver : MonoBehaviour {
 
 		temp =  Quaternion.Inverse(root.rotation) * ring1.rotation;
 		hand.fingers [(int)AngleBasedHandModel.FingerName.ring].mcp = temp;
+        if (rightHanded)
+            hand.fingers[(int)AngleBasedHandModel.FingerName.ring].mcp.mirrorX();
 		hand.fingers[(int)AngleBasedHandModel.FingerName.ring].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.MCP_SIDE] = temp.eulerAngles.y;
 		hand.fingers[(int)AngleBasedHandModel.FingerName.ring].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.MCP_UP] = temp.eulerAngles.x;
 		hand.fingers[(int)AngleBasedHandModel.FingerName.ring].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.PIP] = Vector3.Angle (ring1.forward, ring2.forward);
@@ -149,12 +157,12 @@ public class HandObserver : MonoBehaviour {
 
 		temp =  Quaternion.Inverse(root.rotation) * pinky1.rotation;
 		hand.fingers [(int)AngleBasedHandModel.FingerName.pinky].mcp = temp;
+        if (rightHanded)
+            hand.fingers[(int)AngleBasedHandModel.FingerName.pinky].mcp.mirrorX();
 		hand.fingers[(int)AngleBasedHandModel.FingerName.pinky].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.MCP_SIDE] = temp.eulerAngles.y;
 		hand.fingers[(int)AngleBasedHandModel.FingerName.pinky].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.MCP_UP] = temp.eulerAngles.x;
 		hand.fingers[(int)AngleBasedHandModel.FingerName.pinky].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.PIP] = Vector3.Angle (pinky1.forward, pinky2.forward);
 		hand.fingers[(int)AngleBasedHandModel.FingerName.pinky].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.DIP] = Vector3.Angle (pinky2.forward, pinky3.forward);
-
-		//Debug.Log (Quaternion.Angle(hand.thumb.tmc,DataHandler.instance.getSublist(TrainingUnit.Posture.idle)[0].hand.thumb.tmc));
 
 		if (Input.GetKeyDown ("k")) {
 			saveCurrentAs (trainingPosture);

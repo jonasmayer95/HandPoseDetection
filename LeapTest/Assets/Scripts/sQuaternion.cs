@@ -22,11 +22,43 @@ public struct sQuaternion
 
     public static implicit operator Quaternion(sQuaternion rValue)
     {
-        return new Quaternion(rValue.x, rValue.y, rValue.z, rValue.w);
+        rValue.normalize();
+        Quaternion temp = new Quaternion(rValue.x, rValue.y, rValue.z, rValue.w);
+        return temp;
     }
 
     public static implicit operator sQuaternion(Quaternion rValue)
     {
-        return new sQuaternion(rValue.x, rValue.y, rValue.z, rValue.w);
+        sQuaternion temp = new sQuaternion(rValue.x, rValue.y, rValue.z, rValue.w);
+        temp.normalize();
+        return temp;
+    }
+    public double length()
+    {
+        return Mathf.Sqrt(x * x + y * y + z * z + w * w);
+    }
+    public static sQuaternion normalized(sQuaternion quat)
+    {
+        quat.normalize();
+        return quat;
+    }
+
+    public sQuaternion normalize()
+    {
+        while (length() != 1.0)
+        {
+            x = (float)(x / length());
+            y = (float)(y / length());
+            z = (float)(z / length());
+            w = (float)(w / length());
+        }
+        return this;
+    }
+
+    public sQuaternion mirrorX()
+    {
+        y = -y;
+        z = -z;
+        return this.normalize();
     }
 }
