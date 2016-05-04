@@ -63,6 +63,7 @@ public class HandObserver : MonoBehaviour {
 		{
 			return "Finger: DIP " + jointAngles [0] + ", PIP " + jointAngles [1] + ", MCP_UP " + jointAngles [2] + ", MCP_SIDE " + jointAngles [3];
 		}
+
 		public float euclidianDistance(AngleBasedFingerModel other)
 		{
 			float result = 0;
@@ -72,6 +73,17 @@ public class HandObserver : MonoBehaviour {
             result += Mathf.Pow(Quaternion.Angle(other.mcp, mcp),2.0f);
 			return Mathf.Sqrt (result);
 		}
+
+        public float getTotalBending()
+        {
+            float result=.0f;
+
+            result += jointAngles[0];
+            result += jointAngles[1];
+            result += ((Quaternion)mcp).eulerAngles.x;
+
+            return result;
+        }
 	}
 
 	[System.Serializable]

@@ -39,9 +39,42 @@ public class Discomfort{
 		}
 		}
 		result /= idleStates.Count;
+        result += getYAxisComponent(otherHand);
+        Debug.Log("YAxisComponent: "+getYAxisComponent(otherHand));
+        result+= getHyperExtensionComponent(otherHand);
+        Debug.Log("HyperExtenstion: "+getHyperExtensionComponent(otherHand));
+        result += getInterFingerComponent(otherHand);
+        Debug.Log("InterFingerangle: " + getInterFingerComponent(otherHand));
 
 		return result;
-
-
 	}
+
+    public float getYAxisComponent(HandObserver.AngleBasedHandModel otherHand)
+    {
+        float result =.0f;
+        foreach (HandObserver.AngleBasedFingerModel finger in otherHand.fingers)
+        {
+            result += ((Quaternion)finger.mcp).eulerAngles.y;
+        }
+        return result;
+    }
+    public float getHyperExtensionComponent(HandObserver.AngleBasedHandModel otherHand)
+    {
+        float result = .0f;
+        foreach (HandObserver.AngleBasedFingerModel finger in otherHand.fingers)
+        {
+            if (((Quaternion)finger.mcp).eulerAngles.x>0)
+            result += ((Quaternion)finger.mcp).eulerAngles.x;
+        }
+        return result;
+    }
+    public float getInterFingerComponent(HandObserver.AngleBasedHandModel otherHand)
+    {
+        float result = .0f;
+        for (int i = 0; i < otherHand.fingers.Length - 1; i++)
+        {
+            result += Mathf.Abs(otherHand.fingers[i].getTotalBending()+otherHand.fingers[i].getTotalBending());
+        }
+        return result;
+    }
 }
