@@ -131,9 +131,9 @@ public class HandObserver : MonoBehaviour {
 		hand.position = root.position;
 
 		Quaternion temp = Quaternion.Inverse(root.rotation)* thumb1.rotation;
+		if (rightHanded)
+			((sQuaternion)temp).mirrorX();
 		hand.thumb.tmc = temp;
-        if (rightHanded)
-            hand.thumb.tmc.mirrorX();
 		hand.thumb.jointAngles [(int)AngleBasedThumbModel.Fingerjoints.TMC_X] = temp.eulerAngles.x;
 		hand.thumb.jointAngles [(int)AngleBasedThumbModel.Fingerjoints.TMC_Y] = temp.eulerAngles.y;
 		hand.thumb.jointAngles [(int)AngleBasedThumbModel.Fingerjoints.TMC_Z] = temp.eulerAngles.z;
@@ -141,36 +141,36 @@ public class HandObserver : MonoBehaviour {
 		hand.thumb.jointAngles [(int)AngleBasedThumbModel.Fingerjoints.IP] = Vector3.Angle (thumb3.forward, thumb2.forward);
 
 		temp = Quaternion.Inverse(root.rotation)* index1.rotation;
+		if (rightHanded)
+			((sQuaternion)temp).mirrorX();
 		hand.fingers [(int)AngleBasedHandModel.FingerName.index].mcp = temp;
-        if (rightHanded)
-            hand.fingers[(int)AngleBasedHandModel.FingerName.index].mcp.mirrorX();
 		hand.fingers[(int)AngleBasedHandModel.FingerName.index].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.MCP_SIDE] = temp.eulerAngles.y;
 		hand.fingers[(int)AngleBasedHandModel.FingerName.index].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.MCP_UP] = temp.eulerAngles.x;
 		hand.fingers[(int)AngleBasedHandModel.FingerName.index].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.PIP] = Vector3.Angle (index1.forward, index2.forward);
 		hand.fingers[(int)AngleBasedHandModel.FingerName.index].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.DIP] = Vector3.Angle (index2.forward, index3.forward);
 
 		temp = Quaternion.Inverse(root.rotation)*middle1.rotation;
+		if (rightHanded)
+			((sQuaternion)temp).mirrorX();
 		hand.fingers [(int)AngleBasedHandModel.FingerName.middle].mcp = temp;
-        if (rightHanded)
-            hand.fingers[(int)AngleBasedHandModel.FingerName.middle].mcp.mirrorX();
 		hand.fingers[(int)AngleBasedHandModel.FingerName.middle].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.MCP_SIDE] = temp.eulerAngles.y;
 		hand.fingers[(int)AngleBasedHandModel.FingerName.middle].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.MCP_UP] = temp.eulerAngles.x;
 		hand.fingers[(int)AngleBasedHandModel.FingerName.middle].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.PIP] = Vector3.Angle (middle1.forward, middle2.forward);
 		hand.fingers[(int)AngleBasedHandModel.FingerName.middle].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.DIP] = Vector3.Angle (middle2.forward, middle3.forward);
 
 		temp =  Quaternion.Inverse(root.rotation) * ring1.rotation;
+		if (rightHanded)
+			((sQuaternion)temp).mirrorX();
 		hand.fingers [(int)AngleBasedHandModel.FingerName.ring].mcp = temp;
-        if (rightHanded)
-            hand.fingers[(int)AngleBasedHandModel.FingerName.ring].mcp.mirrorX();
 		hand.fingers[(int)AngleBasedHandModel.FingerName.ring].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.MCP_SIDE] = temp.eulerAngles.y;
 		hand.fingers[(int)AngleBasedHandModel.FingerName.ring].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.MCP_UP] = temp.eulerAngles.x;
 		hand.fingers[(int)AngleBasedHandModel.FingerName.ring].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.PIP] = Vector3.Angle (ring1.forward, ring2.forward);
 		hand.fingers[(int)AngleBasedHandModel.FingerName.ring].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.DIP] = Vector3.Angle (ring2.forward, ring3.forward);
 
 		temp =  Quaternion.Inverse(root.rotation) * pinky1.rotation;
+		if (rightHanded)
+			((sQuaternion)temp).mirrorX();
 		hand.fingers [(int)AngleBasedHandModel.FingerName.pinky].mcp = temp;
-        if (rightHanded)
-            hand.fingers[(int)AngleBasedHandModel.FingerName.pinky].mcp.mirrorX();
 		hand.fingers[(int)AngleBasedHandModel.FingerName.pinky].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.MCP_SIDE] = temp.eulerAngles.y;
 		hand.fingers[(int)AngleBasedHandModel.FingerName.pinky].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.MCP_UP] = temp.eulerAngles.x;
 		hand.fingers[(int)AngleBasedHandModel.FingerName.pinky].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.PIP] = Vector3.Angle (pinky1.forward, pinky2.forward);

@@ -61,4 +61,17 @@ public struct sQuaternion
         z = -z;
         return this.normalize();
     }
+
+	public sQuaternion mirrorY()
+	{
+		x = -x;
+		z = -z;
+		return this.normalize();
+	}
+
+	public sQuaternion mirroredY()
+	{
+		sQuaternion temp = new sQuaternion (this.x,this.y,this.z,this.w);
+		return temp.mirrorY();
+	}
 }

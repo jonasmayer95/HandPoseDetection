@@ -115,4 +115,10 @@ public class DataHandler{
 		Debug.Log("Deleted all "+current+" training data.");
 		saveData ();
 	}
+
+	public void delete(TrainingUnit tu)
+	{
+		trainingData.Remove (tu);
+		saveData ();
+	}
 }
