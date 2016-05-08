@@ -45,13 +45,18 @@ public struct sQuaternion
 
     public sQuaternion normalize()
     {
+        string debug = "";
         while (length() != 1.0)
         {
-            x = (float)(x / length());
-            y = (float)(y / length());
-            z = (float)(z / length());
-            w = (float)(w / length());
+
+            debug += length() +"; ";
+            double len = length();
+            x = (float)(x / len);
+            y = (float)(y / len);
+            z = (float)(z / len);
+            w = (float)(w / len);
         }
+       // Debug.Log(debug);
         return this;
     }
 
@@ -74,4 +79,10 @@ public struct sQuaternion
 		sQuaternion temp = new sQuaternion (this.x,this.y,this.z,this.w);
 		return temp.mirrorY();
 	}
+
+    public sQuaternion mirroredX()
+    {
+        sQuaternion temp = new sQuaternion(this.x, this.y, this.z, this.w);
+        return temp.mirrorX();
+    }
 }

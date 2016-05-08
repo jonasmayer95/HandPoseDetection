@@ -40,11 +40,11 @@ public class Discomfort{
 		}
 		result /= idleStates.Count;
         result += getYAxisComponent(otherHand);
-        Debug.Log("YAxisComponent: "+getYAxisComponent(otherHand));
+       // Debug.Log("YAxisComponent: "+getYAxisComponent(otherHand));
         result+= getHyperExtensionComponent(otherHand);
-        Debug.Log("HyperExtenstion: "+getHyperExtensionComponent(otherHand));
+       // Debug.Log("HyperExtenstion: "+getHyperExtensionComponent(otherHand));
         result += getInterFingerComponent(otherHand);
-        Debug.Log("InterFingerangle: " + getInterFingerComponent(otherHand));
+       // Debug.Log("InterFingerangle: " + getInterFingerComponent(otherHand));
 
 		return result;
 	}
@@ -54,18 +54,24 @@ public class Discomfort{
         float result =.0f;
         foreach (HandObserver.AngleBasedFingerModel finger in otherHand.fingers)
         {
-            result += ((Quaternion)finger.mcp).eulerAngles.y;
+            float temp = ((Quaternion)finger.mcp).eulerAngles.y;
+            if (temp > 180)
+                temp = 360 - temp;
+            result += temp;
         }
         return result;
     }
     public float getHyperExtensionComponent(HandObserver.AngleBasedHandModel otherHand)
     {
         float result = .0f;
+        string debug = "";
         foreach (HandObserver.AngleBasedFingerModel finger in otherHand.fingers)
         {
-            if (((Quaternion)finger.mcp).eulerAngles.x>0)
-            result += ((Quaternion)finger.mcp).eulerAngles.x;
+            debug += ((Quaternion)finger.mcp).eulerAngles.x+ "; ";
+            if (((Quaternion)finger.mcp).eulerAngles.x > 300)
+                result += 360-((Quaternion)finger.mcp).eulerAngles.x;
         }
+      //  Debug.Log(debug);
         return result;
     }
     public float getInterFingerComponent(HandObserver.AngleBasedHandModel otherHand)
@@ -73,7 +79,7 @@ public class Discomfort{
         float result = .0f;
         for (int i = 0; i < otherHand.fingers.Length - 1; i++)
         {
-            result += Mathf.Abs(otherHand.fingers[i].getTotalBending()+otherHand.fingers[i].getTotalBending());
+            result += Mathf.Abs(otherHand.fingers[i].getTotalBending()-otherHand.fingers[i+1].getTotalBending());
         }
         return result;
     }
