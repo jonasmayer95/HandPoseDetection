@@ -182,7 +182,8 @@ public class HandObserver : MonoBehaviour {
 			DataHandler.instance.saveData ();
 		else {
 			currentPosture = knn.detectPosture (hand);
-			poseText.text = "Posture: " + currentPosture + "; Discomfort: " + getDiscomfort();
+			if(poseText)
+				poseText.text = "Posture: " + currentPosture + "; Discomfort: " + getDiscomfort();
 		}
 
 	}
