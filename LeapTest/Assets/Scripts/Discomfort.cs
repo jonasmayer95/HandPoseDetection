@@ -6,6 +6,8 @@ public class Discomfort{
 
 	public List<TrainingUnit> idleStates;
 
+    public float angleFac=1, yaxisFac=1, hyperFac=1, interFac =1;
+
 	private static Discomfort _instance;
 	public static Discomfort instance
 	{
@@ -34,14 +36,15 @@ public class Discomfort{
 			Debug.LogError ("Penis");
 		else
 		{
-		foreach (TrainingUnit tu in idleStates) {
-			result += otherHand.euclidianDistanceFingers (tu.hand);
+		    foreach (TrainingUnit tu in idleStates) {
+			    result += otherHand.euclidianDistanceFingers (tu.hand);
+		    }
 		}
-		}
-		result /= idleStates.Count;
-        result += getYAxisComponent(otherHand);
-        result+= getHyperExtensionComponent(otherHand);
-        result += getInterFingerComponent(otherHand);
+		result /= idleStates.Count                      *   angleFac;
+
+        result += getYAxisComponent(otherHand)          *   yaxisFac;
+        result += getHyperExtensionComponent(otherHand) *   hyperFac;
+        result += getInterFingerComponent(otherHand)    *   interFac;
 
 		return result;
 	}

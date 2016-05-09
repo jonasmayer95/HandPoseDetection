@@ -28,4 +28,5 @@ public class UserStudyData {
 	public string fileEnding = ".jnslog";
 	public bool[] origins = new bool[6], directions = new bool[6];
 	public bool targetShooting, lineDrawing;
+    public float discomfort;
 }

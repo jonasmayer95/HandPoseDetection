@@ -22,6 +22,10 @@ public class UserStudyIntro : MonoBehaviour {
 	bool playing =false;
 	public LineRenderer lr;
 	public InputField nameField;
+    public GameObject handModel;
+    public OutputHand outputHand;
+    public RandomHandGenerator randHand;
+    public HandObserver.AngleBasedHandModel targethand;
 
 	void Start () {
         overridePosture = UserStudyData.instance.posture; 
@@ -61,6 +65,11 @@ public class UserStudyIntro : MonoBehaviour {
 		overridePosture = (TrainingUnit.Posture)poseDropDown.value;
 		devPanel.SetActive (false);
 		startPanel.SetActive (true);
+        handModel.SetActive(true);
+        float targetdiscomfort = UnityEngine.Random.Range(100, 800);
+        targethand = randHand.createRandom(targetdiscomfort, targetdiscomfort+100);
+        outputHand.visualizeHand(targethand);
+        UserStudyData.instance.discomfort = Discomfort.instance.getDiscomfortAngled(targethand);
 		saveData ();
 	}
 
