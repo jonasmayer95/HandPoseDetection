@@ -50,8 +50,9 @@ public class UserStudyTargetShooting : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-		fileName ="TargetShooting_"+ UserStudyData.instance.Name+UserStudyData.instance.fileEnding;
-		File.AppendAllText (fileName, System.DateTime.Now.ToString("dd.MM.yyyy hh:mm:ss: "+Environment.NewLine));
+		fileName ="TargetShootingData"+UserStudyData.instance.fileEnding;
+		if(!File.Exists(fileName))
+			File.AppendAllText (fileName, "Name; Discomfort; Time; Precision; Posture"+Environment.NewLine);
 		remainingTargets = numTargets;
 		for(int i = 0; i<references.Length; i++)
 		{
@@ -81,8 +82,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
 			{
 				RaycastHit hit;
 				if (Physics.Raycast (rayOrigin, rayDirection, out hit, 10, mask)) {
-                    File.AppendAllText(fileName, " Hit at " + timer + " with precision: " + (hit.point - hit.collider.transform.position).magnitude + " using posture " + hand.currentPosture + " at a discomfort of " + hand.getDiscomfort() + Environment.NewLine);
-					Debug.Log ("Hit at " + timer + " with precision: " + (hit.point - hit.collider.transform.position).magnitude +" using posture "+hand.currentPosture+" at a discomfort of " + hand.getDiscomfort());
+					File.AppendAllText(fileName, UserStudyData.instance.Name+"; "+UserStudyData.instance.discomfort+"; "+timer+"; "+(hit.point-hit.collider.transform.position).magnitude+"; "+hand.currentPosture+ Environment.NewLine);
 					remainingTargets--;
 					if (remainingTargets > 0) {
 						setRandTargetActive ();

@@ -25,7 +25,7 @@ public class UserStudyData {
 
 	public TrainingUnit.Posture posture = TrainingUnit.Posture.custom1;
 	public string Name = "Unnamed";
-	public string fileEnding = ".jnslog";
+	public string fileEnding = ".csv";
 	public bool[] origins = new bool[6], directions = new bool[6];
 	public bool targetShooting, lineDrawing;
     public float discomfort;

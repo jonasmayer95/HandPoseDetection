@@ -26,6 +26,7 @@ public class UserStudyIntro : MonoBehaviour {
     public OutputHand outputHand;
     public RandomHandGenerator randHand;
     public HandObserver.AngleBasedHandModel targethand;
+	public int pointingFinger = 0;
 
 	void Start () {
         overridePosture = UserStudyData.instance.posture; 
@@ -70,6 +71,15 @@ public class UserStudyIntro : MonoBehaviour {
         targethand = randHand.createRandom(targetdiscomfort, targetdiscomfort+100);
         outputHand.visualizeHand(targethand);
         UserStudyData.instance.discomfort = Discomfort.instance.getDiscomfortAngled(targethand);
+
+		float min = 100;
+		for (int i = 0 ; i< targethand.fingers.Length; i++) {
+			Debug.Log (i+": "+targethand.fingers [i].getTotalBending ());
+			if (targethand.fingers [i].getTotalBending () < min) {
+				pointingFinger = i+2;
+				min = targethand.fingers [i].getTotalBending ();
+			}
+		}
 		saveData ();
 	}
 
@@ -114,8 +124,8 @@ public class UserStudyIntro : MonoBehaviour {
 		rayDirectionVec = new Vector3 (); 
 		int or = 0;
 		for (int i = 0; i < rayReference.Length; i++) {
-			if (rayOrigin [i].isOn) {or++; rayOriginVec += rayReference [i].position; }
-			if (rayDirection [i].isOn) {rayDirectionVec += rayReference [i].forward; }
+			if (UserStudyData.instance.origins[i]) {or++; rayOriginVec += rayReference [i].position; }
+			if (UserStudyData.instance.directions[i]) {rayDirectionVec += rayReference [i].forward; }
 		}
 		rayDirectionVec.Normalize ();
 		rayOriginVec /= or;
@@ -127,8 +137,10 @@ public class UserStudyIntro : MonoBehaviour {
             UserStudyData.instance.Name = "Unnamed";
 		UserStudyData.instance.posture = overridePosture;
 		for (int i = 0; i < rayReference.Length; i++) {
-			UserStudyData.instance.origins [i] = rayOrigin [i].isOn;
-			UserStudyData.instance.directions [i] = rayDirection [i].isOn;
+			UserStudyData.instance.origins [i] = false;//rayOrigin [i].isOn;
+			UserStudyData.instance.directions [i] = false;//rayDirection [i].isOn;
 		}
+		UserStudyData.instance.origins [pointingFinger] = true;
+		UserStudyData.instance.directions [pointingFinger] = true;
 	}
 }
