@@ -46,6 +46,35 @@ public class HandObserver : MonoBehaviour {
 			}
 			return Mathf.Sqrt (result);
 		}
+
+        public string ToCSVString(string endl)
+        {
+            string result = "";
+
+            result += thumb.ToCSVString(endl) + endl;
+            for (int i = 0; i < fingers.Length; i++)
+            {
+                result += fingers[i].ToCSVString(endl)+endl;
+            }
+            result += rotation.ToCSVString(endl) + endl;
+            result += position.ToCSVString(endl);
+
+            return result;
+        }
+        public static string getCSVHeader(string endl, string handname)
+        {
+            string result = "";
+
+            result += AngleBasedThumbModel.getCSVHeader(endl, handname+"Thumb") + endl;
+            for (int i = 0; i < System.Enum.GetNames(typeof(FingerName)).Length; i++)
+            {
+                result += AngleBasedFingerModel.getCSVHeader(endl,handname+System.Enum.GetNames(typeof(FingerName))[i]) + endl;
+            }
+            result += sQuaternion.getCSVHeader(endl, handname + "Rot") + endl;
+            result += sVector3.getCSVHeader(endl, handname + "Pos");
+
+            return result;
+        }
 	}
 
 	[System.Serializable]
@@ -84,6 +113,31 @@ public class HandObserver : MonoBehaviour {
 
             return result;
         }
+
+        public string ToCSVString(string endl)
+        {
+            string result = "";
+
+            for (int i = 0; i < jointAngles.Length - 2; i++)
+            {
+                result += jointAngles[i] + endl;
+            }
+            result += mcp.ToCSVString(endl);
+
+            return result;
+        }
+
+        public static string getCSVHeader(string endl, string fingername)
+        {
+            string result = "";
+
+            result += fingername + "DIP" + endl;
+            result += fingername + "PIP" + endl;
+            result += sQuaternion.getCSVHeader(endl, fingername+"MCP");
+
+            return result;
+        }
+
 	}
 
 	[System.Serializable]
@@ -107,6 +161,29 @@ public class HandObserver : MonoBehaviour {
             result += Mathf.Pow(Quaternion.Angle(other.tmc, tmc), 2.0f);
 			return Mathf.Sqrt (result);
 		}
+
+        public string ToCSVString(string endl)
+        {
+            string result = "";
+
+            for (int i = 0; i < jointAngles.Length - 3; i++)
+            {
+                result += jointAngles[i] + endl;
+            }
+            result += tmc.ToCSVString(endl);
+
+            return result;
+        }
+        public static string getCSVHeader(string endl, string thumbname)
+        {
+            string result = "";
+
+            result += thumbname + "IP" + endl;
+            result += thumbname + "MP" + endl;
+            result += sQuaternion.getCSVHeader(endl, thumbname + "TMC");
+
+            return result;
+        }
 
 	}
 	// Use this for initialization
@@ -204,7 +281,7 @@ public class HandObserver : MonoBehaviour {
 
 	public float getDiscomfort()
 	{
-		return Discomfort.instance.getDiscomfortAngled (hand);
+		return Discomfort.getDiscomfortAngled (hand);
 	}
 
 }

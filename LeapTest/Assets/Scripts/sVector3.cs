@@ -26,5 +26,27 @@ public struct sVector3{
     {
         return new sVector3(rValue.x, rValue.y, rValue.z);
     }
+
+    public string ToCSVString(string endl)
+    {
+        string result = "";
+
+        result += x + endl;
+        result += y + endl;
+        result += z;
+
+        return result;
+    }
+
+    public static string getCSVHeader(string endl, string vectorName)
+    {
+        string result = "";
+
+        result += vectorName + "x" + endl;
+        result += vectorName + "y" + endl;
+        result += vectorName + "z";
+
+        return result;
+    }
 }
 

@@ -28,7 +28,7 @@ public class RandomHandGenerator : MonoBehaviour {
         result.thumb.jointAngles[(int)HandObserver.AngleBasedThumbModel.Fingerjoints.MP] = MP_min + random * (MP_max - MP_min);
         result.rotation = Quaternion.identity;
         result.position = Vector3.zero;
-        Debug.Log("Discomfort: "+Discomfort.instance.getDiscomfortAngled(result));
+        Debug.Log("Discomfort: "+Discomfort.getDiscomfortAngled(result));
         return result;
     }
     public HandObserver.AngleBasedHandModel createRandom(float disc_min, float disc_max)
@@ -52,9 +52,9 @@ public class RandomHandGenerator : MonoBehaviour {
             result.thumb.jointAngles[(int)HandObserver.AngleBasedThumbModel.Fingerjoints.MP] = MP_min + random * (MP_max - MP_min);
             result.rotation = Quaternion.identity;
             result.position = Vector3.zero;
-            Debug.Log("Discomfort: " + Discomfort.instance.getDiscomfortAngled(result));
+            Debug.Log("Discomfort: " + Discomfort.getDiscomfortAngled(result));
         }
-        while (Discomfort.instance.getDiscomfortAngled(result) < disc_min || Discomfort.instance.getDiscomfortAngled(result)>disc_max);
+        while (Discomfort.getDiscomfortAngled(result) < disc_min || Discomfort.getDiscomfortAngled(result)>disc_max);
         return result;
     }
 

@@ -6,7 +6,7 @@ public class Discomfort{
 
 	public List<TrainingUnit> idleStates;
 
-    public float angleFac=1, yaxisFac=1, hyperFac=1, interFac =1;
+    public float angleFac=1, yaxisFac=1, hyperFac=1, interFac =2;
 
 	private static Discomfort _instance;
 	public static Discomfort instance
@@ -29,27 +29,35 @@ public class Discomfort{
 		_instance = this;
 	}
 
-	public float getDiscomfortAngled(HandObserver.AngleBasedHandModel otherHand)
+	public static float getDiscomfortAngled(HandObserver.AngleBasedHandModel otherHand)
 	{
 		float result = 0.0f;
-		if (idleStates == null)
-			Debug.LogError ("Penis");
-		else
-		{
-		    foreach (TrainingUnit tu in idleStates) {
-			    result += otherHand.euclidianDistanceFingers (tu.hand);
-		    }
-		}
-		result /= idleStates.Count                      *   angleFac;
 
-        result += getYAxisComponent(otherHand)          *   yaxisFac;
-        result += getHyperExtensionComponent(otherHand) *   hyperFac;
-        result += getInterFingerComponent(otherHand)    *   interFac;
+        result += getAngledComponent(otherHand)         * instance.angleFac;
+        result += getYAxisComponent(otherHand)          * instance.yaxisFac;
+        result += getHyperExtensionComponent(otherHand) * instance.hyperFac;
+        result += getInterFingerComponent(otherHand)    * instance.interFac;
 
 		return result;
 	}
 
-    public float getYAxisComponent(HandObserver.AngleBasedHandModel otherHand)
+    public static float getAngledComponent(HandObserver.AngleBasedHandModel otherHand)
+    {
+        float result = 0.0f;
+		if (instance.idleStates == null)
+			Debug.LogError ("Idle states not initialized?");
+		else
+		{
+            foreach (TrainingUnit tu in instance.idleStates)
+            {
+			    result += otherHand.euclidianDistanceFingers (tu.hand);
+		    }
+		}
+        result /= instance.idleStates.Count;
+        return result;
+    }
+
+    public static float getYAxisComponent(HandObserver.AngleBasedHandModel otherHand)
     {
         float result =.0f;
         foreach (HandObserver.AngleBasedFingerModel finger in otherHand.fingers)
@@ -61,7 +69,7 @@ public class Discomfort{
         }
         return result;
     }
-    public float getHyperExtensionComponent(HandObserver.AngleBasedHandModel otherHand)
+    public static float getHyperExtensionComponent(HandObserver.AngleBasedHandModel otherHand)
     {
         float result = .0f;
         foreach (HandObserver.AngleBasedFingerModel finger in otherHand.fingers)
@@ -71,7 +79,7 @@ public class Discomfort{
         }
         return result;
     }
-    public float getInterFingerComponent(HandObserver.AngleBasedHandModel otherHand)
+    public static float getInterFingerComponent(HandObserver.AngleBasedHandModel otherHand)
     {
         float result = .0f;
         for (int i = 0; i < otherHand.fingers.Length - 1; i++)

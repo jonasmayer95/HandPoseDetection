@@ -28,5 +28,6 @@ public class UserStudyData {
 	public string fileEnding = ".csv";
 	public bool[] origins = new bool[6], directions = new bool[6];
 	public bool targetShooting, lineDrawing;
-    public float discomfort;
+    public float discomfort, angleDis, hyperDis, interDis, yaxisDis;
+    public HandObserver.AngleBasedHandModel targetHand;
 }

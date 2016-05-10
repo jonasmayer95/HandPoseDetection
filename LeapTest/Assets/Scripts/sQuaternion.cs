@@ -81,4 +81,27 @@ public struct sQuaternion
         sQuaternion temp = new sQuaternion(this.x, this.y, this.z, this.w);
         return temp.mirrorX();
     }
+
+    public string ToCSVString(string endl)
+        {
+            string result = "";
+
+            result += x + endl;
+            result += y + endl;
+            result += z + endl;
+            result += w;
+
+            return result;
+        }
+    public static string getCSVHeader(string endl, string quatName)
+    {
+        string result = "";
+
+        result += quatName + "x" + endl;
+        result += quatName + "y" + endl;
+        result += quatName + "z" + endl;
+        result += quatName + "w";
+
+        return result;
+    }
 }

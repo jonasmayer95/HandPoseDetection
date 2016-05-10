@@ -17,6 +17,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
 	public LineRenderer lr;
 	public HandObserver hand;
 	public LayerMask mask;
+    public OutputHand outputHand;
 	bool playing = false;
 	float timer;
 	int remainingTargets;
@@ -50,9 +51,10 @@ public class UserStudyTargetShooting : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
+        outputHand.visualizeHand(UserStudyData.instance.targetHand);
 		fileName ="TargetShootingData"+UserStudyData.instance.fileEnding;
 		if(!File.Exists(fileName))
-			File.AppendAllText (fileName, "Name; Discomfort; Time; Precision; Posture"+Environment.NewLine);
+			File.AppendAllText (fileName, "Name; Discomfort; Time; Precision; Posture; AngleDis; InterDis; YAxisDis; HyperDis; "+HandObserver.AngleBasedHandModel.getCSVHeader("; ","") +Environment.NewLine);
 		remainingTargets = numTargets;
 		for(int i = 0; i<references.Length; i++)
 		{
@@ -82,7 +84,22 @@ public class UserStudyTargetShooting : MonoBehaviour {
 			{
 				RaycastHit hit;
 				if (Physics.Raycast (rayOrigin, rayDirection, out hit, 10, mask)) {
-					File.AppendAllText(fileName, UserStudyData.instance.Name+"; "+UserStudyData.instance.discomfort+"; "+timer+"; "+(hit.point-hit.collider.transform.position).magnitude+"; "+hand.currentPosture+ Environment.NewLine);
+
+					File.AppendAllText(
+                        fileName, 
+
+                        UserStudyData.instance.Name+"; "+
+                        UserStudyData.instance.discomfort+"; "+
+                        timer+"; "+
+                        (hit.point-hit.collider.transform.position).magnitude+"; "+
+                        hand.currentPosture+"; "+
+                        UserStudyData.instance.angleDis+"; "+
+                        UserStudyData.instance.interDis+"; "+
+                        UserStudyData.instance.yaxisDis + "; " +
+                        UserStudyData.instance.hyperDis + "; " +
+                        UserStudyData.instance.targetHand.ToCSVString("; ")+Environment.NewLine
+                        );
+
 					remainingTargets--;
 					if (remainingTargets > 0) {
 						setRandTargetActive ();

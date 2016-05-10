@@ -70,7 +70,7 @@ public class UserStudyIntro : MonoBehaviour {
         float targetdiscomfort = UnityEngine.Random.Range(100, 800);
         targethand = randHand.createRandom(targetdiscomfort, targetdiscomfort+100);
         outputHand.visualizeHand(targethand);
-        UserStudyData.instance.discomfort = Discomfort.instance.getDiscomfortAngled(targethand);
+        UserStudyData.instance.discomfort = Discomfort.getDiscomfortAngled(targethand);
 
 		float min = 100;
 		for (int i = 0 ; i< targethand.fingers.Length; i++) {
@@ -142,5 +142,11 @@ public class UserStudyIntro : MonoBehaviour {
 		}
 		UserStudyData.instance.origins [pointingFinger] = true;
 		UserStudyData.instance.directions [pointingFinger] = true;
-	}
+        UserStudyData.instance.targetHand = targethand;
+        UserStudyData.instance.angleDis = Discomfort.getAngledComponent(targethand);
+        UserStudyData.instance.hyperDis = Discomfort.getHyperExtensionComponent(targethand);
+        UserStudyData.instance.yaxisDis = Discomfort.getYAxisComponent(targethand);
+        UserStudyData.instance.interDis = Discomfort.getInterFingerComponent(targethand);
+
+    }
 }
