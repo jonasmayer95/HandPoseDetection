@@ -18,6 +18,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
 	public HandObserver hand;
 	public LayerMask mask;
     public OutputHand outputHand;
+    public string endl = ", ";
 	bool playing = false;
 	float timer;
 	int remainingTargets;
@@ -54,7 +55,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
         outputHand.visualizeHand(UserStudyData.instance.targetHand);
 		fileName ="TargetShootingData"+UserStudyData.instance.fileEnding;
 		if(!File.Exists(fileName))
-			File.AppendAllText (fileName, "Name; Discomfort; Time; Precision; Posture; AngleDis; InterDis; YAxisDis; HyperDis; "+HandObserver.AngleBasedHandModel.getCSVHeader("; ","") +Environment.NewLine);
+            File.AppendAllText(fileName, "Name" + endl + "Discomfort" + endl + "Time" + endl + "Precision" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl  + HandObserver.AngleBasedHandModel.getCSVHeader(endl, "") + Environment.NewLine);
 		remainingTargets = numTargets;
 		for(int i = 0; i<references.Length; i++)
 		{
@@ -88,16 +89,16 @@ public class UserStudyTargetShooting : MonoBehaviour {
 					File.AppendAllText(
                         fileName, 
 
-                        UserStudyData.instance.Name+"; "+
-                        UserStudyData.instance.discomfort+"; "+
-                        timer+"; "+
-                        (hit.point-hit.collider.transform.position).magnitude+"; "+
-                        hand.currentPosture+"; "+
-                        UserStudyData.instance.angleDis+"; "+
-                        UserStudyData.instance.interDis+"; "+
-                        UserStudyData.instance.yaxisDis + "; " +
-                        UserStudyData.instance.hyperDis + "; " +
-                        UserStudyData.instance.targetHand.ToCSVString("; ")+Environment.NewLine
+                        UserStudyData.instance.Name+endl+
+                        UserStudyData.instance.discomfort + endl +
+                        timer + endl +
+                        (hit.point - hit.collider.transform.position).magnitude + endl +
+                        hand.currentPosture + endl +
+                        UserStudyData.instance.angleDis + endl +
+                        UserStudyData.instance.interDis + endl +
+                        UserStudyData.instance.yaxisDis + endl +
+                        UserStudyData.instance.hyperDis + endl +
+                        UserStudyData.instance.targetHand.ToCSVString(endl) + Environment.NewLine
                         );
 
 					remainingTargets--;
