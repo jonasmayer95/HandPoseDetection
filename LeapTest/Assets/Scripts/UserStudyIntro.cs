@@ -143,9 +143,9 @@ public class UserStudyIntro : MonoBehaviour {
 		UserStudyData.instance.origins [pointingFinger] = true;
 		UserStudyData.instance.directions [pointingFinger] = true;
         UserStudyData.instance.targetHand = targethand;
-        UserStudyData.instance.angleDis = Discomfort.getAngledComponent(targethand);
+		UserStudyData.instance.angleDis = Comfort.getRRPComponent(targethand);
         UserStudyData.instance.hyperDis = Discomfort.getHyperExtensionComponent(targethand);
-        UserStudyData.instance.yaxisDis = Discomfort.getYAxisComponent(targethand);
+        UserStudyData.instance.yaxisDis = Discomfort.getAbductionComponent(targethand);
         UserStudyData.instance.interDis = Discomfort.getInterFingerComponent(targethand);
 
     }
