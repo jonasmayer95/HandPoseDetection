@@ -27,19 +27,23 @@ public class Comfort{
 		_instance = this;
 	}
 
-	public static float getRRPComponent(HandObserver.AngleBasedHandModel otherHand)
+	public static float getRRPComponent(AngleBasedHandModel otherHand)
 	{
-		float result = 0.0f;
-		if (instance.idleStates == null)
+		float result = float.PositiveInfinity;
+		if (instance.idleStates == null) {
 			Debug.LogError ("Idle states not initialized?");
+			return -1;
+		}
+		
 		else
 		{
 			foreach (TrainingUnit tu in instance.idleStates)
 			{
-				result += otherHand.euclidianDistanceFingers (tu.hand);
+				if(result > otherHand.euclidianDistanceFingers (tu.hand))
+					result = otherHand.euclidianDistanceFingers (tu.hand);
 			}
 		}
-		result /= instance.idleStates.Count;
+		Debug.Log (result);
 		return result;
 	}
 }

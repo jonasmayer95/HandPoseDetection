@@ -11,7 +11,7 @@ public class PostureMenu : MonoBehaviour {
 	public Button next;
 	TrainingUnit.Posture current;
 	List<TrainingUnit> currentList;
-    public HandObserver observedHand;
+	public HandObserver observedHand;
 	int index;
     public OutputHand outputHand;
 	// Use this for initialization
@@ -28,7 +28,7 @@ public class PostureMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        HandObserver.AngleBasedHandModel currentHand = currentList[index].hand;
+        AngleBasedHandModel currentHand = currentList[index].hand;
 		if (Input.GetButton("Fire2")&&observedHand.gameObject.activeInHierarchy)
         {
             currentHand = observedHand.hand;

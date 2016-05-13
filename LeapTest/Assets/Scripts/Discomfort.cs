@@ -6,38 +6,40 @@ public static class Discomfort{
 
 
 
-    public static float yaxisFac=1, hyperFac=1, interFac =2;
+    public static float yaxisFac=2, hyperFac=2, interFac =1;
 
-	public static float getDiscomfortAngled(HandObserver.AngleBasedHandModel otherHand)
+	public static float getDiscomfortAngled(AngleBasedHandModel otherHand)
 	{
 		float result = 0.0f;
 
         result += getAbductionComponent(otherHand)          * yaxisFac;
         result += getHyperExtensionComponent(otherHand) * hyperFac;
         result += getInterFingerComponent(otherHand)    * interFac;
-
+		if (result > 400)
+			debug (otherHand);
 		return result;
 	}
 
 	//TODO: refine this: split up in comfort/discomfort
-    public static float getAbductionComponent(HandObserver.AngleBasedHandModel otherHand)
+    public static float getAbductionComponent(AngleBasedHandModel otherHand)
     {
         float result =.0f;
-        foreach (HandObserver.AngleBasedFingerModel finger in otherHand.fingers)
+        foreach (AngleBasedFingerModel finger in otherHand.fingers)
         {
             float temp = ((Quaternion)finger.mcp).eulerAngles.y;
             if (temp > 180)
                 temp = 360 - temp;
             result += temp;
         }
-        return result;
+
+		return result;
     }
 
 	//Definitely Discomfort
-    public static float getHyperExtensionComponent(HandObserver.AngleBasedHandModel otherHand)
+    public static float getHyperExtensionComponent(AngleBasedHandModel otherHand)
     {
         float result = .0f;
-        foreach (HandObserver.AngleBasedFingerModel finger in otherHand.fingers)
+        foreach (AngleBasedFingerModel finger in otherHand.fingers)
         {
             if (((Quaternion)finger.mcp).eulerAngles.x > 300)
                 result += 360-((Quaternion)finger.mcp).eulerAngles.x;
@@ -46,7 +48,7 @@ public static class Discomfort{
     }
 
 	//Definitely Discomfort
-    public static float getInterFingerComponent(HandObserver.AngleBasedHandModel otherHand)
+    public static float getInterFingerComponent(AngleBasedHandModel otherHand)
     {
         float result = .0f;
         for (int i = 0; i < otherHand.fingers.Length - 1; i++)
@@ -55,4 +57,12 @@ public static class Discomfort{
         }
         return result;
     }
+
+	static void debug(AngleBasedHandModel otherHand)
+	{
+		string debug = "Abduction: " + getAbductionComponent (otherHand);
+		debug += "Hyper: " + getHyperExtensionComponent (otherHand);
+		debug += "Inter: " + getInterFingerComponent (otherHand);
+		Debug.Log (debug);
+	}
 }

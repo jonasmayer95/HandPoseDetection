@@ -25,7 +25,7 @@ public class UserStudyIntro : MonoBehaviour {
     public GameObject handModel;
     public OutputHand outputHand;
     public RandomHandGenerator randHand;
-    public HandObserver.AngleBasedHandModel targethand;
+    public AngleBasedHandModel targethand;
 	public int pointingFinger = 0;
 
 	void Start () {

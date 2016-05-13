@@ -29,5 +29,5 @@ public class UserStudyData {
 	public bool[] origins = new bool[6], directions = new bool[6];
 	public bool targetShooting, lineDrawing;
     public float discomfort, angleDis, hyperDis, interDis, yaxisDis;
-    public HandObserver.AngleBasedHandModel targetHand;
+    public AngleBasedHandModel targetHand;
 }

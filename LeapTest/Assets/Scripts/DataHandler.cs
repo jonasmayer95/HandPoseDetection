@@ -61,7 +61,7 @@ public class DataHandler{
 		Debug.Log ("Saved "+ trainingData.Count+" Elements.");
 		debugPoseCounts ();
 	}
-	public List<ThreadedKNN.poseCompareObject> getCompareList(HandObserver.AngleBasedHandModel hand)
+	public List<ThreadedKNN.poseCompareObject> getCompareList(AngleBasedHandModel hand)
 	{
 		List<ThreadedKNN.poseCompareObject> result = new List<ThreadedKNN.poseCompareObject> ();
 		foreach (TrainingUnit tu in trainingData) {

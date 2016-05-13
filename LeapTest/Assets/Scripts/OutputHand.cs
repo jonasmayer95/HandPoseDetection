@@ -3,27 +3,28 @@ using System.Collections;
 
 public class OutputHand : MonoBehaviour {
 
-    public HandObserver.AngleBasedHandModel observedHand;
+	public AngleBasedHandModel observedHand = null;
     public float rotationSpeed;
     public Transform root, thumb1, thumb2, thumb3, index1, index2, index3, middle1, middle2, middle3, ring1, ring2, ring3, pinky1, pinky2, pinky3;
+
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Rotate(new Vector3(0, Time.deltaTime * rotationSpeed), Space.World);
+		transform.Rotate (new Vector3 (0, Time.deltaTime * rotationSpeed), Space.World);
 	}
 
-    public void visualizeHand(HandObserver.AngleBasedHandModel currentHand)
+    public void visualizeHand(AngleBasedHandModel currentHand)
     {
         if(observedHand != currentHand)
             observedHand = currentHand;
 
         thumb1.localRotation = currentHand.thumb.tmc.mirroredY();
-        thumb2.localRotation = Quaternion.Euler(0, -currentHand.thumb.jointAngles[(int)HandObserver.AngleBasedThumbModel.Fingerjoints.MP], 0);
-        thumb3.localRotation = Quaternion.Euler(0, -currentHand.thumb.jointAngles[(int)HandObserver.AngleBasedThumbModel.Fingerjoints.IP], 0);
+        thumb2.localRotation = Quaternion.Euler(0, -currentHand.thumb.jointAngles[(int)AngleBasedThumbModel.Fingerjoints.MP], 0);
+        thumb3.localRotation = Quaternion.Euler(0, -currentHand.thumb.jointAngles[(int)AngleBasedThumbModel.Fingerjoints.IP], 0);
 
         index1.localRotation = currentHand.fingers[0].mcp.mirroredY();
         index2.localRotation = Quaternion.Euler(-currentHand.fingers[0].jointAngles[1], 0, 0);
@@ -45,8 +46,8 @@ public class OutputHand : MonoBehaviour {
     public void visualizeHand()
     {
         thumb1.localRotation = observedHand.thumb.tmc.mirroredY();
-        thumb2.localRotation = Quaternion.Euler(0, -observedHand.thumb.jointAngles[(int)HandObserver.AngleBasedThumbModel.Fingerjoints.MP], 0);
-        thumb3.localRotation = Quaternion.Euler(0, -observedHand.thumb.jointAngles[(int)HandObserver.AngleBasedThumbModel.Fingerjoints.IP], 0);
+        thumb2.localRotation = Quaternion.Euler(0, -observedHand.thumb.jointAngles[(int)AngleBasedThumbModel.Fingerjoints.MP], 0);
+        thumb3.localRotation = Quaternion.Euler(0, -observedHand.thumb.jointAngles[(int)AngleBasedThumbModel.Fingerjoints.IP], 0);
 
         index1.localRotation = observedHand.fingers[0].mcp.mirroredY();
         index2.localRotation = Quaternion.Euler(-observedHand.fingers[0].jointAngles[1], 0, 0);

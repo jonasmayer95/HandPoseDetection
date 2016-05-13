@@ -55,7 +55,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
         outputHand.visualizeHand(UserStudyData.instance.targetHand);
 		fileName ="TargetShootingData"+UserStudyData.instance.fileEnding;
 		if(!File.Exists(fileName))
-            File.AppendAllText(fileName, "Name" + endl + "Discomfort" + endl + "Time" + endl + "Precision" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + HandObserver.AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + HandObserver.AngleBasedHandModel.getCSVHeader(endl, "GivenHand") + Environment.NewLine);
+            File.AppendAllText(fileName, "Name" + endl + "Discomfort" + endl + "Time" + endl + "Precision" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + AngleBasedHandModel.getCSVHeader(endl, "GivenHand") + Environment.NewLine);
 		remainingTargets = numTargets;
 		for(int i = 0; i<references.Length; i++)
 		{

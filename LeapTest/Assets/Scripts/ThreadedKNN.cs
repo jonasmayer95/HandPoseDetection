@@ -11,7 +11,7 @@ public class ThreadedKNN{
 	private TrainingUnit.Posture result = TrainingUnit.Posture.idle;
     Thread newestThread;
 
-	public TrainingUnit.Posture detectPosture(HandObserver.AngleBasedHandModel hand)
+	public TrainingUnit.Posture detectPosture(AngleBasedHandModel hand)
     {
 		KNNThread thread = new KNNThread (hand, this);
 		newestThread = new Thread (new ThreadStart(thread.threadJob));
@@ -20,9 +20,9 @@ public class ThreadedKNN{
     }
 	private class KNNThread
 	{
-		HandObserver.AngleBasedHandModel hand;
+		AngleBasedHandModel hand;
 		ThreadedKNN mother;
-		public KNNThread(HandObserver.AngleBasedHandModel _hand, ThreadedKNN _mother)
+		public KNNThread(AngleBasedHandModel _hand, ThreadedKNN _mother)
 		{
 			hand = _hand;
 			mother = _mother;
