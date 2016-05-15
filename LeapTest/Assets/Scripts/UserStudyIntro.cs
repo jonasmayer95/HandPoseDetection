@@ -115,7 +115,7 @@ public class UserStudyIntro : MonoBehaviour {
 		playing = true;
 		lr.enabled = true;
 		yield return new WaitForSeconds (2);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
 	}
 
 	void updateRayCoords()

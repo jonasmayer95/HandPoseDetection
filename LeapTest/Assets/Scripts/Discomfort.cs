@@ -6,7 +6,7 @@ public static class Discomfort{
 
 
 
-    public static float yaxisFac=2, hyperFac=2, interFac =1;
+    public static float yaxisFac=2, hyperFac=2, interFac =0.6f;
 
 	public static float getDiscomfortAngled(AngleBasedHandModel otherHand)
 	{

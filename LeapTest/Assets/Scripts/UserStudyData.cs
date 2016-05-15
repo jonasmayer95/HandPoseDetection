@@ -23,7 +23,7 @@ public class UserStudyData {
 		_instance = this;
 	}
 
-	public TrainingUnit.Posture posture = TrainingUnit.Posture.custom1;
+	public TrainingUnit.Posture posture = TrainingUnit.Posture.flat;
 	public string Name = "Unnamed";
 	public string fileEnding = ".csv";
 	public bool[] origins = new bool[6], directions = new bool[6];

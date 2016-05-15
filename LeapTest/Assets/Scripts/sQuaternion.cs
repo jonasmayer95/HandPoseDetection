@@ -3,9 +3,17 @@ using System.Collections;
 using System;
 
 [System.Serializable]
-public struct sQuaternion
+public class sQuaternion
 {
     public float x, y, z, w;
+
+	public sQuaternion()
+	{
+		x = (Quaternion.identity).x;
+		y = (Quaternion.identity).y;
+		z = (Quaternion.identity).z;
+		w = (Quaternion.identity).w;
+	}
 
     public sQuaternion(float _x, float _y, float _z, float _w)
     {
@@ -45,6 +53,7 @@ public struct sQuaternion
 
     public sQuaternion normalize()
     {
+		int i = 0;
         while (length() != 1.0)
         {
             double len = length();
@@ -52,6 +61,13 @@ public struct sQuaternion
             y = (float)(y / len);
             z = (float)(z / len);
             w = (float)(w / len);
+			i++;
+
+			if (i > 100) {
+				Debug.LogError ("Could not normalize sQuaternion: ");
+				return new sQuaternion ();
+
+			}
         }
         return this;
     }
