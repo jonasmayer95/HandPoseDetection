@@ -1,3 +1,3 @@
-# HandPoseDetection
-Don't steal plox
+# Hand Pose Detection
+Don't steal plox \n
 dsgsdgsdgsgdgfhbfththghfghfgh
