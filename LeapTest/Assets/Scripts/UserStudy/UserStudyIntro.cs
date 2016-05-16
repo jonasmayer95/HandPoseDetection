@@ -41,7 +41,7 @@ public class UserStudyIntro : MonoBehaviour {
 	void Start () {
 		UserStudyData.instance.remainingIts--;
         overridePosture = UserStudyData.instance.posture;
-		float targetdiscomfort = UnityEngine.Random.Range(100, 800);
+		float targetdiscomfort = UnityEngine.Random.Range(0, 1000);
 		targethand = randHand.createRandom(targetdiscomfort, targetdiscomfort+100);
 		outputHand.visualizeHand(targethand);
 		UserStudyData.instance.discomfort = Discomfort.getDiscomfortAngled(targethand);
@@ -101,8 +101,16 @@ public class UserStudyIntro : MonoBehaviour {
 		recordText.enabled = true;
 		DataHandler.instance.deleteAll (overridePosture);
 		for (int i = 0; i < recordSampleCount; i++) {
-			observedHand.saveCurrentAs (overridePosture);
-			recordText.text = "Recording... Recorded Posture Sample " + i + " of " + recordSampleCount;
+			if (observedHand.gameObject.activeInHierarchy) {
+				countdownNumber.enabled = false;
+				observedHand.saveCurrentAs (overridePosture);
+				recordText.text = "Recording... Recorded Posture Sample " + i + " of " + recordSampleCount;
+			} else {
+				countdownNumber.enabled = true;
+				countdownNumber.text = "Wrong Hand!";
+				countdownNumber.color = Color.red;
+				i--;
+			}
 			yield return new WaitForSeconds (recordDuration/recordSampleCount);
 		}
 		recordText.text = "Saving Data";
@@ -116,7 +124,7 @@ public class UserStudyIntro : MonoBehaviour {
 
 		if (UserStudyData.instance.targetShooting)
 			SceneManager.LoadScene ("UserStudyTargetShooting");
-		if (UserStudyData.instance.lineDrawing)
+		else if (UserStudyData.instance.lineDrawing)
 			SceneManager.LoadScene ("UserStudyLineTracing");
 	}
 		

@@ -26,7 +26,6 @@ public class UserStudyTargetShooting : MonoBehaviour {
 	public int numTargets, parallelNumTargets;
 	int current;
 	string fileName;
-	public bool right;
 
 	public Vector3 rayOrigin {
 		get{
@@ -49,13 +48,18 @@ public class UserStudyTargetShooting : MonoBehaviour {
 			hand = leftHand;
 			palm = palmLeft;
 		}
-		if (right != UserStudyData.instance.right)
-			Destroy (this);
-        outputHand.visualizeHand(UserStudyData.instance.targetHand);
 		fileName ="TargetShootingData"+UserStudyData.instance.fileEnding;
 		if(!File.Exists(fileName))
-            File.AppendAllText(fileName, "Name" + endl + "Discomfort" + endl + "Time" + endl + "Precision" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + AngleBasedHandModel.getCSVHeader(endl, "GivenHand") + Environment.NewLine);
+			File.AppendAllText(fileName, "Name" + endl + "Discomfort" + endl + "Time" + endl + "Precision" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + AngleBasedHandModel.getCSVHeader(endl, "GivenHand") + Environment.NewLine);
 		remainingTargets = numTargets;
+		try
+		{
+        outputHand.visualizeHand(UserStudyData.instance.targetHand);
+		}
+		catch(Exception e) {
+			Debug.LogError ("Outputhand fucked up: " + e.StackTrace);
+		}
+
 	}
 	
 	// Update is called once per frame

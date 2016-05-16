@@ -43,7 +43,6 @@ public class Comfort{
 					result = otherHand.euclidianDistanceFingers (tu.hand);
 			}
 		}
-		Debug.Log (result);
 		return result;
 	}
 }

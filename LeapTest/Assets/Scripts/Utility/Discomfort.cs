@@ -6,7 +6,7 @@ public static class Discomfort{
 
 
 
-    public static float yaxisFac=2, hyperFac=2, interFac =0.6f;
+    public static float yaxisFac=2, hyperFac=2, interFac =1f;
 
 	public static float getDiscomfortAngled(AngleBasedHandModel otherHand)
 	{
@@ -15,8 +15,6 @@ public static class Discomfort{
         result += getAbductionComponent(otherHand)          * yaxisFac;
         result += getHyperExtensionComponent(otherHand) * hyperFac;
         result += getInterFingerComponent(otherHand)    * interFac;
-		if (result > 400)
-			debug (otherHand);
 		return result;
 	}
 
@@ -29,7 +27,7 @@ public static class Discomfort{
             float temp = ((Quaternion)finger.mcp).eulerAngles.y;
             if (temp > 180)
                 temp = 360 - temp;
-            result += temp;
+			result += Mathf.Max(0, temp-20);
         }
 
 		return result;

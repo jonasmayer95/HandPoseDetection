@@ -54,6 +54,7 @@ public class sQuaternion
     public sQuaternion normalize()
     {
 		int i = 0;
+	//	string debug = ToString ();
         while (length() != 1.0)
         {
             double len = length();
@@ -64,7 +65,7 @@ public class sQuaternion
 			i++;
 
 			if (i > 100) {
-				Debug.LogError ("Could not normalize sQuaternion: ");
+		//		Debug.LogError ("Could not normalize sQuaternion: "+debug);
 				return new sQuaternion ();
 
 			}

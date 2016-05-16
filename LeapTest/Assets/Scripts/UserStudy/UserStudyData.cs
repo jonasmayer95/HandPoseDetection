@@ -29,5 +29,5 @@ public class UserStudyData {
     public float discomfort, angleDis, hyperDis, interDis, yaxisDis;
     public AngleBasedHandModel targetHand;
 	public bool right = false;
-	public int remainingIts = 0;
+	public int remainingIts = 0, evaluations = 0;
 }

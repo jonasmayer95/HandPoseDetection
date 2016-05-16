@@ -33,7 +33,10 @@ public class AngleBasedFingerModel
 
 		result += jointAngles[0];
 		result += jointAngles[1];
-		result += ((Quaternion)mcp).eulerAngles.x;
+		float temp = ((Quaternion)mcp).eulerAngles.x;
+		if (temp > 180)
+			temp -= 360;
+		result += temp;
 
 		return result;
 	}

@@ -9,9 +9,12 @@ public class UserStudyDevScreen : MonoBehaviour {
 	public Dropdown poseDropDown;
 	public Toggle right;
 	public Toggle target, line, rating;
-	public InputField nameField;
+	public InputField nameField, evalsInp, itersInp;
 	public int iterations = 1;
+	public int evaluations = 5;
 	void Start () {
+		evalsInp.text = evaluations+""; 
+		itersInp.text = iterations+"";
 		poseDropDown.ClearOptions ();
 		List<Dropdown.OptionData> list = new List<Dropdown.OptionData> ();
 		foreach (string pose in Enum.GetNames(typeof(TrainingUnit.Posture))) {
@@ -27,7 +30,7 @@ public class UserStudyDevScreen : MonoBehaviour {
 		saveData ();
 		//Load UserStudyIntro
 		if (UserStudyData.instance.comfortEvaluation) {
-			//load scene; 
+			SceneManager.LoadScene ("UserStudyComfortEvaluation");
 		} else {
 			if (UserStudyData.instance.lineDrawing || UserStudyData.instance.targetShooting)
 				SceneManager.LoadScene ("UserStudyIntro");
@@ -46,7 +49,7 @@ public class UserStudyDevScreen : MonoBehaviour {
 		UserStudyData.instance.targetShooting = target.isOn;
 		UserStudyData.instance.lineDrawing = line.isOn;
 		UserStudyData.instance.comfortEvaluation = rating.isOn;
-		UserStudyData.instance.remainingIts = iterations;
-
+		UserStudyData.instance.remainingIts = Convert.ToInt32(itersInp.text);
+		UserStudyData.instance.evaluations = Convert.ToInt32(evalsInp.text);
 	}
 }

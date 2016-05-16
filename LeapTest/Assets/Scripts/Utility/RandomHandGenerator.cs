@@ -38,8 +38,6 @@ public class RandomHandGenerator : MonoBehaviour {
 
 		result.rotation = Quaternion.identity;
 		result.position = Vector3.zero;
-        Debug.Log("Discomfort: "+Discomfort.getDiscomfortAngled(result));
-		Debug.Log("Comfort: "+Comfort.getRRPComponent(result));
         return result;
     }
     public AngleBasedHandModel createRandom(float disc_min, float disc_max)
@@ -47,7 +45,8 @@ public class RandomHandGenerator : MonoBehaviour {
         AngleBasedHandModel result;
         do
 			result = createRandom();
-		while (Discomfort.getDiscomfortAngled(result) +Comfort.getRRPComponent(result) < disc_min || Discomfort.getDiscomfortAngled(result)>disc_max);
+		while (Discomfort.getDiscomfortAngled(result) + Comfort.getRRPComponent(result) < disc_min || Discomfort.getDiscomfortAngled(result)+Comfort.getRRPComponent(result)>disc_max);
+		Debug.Log("Discomfort: "+Discomfort.getDiscomfortAngled(result)+", Comfort: "+Comfort.getRRPComponent(result));
         return result;
     }
 

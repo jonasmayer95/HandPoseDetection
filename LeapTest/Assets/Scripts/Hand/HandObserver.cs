@@ -81,7 +81,7 @@ public class HandObserver : MonoBehaviour {
 			else {
 				currentPosture = knn.detectPosture (hand);
 				if (poseText)
-					poseText.text = "Posture: " + currentPosture + "; Discomfort: " + getDiscomfort ();
+					poseText.text = "Posture: " + currentPosture + "; Discomfort: " + getDiscomfort ()+ "; Comfort: " + Comfort.getRRPComponent (hand);
 			}
 		}
 
@@ -97,8 +97,12 @@ public class HandObserver : MonoBehaviour {
 
 	public void saveCurrentAs(TrainingUnit.Posture posture)
 	{
-		DataHandler.instance.addTrainigData (new TrainingUnit (posture, hand));
-		hand = new AngleBasedHandModel ();
+		if (gameObject.activeInHierarchy) {
+			DataHandler.instance.addTrainigData (new TrainingUnit (posture, hand));
+			hand = new AngleBasedHandModel ();
+		} else {
+			Debug.LogError ("Tried to save hand, eventhough not active!");
+		}
 	}
 
 	public float getDiscomfort()
