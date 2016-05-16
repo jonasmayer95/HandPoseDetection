@@ -13,6 +13,7 @@ public class HandObserver : MonoBehaviour {
 	public Transform root, thumb1, thumb2, thumb3, index1, index2, index3, middle1, middle2, middle3, ring1, ring2, ring3, pinky1, pinky2, pinky3;
 	public AngleBasedHandModel hand;
 	ThreadedKNN knn = new ThreadedKNN();
+	public bool isDetecting = true;
 
 
 	void Start () {
@@ -72,14 +73,16 @@ public class HandObserver : MonoBehaviour {
 		hand.fingers[(int)AngleBasedHandModel.FingerName.pinky].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.PIP] = Vector3.Angle (pinky1.forward, pinky2.forward);
 		hand.fingers[(int)AngleBasedHandModel.FingerName.pinky].jointAngles[(int)AngleBasedFingerModel.Fingerjoints.DIP] = Vector3.Angle (pinky2.forward, pinky3.forward);
 
-		if (Input.GetKeyDown ("k")) {
-			saveCurrentAs (trainingPosture);
-		} else if (Input.GetKeyDown ("s"))
-			DataHandler.instance.saveData ();
-		else {
-			currentPosture = knn.detectPosture (hand);
-			if(poseText)
-				poseText.text = "Posture: " + currentPosture + "; Discomfort: " + getDiscomfort();
+		if (isDetecting) {
+			if (Input.GetKeyDown ("k")) {
+				saveCurrentAs (trainingPosture);
+			} else if (Input.GetKeyDown ("s"))
+				DataHandler.instance.saveData ();
+			else {
+				currentPosture = knn.detectPosture (hand);
+				if (poseText)
+					poseText.text = "Posture: " + currentPosture + "; Discomfort: " + getDiscomfort ();
+			}
 		}
 
 	}

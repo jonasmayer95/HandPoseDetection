@@ -4,18 +4,19 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System.IO;
 using System;
+using UnityEngine.SceneManagement;
 
 public class UserStudyTargetShooting : MonoBehaviour {
-
-	public Transform[] references;
-	private List<Transform> origins = new List<Transform> ();
-	private List<Transform> directions = new List<Transform> ();
+	
+	Transform palm;
+	public Transform palmLeft, palmRight;
 	public Text progress;
 	public GameObject[] targets;
 	public Text countdownNumber;
 	public GameObject startPanel, endPanel;
-	public LineRenderer lr;
-	public HandObserver hand;
+	public LineRenderer lr;	
+	HandObserver hand;
+	public HandObserver leftHand, rightHand;
 	public LayerMask mask;
     public OutputHand outputHand;
     public string endl = ", ";
@@ -25,45 +26,36 @@ public class UserStudyTargetShooting : MonoBehaviour {
 	public int numTargets, parallelNumTargets;
 	int current;
 	string fileName;
+	public bool right;
+
 	public Vector3 rayOrigin {
 		get{
-			Vector3 result = Vector3.zero;
-			if (origins.Count > 0) {
-				for (int i = 0; i < origins.Count; i++)
-					result += origins [i].position;
-				result /= origins.Count;
-			} else
-				result = references [0].position;
-			return result;
+			return palm.position;
 		}
 	}
 
 	public Vector3 rayDirection{
 		get{
-			Vector3 result = Vector3.zero;
-			if (origins.Count > 0) {
-				for (int i = 0; i < origins.Count; i++)
-					result += origins [i].forward;
-				result /= origins.Count;
-			} else
-				result = references [0].forward;
-			return result;
+			return palm.forward;
 		}
 	}
 	// Use this for initialization
 	void Start () {
+
+		if (UserStudyData.instance.right) {
+			hand = rightHand;
+			palm = palmRight;
+		} else {
+			hand = leftHand;
+			palm = palmLeft;
+		}
+		if (right != UserStudyData.instance.right)
+			Destroy (this);
         outputHand.visualizeHand(UserStudyData.instance.targetHand);
 		fileName ="TargetShootingData"+UserStudyData.instance.fileEnding;
 		if(!File.Exists(fileName))
             File.AppendAllText(fileName, "Name" + endl + "Discomfort" + endl + "Time" + endl + "Precision" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + AngleBasedHandModel.getCSVHeader(endl, "GivenHand") + Environment.NewLine);
 		remainingTargets = numTargets;
-		for(int i = 0; i<references.Length; i++)
-		{
-			if (UserStudyData.instance.origins [i])
-				origins.Add (references [i]);
-			if (UserStudyData.instance.directions [i])
-				directions.Add (references [i]);
-		}
 	}
 	
 	// Update is called once per frame
@@ -159,7 +151,14 @@ public class UserStudyTargetShooting : MonoBehaviour {
 
     public void onEnd()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+		if (UserStudyData.instance.lineDrawing)
+			SceneManager.LoadScene ("UserStudyLineTracing");
+		else {
+			if(UserStudyData.instance.remainingIts >0)
+				SceneManager.LoadScene ("UserStudyIntro");
+			else
+				SceneManager.LoadScene ("UserStudyEnd");
+		}
     }
 
     public void onOpenLog()

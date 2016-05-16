@@ -4,13 +4,16 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System.IO;
 using System;
+using UnityEngine.SceneManagement;
 
 public class UserStudyLineTracing : MonoBehaviour {
 
-	public Transform palm;
+	Transform palm;
+	public Transform palmLeft, palmRight;
 	public GameObject startPanel, endPanel;
 	public LineRenderer lr;
-	public HandObserver hand;
+	HandObserver hand;
+	public HandObserver leftHand, rightHand;
 	public OutputHand outputHand;
 	public string endl = ", ";
 	bool playing = false;
@@ -18,7 +21,7 @@ public class UserStudyLineTracing : MonoBehaviour {
 	public Text countdownNumber;
 	public Text progress;
 	string fileName;
-	public List<LinePoint> points;
+	static List<LinePoint> points = new List<LinePoint>();
 	public LayerMask lineMask;
 
 	public float maxX=6;
@@ -45,39 +48,52 @@ public class UserStudyLineTracing : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		generateRandCurve ();
-		for (int i = 0; i < points.Count - 1; i++) {
-			points [i].init (points[i+1].getOwn());
+			
+		if (UserStudyData.instance.right) {
+			hand = rightHand;
+			palm = palmRight;
+		} else {
+			hand = leftHand;
+			palm = palmLeft;
 		}
-//		outputHand.visualizeHand(UserStudyData.instance.targetHand);
-		fileName ="LineTracingData"+UserStudyData.instance.fileEnding;
-		if(!File.Exists(fileName))
-			File.AppendAllText(fileName, "Name" + endl + "Discomfort" + endl + "Time" + endl + "Accuracy" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + AngleBasedHandModel.getCSVHeader(endl, "GivenHand") + Environment.NewLine);
+
+		points = new List<LinePoint>();
+			generateRandCurve ();
+			for (int i = 0; i < points.Count - 1; i++) {
+				points [i].init (points[i+1].getOwn());
+			}
+			fileName ="LineTracingData"+UserStudyData.instance.fileEnding;
+			if(!File.Exists(fileName))
+				File.AppendAllText(fileName, "Name" + endl + "Discomfort" + endl + "Time" + endl + "Accuracy" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + AngleBasedHandModel.getCSVHeader(endl, "GivenHand") + Environment.NewLine);
+			if (UserStudyData.instance.targetHand != null)
+				outputHand.visualizeHand (UserStudyData.instance.targetHand);
+			else
+				outputHand.gameObject.SetActive (false);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(hand.currentPosture !=UserStudyData.instance.posture)
-		{
-			progress.text = "Wrong Hand Posture!";
-		}
-		else
-			progress.text = "Dist: "+accuracy +", Progress: "+getProgress();
+			if (hand.currentPosture != UserStudyData.instance.posture) {
+				progress.text = "Wrong Hand Posture!";
+			} else
+				progress.text = "Dist: " + accuracy + ", Progress: " + getProgress ();
 		
-		lr.SetPositions(new Vector3[] {rayOrigin,rayOrigin+10*rayDirection});
+			lr.SetPositions (new Vector3[] { rayOrigin, rayOrigin + 10 * rayDirection });
+		lr.enabled = hand.gameObject.activeInHierarchy;
 
-		if (playing) {
-			timer += Time.deltaTime;
-			if (hand.currentPosture == UserStudyData.instance.posture) {
+			if (playing) {
+				timer += Time.deltaTime;
+				if (hand.currentPosture == UserStudyData.instance.posture) {
 
-				RaycastHit hit;
-				if (Physics.Raycast (rayOrigin, rayDirection, out hit, 10, lineMask)) {
-					accuracy = getDistanceToCurve (hit.point);
-					if (isDone ())
-						endStudy ();
+					RaycastHit hit;
+					if (Physics.Raycast (rayOrigin, rayDirection, out hit, 10, lineMask)) {
+						accuracy = getDistanceToCurve (hit.point);
+						if (isDone ())
+							endStudy ();
+					}
 				}
 			}
-		}
 	}
 
 	public void onContinue()
@@ -106,6 +122,10 @@ public class UserStudyLineTracing : MonoBehaviour {
 
 	void endStudy()
 	{
+		playing = false;
+		endPanel.SetActive (true);
+		progress.enabled = false;
+
 		File.AppendAllText(
 			fileName, 
 
@@ -121,14 +141,15 @@ public class UserStudyLineTracing : MonoBehaviour {
 			hand.hand.ToCSVString(endl) + endl +
 			UserStudyData.instance.targetHand.ToCSVString(endl) + Environment.NewLine
 		);
-		playing = false;
-		endPanel.SetActive (true);
-		progress.enabled = false;
+
 	}
 
 	public void onEnd()
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+			if(UserStudyData.instance.remainingIts > 0)
+				SceneManager.LoadScene ("UserStudyIntro");
+		else
+			SceneManager.LoadScene ("UserStudyEnd");
 	}
 
 	public void onOpenLog()
@@ -153,6 +174,8 @@ public class UserStudyLineTracing : MonoBehaviour {
 
 	bool isDone()
 	{
+		if (points.Count == 0)
+			return false;
 		bool result = true;
 		for (int i = 0; i < points.Count - 1; i++) {
 			result = result && points [i].isDone ();
@@ -162,6 +185,8 @@ public class UserStudyLineTracing : MonoBehaviour {
 
 	public float getTotalAccuracy()
 	{
+		if (points.Count == 0)
+			return 0;
 		double result =0;
 		int samples=0;
 		for (int i = 0; i < points.Count - 1; i++) {
@@ -174,6 +199,8 @@ public class UserStudyLineTracing : MonoBehaviour {
 	}
 	public float getProgress()
 	{
+		if (points.Count == 0)
+			return 0;
 		float result =0;
 		for (int i = 0; i < points.Count - 1; i++) {
 			if (points [i].isDone())
@@ -192,7 +219,7 @@ public class UserStudyLineTracing : MonoBehaviour {
 			GameObject point = (GameObject)Instantiate (pointPrefab, new Vector3 (pointX, pointY, linePlane), Quaternion.identity);
 			points.Add (point.GetComponent<LinePoint>());
 			pointX += (2 * maxX) / steps;
-			pointY += UnityEngine.Random.Range ((2 * maxX) / steps,-(2 * maxX) / steps)+(pointY/maxY*0.4f);
+			pointY += UnityEngine.Random.Range ((2 * maxX) / steps,-(2 * maxX) / steps)-((pointY/maxY)*0.8f);
 		}
 	}
 }

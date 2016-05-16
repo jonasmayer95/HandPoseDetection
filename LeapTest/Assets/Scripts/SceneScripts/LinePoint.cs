@@ -7,7 +7,7 @@ public class LinePoint : MonoBehaviour {
 	Vector3 own, next;
 	bool ownC, nextC;
 	public LineRenderer lr;
-	public float nearnesFac = 8;
+	public float nearness = 0.2f;
 
 	public double accuracy =0;
 	public int samples=0;
@@ -40,13 +40,11 @@ public class LinePoint : MonoBehaviour {
 
 	public void checkCompletition(Vector3 other)
 	{
-		if (Vector3.Distance (other, own) < Vector3.Distance (next, own) / nearnesFac)
+		if (Vector3.Distance (other, own) < nearness)
 			ownC = true;
-		if (Vector3.Distance (other, next) < Vector3.Distance (next, own) / nearnesFac)
+		if (Vector3.Distance (other, next) < nearness)
 			nextC = true;
 		if (nextC || ownC) {
-
-			Debug.Log ("sgdgd");
 			if (nextC && ownC)
 				lr.SetColors (Color.green, Color.green);
 			else

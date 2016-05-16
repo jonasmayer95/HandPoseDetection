@@ -10,7 +10,7 @@ public class AngleBasedFingerModel
 	}
 
 	public float[] jointAngles = new float[4];
-	public sQuaternion mcp;
+	public sQuaternion mcp = new sQuaternion();
 
 	public override string ToString()
 	{

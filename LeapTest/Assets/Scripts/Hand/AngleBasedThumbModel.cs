@@ -9,7 +9,7 @@ public class AngleBasedThumbModel
 		IP = 0 , MP = 1, TMC_X = 2 , TMC_Y = 3, TMC_Z = 4
 	}
 	public float[] jointAngles = new float[5];
-	public sQuaternion tmc;
+	public sQuaternion tmc = new sQuaternion();
 	public override string ToString()
 	{
 		return "Thumb: IP " + jointAngles [0] + ", MP " + jointAngles [1] + ", TMC_X " + jointAngles [2] + ", TMC_Y " + jointAngles [3]+ ", TMC_Z " + jointAngles [4];

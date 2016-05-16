@@ -47,7 +47,7 @@ public class RandomHandGenerator : MonoBehaviour {
         AngleBasedHandModel result;
         do
 			result = createRandom();
-        while (Discomfort.getDiscomfortAngled(result) < disc_min || Discomfort.getDiscomfortAngled(result)>disc_max);
+		while (Discomfort.getDiscomfortAngled(result) +Comfort.getRRPComponent(result) < disc_min || Discomfort.getDiscomfortAngled(result)>disc_max);
         return result;
     }
 

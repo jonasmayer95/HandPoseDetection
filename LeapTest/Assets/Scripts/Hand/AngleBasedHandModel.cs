@@ -15,6 +15,8 @@ public class AngleBasedHandModel
 
 	public AngleBasedHandModel()
 	{
+		rotation = new sQuaternion ();
+		position = new sVector3 (0, 0, 0);
 		thumb = new AngleBasedThumbModel();
 		for(int i =0 ; i<fingers.Length ; i++)
 			fingers[i] = new AngleBasedFingerModel();
