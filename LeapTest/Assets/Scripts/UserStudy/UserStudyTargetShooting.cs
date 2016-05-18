@@ -12,6 +12,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
 	public Transform palmLeft, palmRight;
 	public Text progress;
 	public GameObject[] targets;
+    List<int> targetList;
 	public Text countdownNumber;
 	public GameObject startPanel, endPanel;
 	public LineRenderer lr;	
@@ -50,7 +51,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
 		}
 		fileName ="TargetShootingData"+UserStudyData.instance.fileEnding;
 		if(!File.Exists(fileName))
-			File.AppendAllText(fileName, "Name" + endl + "Discomfort" + endl + "Time" + endl + "Precision" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + AngleBasedHandModel.getCSVHeader(endl, "GivenHand") + Environment.NewLine);
+            File.AppendAllText(fileName, "Name" + endl + "Discomfort" + endl + "Time" + endl + "Precision" + endl + "TargetIndex" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + AngleBasedHandModel.getCSVHeader(endl, "GivenHand") + Environment.NewLine);
 		remainingTargets = numTargets;
 		try
 		{
@@ -81,25 +82,31 @@ public class UserStudyTargetShooting : MonoBehaviour {
 			{
 				RaycastHit hit;
 				if (Physics.Raycast (rayOrigin, rayDirection, out hit, 10, mask)) {
+                    try
+                    {
+                        File.AppendAllText(
+                            fileName,
 
-					File.AppendAllText(
-                        fileName, 
-
-                        UserStudyData.instance.Name+endl+
-                        UserStudyData.instance.discomfort + endl +
-                        timer + endl +
-                        (hit.point - hit.collider.transform.position).magnitude + endl +
-                        hand.currentPosture + endl +
-                        UserStudyData.instance.angleDis + endl +
-                        UserStudyData.instance.interDis + endl +
-                        UserStudyData.instance.yaxisDis + endl +
-                        UserStudyData.instance.hyperDis + endl +
-                        hand.hand.ToCSVString(endl) + endl +
-                        UserStudyData.instance.targetHand.ToCSVString(endl) + Environment.NewLine
-                        );
+                            UserStudyData.instance.Name + endl +
+                            UserStudyData.instance.discomfort + endl +
+                            timer + endl +
+                            (hit.point - hit.collider.transform.position).magnitude + endl +
+                            targetList[current-1] +endl +
+                            hand.currentPosture + endl +
+                            UserStudyData.instance.angleDis + endl +
+                            UserStudyData.instance.interDis + endl +
+                            UserStudyData.instance.yaxisDis + endl +
+                            UserStudyData.instance.hyperDis + endl +
+                            hand.hand.ToCSVString(endl) + endl +
+                            UserStudyData.instance.targetHand.ToCSVString(endl) + Environment.NewLine
+                            );
+                    }
+                    catch (Exception e)
+                    { Debug.LogError("Saving failed!"+e.ToString() + e.StackTrace); 
+                    }
 
 					remainingTargets--;
-					if (remainingTargets > 0) {
+					if (remainingTargets > 0 && current<targets.Length) {
 						setRandTargetActive ();
 						hit.collider.gameObject.SetActive (false);
 					} else
@@ -118,8 +125,14 @@ public class UserStudyTargetShooting : MonoBehaviour {
 			progress.enabled = true;
 			foreach (GameObject target in targets)
 				target.SetActive (false);
+            targetList = new List<int>();
+            for (int i = 0; (i < numTargets) && (i < targets.Length); i++)
+            {
+                targetList.Add(i);
+            }
+            targetList = Utility<int>.shuffleList(targetList);
 
-			current = UnityEngine.Random.Range (0, targets.Length - 1);
+            current = 0;
 			for (int i = 0; i < parallelNumTargets; i++) {
 				setRandTargetActive ();
 			}
@@ -141,9 +154,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
 
 	void setRandTargetActive()
 	{
-		while(targets[current].activeInHierarchy)
-			current = UnityEngine.Random.Range (0, targets.Length-1);
-		targets [current].SetActive (true);
+		targets[targetList [current++]].SetActive (true);
 	}
 
 	void endStudy()
