@@ -9,13 +9,14 @@ public class UserStudyComfortEvaluation : MonoBehaviour {
 
 	public Text comfortNumber, remainingText;
 	public Slider slider;
-	public OutputHand outHand;
+	public OutputHand outputHand;
 	public RandomHandGenerator randHand;
 	public AngleBasedHandModel targethand;
 	float targetdiscomfort; 
 	string fileName;
 	public string endl = ", ";
 	int remaining =0;
+    bool generating = false;
 	// Use this for initialization
 	void Start () {
 		remaining = UserStudyData.instance.evaluations;
@@ -23,6 +24,8 @@ public class UserStudyComfortEvaluation : MonoBehaviour {
 		if(!File.Exists(fileName))
 			File.AppendAllText(fileName, "Name" + endl + "Rating" + endl +"Discomfort" + endl + "Comfort" + endl + "InterDis" + endl + "AbductionDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "RandomHand") + Environment.NewLine);
 		reset ();
+        if (UserStudyData.instance.right)
+            outputHand.transform.localScale = new Vector3(-outputHand.transform.localScale.x, outputHand.transform.localScale.y, outputHand.transform.localScale.z);
 	}
 	
 	// Update is called once per frame
@@ -37,34 +40,51 @@ public class UserStudyComfortEvaluation : MonoBehaviour {
 
 	public void onNext()
 	{
-		saveResults ();
+        if (!generating)
+        {
+            saveResults();
 
-		if(--remaining<=0)
-		{
-			if (UserStudyData.instance.targetShooting || UserStudyData.instance.lineDrawing)
-				SceneManager.LoadScene ("UserStudyIntro");
-			else
-				SceneManager.LoadScene ("UserStudyEnd");
-		}
+            if (--remaining <= 0)
+            {
+                if (UserStudyData.instance.targetShooting || UserStudyData.instance.lineDrawing)
+                    SceneManager.LoadScene("UserStudyIntro");
+                else
+                    SceneManager.LoadScene("UserStudyEnd");
+            }
 
-		reset();
+            reset();
+        }
 
 	}
 
 	void reset()
 	{
-		getNewRandomHand ();
-		outHand.visualizeHand (targethand);
+		StartCoroutine (getNewRandomHand());
 		slider.value = 5;
 		comfortNumber.text = "5/10";
 		remainingText.text = "Remaining: " + remaining; 
 	}
 
-	public void getNewRandomHand()
+	IEnumerator getNewRandomHand()
 	{
-		targetdiscomfort = UnityEngine.Random.Range(0, 1000);
-		targethand = randHand.createRandom(targetdiscomfort, targetdiscomfort+100);
-		Debug.Log (targetdiscomfort);
+        generating = true;
+		targetdiscomfort = UnityEngine.Random.Range(50, 1000);
+        int counter = 0;
+        Debug.Log(targetdiscomfort);
+        do{
+		    targethand = randHand.createRandom();
+            outputHand.visualizeHand(targethand);
+            yield return new WaitForEndOfFrame();
+            counter++;
+            if (counter > 200)
+            {
+                counter = 0;
+                targetdiscomfort = UnityEngine.Random.Range(50, 1000);
+                Debug.Log(targetdiscomfort);
+            }
+        }
+        while (Discomfort.getDiscomfortAngled(targethand) + Comfort.getRRPComponent(targethand) < targetdiscomfort || Discomfort.getDiscomfortAngled(targethand) + Comfort.getRRPComponent(targethand) > targetdiscomfort+100);
+        generating = false;
 	}
 
 	void saveResults()

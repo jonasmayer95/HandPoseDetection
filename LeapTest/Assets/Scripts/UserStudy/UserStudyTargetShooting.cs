@@ -53,13 +53,12 @@ public class UserStudyTargetShooting : MonoBehaviour {
 		if(!File.Exists(fileName))
             File.AppendAllText(fileName, "Name" + endl + "Discomfort" + endl + "Time" + endl + "Precision" + endl + "TargetIndex" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + AngleBasedHandModel.getCSVHeader(endl, "GivenHand") + Environment.NewLine);
 		remainingTargets = numTargets;
-		try
-		{
-        outputHand.visualizeHand(UserStudyData.instance.targetHand);
-		}
-		catch(Exception e) {
-			Debug.LogError ("Outputhand fucked up: " + e.StackTrace);
-		}
+        if (UserStudyData.instance.right)
+            outputHand.transform.localScale = new Vector3(-outputHand.transform.localScale.x, outputHand.transform.localScale.y, outputHand.transform.localScale.z);
+        if (UserStudyData.instance.targetHand != null)
+            outputHand.visualizeHand(UserStudyData.instance.targetHand);
+        else
+            outputHand.gameObject.SetActive(false);
 
 	}
 	

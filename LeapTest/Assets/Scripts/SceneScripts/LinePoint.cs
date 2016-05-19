@@ -12,20 +12,29 @@ public class LinePoint : MonoBehaviour {
 	public double accuracy =0;
 	public int samples=0;
 
+    public Color standard = Color.gray;
+
 	public void init(Vector3 _next)
 	{
-		lr.SetColors (Color.gray, Color.gray);
+		lr.SetColors (standard, standard);
 		next = _next;
 		own = transform.position;
-		Debug.Log (_next.ToString());
 		lr.SetPositions (new Vector3[]{own, next});
 	}
 		
 	public float getLineDistance(Vector3 other)
 	{
-		float numerator = Vector3.Cross(other-own,other-next).magnitude;
-		float denominatior = Vector3.Distance (own, next);
-		return numerator / denominatior;
+        float t = Vector3.Dot(other-own, (next-own).normalized);
+        //Debug.Log("t: "+t);
+        if (t < 0)
+            return getPointDistance(other);
+        if (t > Vector3.Distance(own, next))
+            return Vector3.Distance(other, next);
+        float numerator = Vector3.Cross(other - own, other - next).magnitude;
+        float denominatior = Vector3.Distance(own, next);
+        return numerator / denominatior;
+
+
 	}
 
 	public float getPointDistance(Vector3 other)

@@ -43,6 +43,8 @@ public class UserStudyIntro : MonoBehaviour {
         overridePosture = UserStudyData.instance.posture;
 		float targetdiscomfort = UnityEngine.Random.Range(0, 1000);
 		targethand = randHand.createRandom(targetdiscomfort, targetdiscomfort+100);
+        if (UserStudyData.instance.right)
+            outputHand.transform.localScale = new Vector3(-outputHand.transform.localScale.x, outputHand.transform.localScale.y, outputHand.transform.localScale.z);
 		outputHand.visualizeHand(targethand);
 		UserStudyData.instance.discomfort = Discomfort.getDiscomfortAngled(targethand);
 		saveData ();

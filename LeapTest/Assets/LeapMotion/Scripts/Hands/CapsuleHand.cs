@@ -39,6 +39,8 @@ namespace Leap.Unity{
   
     private Transform armFrontLeft, armFrontRight, armBackLeft, armBackRight;
     private Hand hand_;
+    [SerializeField]
+    private bool isVisible = true; 
   
     public override ModelType HandModelType {
       get {
@@ -81,25 +83,31 @@ namespace Leap.Unity{
       _capsuleTransforms = new List<Transform>();
       _sphereATransforms = new List<Transform>();
       _sphereBTransforms = new List<Transform>();
-  
-      createSpheres();
-      createCapsules();
+
+      if (isVisible)
+      {
+          createSpheres();
+          createCapsules();
+      }
   
       updateArmVisibility();
     }
   
     public override void UpdateHand() {
-      //Update the spheres first
-      updateSpheres();
+        if(isVisible)
+        {
+          //Update the spheres first
+          updateSpheres();
   
-      //Update Arm only if we need to
-      if (_showArm) {
-        updateArm();
-      }
+          //Update Arm only if we need to
+          if (_showArm) {
+            updateArm();
+          }
   
-      //The capsule transforms are deterimined by the spheres they are connected to
-      updateCapsules();
+          //The capsule transforms are deterimined by the spheres they are connected to
+          updateCapsules();
     }
+  }
   
     //Transform updating methods
   

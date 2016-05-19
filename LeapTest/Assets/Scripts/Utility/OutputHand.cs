@@ -14,7 +14,7 @@ public class OutputHand : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Rotate (new Vector3 (0, Time.deltaTime * rotationSpeed), Space.World);
+		transform.Rotate (new Vector3 (0, Time.deltaTime * rotationSpeed * Input.GetAxis("Horizontal")), Space.World);
 	}
 
     public void visualizeHand(AngleBasedHandModel currentHand)
