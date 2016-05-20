@@ -29,10 +29,10 @@ public class ThreadedKNN{
 		}
 		public void threadJob()
 		{
-			List<ThreadedKNN.poseCompareObject> compareList =  DataHandler.instance.getCompareList (hand);
+			List<ThreadedKNN.poseCompareObject> compareList =  PostureDataHandler.instance.getCompareList (hand);
 			compareList.Sort (new poseComparer());
 			int[] poseCounts = new int[Enum.GetNames(typeof(TrainingUnit.Posture)).Length];
-			for (int k = 0; k < DataHandler.instance.getK (); k++) {
+			for (int k = 0; k < PostureDataHandler.instance.getK (); k++) {
 				poseCounts [(int)compareList [k].posture]++;
 			}
 			mother.result = (TrainingUnit.Posture)poseCounts.ToList ().IndexOf (poseCounts.Max ());

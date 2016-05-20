@@ -26,7 +26,8 @@ public class UserStudyLineTracing : MonoBehaviour {
     GameObject currentLinePoint;
     bool isDrawing = false;
     public float timeOut = .5f, mySteps = .5f;
-    float to;
+	float toClick, toPosture;
+	bool holdingPosture = true;
 
 	public LayerMask lineMask;
 
@@ -57,7 +58,7 @@ public class UserStudyLineTracing : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		to = timeOut;
+		toClick = toPosture = timeOut;
 		if (UserStudyData.instance.right) {
 			hand = rightHand;
 			palm = palmRight;
@@ -85,20 +86,35 @@ public class UserStudyLineTracing : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-			if (hand.currentPosture != UserStudyData.instance.posture) {
+		if (hand.currentPosture != UserStudyData.instance.posture) {
+			if (holdingPosture) {
+				progress.text = "Loosing Hand Posture!";
+				progress.color = Color.yellow;
+			} else {
 				progress.text = "Wrong Hand Posture!";
-			} else
-				progress.text = "Dist: " + accuracy + ", Progress: " + getProgress ();
+				progress.color = Color.red;
+			}
+			toPosture-=Time.deltaTime;
+			if (toPosture < 0)
+				holdingPosture = false;
+
+		} else {
+			progress.text = "Dist: " + accuracy + ", Progress: " + getProgress ();
+			progress.color = Color.blue;
+			toPosture = timeOut;
+			holdingPosture = true;
+		}
 		
 			lr.SetPositions (new Vector3[] { rayOrigin, rayOrigin + 10 * rayDirection });
 		lr.enabled = hand.gameObject.activeInHierarchy;
 
 			if (playing) {
+			countdownNumber.enabled = !holdingPosture;
 				timer += Time.deltaTime;
                 if (Input.GetButton("Fire1"))
                 {
-                    to = timeOut;
-                    if (hand.currentPosture == UserStudyData.instance.posture)
+                    toClick = timeOut;
+				if (holdingPosture)
                     {
                         RaycastHit hit;
                         if (Physics.Raycast(rayOrigin, rayDirection, out hit, 10, lineMask))
@@ -130,12 +146,12 @@ public class UserStudyLineTracing : MonoBehaviour {
                 {
                     if (isDrawing)
                     {
-                        if (to < 0)
+                        if (toClick < 0)
                         {
                             Debug.Log("Timed Out!");
                             endStudy();
                         }
-                        to -= Time.deltaTime;
+                        toClick -= Time.deltaTime;
                     }
                 }
 			}
@@ -162,6 +178,8 @@ public class UserStudyLineTracing : MonoBehaviour {
 		}
 		yield return new WaitForSeconds (1);
 		countdownNumber.enabled = false;
+		countdownNumber.text = "Wrong Hand Posture!";
+		countdownNumber.color = Color.red;
 		playing = true;
 	}
 

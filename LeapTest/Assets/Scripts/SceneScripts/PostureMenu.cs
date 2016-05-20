@@ -22,7 +22,7 @@ public class PostureMenu : MonoBehaviour {
 			list.Add (new Dropdown.OptionData(pose));
 		}
 		dropDown.AddOptions (list);
-		fileName.text = DataHandler.instance.fileName;
+		fileName.text = PostureDataHandler.instance.fileName;
 		onChangePose ();
 	}
 	
@@ -39,8 +39,8 @@ public class PostureMenu : MonoBehaviour {
 
 	public void changeFileName()
 	{
-		DataHandler.instance.fileName = fileName.text;
-		DataHandler.instance.loadData ();
+		PostureDataHandler.instance.fileName = fileName.text;
+		PostureDataHandler.instance.loadData ();
 	}
 	public void onNext()
 	{
@@ -56,7 +56,7 @@ public class PostureMenu : MonoBehaviour {
 
 	public void onDelete()
 	{
-		DataHandler.instance.delete (currentList[index]);
+		PostureDataHandler.instance.delete (currentList[index]);
 		currentList.RemoveAt (index);
 		index %= currentList.Count;
 	}
@@ -64,13 +64,13 @@ public class PostureMenu : MonoBehaviour {
 	public void onChangePose()
 	{
 		current = (TrainingUnit.Posture)dropDown.value;
-		currentList = DataHandler.instance.getSublist (current);
+		currentList = PostureDataHandler.instance.getSublist (current);
 		index = 0;
 		Debug.Log("Got "+currentList.Count+" elements.");
 	}
 
 	public void onDeleteAll()
 	{
-		DataHandler.instance.deleteAll (current);
+		PostureDataHandler.instance.deleteAll (current);
 	}
 }

@@ -77,7 +77,7 @@ public class HandObserver : MonoBehaviour {
 			if (Input.GetKeyDown ("k")) {
 				saveCurrentAs (trainingPosture);
 			} else if (Input.GetKeyDown ("s"))
-				DataHandler.instance.saveData ();
+				PostureDataHandler.instance.saveData ();
 			else {
 				currentPosture = knn.detectPosture (hand);
 				if (poseText)
@@ -98,7 +98,7 @@ public class HandObserver : MonoBehaviour {
 	public void saveCurrentAs(TrainingUnit.Posture posture)
 	{
 		if (gameObject.activeInHierarchy) {
-			DataHandler.instance.addTrainigData (new TrainingUnit (posture, hand));
+			PostureDataHandler.instance.addTrainigData (new TrainingUnit (posture, hand));
 			hand = new AngleBasedHandModel ();
 		} else {
 			Debug.LogError ("Tried to save hand, eventhough not active!");

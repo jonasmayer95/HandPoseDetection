@@ -25,6 +25,7 @@ namespace Leap.Unity{
     private Material _material;
   
     private Material jointMat;
+	private Material ballMat;
   
     private Transform[] _jointSpheres;
     private Transform mockThumbJointSphere;
@@ -75,7 +76,12 @@ namespace Leap.Unity{
         jointMat = new Material(_material);
         jointMat.hideFlags = HideFlags.DontSaveInEditor;
         jointMat.color = _colorList[_colorIndex];
-        _colorIndex = (_colorIndex + 1) % _colorList.Length;
+				_colorIndex = (_colorIndex + 1) % _colorList.Length;
+				ballMat = new Material (jointMat);
+				if (UserStudyData.instance.right == (handedness == Chirality.Right))
+					ballMat.color = Color.green;
+				else
+					ballMat.color = Color.red;
       }
   
       _jointSpheres = new Transform[4 * 5];
@@ -84,11 +90,11 @@ namespace Leap.Unity{
       _sphereATransforms = new List<Transform>();
       _sphereBTransforms = new List<Transform>();
 
-      if (isVisible)
-      {
-          createSpheres();
-          createCapsules();
-      }
+			if (isVisible) {
+				createSpheres ();
+				createCapsules ();
+			} else
+				createBallSack();
   
       updateArmVisibility();
     }
@@ -107,6 +113,8 @@ namespace Leap.Unity{
           //The capsule transforms are deterimined by the spheres they are connected to
           updateCapsules();
     }
+			else
+				updateBallSack();
   }
   
     //Transform updating methods
@@ -135,6 +143,19 @@ namespace Leap.Unity{
       mockThumbJointSphere.position = hand_.PalmPosition.ToVector3() + Vector3.Reflect(thumbBaseToPalm, hand_.Basis.xBasis.ToVector3().normalized);
     }
   
+
+		private void createBallSack()
+		{
+			palmPositionSphere = createSphere("PalmPosition", PALM_RADIUS);
+			palmPositionSphere.GetComponent<Renderer> ().sharedMaterial = ballMat;
+		}
+
+		private void updateBallSack()
+		{
+			palmPositionSphere.position = hand_.PalmPosition.ToVector3();
+		}
+
+
     private void updateArm() {
       var arm = hand_.Arm;
       Vector3 right = arm.Basis.xBasis.ToVector3().normalized * arm.Width * 0.7f * 0.5f;

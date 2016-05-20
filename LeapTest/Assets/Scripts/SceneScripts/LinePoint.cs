@@ -12,11 +12,8 @@ public class LinePoint : MonoBehaviour {
 	public double accuracy =0;
 	public int samples=0;
 
-    public Color standard = Color.gray;
-
 	public void init(Vector3 _next)
 	{
-		lr.SetColors (standard, standard);
 		next = _next;
 		own = transform.position;
 		lr.SetPositions (new Vector3[]{own, next});

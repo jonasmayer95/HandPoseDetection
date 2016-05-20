@@ -22,7 +22,7 @@ public class Comfort{
 		if (_instance != null)
 			return;
 
-		idleStates = DataHandler.instance.getSublist (TrainingUnit.Posture.idle);
+		idleStates = PostureDataHandler.instance.getSublist (TrainingUnit.Posture.idle);
 
 		_instance = this;
 	}

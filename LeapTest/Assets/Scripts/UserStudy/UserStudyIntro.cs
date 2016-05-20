@@ -101,7 +101,7 @@ public class UserStudyIntro : MonoBehaviour {
 	IEnumerator record()
 	{
 		recordText.enabled = true;
-		DataHandler.instance.deleteAll (overridePosture);
+		PostureDataHandler.instance.deleteAll (overridePosture);
 		for (int i = 0; i < recordSampleCount; i++) {
 			if (observedHand.gameObject.activeInHierarchy) {
 				countdownNumber.enabled = false;
@@ -116,7 +116,7 @@ public class UserStudyIntro : MonoBehaviour {
 			yield return new WaitForSeconds (recordDuration/recordSampleCount);
 		}
 		recordText.text = "Saving Data";
-		DataHandler.instance.saveData ();
+		PostureDataHandler.instance.saveData ();
 		recordText.text = "Done";
 		yield return new WaitForSeconds (1);
 		recordText.enabled = false;

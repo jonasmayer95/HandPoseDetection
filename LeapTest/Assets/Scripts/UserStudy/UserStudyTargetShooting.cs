@@ -77,40 +77,42 @@ public class UserStudyTargetShooting : MonoBehaviour {
 		{
 
 			timer += Time.deltaTime;
-			if (Input.GetButtonDown ("Fire1") && hand.currentPosture == UserStudyData.instance.posture) 
-			{
-				RaycastHit hit;
-				if (Physics.Raycast (rayOrigin, rayDirection, out hit, 10, mask)) {
-                    try
-                    {
-                        File.AppendAllText(
-                            fileName,
+			if (hand.currentPosture == UserStudyData.instance.posture) {
+				countdownNumber.enabled = false;
+				if (Input.GetButtonDown ("Fire1")) {
+					RaycastHit hit;
+					if (Physics.Raycast (rayOrigin, rayDirection, out hit, 10, mask)) {
+						try {
+							File.AppendAllText (
+								fileName,
 
-                            UserStudyData.instance.Name + endl +
-                            UserStudyData.instance.discomfort + endl +
-                            timer + endl +
-                            (hit.point - hit.collider.transform.position).magnitude + endl +
-                            targetList[current-1] +endl +
-                            hand.currentPosture + endl +
-                            UserStudyData.instance.angleDis + endl +
-                            UserStudyData.instance.interDis + endl +
-                            UserStudyData.instance.yaxisDis + endl +
-                            UserStudyData.instance.hyperDis + endl +
-                            hand.hand.ToCSVString(endl) + endl +
-                            UserStudyData.instance.targetHand.ToCSVString(endl) + Environment.NewLine
-                            );
-                    }
-                    catch (Exception e)
-                    { Debug.LogError("Saving failed!"+e.ToString() + e.StackTrace); 
-                    }
+								UserStudyData.instance.Name + endl +
+								UserStudyData.instance.discomfort + endl +
+								timer + endl +
+								(hit.point - hit.collider.transform.position).magnitude + endl +
+								targetList [current - 1] + endl +
+								hand.currentPosture + endl +
+								UserStudyData.instance.angleDis + endl +
+								UserStudyData.instance.interDis + endl +
+								UserStudyData.instance.yaxisDis + endl +
+								UserStudyData.instance.hyperDis + endl +
+								hand.hand.ToCSVString (endl) + endl +
+								UserStudyData.instance.targetHand.ToCSVString (endl) + Environment.NewLine
+							);
+						} catch (Exception e) {
+							Debug.LogError ("Saving failed!" + e.ToString () + e.StackTrace); 
+						}
 
-					remainingTargets--;
-					if (remainingTargets > 0 && current<targets.Length) {
-						setRandTargetActive ();
-						hit.collider.gameObject.SetActive (false);
-					} else
-						endStudy ();
+						remainingTargets--;
+						if (remainingTargets > 0 && current < targets.Length) {
+							setRandTargetActive ();
+							hit.collider.gameObject.SetActive (false);
+						} else
+							endStudy ();
+					}
 				}
+			} else {
+				countdownNumber.enabled = true;
 			}
 		}
 			
@@ -148,6 +150,8 @@ public class UserStudyTargetShooting : MonoBehaviour {
 		}
 		yield return new WaitForSeconds (1);
 		countdownNumber.enabled = false;
+		countdownNumber.text = "Wrong Hand Posture!";
+		countdownNumber.color = Color.red;
 		playing = true;
 	}
 
