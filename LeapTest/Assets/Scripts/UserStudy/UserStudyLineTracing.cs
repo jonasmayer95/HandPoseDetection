@@ -58,6 +58,7 @@ public class UserStudyLineTracing : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        HandPostureUtils.reload();
 		toClick = toPosture = timeOut;
 		if (UserStudyData.instance.right) {
 			hand = rightHand;
@@ -86,7 +87,7 @@ public class UserStudyLineTracing : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (hand.currentPosture != UserStudyData.instance.posture) {
+		if (!HandPostureUtils.isHolding(UserStudyData.instance.posture,hand.hand)) {
 			if (holdingPosture) {
 				progress.text = "Loosing Hand Posture!";
 				progress.color = Color.yellow;

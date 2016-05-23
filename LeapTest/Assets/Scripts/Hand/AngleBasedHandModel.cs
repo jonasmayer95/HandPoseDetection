@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class AngleBasedHandModel
@@ -45,6 +46,7 @@ public class AngleBasedHandModel
 		}
 		return Mathf.Sqrt (result);
 	}
+
 
 	public string ToCSVString(string endl)
 	{

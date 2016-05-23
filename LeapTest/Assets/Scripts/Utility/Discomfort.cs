@@ -6,7 +6,8 @@ public static class Discomfort{
 
 
 
-    public static float yaxisFac=2, hyperFac=2, interFac =1f;
+    public static float yaxisFac=2, hyperFac=2, interFac =1.5f;
+    static float ringBonus = 1.3f;
 
 	public static float getDiscomfortAngled(AngleBasedHandModel otherHand)
 	{
@@ -53,6 +54,9 @@ public static class Discomfort{
         {
             result += Mathf.Abs(otherHand.fingers[i].getTotalBending()-otherHand.fingers[i+1].getTotalBending());
         }
+
+        result += (ringBonus - 1) * Mathf.Abs((otherHand.fingers[(int)AngleBasedHandModel.FingerName.middle].getTotalBending() - otherHand.fingers[(int)AngleBasedHandModel.FingerName.ring].getTotalBending()) + (otherHand.fingers[(int)AngleBasedHandModel.FingerName.ring].getTotalBending() - otherHand.fingers[(int)AngleBasedHandModel.FingerName.pinky].getTotalBending()));
+
         return result;
     }
 

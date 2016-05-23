@@ -46,10 +46,10 @@ public class PostureDataHandler{
 		trainingData = new List<TrainingUnit> ();
 
 
-		if (!Directory.Exists(fileFolder)) {
+		if (!Directory.Exists(fileFolder) || !(File.Exists (filePath + fileName + fileEnding))) {
 			createUserFolder ();
 		}
-		if (File.Exists (filePath + fileName + fileEnding)) {
+		else {
 			file = File.Open (filePath + fileName + fileEnding, FileMode.Open);
 			trainingData = (List<TrainingUnit>) formatter.Deserialize (file);
 			file.Close ();
@@ -136,11 +136,15 @@ public class PostureDataHandler{
 	void createUserFolder()
 	{
 		Directory.CreateDirectory (fileFolder);
-		if (File.Exists (fileName + fileEnding)) {
-			file = File.Open (filePath + fileName + fileEnding, FileMode.Open);
-			trainingData = (List<TrainingUnit>) formatter.Deserialize (file);
-			file.Close ();
-			saveData ();
-		}
+        if (File.Exists(fileName + fileEnding))
+        {
+            file = File.Open(fileName + fileEnding, FileMode.Open);
+            trainingData = (List<TrainingUnit>)formatter.Deserialize(file);
+            file.Close();
+            saveData();
+        }
+        else
+        {
+        }
 	}
 }

@@ -41,7 +41,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-
+        HandPostureUtils.reload();
 		if (UserStudyData.instance.right) {
 			hand = rightHand;
 			palm = palmRight;
@@ -64,10 +64,11 @@ public class UserStudyTargetShooting : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		if(hand.currentPosture !=UserStudyData.instance.posture)
+
+        if (HandPostureUtils.isHolding(UserStudyData.instance.posture, hand.hand))
 		{
 			progress.text = "Wrong Hand Posture!";
+            Debug.Log("Distance: "+HandPostureUtils.getMinDistanceToPosture(UserStudyData.instance.posture, hand.hand));
 		}
 		else
 			progress.text = remainingTargets+" of "+numTargets+" targets remaining.";
@@ -77,7 +78,8 @@ public class UserStudyTargetShooting : MonoBehaviour {
 		{
 
 			timer += Time.deltaTime;
-			if (hand.currentPosture == UserStudyData.instance.posture) {
+            if (HandPostureUtils.isHolding(UserStudyData.instance.posture, hand.hand))
+            {
 				countdownNumber.enabled = false;
 				if (Input.GetButtonDown ("Fire1")) {
 					RaycastHit hit;
@@ -113,6 +115,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
 				}
 			} else {
 				countdownNumber.enabled = true;
+                Debug.Log("Distance: " + HandPostureUtils.getMinDistanceToPosture(UserStudyData.instance.posture, hand.hand));
 			}
 		}
 			
