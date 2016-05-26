@@ -36,7 +36,7 @@ public class AngleBasedHandModel
 	{
 		float result = Mathf.Pow (euclidianDistanceFingers (other), 2.0f);
 		//TODO: make usefull as soon as i need
-		return result;
+		return Mathf.Sqrt (result);
 	}
 	public float euclidianDistanceFingers(AngleBasedHandModel other)
 	{
@@ -45,6 +45,19 @@ public class AngleBasedHandModel
 			result += Mathf.Pow (fingers [i].euclidianDistance (other.fingers [i]), 2);
 		}
 		return Mathf.Sqrt (result);
+	}
+
+	public float getAvgMCPAngle()
+	{
+		float result = 0;
+		for (int i = 0; i < fingers.Length; i++) {
+			float temp = ((Quaternion)fingers [i].mcp).eulerAngles.x;
+			if (temp >= 180)
+				temp -= 360;
+			result += temp;
+		}
+		result /= fingers.Length;
+		return result;
 	}
 
 

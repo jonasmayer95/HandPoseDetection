@@ -36,7 +36,11 @@ public class UserStudyTargetShooting : MonoBehaviour {
 
 	public Vector3 rayDirection{
 		get{
-			return palm.forward;
+			palm.Rotate(new Vector3(UserStudyData.instance.palmangle,0,0), Space.Self);
+			Vector3 result = palm.forward;
+			palm.Rotate(new Vector3(-UserStudyData.instance.palmangle,0,0), Space.Self);
+
+			return result;
 		}
 	}
 	// Use this for initialization
@@ -64,11 +68,13 @@ public class UserStudyTargetShooting : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        if (HandPostureUtils.isHolding(UserStudyData.instance.posture, hand.hand))
+		if (startPanel.activeInHierarchy && Input.GetKeyDown (KeyCode.JoystickButton0))
+			onContinue ();
+		if (endPanel.activeInHierarchy && Input.GetKeyDown (KeyCode.JoystickButton0))
+			onEnd ();
+        if (!HandPostureUtils.isHolding(UserStudyData.instance.posture, hand.hand))
 		{
-			progress.text = "Wrong Hand Posture!";
-            Debug.Log("Distance: "+HandPostureUtils.getMinDistanceToPosture(UserStudyData.instance.posture, hand.hand));
+			progress.text = "Please correct your hand posture!";
 		}
 		else
 			progress.text = remainingTargets+" of "+numTargets+" targets remaining.";
@@ -153,7 +159,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
 		}
 		yield return new WaitForSeconds (1);
 		countdownNumber.enabled = false;
-		countdownNumber.text = "Wrong Hand Posture!";
+		countdownNumber.text = "Please correct your hand posture!";
 		countdownNumber.color = Color.red;
 		playing = true;
 	}
@@ -172,6 +178,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
 
     public void onEnd()
     {
+		Debug.Log ("Pen");
 		if (UserStudyData.instance.lineDrawing)
 			SceneManager.LoadScene ("UserStudyLineTracing");
 		else {

@@ -52,7 +52,11 @@ public class UserStudyLineTracing : MonoBehaviour {
 
 	public Vector3 rayDirection{
 		get{
-			return palm.forward;
+			palm.Rotate(new Vector3(UserStudyData.instance.palmangle,0,0), Space.Self);
+			Vector3 result = palm.forward;
+			palm.Rotate(new Vector3(-UserStudyData.instance.palmangle,0,0), Space.Self);
+
+			return result;
 		}
 	}
 
@@ -87,12 +91,16 @@ public class UserStudyLineTracing : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (startPanel.activeInHierarchy && Input.GetKeyDown (KeyCode.JoystickButton0))
+			onContinue ();
+		if (endPanel.activeInHierarchy && Input.GetKeyDown (KeyCode.JoystickButton0))
+			onEnd ();
 		if (!HandPostureUtils.isHolding(UserStudyData.instance.posture,hand.hand)) {
 			if (holdingPosture) {
 				progress.text = "Loosing Hand Posture!";
 				progress.color = Color.yellow;
 			} else {
-				progress.text = "Wrong Hand Posture!";
+				progress.text = "Please correct your hand posture!";
 				progress.color = Color.red;
 			}
 			toPosture-=Time.deltaTime;
@@ -179,7 +187,7 @@ public class UserStudyLineTracing : MonoBehaviour {
 		}
 		yield return new WaitForSeconds (1);
 		countdownNumber.enabled = false;
-		countdownNumber.text = "Wrong Hand Posture!";
+		countdownNumber.text = "Please correct your hand posture!";
 		countdownNumber.color = Color.red;
 		playing = true;
 	}

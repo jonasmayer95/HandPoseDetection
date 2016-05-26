@@ -15,7 +15,7 @@ public class RandomHandGenerator : MonoBehaviour {
     public AngleBasedHandModel createRandom()
     {
         AngleBasedHandModel result = new AngleBasedHandModel();
-		float random = Random.value;
+		float random = Mathf.Pow(Random.value,2.0f);
 
 		result.fingers[(int)AngleBasedHandModel.FingerName.index].mcp = Quaternion.Euler(Random.Range(XMCP_min, XMCP_max), random*abduct_index, 0);
 		result.fingers[(int)AngleBasedHandModel.FingerName.middle].mcp = Quaternion.Euler(Random.Range(XMCP_min, XMCP_max), 0 , 0);

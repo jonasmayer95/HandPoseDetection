@@ -54,8 +54,8 @@ public static class Discomfort{
         {
             result += Mathf.Abs(otherHand.fingers[i].getTotalBending()-otherHand.fingers[i+1].getTotalBending());
         }
-
-        result += (ringBonus - 1) * Mathf.Abs((otherHand.fingers[(int)AngleBasedHandModel.FingerName.middle].getTotalBending() - otherHand.fingers[(int)AngleBasedHandModel.FingerName.ring].getTotalBending()) + (otherHand.fingers[(int)AngleBasedHandModel.FingerName.ring].getTotalBending() - otherHand.fingers[(int)AngleBasedHandModel.FingerName.pinky].getTotalBending()));
+			
+        result += (ringBonus - 1) * Mathf.Abs((otherHand.fingers[(int)AngleBasedHandModel.FingerName.middle].getTotalBending() - otherHand.fingers[(int)AngleBasedHandModel.FingerName.ring].getTotalBending()) - (otherHand.fingers[(int)AngleBasedHandModel.FingerName.ring].getTotalBending() - otherHand.fingers[(int)AngleBasedHandModel.FingerName.pinky].getTotalBending()));
 
         return result;
     }

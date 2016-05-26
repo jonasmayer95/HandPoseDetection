@@ -30,4 +30,5 @@ public class UserStudyData {
     public AngleBasedHandModel targetHand;
 	public bool right = false;
 	public int remainingIts = 0, evaluations = 0;
+	public float palmangle=0;
 }

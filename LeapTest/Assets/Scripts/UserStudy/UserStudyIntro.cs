@@ -25,6 +25,7 @@ public class UserStudyIntro : MonoBehaviour {
 	public TrainingUnit.Posture overridePosture;
 	public int pointingFinger = 0;
 	public GameObject startPanel;
+	bool generating = false;
 
 	public Vector3 rayOrigin {
 		get{
@@ -34,7 +35,11 @@ public class UserStudyIntro : MonoBehaviour {
 
 	public Vector3 rayDirection{
 		get{
-			return palm.forward;
+			palm.Rotate(new Vector3(UserStudyData.instance.palmangle,0,0), Space.Self);
+			Vector3 result = palm.forward;
+			palm.Rotate(new Vector3(-UserStudyData.instance.palmangle,0,0), Space.Self);
+
+			return result;
 		}
 	}
 
@@ -42,12 +47,10 @@ public class UserStudyIntro : MonoBehaviour {
 		UserStudyData.instance.remainingIts--;
         overridePosture = UserStudyData.instance.posture;
 		float targetdiscomfort = UnityEngine.Random.Range(0, 1000);
-		targethand = randHand.createRandom(targetdiscomfort, targetdiscomfort+100);
+		StartCoroutine (getNewRandomHand(targetdiscomfort));
         if (UserStudyData.instance.right)
             outputHand.transform.localScale = new Vector3(-outputHand.transform.localScale.x, outputHand.transform.localScale.y, outputHand.transform.localScale.z);
 		outputHand.visualizeHand(targethand);
-		UserStudyData.instance.discomfort = Discomfort.getDiscomfortAngled(targethand);
-		saveData ();
 	}
 	
 	// Update is called once per frame
@@ -55,19 +58,23 @@ public class UserStudyIntro : MonoBehaviour {
 		if (playing) {
 			lr.SetPositions(new Vector3[] {rayOrigin,rayOrigin+10*rayDirection});
 		}
+		if (startPanel.activeInHierarchy && Input.GetKeyDown (KeyCode.JoystickButton0))
+			onContinueButton ();
 	}
 
 	public void onContinueButton()
 	{
-		startPanel.SetActive (false);
-		if (UserStudyData.instance.right) {
-			observedHand = rightHand;
-			palm = palmRight;
-		} else {
-			observedHand = leftHand;
-			palm = palmLeft;
+		if (!generating) {
+			startPanel.SetActive (false);
+			if (UserStudyData.instance.right) {
+				observedHand = rightHand;
+				palm = palmRight;
+			} else {
+				observedHand = leftHand;
+				palm = palmLeft;
+			}
+			StartCoroutine (numberCountdown ());
 		}
-		StartCoroutine (numberCountdown ());
 	}
 
 
@@ -137,5 +144,30 @@ public class UserStudyIntro : MonoBehaviour {
         UserStudyData.instance.hyperDis = Discomfort.getHyperExtensionComponent(targethand);
         UserStudyData.instance.yaxisDis = Discomfort.getAbductionComponent(targethand);
         UserStudyData.instance.interDis = Discomfort.getInterFingerComponent(targethand);
+		UserStudyData.instance.discomfort = Discomfort.getDiscomfortAngled(targethand);
+		UserStudyData.instance.palmangle = targethand.getAvgMCPAngle ()*0.5f;
+		Debug.Log (targethand.getAvgMCPAngle ()*0.5f);
     }
+
+	IEnumerator getNewRandomHand(float targetDiscomfort)
+	{
+		generating = true;
+		int counter = 0;
+		Debug.Log(targetDiscomfort);
+		do{
+			targethand = randHand.createRandom();
+			outputHand.visualizeHand(targethand);
+			yield return new WaitForEndOfFrame();
+			counter++;
+			if (counter > 200)
+			{
+				counter = 0;
+				targetDiscomfort = UnityEngine.Random.Range(50, 1000);
+				Debug.Log(targetDiscomfort);
+			}
+		}
+		while (Discomfort.getDiscomfortAngled(targethand) + Comfort.getRRPComponent(targethand) < targetDiscomfort || Discomfort.getDiscomfortAngled(targethand) + Comfort.getRRPComponent(targethand) > targetDiscomfort+100);
+		generating = false;
+		saveData ();
+	}
 }

@@ -17,6 +17,8 @@ public class UserStudyComfortEvaluation : MonoBehaviour {
 	public string endl = ", ";
 	int remaining =0;
     bool generating = false;
+	int last =0;
+
 	// Use this for initialization
 	void Start () {
 		remaining = UserStudyData.instance.evaluations;
@@ -30,7 +32,12 @@ public class UserStudyComfortEvaluation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if ((int)Input.GetAxisRaw ("PadHor") != last) {
+			slider.value += (int)Input.GetAxisRaw ("PadHor");
+			last = (int)Input.GetAxisRaw ("PadHor");
+		}
+		if (Input.GetKeyDown (KeyCode.JoystickButton0))
+			onNext ();
 	}
 
 	public void changeComfortNumer(float newVal)

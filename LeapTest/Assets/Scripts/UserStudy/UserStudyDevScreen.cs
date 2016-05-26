@@ -30,7 +30,7 @@ public class UserStudyDevScreen : MonoBehaviour {
 		saveData ();
 		//Load UserStudyIntro
 		if (UserStudyData.instance.comfortEvaluation) {
-			SceneManager.LoadScene ("UserStudyComfortEvaluation");
+			SceneManager.LoadScene ("UserStudyComfortExample");
 		} else {
 			if (UserStudyData.instance.lineDrawing || UserStudyData.instance.targetShooting)
 				SceneManager.LoadScene ("UserStudyIntro");
