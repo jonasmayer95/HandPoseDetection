@@ -12,6 +12,16 @@ public class RandomHandGenerator : MonoBehaviour {
     public OutputHand output;
 	// Use this for initialization
 
+	public enum ThumbState
+	{
+		Under, Downward, Aligned, Sideways
+	}
+
+	public enum FingerState
+	{
+		HyperExtended, Flat, Fist, ForwardFist
+	}
+
     public AngleBasedHandModel createRandom()
     {
         AngleBasedHandModel result = new AngleBasedHandModel();
@@ -40,6 +50,53 @@ public class RandomHandGenerator : MonoBehaviour {
 		result.position = Vector3.zero;
         return result;
     }
+
+	public AngleBasedHandModel createRandomNew()
+	{
+		AngleBasedHandModel result = new AngleBasedHandModel();
+
+		FingerState[] fingers = new FingerState[result.fingers.Length];
+		for (int i = 0; i < fingers.Length; i++) {
+			fingers [i] = (FingerState)Random.Range (0,System.Enum.GetNames(typeof(FingerState)).Length);
+		}
+		//abduction
+		float random = Mathf.Pow(Random.value,2.0f);
+		float[] abductions = {random*abduct_index,0,random*abduct_ring,random*abduct_pinky};
+		for (int i = 0; i < result.fingers.Length; i++)
+		{
+			float xmcp =0;
+			if (fingers [i] == FingerState.ForwardFist || fingers [i] == FingerState.Flat)
+				xmcp = 0;
+			if (fingers [i] == FingerState.Fist)
+				xmcp = XMCP_max;
+			if (fingers [i] == FingerState.HyperExtended)
+				xmcp = XMCP_min;
+			
+			result.fingers [i].mcp = Quaternion.Euler (xmcp,abductions[i],0);
+
+			AngleBasedFingerModel finger = result.fingers[i];
+			if (fingers [i] == FingerState.HyperExtended || fingers [i] == FingerState.Flat) {
+				finger.jointAngles [(int)AngleBasedFingerModel.Fingerjoints.DIP] = DIP_min;
+				finger.jointAngles [(int)AngleBasedFingerModel.Fingerjoints.PIP] = PIP_min;
+			}
+			if (fingers [i] == FingerState.Fist || fingers [i] == FingerState.ForwardFist) {
+				finger.jointAngles [(int)AngleBasedFingerModel.Fingerjoints.DIP] = DIP_max;
+				finger.jointAngles [(int)AngleBasedFingerModel.Fingerjoints.PIP] = PIP_max;
+			}
+		}
+
+		ThumbState thumb = (ThumbState)Random.Range (0,System.Enum.GetNames(typeof(ThumbState)).Length);
+		random = Random.value;
+
+		result.thumb.tmc = Quaternion.Euler(Random.Range(XTMC_min, XTMC_max), Random.Range(YTMC_min, YTMC_max), Random.Range(ZTMC_min, ZTMC_max));
+		result.thumb.jointAngles[(int)AngleBasedThumbModel.Fingerjoints.IP] = IP_min + random * (IP_max - IP_min);
+		result.thumb.jointAngles[(int)AngleBasedThumbModel.Fingerjoints.MP] = MP_min + random * (MP_max - MP_min);
+
+		result.rotation = Quaternion.identity;
+		result.position = Vector3.zero;
+		return result;
+	}
+
     public AngleBasedHandModel createRandom(float disc_min, float disc_max)
     {
         AngleBasedHandModel result;
@@ -52,6 +109,6 @@ public class RandomHandGenerator : MonoBehaviour {
 
     public void showRandHand()
     {
-        output.visualizeHand(createRandom());
+        output.visualizeHand(createRandomNew());
     }
 }

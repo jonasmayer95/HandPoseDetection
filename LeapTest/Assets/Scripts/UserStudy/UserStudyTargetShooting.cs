@@ -28,6 +28,8 @@ public class UserStudyTargetShooting : MonoBehaviour {
 	int current;
 	string fileName;
 
+	float holdcounter = 0f;
+
 	public Vector3 rayOrigin {
 		get{
 			return palm.position;
@@ -53,9 +55,9 @@ public class UserStudyTargetShooting : MonoBehaviour {
 			hand = leftHand;
 			palm = palmLeft;
 		}
-		fileName ="TargetShootingData"+UserStudyData.instance.fileEnding;
+		fileName = PostureDataHandler.instance.filePath + "TargetShootingData"+UserStudyData.instance.fileEnding;
 		if(!File.Exists(fileName))
-            File.AppendAllText(fileName, "Name" + endl + "Discomfort" + endl + "Time" + endl + "Precision" + endl + "TargetIndex" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + AngleBasedHandModel.getCSVHeader(endl, "GivenHand") + Environment.NewLine);
+			File.AppendAllText(fileName, "Name" + endl + "Discomfort" + endl + "Time" + endl + "Precision" + endl + "Postureholdtime" + endl + "TargetIndex" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + AngleBasedHandModel.getCSVHeader(endl, "GivenHand") + Environment.NewLine);
 		remainingTargets = numTargets;
         if (UserStudyData.instance.right)
             outputHand.transform.localScale = new Vector3(-outputHand.transform.localScale.x, outputHand.transform.localScale.y, outputHand.transform.localScale.z);
@@ -72,7 +74,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
 			onContinue ();
 		if (endPanel.activeInHierarchy && Input.GetKeyDown (KeyCode.JoystickButton0))
 			onEnd ();
-        if (!HandPostureUtils.isHolding(UserStudyData.instance.posture, hand.hand))
+		if (!HandPostureUtils.isHolding(UserStudyData.instance.posture, hand.hand) && !Input.GetButton("Emergency"))
 		{
 			progress.text = "Please correct your hand posture!";
 		}
@@ -82,14 +84,19 @@ public class UserStudyTargetShooting : MonoBehaviour {
 		lr.SetPositions(new Vector3[] {rayOrigin,rayOrigin+10*rayDirection});
 		if (playing) 
 		{
-
+			if (HandPostureUtils.isHolding(UserStudyData.instance.posture, hand.hand))
+				{
+				holdcounter+= Time.deltaTime;
+				}
 			timer += Time.deltaTime;
-            if (HandPostureUtils.isHolding(UserStudyData.instance.posture, hand.hand))
+			if (HandPostureUtils.isHolding(UserStudyData.instance.posture, hand.hand) || Input.GetButton("Emergency"))
             {
 				countdownNumber.enabled = false;
 				if (Input.GetButtonDown ("Fire1")) {
 					RaycastHit hit;
 					if (Physics.Raycast (rayOrigin, rayDirection, out hit, 10, mask)) {
+
+						float holdperc = holdcounter / timer;
 						try {
 							File.AppendAllText (
 								fileName,
@@ -98,6 +105,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
 								UserStudyData.instance.discomfort + endl +
 								timer + endl +
 								(hit.point - hit.collider.transform.position).magnitude + endl +
+								holdperc + endl +
 								targetList [current - 1] + endl +
 								hand.currentPosture + endl +
 								UserStudyData.instance.angleDis + endl +
@@ -121,8 +129,9 @@ public class UserStudyTargetShooting : MonoBehaviour {
 				}
 			} else {
 				countdownNumber.enabled = true;
-                Debug.Log("Distance: " + HandPostureUtils.getMinDistanceToPosture(UserStudyData.instance.posture, hand.hand));
 			}
+
+			Debug.Log("Distance: " + HandPostureUtils.getMinDistanceToPosture(UserStudyData.instance.posture, hand.hand));
 		}
 			
 
@@ -178,7 +187,6 @@ public class UserStudyTargetShooting : MonoBehaviour {
 
     public void onEnd()
     {
-		Debug.Log ("Pen");
 		if (UserStudyData.instance.lineDrawing)
 			SceneManager.LoadScene ("UserStudyLineTracing");
 		else {

@@ -6,7 +6,7 @@ public static class HandPostureUtils{
 
     private static TrainingUnit.Posture comparePosture;
     private static List<TrainingUnit> compareData;
-    private static float postureHoldingThresh = 100;
+    private static float postureHoldingThresh = 60;
     public static float getMinDistanceToPosture(TrainingUnit.Posture posture, AngleBasedHandModel hand)
     {
 		if (comparePosture != posture || compareData == null || compareData.Count == 0)

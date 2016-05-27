@@ -32,10 +32,12 @@ public class UserStudyLineTracing : MonoBehaviour {
 	public LayerMask lineMask;
 
 	public float maxX=6;
-	public float maxY = 4;
+	public float maxY = 3;
 	public float steps = 10;
 	public float linePlane = 7;
 	public GameObject pointPrefab, bezierControllPoint, myPointPrefab;
+
+	float holdcounter = 0f;
 
 
     public int bezierPoints = 5;
@@ -77,9 +79,9 @@ public class UserStudyLineTracing : MonoBehaviour {
 			for (int i = 0; i < points.Count - 1; i++) {
 				points [i].init (points[i+1].getOwn());
 			}
-			fileName ="LineTracingData"+UserStudyData.instance.fileEnding;
+		fileName = PostureDataHandler.instance.filePath + "LineTracingData"+UserStudyData.instance.fileEnding;
 			if(!File.Exists(fileName))
-				File.AppendAllText(fileName, "Name" + endl + "Discomfort" + endl + "Time" + endl + "Accuracy" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + AngleBasedHandModel.getCSVHeader(endl, "GivenHand") + Environment.NewLine);
+			File.AppendAllText(fileName, "Name" + endl + "Discomfort" + endl + "Time" + endl + "Accuracy" + endl + "Postureholdtime" + endl +"Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + AngleBasedHandModel.getCSVHeader(endl, "GivenHand") + Environment.NewLine);
             if (UserStudyData.instance.right)
                 outputHand.transform.localScale = new Vector3(-outputHand.transform.localScale.x, outputHand.transform.localScale.y, outputHand.transform.localScale.z);
         if (UserStudyData.instance.targetHand != null)
@@ -95,7 +97,7 @@ public class UserStudyLineTracing : MonoBehaviour {
 			onContinue ();
 		if (endPanel.activeInHierarchy && Input.GetKeyDown (KeyCode.JoystickButton0))
 			onEnd ();
-		if (!HandPostureUtils.isHolding(UserStudyData.instance.posture,hand.hand)) {
+		if (!HandPostureUtils.isHolding(UserStudyData.instance.posture,hand.hand) && !Input.GetButton("Emergency"))  {
 			if (holdingPosture) {
 				progress.text = "Loosing Hand Posture!";
 				progress.color = Color.yellow;
@@ -118,12 +120,14 @@ public class UserStudyLineTracing : MonoBehaviour {
 		lr.enabled = hand.gameObject.activeInHierarchy;
 
 			if (playing) {
+			if (HandPostureUtils.isHolding(UserStudyData.instance.posture, hand.hand))
+				holdcounter+=Time.deltaTime;
 			countdownNumber.enabled = !holdingPosture;
 				timer += Time.deltaTime;
                 if (Input.GetButton("Fire1"))
                 {
                     toClick = timeOut;
-				if (holdingPosture)
+				if (holdingPosture || Input.GetButton("Emergency"))
                     {
                         RaycastHit hit;
                         if (Physics.Raycast(rayOrigin, rayDirection, out hit, 10, lineMask))
@@ -198,6 +202,8 @@ public class UserStudyLineTracing : MonoBehaviour {
 		endPanel.SetActive (true);
 		progress.enabled = false;
 
+		float holdPercent = (float)holdcounter / (float)timer;
+
         try
         {
             File.AppendAllText(
@@ -207,6 +213,7 @@ public class UserStudyLineTracing : MonoBehaviour {
                 UserStudyData.instance.discomfort + endl +
                 timer + endl +
                 getTotalAccuracy() + endl +
+				holdPercent + endl +
                 hand.currentPosture + endl +
                 UserStudyData.instance.angleDis + endl +
                 UserStudyData.instance.interDis + endl +
@@ -351,13 +358,25 @@ public class UserStudyLineTracing : MonoBehaviour {
         {
             Instantiate(bezierControllPoint,point,Quaternion.identity);
         }
-		float pointX = -maxX;
-		float pointY = 0;
+
+		float max = 0;
+		float avg = 0;
 		for (int i = 0; i < steps; i++) {
 			GameObject point = (GameObject)Instantiate (pointPrefab, Bezier.getPoint(((float) i)/steps,pointsArr), Quaternion.identity);
 			points.Add (point.GetComponent<LinePoint>());
-			pointX += (2 * maxX) / steps;
-			pointY += UnityEngine.Random.Range ((2 * maxX) / steps,-(2 * maxX) / steps)-((pointY/maxY)*0.8f);
+			avg += point.transform.position.y;		
 		}
+		avg /= points.Count;
+
+		for (int i = 0; i < steps; i++) {
+			points [i].transform.position = new Vector3 (points [i].transform.position.x, points [i].transform.position.y -avg, points [i].transform.position.z);
+			if (Mathf.Abs(points[i].transform.position.y)> max)
+				max = Mathf.Abs(points[i].transform.position.y);
+		}
+		for (int i = 0; i < steps; i++) {
+			points [i].transform.position = new Vector3 (points [i].transform.position.x, points [i].transform.position.y * (maxY/max), points [i].transform.position.z);
+		}
+		Debug.Log ("Max: "+max+", Avg: "+avg);
+			
 	}
 }

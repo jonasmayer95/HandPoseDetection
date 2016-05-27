@@ -19,6 +19,7 @@ public class PostureDataHandler{
 	public string fileName = "test";
 	public string fileEnding = ".jns";
 	private List<TrainingUnit> trainingData;
+	private AngleBasedHandModel[] randomData; 
 	BinaryFormatter formatter;
 	FileStream file; 
 

@@ -21,7 +21,7 @@ public class UserStudyDevScreen : MonoBehaviour {
 			list.Add (new Dropdown.OptionData(pose));
 		}
 		poseDropDown.AddOptions (list);
-		poseDropDown.value = (int)UserStudyData.instance.posture;
+		poseDropDown.value = (int)TrainingUnit.Posture.custom1;
 		nameField.text = UserStudyData.instance.Name;
 	}
 

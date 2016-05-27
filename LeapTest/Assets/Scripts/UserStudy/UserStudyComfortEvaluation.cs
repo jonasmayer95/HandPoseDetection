@@ -22,7 +22,7 @@ public class UserStudyComfortEvaluation : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		remaining = UserStudyData.instance.evaluations;
-		fileName ="ComfortEvaluationData"+UserStudyData.instance.fileEnding;
+		fileName =PostureDataHandler.instance.filePath + "ComfortEvaluationData"+UserStudyData.instance.fileEnding;
 		if(!File.Exists(fileName))
 			File.AppendAllText(fileName, "Name" + endl + "Rating" + endl +"Discomfort" + endl + "Comfort" + endl + "InterDis" + endl + "AbductionDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "RandomHand") + Environment.NewLine);
 		reset ();

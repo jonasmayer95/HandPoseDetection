@@ -14,6 +14,9 @@ public class UserStudyComfortExample : MonoBehaviour {
 	float targetdiscomfort = 1000;
 	// Use this for initialization
 	void Start () {
+
+		if (UserStudyData.instance.right)
+			outH.transform.localScale = new Vector3(-outH.transform.localScale.x, outH.transform.localScale.y, outH.transform.localScale.z);
 		comfortable = PostureDataHandler.instance.getSublist(TrainingUnit.Posture.idle)[Random.Range(0,PostureDataHandler.instance.getSublist(TrainingUnit.Posture.idle).Count)].hand;
 		outH.visualizeHand (comfortable);
 		StartCoroutine (getNewRandomHand ());
@@ -37,8 +40,8 @@ public class UserStudyComfortExample : MonoBehaviour {
 			if (firstPanel.activeInHierarchy)
 				onNext ();
 			else {
-				if (generating == false)
-					onNext ();
+				if (!generating)
+					onContinue ();
 			}
 		}
 	}
