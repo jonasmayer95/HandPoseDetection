@@ -9,6 +9,8 @@ public class RandomHandGenerator : MonoBehaviour {
 
 	public float abduct_index = 30, abduct_ring = -15, abduct_pinky = -45;
 
+	public static float randomfac = 0.3f, proceduralfac = 0.2f, morphfac = 0.4f, fromdatafac = 0.5f;
+
     public OutputHand output;
 	// Use this for initialization
 
@@ -22,7 +24,20 @@ public class RandomHandGenerator : MonoBehaviour {
 		HyperExtended, Flat, Fist, ForwardFist
 	}
 
-    public AngleBasedHandModel createRandom()
+	public AngleBasedHandModel createRandom()
+	{
+		float random = Random.Range (0, randomfac + proceduralfac + fromdatafac + morphfac);
+		if (random <= randomfac)
+			return createRandomRandom ();
+		if (random <= randomfac + proceduralfac)
+			return createRandomProcedural ();
+		if (random <= randomfac + proceduralfac+morphfac)
+			return createRandomFromSavedMorph ();
+		else
+			return createRandomFromSaved ();
+	}
+
+    public AngleBasedHandModel createRandomRandom()
     {
         AngleBasedHandModel result = new AngleBasedHandModel();
 		float random = Mathf.Pow(Random.value,2.0f);
@@ -42,7 +57,7 @@ public class RandomHandGenerator : MonoBehaviour {
 
 		random = Random.value;
 
-		result.thumb.tmc = Quaternion.Euler(Random.Range(XTMC_min, XTMC_max), Random.Range(YTMC_min, YTMC_max), Random.Range(ZTMC_min, ZTMC_max));
+		result.thumb.tmc = Quaternion.Lerp(PostureDataHandler.instance.getRand().hand.thumb.tmc,Quaternion.Euler(Random.Range(XTMC_min, XTMC_max), Random.Range(YTMC_min, YTMC_max), Random.Range(ZTMC_min, ZTMC_max)),0.5f);
 		result.thumb.jointAngles[(int)AngleBasedThumbModel.Fingerjoints.IP] = IP_min + random * (IP_max - IP_min);
 		result.thumb.jointAngles[(int)AngleBasedThumbModel.Fingerjoints.MP] = MP_min + random * (MP_max - MP_min);
 
@@ -51,7 +66,44 @@ public class RandomHandGenerator : MonoBehaviour {
         return result;
     }
 
-	public AngleBasedHandModel createRandomNew()
+	public AngleBasedHandModel createRandomFromSaved()
+	{
+		AngleBasedHandModel temp;
+		AngleBasedHandModel result = new AngleBasedHandModel();
+		for (int i = 0; i < result.fingers.Length; i++) {			
+			temp = PostureDataHandler.instance.getRand ().hand;
+			result.fingers [i] = temp.fingers [i];
+		}
+		temp = PostureDataHandler.instance.getRand ().hand;
+		result.thumb = temp.thumb;
+		return result;
+	}
+
+	public AngleBasedHandModel createRandomFromSavedMorph()
+	{
+		TrainingUnit first = PostureDataHandler.instance.getRand ();
+		TrainingUnit second;
+		do 
+		{
+			second = PostureDataHandler.instance.getRand ();
+		} 
+		while(first.posture == second.posture);
+
+
+		AngleBasedHandModel temp1 = first.hand;
+		AngleBasedHandModel temp2 = second.hand;
+		AngleBasedHandModel result = new AngleBasedHandModel();
+		for (int i = 0; i < result.fingers.Length; i++) {			
+			result.fingers [i] = AngleBasedFingerModel.Lerp(temp1.fingers[i], temp2.fingers[i],((float)i)/((float)result.fingers.Length) );
+		}
+
+		//Debug.Log ("First: "+first.posture+", Second: "+second.posture);
+		temp1= PostureDataHandler.instance.getRand ().hand;
+		result.thumb = temp1.thumb;
+		return result;
+	}
+
+	public AngleBasedHandModel createRandomProcedural()
 	{
 		AngleBasedHandModel result = new AngleBasedHandModel();
 
@@ -86,14 +138,14 @@ public class RandomHandGenerator : MonoBehaviour {
 		}
 
 		ThumbState thumb = (ThumbState)Random.Range (0,System.Enum.GetNames(typeof(ThumbState)).Length);
-		random = Random.value;
 
-		result.thumb.tmc = Quaternion.Euler(Random.Range(XTMC_min, XTMC_max), Random.Range(YTMC_min, YTMC_max), Random.Range(ZTMC_min, ZTMC_max));
-		result.thumb.jointAngles[(int)AngleBasedThumbModel.Fingerjoints.IP] = IP_min + random * (IP_max - IP_min);
-		result.thumb.jointAngles[(int)AngleBasedThumbModel.Fingerjoints.MP] = MP_min + random * (MP_max - MP_min);
+		result.thumb = PostureDataHandler.instance.getRand ().hand.thumb;
 
 		result.rotation = Quaternion.identity;
 		result.position = Vector3.zero;
+
+		result = AngleBasedHandModel.Lerp (result, PostureDataHandler.instance.getRand (TrainingUnit.Posture.idle).hand, 0.2f);
+
 		return result;
 	}
 
@@ -109,6 +161,6 @@ public class RandomHandGenerator : MonoBehaviour {
 
     public void showRandHand()
     {
-        output.visualizeHand(createRandomNew());
+		output.visualizeHand(createRandomProcedural());
     }
 }

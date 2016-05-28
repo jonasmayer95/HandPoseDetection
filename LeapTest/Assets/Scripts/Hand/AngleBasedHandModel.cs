@@ -89,4 +89,18 @@ public class AngleBasedHandModel
 
 		return result;
 	}
+	public static AngleBasedHandModel Lerp(AngleBasedHandModel first, AngleBasedHandModel second, float t)
+	{
+		AngleBasedHandModel result = new AngleBasedHandModel ();
+		t = Mathf.Clamp (t, 0, 1);
+		result.rotation = Quaternion.Lerp (first.rotation, second.rotation, t);
+		result.position = Vector3.Lerp (first.position, second.position, t);
+
+		for (int i = 0; i < result.fingers.Length; i++) {
+			result.fingers [i] = AngleBasedFingerModel.Lerp (first.fingers [i], second.fingers [i], t);
+		}
+		result.thumb =AngleBasedThumbModel.Lerp (first.thumb, second.thumb, t);
+		return result;
+
+	}
 }

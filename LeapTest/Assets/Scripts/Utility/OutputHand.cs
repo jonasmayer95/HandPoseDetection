@@ -22,25 +22,7 @@ public class OutputHand : MonoBehaviour {
         if(observedHand != currentHand)
             observedHand = currentHand;
 
-        thumb1.localRotation = currentHand.thumb.tmc.mirroredY();
-        thumb2.localRotation = Quaternion.Euler(0, -currentHand.thumb.jointAngles[(int)AngleBasedThumbModel.Fingerjoints.MP], 0);
-        thumb3.localRotation = Quaternion.Euler(0, -currentHand.thumb.jointAngles[(int)AngleBasedThumbModel.Fingerjoints.IP], 0);
-
-        index1.localRotation = currentHand.fingers[0].mcp.mirroredY();
-        index2.localRotation = Quaternion.Euler(-currentHand.fingers[0].jointAngles[1], 0, 0);
-        index3.localRotation = Quaternion.Euler(-currentHand.fingers[0].jointAngles[0], 0, 0);
-
-        middle1.localRotation = currentHand.fingers[1].mcp.mirroredY();
-        middle2.localRotation = Quaternion.Euler(-currentHand.fingers[1].jointAngles[1], 0, 0);
-        middle3.localRotation = Quaternion.Euler(-currentHand.fingers[1].jointAngles[0], 0, 0);
-
-        ring1.localRotation = currentHand.fingers[2].mcp.mirroredY();
-        ring2.localRotation = Quaternion.Euler(-currentHand.fingers[2].jointAngles[1], 0, 0);
-        ring3.localRotation = Quaternion.Euler(-currentHand.fingers[2].jointAngles[0], 0, 0);
-
-        pinky1.localRotation = currentHand.fingers[3].mcp.mirroredY();
-        pinky2.localRotation = Quaternion.Euler(-currentHand.fingers[3].jointAngles[1], 0, 0);
-        pinky3.localRotation = Quaternion.Euler(-currentHand.fingers[3].jointAngles[0], 0, 0);
+		visualizeHand ();
     }
 
     public void visualizeHand()

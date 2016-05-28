@@ -65,4 +65,17 @@ public class AngleBasedFingerModel
 		return result;
 	}
 
+	public static AngleBasedFingerModel Lerp(AngleBasedFingerModel first, AngleBasedFingerModel second, float t)
+	{
+		AngleBasedFingerModel result = new AngleBasedFingerModel ();
+		t = Mathf.Clamp (t, 0, 1);
+		result.mcp = Quaternion.Lerp (first.mcp, second.mcp, t);
+
+		for (int i = 0; i < result.jointAngles.Length; i++) {
+			result.jointAngles [i] = Mathf.Lerp (first.jointAngles [i], second.jointAngles [i], t);
+		}
+		return result;
+
+	}
+
 }

@@ -148,4 +148,13 @@ public class PostureDataHandler{
         {
         }
 	}
+
+	public TrainingUnit getRand()
+	{
+		return trainingData [UnityEngine.Random.Range (0, trainingData.Count-1)];
+	}
+	public TrainingUnit getRand(TrainingUnit.Posture post)
+	{
+		return getSublist(post)[UnityEngine.Random.Range (0, getSublist(post).Count-1)];
+	}
 }

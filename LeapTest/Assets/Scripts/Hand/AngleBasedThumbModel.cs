@@ -46,4 +46,17 @@ public class AngleBasedThumbModel
 		return result;
 	}
 
+	public static AngleBasedThumbModel Lerp(AngleBasedThumbModel first, AngleBasedThumbModel second, float t)
+	{
+		AngleBasedThumbModel result = new AngleBasedThumbModel ();
+		t = Mathf.Clamp (t, 0, 1);
+		result.tmc = Quaternion.Lerp (first.tmc, second.tmc, t);
+
+		for (int i = 0; i < result.jointAngles.Length; i++) {
+			result.jointAngles [i] = Mathf.Lerp (first.jointAngles [i], second.jointAngles [i], t);
+		}
+		return result;
+
+	}
+
 }
