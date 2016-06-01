@@ -117,7 +117,7 @@ public class UserStudyLineTracing : MonoBehaviour {
 		}
 		
 			lr.SetPositions (new Vector3[] { rayOrigin, rayOrigin + 10 * rayDirection });
-		lr.enabled = hand.gameObject.activeInHierarchy;
+            lr.enabled = true; //hand.gameObject.activeInHierarchy;
 
 			if (playing) {
 			if (HandPostureUtils.isHolding(UserStudyData.instance.posture, hand.hand))
