@@ -8,7 +8,10 @@ using UnityEngine.SceneManagement;
 
 public class UserStudyLineTracing : MonoBehaviour {
 
-	Transform palm;
+    public ARTPositioner art;
+
+    Transform palm;
+    public GameObject activeHandVis;
 	public Transform palmLeft, palmRight;
 	public GameObject startPanel, endPanel;
 	public LineRenderer lr;
@@ -48,15 +51,24 @@ public class UserStudyLineTracing : MonoBehaviour {
 
 	public Vector3 rayOrigin {
 		get{
-			return palm.position;
+            if (art.isTracking())
+                return art.getPosition();
+            else
+			    return palm.position;
 		}
 	}
 
 	public Vector3 rayDirection{
 		get{
-			palm.Rotate(new Vector3(UserStudyData.instance.palmangle,0,0), Space.Self);
-			Vector3 result = palm.forward;
-			palm.Rotate(new Vector3(-UserStudyData.instance.palmangle,0,0), Space.Self);
+            Transform target;
+            if (art.isTracking())
+                target = art.target;
+            else
+                target = palm;
+
+			target.Rotate(new Vector3(UserStudyData.instance.palmangle,0,0), Space.Self);
+            Vector3 result = target.forward;
+			target.Rotate(new Vector3(-UserStudyData.instance.palmangle,0,0), Space.Self);
 
 			return result;
 		}
@@ -117,7 +129,10 @@ public class UserStudyLineTracing : MonoBehaviour {
 		}
 		
 			lr.SetPositions (new Vector3[] { rayOrigin, rayOrigin + 10 * rayDirection });
-            lr.enabled = true; //hand.gameObject.activeInHierarchy;
+            lr.enabled = hand.gameObject.activeInHierarchy || art.isTracking();
+
+            activeHandVis.SetActive(hand.gameObject.activeInHierarchy || art.isTracking());
+            activeHandVis.transform.position = rayOrigin;
 
 			if (playing) {
 			if (HandPostureUtils.isHolding(UserStudyData.instance.posture, hand.hand))

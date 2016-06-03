@@ -9,11 +9,19 @@ public class ARTPositioner : MonoBehaviour {
 
     public Transform target;
 
+    public int markerID = 1;
+
+    public sVector3 offset = new sVector3(0,-0.3f,0);
+
 
     public const int BufferSize = 8192; //up this to theoretical UDP limit if required.
     private readonly string[] frameDelimiters = { "\r\n" };
     private readonly string[] bodyDelimiters = { " ", "]", "[" };
     public volatile bool terminate = false;
+    public bool timedOut = false, isVisible = false;
+
+    Vector3 position = new Vector3();
+    Quaternion rotation = Quaternion.identity;
 
     [HideInInspector]
     public byte[] buffer = new byte[BufferSize];
@@ -29,9 +37,9 @@ public class ARTPositioner : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
-        setTarget();
+        updateMarker();
     }
 
 
@@ -70,14 +78,21 @@ public class ARTPositioner : MonoBehaviour {
             if (artSocket != null && ex.SocketErrorCode == SocketError.TimedOut)
             {
                 artSocket.Close();
+                timedOut = true;
                 Debug.Log("ArtFilter: closed artSocket due to timeout");
             }
         }
     }
 
-    private void setTarget()
+    public bool isTracking()
+    {
+        return !(timedOut || terminate) && isVisible;
+    }
+
+    private void updateMarker()
     {
         string data;
+        isVisible = false;
 
         lock (buffer)
         {
@@ -109,11 +124,12 @@ public class ARTPositioner : MonoBehaviour {
                 lastPos = findPos + 1; //start one char after last space
                 findPos = line.IndexOf(' ', lastPos);
 
-                string count = line.Substring(lastPos, findPos - lastPos);
-                int bodyCount = int.Parse(count);
+                string trackID = line.Substring(lastPos, findPos - lastPos);
+                int id = int.Parse(trackID);
 
-                for (int i = 0; i < bodyCount; ++i)
+                if(id == markerID)
                 {
+                    isVisible = true;
                     //do stuff for each 6d body
                     if (lastPos > line.Length)
                     {
@@ -139,15 +155,37 @@ public class ARTPositioner : MonoBehaviour {
                     //rotations seem to be in euler angles
                     //int id;
                     //double qual, px, py, pz, rx, ry, rz;
-                    Vector3 position = new Vector3(float.Parse(positions[2]), float.Parse(positions[4]), float.Parse(positions[3]));
-                    Quaternion rotation = Quaternion.Euler(-float.Parse(positions[5]), -float.Parse(positions[7]), -float.Parse(positions[6]));
+                    position = new Vector3(float.Parse(positions[2]), float.Parse(positions[4]), float.Parse(positions[3]));
+                    rotation = Quaternion.Euler(-float.Parse(positions[5]), -float.Parse(positions[7]), -float.Parse(positions[6]));
                     position /= 1000f;
+                    position += offset;
 
                     target.position = position;
-                    target.localRotation = rotation;
+                    target.rotation = rotation;
+                    break;
                 }
             }
         }
+    }
+
+    public void setTarget()
+    {
+        target.position = position;
+        target.localRotation = rotation;
+    }
+
+    public Vector3 getPosition()
+    {
+        return position;
+    }
+
+    public Quaternion getRotation()
+    {
+        return rotation;
+    }
+    public Vector3 getForward()
+    {
+        return transform.forward;
     }
 }
 

@@ -9,7 +9,7 @@ public struct sVector3{
     {
         x = _x;
         y = _y;
-        z = _y;
+        z = _z;
     }
 
     public override string ToString()

@@ -41,7 +41,7 @@ namespace Leap.Unity{
     private Transform armFrontLeft, armFrontRight, armBackLeft, armBackRight;
     private Hand hand_;
     [SerializeField]
-    private bool isVisible = true; 
+    private bool isVisible = true, showDominant = true; 
   
     public override ModelType HandModelType {
       get {
@@ -78,10 +78,12 @@ namespace Leap.Unity{
         jointMat.color = _colorList[_colorIndex];
 				_colorIndex = (_colorIndex + 1) % _colorList.Length;
 				ballMat = new Material (jointMat);
-				if (UserStudyData.instance.right == (handedness == Chirality.Right))
-					ballMat.color = Color.green;
-				else
+				if (UserStudyData.instance.right != (handedness == Chirality.Right))
 					ballMat.color = Color.red;
+                else
+                    ballMat.color = Color.green;
+
+
       }
   
       _jointSpheres = new Transform[4 * 5];
@@ -93,7 +95,8 @@ namespace Leap.Unity{
 			if (isVisible) {
 				createSpheres ();
 				createCapsules ();
-			} else
+            }
+            else if (UserStudyData.instance.right != (handedness == Chirality.Right) || showDominant)
 				createBallSack();
   
       updateArmVisibility();
@@ -113,7 +116,7 @@ namespace Leap.Unity{
           //The capsule transforms are deterimined by the spheres they are connected to
           updateCapsules();
     }
-			else
+        else if (UserStudyData.instance.right != (handedness == Chirality.Right) || showDominant)
 				updateBallSack();
   }
   

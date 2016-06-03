@@ -7,8 +7,11 @@ using System;
 using UnityEngine.SceneManagement;
 
 public class UserStudyTargetShooting : MonoBehaviour {
-	
+
+    public ARTPositioner art;
+
 	Transform palm;
+    public GameObject activeHandVis;
 	public Transform palmLeft, palmRight;
 	public Text progress;
 	public GameObject[] targets;
@@ -30,21 +33,34 @@ public class UserStudyTargetShooting : MonoBehaviour {
 
 	float holdcounter = 0f;
 
-	public Vector3 rayOrigin {
-		get{
-			return palm.position;
-		}
-	}
+    public Vector3 rayOrigin
+    {
+        get
+        {
+            if (art.isTracking())
+                return art.getPosition();
+            else
+                return palm.position;
+        }
+    }
 
-	public Vector3 rayDirection{
-		get{
-			palm.Rotate(new Vector3(UserStudyData.instance.palmangle,0,0), Space.Self);
-			Vector3 result = palm.forward;
-			palm.Rotate(new Vector3(-UserStudyData.instance.palmangle,0,0), Space.Self);
+    public Vector3 rayDirection
+    {
+        get
+        {
+            Transform target;
+            if (art.isTracking())
+                target = art.target;
+            else
+                target = palm;
 
-			return result;
-		}
-	}
+            target.Rotate(new Vector3(UserStudyData.instance.palmangle, 0, 0), Space.Self);
+            Vector3 result = target.forward;
+            target.Rotate(new Vector3(-UserStudyData.instance.palmangle, 0, 0), Space.Self);
+
+            return result;
+        }
+    }
 	// Use this for initialization
 	void Start () {
         HandPostureUtils.reload();
@@ -82,6 +98,11 @@ public class UserStudyTargetShooting : MonoBehaviour {
 			progress.text = remainingTargets+" of "+numTargets+" targets remaining.";
 		
 		lr.SetPositions(new Vector3[] {rayOrigin,rayOrigin+10*rayDirection});
+        lr.enabled = hand.gameObject.activeInHierarchy || art.isTracking();
+
+
+        activeHandVis.SetActive(hand.gameObject.activeInHierarchy || art.isTracking());
+        activeHandVis.transform.position = rayOrigin;
 		if (playing) 
 		{
 			if (HandPostureUtils.isHolding(UserStudyData.instance.posture, hand.hand))
