@@ -11,10 +11,12 @@ public class ARTPositioner : MonoBehaviour {
     public Transform target;
 
     public int markerID = 1;
+    public int originID = 0;
 
-    public sVector3 offset = new sVector3(0,0,0), leapPosition = new sVector3(0,-0.3f,0.3f);
+    public sVector3 offset = new sVector3(0,0,0), 
+        leapPosition = new sVector3(0,-0.3f,0.3f),
+        originPosition = new sVector3(0,0,0);
 
-    public Text text;
 
     public const int BufferSize = 8192; //up this to theoretical UDP limit if required.
     private readonly string[] frameDelimiters = { "\r\n" };
@@ -96,6 +98,11 @@ public class ARTPositioner : MonoBehaviour {
         return !(timedOut || terminate) && isVisible;
     }
 
+    public void closeSock()
+    {
+        artSocket.Close();
+    }
+
     private void updateMarker()
     {
         string data;
@@ -106,7 +113,6 @@ public class ARTPositioner : MonoBehaviour {
             //parse stuff, fill into our struct, return
             data = Encoding.ASCII.GetString(buffer);
         }
-        text.text = data;
         var lines = data.Split(frameDelimiters, StringSplitOptions.RemoveEmptyEntries);
 
         foreach (string line in lines)
@@ -132,44 +138,53 @@ public class ARTPositioner : MonoBehaviour {
                 findPos = line.IndexOf(' ', lastPos);
 
                 string trackID = line.Substring(lastPos, findPos - lastPos);
-                int id = int.Parse(trackID);
+                int numTracker = int.Parse(trackID);
 
-                if(id == markerID)
+
+                for (int i = 0; i < numTracker; i++)
                 {
-                    isVisible = true;
-                    //do stuff for each 6d body
-                    if (lastPos > line.Length)
-                    {
-                        Debug.Log("6d: Unexpected end of line");
-                        break;
+                        isVisible = true;
+                        //do stuff for each 6d body
+                        if (lastPos > line.Length)
+                        {
+                            Debug.Log("6d: Unexpected end of line");
+                            break;
+                        }
+
+                        //find first '['
+                        if ((lastPos = line.IndexOf('[', lastPos)) == -1)
+                        {
+                            //there is no body data
+                            break;
+                        }
+
+                        //find record ending
+                        findPos = line.IndexOf("] ", lastPos);
+
+                        string record = line.Substring(lastPos, findPos - lastPos);
+
+                        var positions = record.Split(bodyDelimiters, StringSplitOptions.RemoveEmptyEntries);
+                        int id = int.Parse(positions[0]);
+                         if (id == markerID)
+                          {
+
+                        //parse positions and write them into our struct
+                        //rotations seem to be in euler angles
+                        //int id;
+                        //double qual, px, py, pz, rx, ry, rz;
+                        position = new Vector3(float.Parse(positions[2]), float.Parse(positions[4]), float.Parse(positions[3]));
+                        rotation = Quaternion.Euler(-float.Parse(positions[5]), -float.Parse(positions[7]), -float.Parse(positions[6]));
+                        position /= 1000f;
+                        position += offset;
+                        position += leapPosition;
+                        position -= originPosition;
                     }
-
-                    //find first '['
-                    if ((lastPos = line.IndexOf('[', lastPos)) == -1)
-                    {
-                        //there is no body data
-                        break;
-                    }
-
-                    //find record ending
-                    findPos = line.IndexOf("] ", lastPos);
-
-                    string record = line.Substring(lastPos, findPos - lastPos);
-
-                    var positions = record.Split(bodyDelimiters, StringSplitOptions.RemoveEmptyEntries);
-
-                    //parse positions and write them into our struct
-                    //rotations seem to be in euler angles
-                    //int id;
-                    //double qual, px, py, pz, rx, ry, rz;
-                    position = new Vector3(float.Parse(positions[2]), float.Parse(positions[4]), float.Parse(positions[3]));
-                    rotation = Quaternion.Euler(-float.Parse(positions[5]), -float.Parse(positions[7]), -float.Parse(positions[6]));
-                    position /= 1000f;
-                    position += offset;
-                    position += leapPosition;
-
-
-                    break;
+                         if (id == originID)
+                         {
+                             originPosition = new Vector3(float.Parse(positions[2]), float.Parse(positions[4]), float.Parse(positions[3]));
+                             originPosition = ((Vector3)originPosition)/1000f;
+                         }
+                         lastPos = findPos + 1;
                 }
 
             }
@@ -181,7 +196,6 @@ public class ARTPositioner : MonoBehaviour {
 
                 string trackID = line.Substring(lastPos, findPos - lastPos);
                 int id = int.Parse(trackID);
-                Debug.Log(id);
                 if (id == markerID)
                 { 
                     for (int i = 0; i < 3; i++ )

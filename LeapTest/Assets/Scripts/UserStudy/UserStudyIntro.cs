@@ -145,8 +145,8 @@ public class UserStudyIntro : MonoBehaviour {
         UserStudyData.instance.yaxisDis = Discomfort.getAbductionComponent(targethand);
         UserStudyData.instance.interDis = Discomfort.getInterFingerComponent(targethand);
 		UserStudyData.instance.discomfort = Discomfort.getDiscomfortAngled(targethand);
-		UserStudyData.instance.palmangle = targethand.getAvgMCPAngle ()*0.5f;
-		Debug.Log (targethand.getAvgMCPAngle ()*0.5f);
+		UserStudyData.instance.palmangle = targethand.getAvgMCPAngle ()*0;
+		Debug.Log (targethand.getAvgMCPAngle ()*0);
     }
 
 	IEnumerator getNewRandomHand(float targetDiscomfort)

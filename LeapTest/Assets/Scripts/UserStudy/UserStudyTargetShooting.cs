@@ -208,6 +208,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
 
     public void onEnd()
     {
+        art.closeSock();
 		if (UserStudyData.instance.lineDrawing)
 			SceneManager.LoadScene ("UserStudyLineTracing");
 		else {

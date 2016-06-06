@@ -247,7 +247,8 @@ public class UserStudyLineTracing : MonoBehaviour {
 
 	public void onEnd()
 	{
-			if(UserStudyData.instance.remainingIts > 0)
+        art.closeSock();
+		if(UserStudyData.instance.remainingIts > 0)
 				SceneManager.LoadScene ("UserStudyIntro");
 		else
 			SceneManager.LoadScene ("UserStudyEnd");
