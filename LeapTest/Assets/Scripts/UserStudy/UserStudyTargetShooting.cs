@@ -137,6 +137,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
 								fileName,
 
 								UserStudyData.instance.Name + endl +
+								UserStudyData.instance.ComfortEvaluation + endl +
 								UserStudyData.instance.discomfort + endl +
 								timer + endl +
 								(hit.point - hit.collider.transform.position).magnitude + endl +

@@ -69,6 +69,7 @@ public class UserStudyIntro : MonoBehaviour {
 	{
 		if (!generating) {
 			startPanel.SetActive (false);
+			UserStudyData.instance.ComfortEvaluation = (int)comfortSlider.value;
 			if (UserStudyData.instance.right) {
 				observedHand = rightHand;
 				palm = palmRight;
@@ -142,7 +143,6 @@ public class UserStudyIntro : MonoBehaviour {
 		
 	void saveData()
 	{
-        UserStudyData.instance.ComfortEvaluation = (int)comfortSlider.value;
         UserStudyData.instance.targetHand = targethand;
 		UserStudyData.instance.angleDis = Comfort.getRRPComponent(targethand);
         UserStudyData.instance.hyperDis = Discomfort.getHyperExtensionComponent(targethand);

@@ -243,6 +243,7 @@ public class UserStudyLineTracing : MonoBehaviour {
                 fileName,
 
                 UserStudyData.instance.Name + endl +
+				UserStudyData.instance.ComfortEvaluation + endl +
                 UserStudyData.instance.discomfort + endl +
                 timer + endl +
                 getTotalAccuracy() + endl +
