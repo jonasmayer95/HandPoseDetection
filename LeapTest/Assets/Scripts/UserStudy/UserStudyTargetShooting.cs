@@ -71,9 +71,23 @@ public class UserStudyTargetShooting : MonoBehaviour {
 			hand = leftHand;
 			palm = palmLeft;
 		}
+        string fileHeader = "Name" + endl + "UserEvaluation" + endl + "Discomfort" + endl + "Time" + endl + "Precision" + endl + "Postureholdtime" + endl + "TargetIndex" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + AngleBasedHandModel.getCSVHeader(endl, "GivenHand");
 		fileName = PostureDataHandler.instance.filePath + "TargetShootingData"+UserStudyData.instance.fileEnding;
-		if(!File.Exists(fileName))
-			File.AppendAllText(fileName, "Name" + endl + "Discomfort" + endl + "Time" + endl + "Precision" + endl + "Postureholdtime" + endl + "TargetIndex" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + AngleBasedHandModel.getCSVHeader(endl, "GivenHand") + Environment.NewLine);
+
+        if (!File.Exists(fileName))
+            File.AppendAllText(fileName, fileHeader+Environment.NewLine);
+        else
+        {
+            StreamReader read = new StreamReader(fileName);
+            string oldHeader = read.ReadLine();
+            read.Close();
+            if (!oldHeader.Equals(fileHeader))
+            {
+                Debug.Log("Fileheader not matching. Creating new file.");
+                File.Delete(fileName);
+                File.AppendAllText(fileName, fileHeader+Environment.NewLine);
+            }
+        }
 		remainingTargets = numTargets;
         if (UserStudyData.instance.right)
             outputHand.transform.localScale = new Vector3(-outputHand.transform.localScale.x, outputHand.transform.localScale.y, outputHand.transform.localScale.z);
@@ -163,19 +177,8 @@ public class UserStudyTargetShooting : MonoBehaviour {
 		if (gameObject.activeInHierarchy) {
 			startPanel.SetActive (false);
 			progress.enabled = true;
-			foreach (GameObject target in targets)
-				target.SetActive (false);
-            targetList = new List<int>();
-            for (int i = 0; (i < numTargets) && (i < targets.Length); i++)
-            {
-                targetList.Add(i);
-            }
-            targetList = Utility<int>.shuffleList(targetList);
-
-            current = 0;
-			for (int i = 0; i < parallelNumTargets; i++) {
-				setRandTargetActive ();
-			}
+            foreach (GameObject target in targets)
+                target.SetActive(false);
 			StartCoroutine (numberCountdown ());
 		}
 	}
@@ -188,6 +191,19 @@ public class UserStudyTargetShooting : MonoBehaviour {
 			yield return new WaitForSeconds (1);
 		}
 		yield return new WaitForSeconds (1);
+
+        targetList = new List<int>();
+        for (int i = 0; (i < numTargets) && (i < targets.Length); i++)
+        {
+            targetList.Add(i);
+        }
+        targetList = Utility<int>.shuffleList(targetList);
+
+        current = 0;
+        for (int i = 0; i < parallelNumTargets; i++)
+        {
+            setRandTargetActive();
+        }
 		countdownNumber.enabled = false;
 		countdownNumber.text = "Please correct your hand posture!";
 		countdownNumber.color = Color.red;
