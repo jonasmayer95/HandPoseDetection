@@ -27,6 +27,9 @@ public class UserStudyIntro : MonoBehaviour {
 	public GameObject startPanel;
 	bool generating = false;
 
+    public Text comfortNumber;
+    public Slider comfortSlider;
+
 	public Vector3 rayOrigin {
 		get{
 			return palm.position;
@@ -139,6 +142,7 @@ public class UserStudyIntro : MonoBehaviour {
 		
 	void saveData()
 	{
+        UserStudyData.instance.ComfortEvaluation = (int)comfortSlider.value;
         UserStudyData.instance.targetHand = targethand;
 		UserStudyData.instance.angleDis = Comfort.getRRPComponent(targethand);
         UserStudyData.instance.hyperDis = Discomfort.getHyperExtensionComponent(targethand);
@@ -170,4 +174,9 @@ public class UserStudyIntro : MonoBehaviour {
 		generating = false;
 		saveData ();
 	}
+
+    public void changeComfortNumer(float newVal)
+    {
+        comfortNumber.text = ((int)newVal) + "/10";
+    }
 }

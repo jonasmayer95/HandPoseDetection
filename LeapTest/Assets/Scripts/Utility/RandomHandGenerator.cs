@@ -161,6 +161,8 @@ public class RandomHandGenerator : MonoBehaviour {
 
     public void showRandHand()
     {
-		output.visualizeHand(createRandomProcedural());
+        AngleBasedHandModel result = createRandom();
+		output.visualizeHand(result);
+        Debug.Log("Comfort+Discomfort: "+ (Discomfort.getDiscomfortAngled(result)+Comfort.getRRPComponent(result)));
     }
 }

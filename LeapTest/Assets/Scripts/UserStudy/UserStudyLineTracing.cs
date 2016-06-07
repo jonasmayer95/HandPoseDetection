@@ -28,7 +28,7 @@ public class UserStudyLineTracing : MonoBehaviour {
     List<LinePoint> myPoints = new List<LinePoint>();
     GameObject currentLinePoint;
     bool isDrawing = false;
-    public float timeOut = .5f, mySteps = .5f;
+    public float timeOut = .5f, mySteps = .1f;
 	float toClick, toPosture;
 	bool holdingPosture = true;
 
@@ -125,7 +125,12 @@ public class UserStudyLineTracing : MonoBehaviour {
 			progress.text = "Dist: " + accuracy + ", Progress: " + getProgress ();
 			progress.color = Color.blue;
 			toPosture = timeOut;
-			holdingPosture = true;
+            if (!holdingPosture)
+            {
+                myPoints.Add(currentLinePoint.GetComponent<LinePoint>());
+                isDrawing = false;
+                holdingPosture = true;
+            }
 		}
 		
 			lr.SetPositions (new Vector3[] { rayOrigin, rayOrigin + 10 * rayDirection });
