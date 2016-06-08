@@ -28,7 +28,8 @@ public class UserStudyIntro : MonoBehaviour {
 	bool generating = false;
 
     public Text comfortNumber;
-    public Slider comfortSlider;
+	public Slider comfortSlider;
+	int last =0;
 
 	public Vector3 rayOrigin {
 		get{
@@ -63,6 +64,10 @@ public class UserStudyIntro : MonoBehaviour {
 		}
 		if (startPanel.activeInHierarchy && Input.GetKeyDown (KeyCode.JoystickButton0))
 			onContinueButton ();
+		if ((int)Input.GetAxisRaw ("PadHor") != last) {
+			comfortSlider.value += (int)Input.GetAxisRaw ("PadHor");
+			last = (int)Input.GetAxisRaw ("PadHor");
+		}
 	}
 
 	public void onContinueButton()
