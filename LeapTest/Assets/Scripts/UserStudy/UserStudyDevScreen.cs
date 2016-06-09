@@ -10,7 +10,7 @@ public class UserStudyDevScreen : MonoBehaviour {
 	public Toggle right;
 	public Toggle target, line, rating;
 	public InputField nameField, evalsInp, itersInp;
-	public int iterations = 1;
+	public int iterations = 4;
 	public int evaluations = 5;
 	void Start () {
 		evalsInp.text = evaluations+""; 

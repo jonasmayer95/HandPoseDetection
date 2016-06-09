@@ -138,7 +138,7 @@ public class UserStudyLineTracing : MonoBehaviour {
 			progress.text = "Dist: " + accuracy + ", Progress: " + getProgress ();
 			progress.color = Color.blue;
 			toPosture = timeOut;
-            if (!holdingPosture)
+            if (!holdingPosture && currentLinePoint != null)
             {
                 myPoints.Add(currentLinePoint.GetComponent<LinePoint>());
                 isDrawing = false;
