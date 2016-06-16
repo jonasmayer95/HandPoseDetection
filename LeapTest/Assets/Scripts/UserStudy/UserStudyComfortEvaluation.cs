@@ -23,8 +23,23 @@ public class UserStudyComfortEvaluation : MonoBehaviour {
 	void Start () {
 		remaining = UserStudyData.instance.evaluations;
 		fileName =PostureDataHandler.instance.filePath + "ComfortEvaluationData"+UserStudyData.instance.fileEnding;
+
 		if(!File.Exists(fileName))
-			File.AppendAllText(fileName, "Name" + endl + "Rating" + endl +"Discomfort" + endl + "Comfort" + endl + "InterDis" + endl + "AbductionDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "RandomHand") + Environment.NewLine);
+			File.AppendAllText(fileName, 
+                "Name" + endl + 
+                "Rating" + endl +
+                "Discomfort" + endl + 
+                "Comfort" + endl + 
+                "InterDis" + endl + 
+                "AbductionDis" + endl + 
+                "HyperDis" + endl + 
+                Discomfort.getInterFingerCSVHeader(endl) +
+                Discomfort.getAbductionCSVHeader(endl) +
+                Discomfort.getHyperExtensionCSVHeader(endl) +
+                Comfort.getRRPCSVHeader(endl) +
+                AngleBasedHandModel.getCSVHeader(endl, "RandomHand") + 
+                Environment.NewLine);
+
 		reset ();
         if (UserStudyData.instance.right)
             outputHand.transform.localScale = new Vector3(-outputHand.transform.localScale.x, outputHand.transform.localScale.y, outputHand.transform.localScale.z);
@@ -106,6 +121,10 @@ public class UserStudyComfortEvaluation : MonoBehaviour {
 			Discomfort.getInterFingerComponent(targethand) + endl +
 			Discomfort.getAbductionComponent(targethand) + endl +
 			Discomfort.getHyperExtensionComponent(targethand) + endl +
+            Discomfort.getInterFingerCSV(targethand, endl) +
+            Discomfort.getAbductionCSV(targethand, endl) +
+            Discomfort.getHyperExtensionCSV(targethand, endl) +
+            Comfort.getRRPCSV(targethand, endl) +
 			targethand.ToCSVString(endl) + Environment.NewLine
 		);
 	}
