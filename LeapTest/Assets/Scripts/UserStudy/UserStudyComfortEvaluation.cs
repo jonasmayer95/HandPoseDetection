@@ -24,22 +24,36 @@ public class UserStudyComfortEvaluation : MonoBehaviour {
 		remaining = UserStudyData.instance.evaluations;
 		fileName =PostureDataHandler.instance.filePath + "ComfortEvaluationData"+UserStudyData.instance.fileEnding;
 
+		string fileHeader = 
+			"Name" + endl + 
+			"Rating" + endl +
+			"Discomfort" + endl + 
+			"Comfort" + endl + 
+			"InterDis" + endl + 
+			"AbductionDis" + endl + 
+			"HyperDis" + endl + 
+			Discomfort.getInterFingerCSVHeader(endl) +
+			Discomfort.getAbductionCSVHeader(endl) +
+			Discomfort.getHyperExtensionCSVHeader(endl) +
+			Comfort.getRRPCSVHeader(endl) +
+			AngleBasedHandModel.getCSVHeader(endl, "RandomHand");
+		
 		if(!File.Exists(fileName))
-			File.AppendAllText(fileName, 
-                "Name" + endl + 
-                "Rating" + endl +
-                "Discomfort" + endl + 
-                "Comfort" + endl + 
-                "InterDis" + endl + 
-                "AbductionDis" + endl + 
-                "HyperDis" + endl + 
-                Discomfort.getInterFingerCSVHeader(endl) +
-                Discomfort.getAbductionCSVHeader(endl) +
-                Discomfort.getHyperExtensionCSVHeader(endl) +
-                Comfort.getRRPCSVHeader(endl) +
-                AngleBasedHandModel.getCSVHeader(endl, "RandomHand") + 
-                Environment.NewLine);
-
+			{
+			File.AppendAllText(fileName,fileHeader+Environment.NewLine);
+			}
+			else
+			{
+				StreamReader read = new StreamReader(fileName);
+				string oldHeader = read.ReadLine();
+				read.Close();
+				if (!oldHeader.Equals(fileHeader))
+				{
+					Debug.Log("Fileheader not matching. Creating new file.");
+					File.Delete(fileName);
+					File.AppendAllText(fileName, fileHeader+Environment.NewLine);
+				}
+			}
 		reset ();
         if (UserStudyData.instance.right)
             outputHand.transform.localScale = new Vector3(-outputHand.transform.localScale.x, outputHand.transform.localScale.y, outputHand.transform.localScale.z);

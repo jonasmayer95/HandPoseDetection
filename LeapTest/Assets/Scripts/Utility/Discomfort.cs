@@ -37,7 +37,7 @@ public static class Discomfort{
     public static float[] getAbduction(AngleBasedHandModel otherHand)
     {
         float[] result = new float[otherHand.fingers.Length];
-        for (int i = 0; i < otherHand.fingers.Length - 1; i++)
+        for (int i = 0; i < otherHand.fingers.Length; i++)
         {
             float temp = ((Quaternion)otherHand.fingers[i].mcp).eulerAngles.y;
             if (temp > 180)
@@ -88,7 +88,7 @@ public static class Discomfort{
     public static float[] getHyperExtension(AngleBasedHandModel otherHand)
     {
         float[] result = new float[otherHand.fingers.Length];
-        for (int i = 0; i < otherHand.fingers.Length - 1; i++)
+        for (int i = 0; i < otherHand.fingers.Length; i++)
         {
             if (((Quaternion)otherHand.fingers[i].mcp).eulerAngles.x > 300)
                 result[i] = 360 - ((Quaternion)otherHand.fingers[i].mcp).eulerAngles.x;
