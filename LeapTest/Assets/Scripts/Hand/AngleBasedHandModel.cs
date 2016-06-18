@@ -89,6 +89,18 @@ public class AngleBasedHandModel
 
 		return result;
 	}
+	public int parseCSV(string[] input, int first)
+	{
+		first = thumb.FromCSV (input, first);
+		for (int i = 0; i < fingers.Length; i++)
+		{
+			first = fingers [i].FromCSV (input, first);
+		}
+		first = rotation.FromCSV (input, first);
+		first = position.FromCSV (input, first);
+		return first;
+	}
+
 	public static AngleBasedHandModel Lerp(AngleBasedHandModel first, AngleBasedHandModel second, float t)
 	{
 		AngleBasedHandModel result = new AngleBasedHandModel ();

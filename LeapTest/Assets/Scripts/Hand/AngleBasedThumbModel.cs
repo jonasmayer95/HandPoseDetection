@@ -59,4 +59,16 @@ public class AngleBasedThumbModel
 
 	}
 
+	public int FromCSV(string[] input, int first)
+	{
+		for (int i = 0; i < jointAngles.Length - 3; i++)
+		{
+			jointAngles[i] = float.Parse (input [first++]);
+		}
+		first = tmc.FromCSV (input, first);
+		return first;
+	}
+
+
+
 }

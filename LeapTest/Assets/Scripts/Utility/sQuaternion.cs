@@ -121,4 +121,12 @@ public class sQuaternion
 
         return result;
     }
+	public int FromCSV(string[] input, int first)
+	{
+		x = float.Parse (input [first++]);
+		y = float.Parse (input [first++]);
+		z = float.Parse (input [first++]);
+		w = float.Parse (input [first++]);
+		return first;
+	}
 }

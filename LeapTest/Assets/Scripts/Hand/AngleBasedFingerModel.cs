@@ -65,6 +65,17 @@ public class AngleBasedFingerModel
 		return result;
 	}
 
+	public int FromCSV(string[] input, int first)
+	{
+		for (int i = 0; i < jointAngles.Length - 2; i++)
+		{
+			jointAngles[i] = float.Parse (input [first++]);
+		}
+		first = mcp.FromCSV (input, first);
+		return first;
+	}
+
+
 	public static AngleBasedFingerModel Lerp(AngleBasedFingerModel first, AngleBasedFingerModel second, float t)
 	{
 		AngleBasedFingerModel result = new AngleBasedFingerModel ();
