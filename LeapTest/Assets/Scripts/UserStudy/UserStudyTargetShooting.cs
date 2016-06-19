@@ -25,11 +25,11 @@ public class UserStudyTargetShooting : MonoBehaviour {
     public OutputHand outputHand;
     public string endl = ", ";
 	bool playing = false;
-	float timer;
+	float timer = 0, timerTracking =0;
 	int remainingTargets;
 	public int numTargets, parallelNumTargets;
 	int current;
-	string fileName;
+	string fileName, fileNameEnd;
 
 	float holdcounter = 0f;
 
@@ -72,7 +72,24 @@ public class UserStudyTargetShooting : MonoBehaviour {
 			palm = palmLeft;
 		}
         string fileHeader = "Name" + endl + "UserEvaluation" + endl + "Discomfort" + endl + "Time" + endl + "Precision" + endl + "Postureholdtime" + endl + "TargetIndex" + endl + "Posture" + endl + "AngleDis" + endl + "InterDis" + endl + "YAxisDis" + endl + "HyperDis" + endl + AngleBasedHandModel.getCSVHeader(endl, "ActualHand") + endl + AngleBasedHandModel.getCSVHeader(endl, "GivenHand");
+		string fileHeaderEnd =
+			"Name" + endl + 
+			"Rating" + endl +
+			"Time" + endl +
+			"TrackingTime" + endl +
+			"Discomfort" + endl + 
+			"Comfort" + endl + 
+			"InterDis" + endl + 
+			"AbductionDis" + endl + 
+			"HyperDis" + endl + 
+			Discomfort.getInterFingerCSVHeader(endl) +
+			Discomfort.getAbductionCSVHeader(endl) +
+			Discomfort.getHyperExtensionCSVHeader(endl) +
+			Comfort.getRRPCSVHeader(endl) +
+			AngleBasedHandModel.getCSVHeader(endl, "RandomHand");
+		
 		fileName = PostureDataHandler.instance.filePath + "TargetShootingData"+UserStudyData.instance.fileEnding;
+		fileNameEnd = PostureDataHandler.instance.filePath + "TargetShootingDataEnd"+UserStudyData.instance.fileEnding;
 
         if (!File.Exists(fileName))
             File.AppendAllText(fileName, fileHeader+Environment.NewLine);
@@ -88,6 +105,23 @@ public class UserStudyTargetShooting : MonoBehaviour {
                 File.AppendAllText(fileName, fileHeader+Environment.NewLine);
             }
         }
+
+		if (!File.Exists(fileNameEnd))
+			File.AppendAllText(fileNameEnd, fileHeaderEnd+Environment.NewLine);
+		else
+		{
+			StreamReader read = new StreamReader(fileNameEnd);
+			string oldHeader = read.ReadLine();
+			read.Close();
+			if (!oldHeader.Equals(fileHeaderEnd))
+			{
+				Debug.Log("Fileheader not matching. Creating new file.");
+				File.Delete(fileNameEnd);
+				File.AppendAllText(fileNameEnd, fileHeaderEnd+Environment.NewLine);
+			}
+		}
+
+
 		remainingTargets = numTargets;
         if (UserStudyData.instance.right)
             outputHand.transform.localScale = new Vector3(-outputHand.transform.localScale.x, outputHand.transform.localScale.y, outputHand.transform.localScale.z);
@@ -124,6 +158,8 @@ public class UserStudyTargetShooting : MonoBehaviour {
 				holdcounter+= Time.deltaTime;
 				}
 			timer += Time.deltaTime;
+			if (art.isTracking ())
+				timerTracking += Time.deltaTime;
 			if (HandPostureUtils.isHolding(UserStudyData.instance.posture, hand.hand) || Input.GetButton("Emergency"))
             {
 				countdownNumber.enabled = false;
@@ -218,6 +254,7 @@ public class UserStudyTargetShooting : MonoBehaviour {
 
 	void endStudy()
 	{
+		saveResults ();
 		playing = false;
 		endPanel.SetActive (true);
 		progress.enabled = false;
@@ -240,4 +277,26 @@ public class UserStudyTargetShooting : MonoBehaviour {
     {
         System.Diagnostics.Process.Start(fileName);
     }
+
+	void saveResults()
+	{
+		File.AppendAllText(
+			fileNameEnd, 
+
+			UserStudyData.instance.Name+endl+
+			UserStudyData.instance.ComfortEvaluation + endl +
+			timer +endl+
+			timerTracking +endl +
+			Discomfort.getDiscomfortAngled(UserStudyData.instance.targetHand) + endl +
+			Comfort.getRRPComponent(UserStudyData.instance.targetHand) + endl +
+			Discomfort.getInterFingerComponent(UserStudyData.instance.targetHand) + endl +
+			Discomfort.getAbductionComponent(UserStudyData.instance.targetHand) + endl +
+			Discomfort.getHyperExtensionComponent(UserStudyData.instance.targetHand) + endl +
+			Discomfort.getInterFingerCSV(UserStudyData.instance.targetHand, endl) +
+			Discomfort.getAbductionCSV(UserStudyData.instance.targetHand, endl) +
+			Discomfort.getHyperExtensionCSV(UserStudyData.instance.targetHand, endl) +
+			Comfort.getRRPCSV(UserStudyData.instance.targetHand, endl) +
+			UserStudyData.instance.targetHand.ToCSVString(endl) + Environment.NewLine
+		);
+	}
 }

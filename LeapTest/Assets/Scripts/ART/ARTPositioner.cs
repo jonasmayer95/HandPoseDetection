@@ -143,7 +143,6 @@ public class ARTPositioner : MonoBehaviour {
 
                 for (int i = 0; i < numTracker; i++)
                 {
-                        isVisible = true;
                         //do stuff for each 6d body
                         if (lastPos > line.Length)
                         {
@@ -168,6 +167,7 @@ public class ARTPositioner : MonoBehaviour {
                          if (id == markerID)
                           {
 
+						isVisible = true;
                         //parse positions and write them into our struct
                         //rotations seem to be in euler angles
                         //int id;
