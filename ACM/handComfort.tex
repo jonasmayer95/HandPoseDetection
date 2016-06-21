@@ -1,0 +1,285 @@
+% This is "sig-alternate.tex" V2.1 April 2013
+% This file should be compiled with V2.5 of "sig-alternate.cls" May 2012
+%
+% This example file demonstrates the use of the 'sig-alternate.cls'
+% V2.5 LaTeX2e document class file. It is for those submitting
+% articles to ACM Conference Proceedings WHO DO NOT WISH TO
+% STRICTLY ADHERE TO THE SIGS (PUBS-BOARD-ENDORSED) STYLE.
+% The 'sig-alternate.cls' file will produce a similar-looking,
+% albeit, 'tighter' paper resulting in, invariably, fewer pages.
+%
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V2.5) produces:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) NO page numbers
+%
+% as against the acm_proc_article-sp.cls file which
+% DOES NOT produce 1) thru' 3) above.
+%
+% Using 'sig-alternate.cls' you have control, however, from within
+% the source .tex file, over both the CopyrightYear
+% (defaulted to 200X) and the ACM Copyright Data
+% (defaulted to X-XXXXX-XX-X/XX/XX).
+% e.g.
+% \CopyrightYear{2007} will cause 2007 to appear in the copyright line.
+% \crdata{0-12345-67-8/90/12} will cause 0-12345-67-8/90/12 to appear in the copyright line.
+%
+% ---------------------------------------------------------------------------------------------------------------
+% This .tex source is an example which *does* use
+% the .bib file (from which the .bbl file % is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission, you *NEED* to 'insert'
+% your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% ================= IF YOU HAVE QUESTIONS =======================
+% Questions regarding the SIGS styles, SIGS policies and
+% procedures, Conferences etc. should be sent to
+% Adrienne Griscti (griscti@acm.org)
+%
+% Technical questions _only_ to
+% Gerald Murray (murray@hq.acm.org)
+% ===============================================================
+%
+% For tracking purposes - this is V2.0 - May 2012
+
+\documentclass{sig-alternate-05-2015}
+
+
+\begin{document}
+
+% Copyright
+\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+%\setcopyright{rightsretained}
+%\setcopyright{usgov}
+%\setcopyright{usgovmixed}
+%\setcopyright{cagov}
+%\setcopyright{cagovmixed}
+
+
+% DOI
+\doi{10.475/123_4}
+
+% ISBN
+\isbn{123-4567-24-567/08/06}
+
+%Conference
+\conferenceinfo{PLDI '13}{June 16--19, 2013, Seattle, WA, USA}
+
+\acmPrice{\$15.00}
+
+%
+% --- Author Metadata here ---
+\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
+%\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
+%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
+% --- End of Author Metadata ---
+
+\title{Proposal of an Objective Metric for Hand Posture Comfort/Discomfort Evaluation.
+\titlenote{(Produces the permission block, and
+copyright information). For use with
+SIG-ALTERNATE.CLS. Supported by ACM.}}
+%\subtitle{[Extended Abstract]
+%\titlenote{A full version of this paper is available as
+%\textit{Author's Guide to Preparing ACM SIG Proceedings Using
+%\LaTeX$2_\epsilon$\ and BibTeX} at
+%\texttt{www.acm.org/eaddress.htm}}}
+%
+% You need the command \numberofauthors to handle the 'placement
+% and alignment' of the authors beneath the title.
+%
+% For aesthetic reasons, we recommend 'three authors at a time'
+% i.e. three 'name/affiliation blocks' be placed beneath the title.
+%
+% NOTE: You are NOT restricted in how many 'rows' of
+% "name/affiliations" may appear. We just ask that you restrict
+% the number of 'columns' to three.
+%
+% Because of the available 'opening page real-estate'
+% we ask you to refrain from putting more than six authors
+% (two rows with three columns) beneath the article title.
+% More than six makes the first-page appear very cluttered indeed.
+%
+% Use the \alignauthor commands to handle the names
+% and affiliations for an 'aesthetic maximum' of six authors.
+% Add names, affiliations, addresses for
+% the seventh etc. author(s) as the argument for the
+% \additionalauthors command.
+% These 'additional authors' will be output/set for you
+% without further effort on your part as the last section in
+% the body of your article BEFORE References or any Appendices.
+
+\numberofauthors{8} %  in this sample file, there are a *total*
+% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+% reasons) and the remaining two appear in the \additionalauthors section.
+%
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+Jonas A. Mayer
+			%\titlenote{Dr.~Trovato insisted his name be first.}
+	     \\
+       \affaddr{Technische Universitaet Muenchen}\\
+  %     \affaddr{1932 Wallamaloo Lane}\\
+  %     \affaddr{Wallamaloo, New Zealand}\\
+       \email{ga97qic@mytum.de}
+% 2nd. author
+\alignauthor
+G.K.M. Tobin\\
+       \affaddr{Institute for Clarity in Documentation}\\
+       \affaddr{P.O. Box 1212}\\
+       \affaddr{Dublin, Ohio 43017-6221}\\
+       \email{webmaster@marysville-ohio.com}
+% 3rd. author
+\alignauthor Lars Th{\o}rv{\"a}ld\\
+       \affaddr{The Th{\o}rv{\"a}ld Group}\\
+       \affaddr{1 Th{\o}rv{\"a}ld Circle}\\
+       \affaddr{Hekla, Iceland}\\
+       \email{larst@affiliation.org}
+}
+% There's nothing stopping you putting the seventh, eighth, etc.
+% author on the opening page (as the 'third row') but we ask,
+% for aesthetic reasons that you place these 'additional authors'
+% in the \additional authors block, viz.
+% Just remember to make sure that the TOTAL number of authors
+% is the number that will appear on the first page PLUS the
+% number that will appear in the \additionalauthors section.
+
+\maketitle
+\begin{abstract}
+
+TODO: Add Abstract
+
+\end{abstract}
+
+
+%
+% The code below should be generated by the tool at
+% http://dl.acm.org/ccs.cfm
+% Please copy and paste the code instead of the example below. 
+%
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10003120.10003123.10011758</concept_id>
+<concept_desc>Human-centered computing~Interaction design theory, concepts and paradigms</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Human-centered computing~Interaction design theory, concepts and paradigms}
+
+
+
+
+
+%
+% End generated code
+%
+
+%
+%  Use this command to print the description
+%
+\printccsdesc
+
+% We no longer use \terms command
+%\terms{Theory}
+
+\keywords{ACM proceedings; \LaTeX; text tagging}
+
+\section{Introduction}
+
+For a traditional desktop computer environment, there exist a number of different standardized interfaces for human-computer interaction using a mouse, keyboard and monitor, that allow the user to 
+complete a variety of tasks effectively and efficiently by providing sets of shortcuts and macros. 
+
+However, advancing technological progress as seen in virtual reality, augmented reality,
+%not scientific
+ robotics etc. open up new possibilities and create a need for new interaction techniques such as speech, gesture and posture interaction. 
+
+In a human-robot interaction context, both speech as well as hand gestures and postures are common concepts. While speech interaction is struggling 
+%not powerful, no need to talk all the time
+with ambient noise, speech target identification and the creation of intuitive or learnable command sets, the main challenge for gestures and postures has been fighting physical forces that cause fatigue or discomfort and therefore limiting precision, performance and user experience.
+
+%speech is not powerful enough
+This paper is meant to support the creation and evaluation of hand posture catalogs for effective and efficient human-robot interaction by suggesting a hand posture comfort/discomfort metric, that allows for quick objective hand posture evaluation. For this, state of the art comfort/discomfort models were applied to current hand anatomy and ergonomics knowledge to create models for hand comfort and discomfort. Using a large data set, gained in a user study, a machine learning algorithm generated a comfort/discomfort metric based on our model, which was verified in yet another user study.
+
+We will first explain the theoretical basis of our comfort/discomfort model, before deriving our concrete metric from it. After that we will explain the methodology used for optimizing and validating the metric as well as present the results gained therefrom. Finally we will critically discuss ...
+%overview over paper content
+%concrete, important, scientific text
+
+
+\section{Theoretical Foundation}
+... is based on the comfort and discomfort models seen in Vink \& Hallbeck \cite{vink2012editorial}, defining comfort as a "pleasant state or relaxed feeling of a human being" mostly caused by subjective impressions and expectations and discomfort as "an unpleasant state of the human body" occurring from physical stress. Using this information and knowledge of the human hand anatomy, we broke down human hand comfort and discomfort in an non-resting (as opposed to resting on an object) hand into the following four components:
+
+\subsection{Deviation from Range of Rest Posture}
+
+%rest on supports
+The \textbf{Range of Rest Posture (RRP)} as described in Apostolico et al. \cite{apostolico2014postural} is a range of angles for an articular joint, where the joint "can be considered statistically in rest", caused by muscle relaxation and therefore creating a maximum of comfort in this particular joint. In our case, we considered the human hand to have one RRP for each finger joint in a non-resting position with the palm facing downwards, resulting in a range of relaxed hand postures, similar to the one shown in Fig
+%add figure
+, where the comfort is maximized. 
+
+As shown by Naddeo, Cappetti \& D'Oria 
+\cite{naddeo2015proposal}, perceived comfort decreases for articular joints when deviating from the RRP and minimizes at the bounds of the natural range of motion. Applying this to the whole hand leads to the conclusion, that hand posture comfort can be evaluated by computing the total joint angle distance to the RRP.
+
+\subsection{The Inter Finger Angle}
+
+%hand anatomy
+
+\subsection{Finger Abduction}
+
+\subsection{Finger Hyper Extension}
+
+\section{Hand Posture Comfort/Discomfort Metric}
+%Hand Model!! Angle Based Hand Model/ X-DOF
+
+\section{Methodology}
+
+\section{Results}
+
+\section{Discussion}
+
+
+%\end{document}  % This is where a 'short' article might terminate
+
+%ACKNOWLEDGMENTS are optional
+\section{Acknowledgments}
+This section is optional; it is a location for you
+to acknowledge grants, funding, editing assistance and
+what have you.  In the present case, for example, the
+authors would like to thank Gerald Murray of ACM for
+his help in codifying this \textit{Author's Guide}
+and the \textbf{.cls} and \textbf{.tex} files that it describes.
+
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+\bibliography{handComfort}  % sigproc.bib is the name of the Bibliography in this case
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+%
+% ACM needs 'a single self-contained file'!
+%
+%APPENDICES are optional
+%\balancecolumns
+
+%\balancecolumns % GM June 2007
+% That's all folks!
+\end{document}
