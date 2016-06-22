@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=latex 2016.6.19)  21 JUN 2016 20:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=latex 2016.6.19)  22 JUN 2016 12:59
 entering extended mode
 **./handComfort.tex
 (handComfort.tex
@@ -266,20 +266,18 @@ Overfull \hbox (3.73346pt too wide) in paragraph at lines 218--219
 
 
 ]
-Overfull \hbox (25.26869pt too wide) in paragraph at lines 246--246
+Overfull \hbox (25.26869pt too wide) in paragraph at lines 259--259
 []\secfnt HAND POS-TURE COM-FORT/DISCOMFORT
  []
 
-(handComfort.bbl) [2
-
-] (handComfort.aux) ) 
+(handComfort.bbl) [2] (handComfort.aux) ) 
 Here is how much of TeX's memory you used:
- 2263 strings out of 493635
- 26848 string characters out of 3141340
- 96023 words of memory out of 3000000
- 5601 multiletter control sequences out of 15000+200000
+ 2264 strings out of 493635
+ 26867 string characters out of 3141340
+ 97023 words of memory out of 3000000
+ 5602 multiletter control sequences out of 15000+200000
  46109 words of font info for 61 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  39i,10n,34p,615b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on handComfort.dvi (2 pages, 9928 bytes).
+Output written on handComfort.dvi (2 pages, 12032 bytes).
