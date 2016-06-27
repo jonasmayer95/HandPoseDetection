@@ -112,7 +112,7 @@ SIG-ALTERNATE.CLS. Supported by ACM.}}
 % without further effort on your part as the last section in
 % the body of your article BEFORE References or any Appendices.
 
-\numberofauthors{1} %  in this sample file, there are a *total*
+\numberofauthors{2} %  in this sample file, there are a *total*
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
 %
@@ -129,14 +129,20 @@ SIG-ALTERNATE.CLS. Supported by ACM.}}
 %
 % 1st. author
 \alignauthor
-Jonas A. Mayer
-			%\titlenote{Dr.~Trovato insisted his name be first.}
-	     \\
+Jonas A. Mayer\\
        \affaddr{Technische Universit\"at M\"unchen}\\
        \affaddr{Arcisstra\ss e 21}\\
        \affaddr{Munich, Germany}\\
        \email{ga97qic@mytum.de}
-}
+
+
+\alignauthor
+Nicholas Katzakis\\
+       \affaddr{Technische Universit\"at M\"unchen}\\
+       \affaddr{Arcisstra\ss e 21}\\
+       \affaddr{Munich, Germany}\\
+       \email{niko@tum.de}
+			}
 % There's nothing stopping you putting the seventh, eighth, etc.
 % author on the opening page (as the 'third row') but we ask,
 % for aesthetic reasons that you place these 'additional authors'
@@ -192,34 +198,49 @@ When creating a interface for hand posture computer interaction, comfort and dis
 For a traditional desktop computer environment, there exist a number of different standardized interfaces for human-computer interaction using a mouse, keyboard and monitor, that allow the user to 
 complete a variety of tasks effectively and efficiently by providing sets of shortcuts and macros. 
 
-However, in contexts as virtual reality, augmented reality and robotics traditional input methods are often not suitable for the tasks environment and create a need for new interaction techniques such as speech, gesture and posture interaction. 
+However, in contexts such as virtual reality, augmented reality and robotics traditional input methods are often not suitable for the tasks environment and create the need for new interaction techniques such as speech, gesture and posture interaction. 
 
-In a human-robot interaction context, both speech as well as hand gestures and postures are common concepts. While speech interaction is often struggling with its limited powerfulness for spatial navigation and the need for the user to talk constantly, the main challenge for gestures and postures has been fighting physical forces that cause fatigue or discomfort and therefore limiting user experience as well as precision and performance as indicated by Short \& Cauraugh \cite{short1999precision}. Even though comfort and discomfort are therefore often taken into consideration by designers, there still only exist very few quantitative methods for their evaluation, as pointed out by Naddeo, Cappetti \& D'Oria 
-\cite{naddeo2015proposal}.
+In a human-robot interaction context, both speech as well as hand gestures and postures are common concepts. While speech interaction is often struggling with its limited powerfulness for spatial navigation and the need for the user to talk constantly, the main challenge for gestures and postures has been fighting physical forces that cause fatigue or discomfort and therefore limiting user experience as well as precision and performance as indicated by Short et al. \cite{short1999precision}. Even though comfort and discomfort are often taken into consideration by designers, there still only exist very few quantitative methods for their evaluation\cite{naddeo2015proposal}.
 
-This paper is meant to support the creation and evaluation of hand posture catalogs for effective and efficient human-robot interaction by suggesting a hand posture comfort/discomfort metric, that allows for quick objective hand posture evaluation and demonstrating its effect on user performance. For this, state of the art comfort/discomfort models were applied to current hand anatomy and ergonomics knowledge to create models for hand comfort and discomfort. Using a large data set, gained in a user study, a machine learning algorithm generated a comfort/discomfort metric based on our model, which was verified in yet another user study. Finally another user study was used to show the the impact of comfort and discomfort, measured by our metric on performance in a pointing task.
+This work is meant to support the creation and evaluation of a hand posture catalog for effective and efficient human-robot interaction by proposing a hand posture comfort/discomfort metric, that allows for quick objective hand posture evaluation and demonstrating its effect on user performance. State of the art comfort/discomfort models were applied to current hand anatomy and ergonomics knowledge to create models for hand comfort and discomfort. Using a data set, collected in a user study, a machine learning algorithm we used to generate a comfort/discomfort metric based on our model, which was verified in yet another user study. Finally another user study was used to show the the impact of comfort and discomfort, measured by our metric on performance in a pointing task.
 
 We will first explain the theoretical basis of our comfort/discomfort model, before deriving our concrete metric from it. After that we will explain the methodology used for optimizing and validating the metric as well as for showing the relevance in the example of target shooting. Finally, the results will be analyzed and discussed, before evaluating and putting our findings in a greater context.
 
 
-\section{Theoretical Foundation}
-The structure of the metric proposed in this paper is based on the comfort and discomfort models described by Vink \& Hallbeck \cite{vink2012editorial}, defining comfort as a "pleasant state or relaxed feeling of a human being" mostly caused by subjective impressions and expectations and discomfort as "an unpleasant state of the human body" occurring from physical stress. Using this information and knowledge of the human hand anatomy, we broke down human hand comfort and discomfort in an non-resting hand into the following four components:
+\section{Hand Posture Comfort/Discomfort Metric}
+The structure of the metric proposed is based on current ergonomics models, defining comfort as a "pleasant state or relaxed feeling of a human being" mostly caused by subjective impressions and expectations and discomfort as "an unpleasant state of the human body" occurring from physical stress.\cite{vink2012editorial} Using this information and knowledge of the human hand anatomy, we broke down human hand comfort and discomfort in an non-resting hand into the following four components, that will be explained in the following sections: 
+
+\begin{itemize}
+	\item Deviation from Range of Rest Posture (RRP)
+	\item Inter Finger Angles (IFA)
+	\item Finger Hyperextension (HE)
+	\item Finger Abduction (FA)
+\end{itemize}
+
+For the computation of our metric we used an angle based hand model \cite{su1994logical}(Figure (add figure)), as it makes reading of joint angles pretty trivial. Instead of the full 23 degrees of freedom, described by LaViola \cite{laviola1999survey}, we used that simplified model that neglects the MCC (metacarpocarpal joint) (Figure Z) of the fourth and fifth digit. This was for one because of the \textbf{Leap} using the same model for detecting hands and for another due to the MCC not being noticeable to influence hand postures at all.
+
+The 21 DOF angle based hand model was futhermore simply handled as a vector of 21 \texttt{float}s. 
 
 \subsection{Deviation from Range of Rest Posture}
 
 %rest on supports
-The \textbf{Range of Rest Posture (RRP)} as described in Apostolico et al. \cite{apostolico2014postural} is a range of angles for an articular joint, where the joint "can be considered statistically in rest", caused by muscle relaxation and therefore creating a maximum of comfort in this particular joint. In our case, we considered the human hand to have one RRP for each finger joint in a non-resting position with the palm facing downwards, resulting in a range of relaxed hand postures where the comfort is maximized. 
+The \textbf{Range of Rest Posture (RRP)} is a range of angles for an articular joint\footnote{The word "articular joint" refers to the joints in the human body.}, where the joint "can be considered statistically in rest", caused by muscle relaxation and therefore creating a maximum of comfort in this particular joint.\cite{apostolico2014postural} In our case, we considered the human hand to have one RRP for each finger joint in a non-resting position with the palm facing downwards (Figure Y), resulting in a range of relaxed hand postures where the comfort is maximized. 
 
-As shown by Naddeo et al.\cite{naddeo2015proposal}, perceived comfort decreases for articular joints when deviating from the RRP and minimizes at the bounds of the natural range of motion. Applying this to the whole hand leads to the conclusion, that hand posture comfort can be evaluated by adding up the individual joint angle distances to the RRP.
+Perceived comfort decreases for articular joints when deviating from the RRP and minimizes at the bounds of the natural range of motion. Applying this to the whole hand leads to the conclusion, that hand posture comfort can be evaluated by adding up the individual joint angle distances to the RRP. \cite{naddeo2015proposal}
+
+In our implementation the RRP was represented by a set of 50 relaxed hand postures recorded with the Leap. The metric RRP(x) was simply computed by calculating the minimum euclidean distance of a Hand x to the RRP set, initially for the whole hand. 
+For our metric we supposed the comfort to linearly decrease with distance to the RRP for simplicity.
 
 \subsection{The Inter Finger Angles}
 
 %hand anatomy
 As it can be seen in Figure \ref{fig:handAnatomy}
 the hand has a very compact and highly connected system of muscles and tendons that limits the individual movement of fingers.
-The fingers, excluding the thumb, share \textsl{most} of their flexor and extendor muscles, however minor individual flexion and extension of adjacent fingers is still possible due to finger tendons originating from different areas of the muscles. In the case of the \textit{Extensor digitorum communis} the finger tendons are even interconnected on the back of the hand. 
+The fingers, excluding the thumb, share \textsl{most} of their flexor and extendor muscles, however minor individual flexion and extension of adjacent fingers is still possible due to finger tendons originating from different areas of the muscles. In the case of the EDC (\textit{Extensor digitorum communis}) (Figure K) the finger tendons are even interconnected on the back of the hand. 
 
-In conclusion of this, hand postures with high bending differences of adjacent fingers, again excluding the thumb, should lead to stress of tendons and muscles, as well as cognitive stress, minimizing comfort and increasing perceived discomfort.
+In conclusion of this, hand postures with high bending differences of adjacent fingers, excluding the thumb, should lead to stress of tendons and muscles, as well as cognitive stress, minimizing comfort and increasing perceived discomfort.
+
+The \textbf{inter finger angle component} IFA(x) was computed by first summing up the flexion/extension angles of MCP (\textit{metacarpophalangeal}), PIP(\textit{proximal interphalangeal}) and DIP (\textit{distal interphalangeal}) joints (Figure K) for each finger and adding up the differences in total bending of adjacent fingers (3 values). In order to compensate anatomical differences of the fingers, mostly affecting the ring finger, we added a ring finger bonus consisting of the difference of the ring finger's bending to both of his neighbors multiplied with an estimated weighting coefficient. The importance of this differentiation can be seen in when extending a the index finger from a closed fist as opposed to extending the ring finger. 
 
 \begin{figure}
 \centering
@@ -232,7 +253,10 @@ In conclusion of this, hand postures with high bending differences of adjacent f
 
 \subsection{Finger Hyperextension}
 
-As highlighted by LaViola \cite{laviola1999survey} \textbf{hyperextension}, as seen in Figure \ref{fig:hyperabduction}, "\textit{puts more strain on the }[metacarpophalangeal] \textit{joints and tendons than the hand is accustomed to}" \cite{laviola1999survey} and therefore causes discomfort. Even though this might seem redundant to the deviation from RRP on first sight, hyperextension takes a special position as it causes considerably more discomfort, compared to a full flexion of the fingers and compared to what the deviation from RRP would suggest.
+\textbf{Hyperextension}, as seen in Figure \ref{fig:hyperabduction}, "\textit{puts more strain on the }[MCP] \textit{joints and tendons than the hand is accustomed to}" \cite{laviola1999survey} and therefore causes discomfort.\cite{laviola1999survey}
+Even though this might seem redundant to the deviation from RRP on first sight, hyperextension takes a special position as it causes considerably more discomfort, compared to a full flexion of the fingers and compared to what the deviation from RRP would suggest.
+
+For the \textbf{hyper extension} component HE(x) we simply summed up the the flexion/extension angle of the fingers MCP that had a negative angle and were therefore hyperextended.
 
 \begin{figure}
 \centering
@@ -246,43 +270,38 @@ As highlighted by LaViola \cite{laviola1999survey} \textbf{hyperextension}, as s
 \subsection{Finger Abduction}
 
 Finger \textbf{abduction}, as seen in Figure \ref{fig:hyperabduction}, 
-also causes stress on the metacarpophalangeal joint, the interrosseus muscles and the tendons involved.
+also causes stress on the MCP joint, the abduction muscles and tendons involved.
 
 It was therefore also considered, analogue to the hyperextension, due to full abduction creating substantially more discomfort than full adduction.
 
-
-\section{Hand Posture Comfort/Discomfort Metric}
-%Hand Model!! Angle Based Hand Model/ X-DOF
-For the computation of our metric we used an angle based hand model as described by Su \& Futura \cite{su1994logical}, as it made extraction of angles pretty trivial. Instead of the full 23 degrees of freedom, described by LaViola \cite{laviola1999survey}, we used that simplified model that neglects the metacarpocarpal joint of the fourth and fifth digit. This was for one due to the \textbf{Leap} using the same model for detecting hands and for another due to the metacarpocarpal joint not being noticeable to influence hand postures at all.
-
-The 21 DOF angle based hand model was futhermore simply handled as a vector of 21 \texttt{float}s. 
-%TODO: get a real explanation
-
-\subsection{Comfort Metric}
-
-The only component of our theoretical model to display comfort is the \textbf{deviation of the RRP}. Unlike Naddeo et al. \cite{naddeo2015proposal}, we supposed the comfort to linearly decrease with distance to the RRP for simplicity. 
-In our implementation the RRP was represented by a set of 50 relaxed hand postures recorded with the Leap. The metric was simply computed by calculating the minimum euclidean distance to the our RRP set, initially for the whole hand.
-The resulting comfort metric value would grow indirectly proportional to the expected perceived comfort, with a value of 0 describing the maximum amount of comfort. 
+We computed the \textbf{abduction} component FA(x) by adding up the absolute abduction/adduction angle for the finger, based on fact, that in our model a fully adducted finger has an abduction angle of 0.
 
 
-\subsection{Discomfort Metric}
+\subsection{Naive Metric}
 
-Our discomfort metric consists of three components: inter finger angles, hyper extension and abduction. These components were computed individually, multiplied by guessed weight coefficients and finally added. Note that our discomfort metric did not consider the posture of the thumb.
 
-The \textbf{inter finger angle component} was computed by first summing up the flexion/extension angles of \textit{metacarpophalangeal} (MCP), \textit{proximal interphalangeal} (PIP) and \textit{distal interphalangeal} (DIP) joints for each finger and adding up the differences in total bending of adjacent fingers (3 values). In order to compensate anatomical differences of the fingers, mostly affecting the ring finger, we added a ring finger bonus consisting of the difference of the ring finger's bending to both of his neighbors multiplied with an estimated weighting coefficient. The importance of this differentiation can be seen in when extending a the index finger from a closed fist as opposed to extending the ring finger. 
-
-For the \textbf{hyper extension} component we simply summed up the the flexion/extension angle of the fingers MCP that had a negative angle and were therefore hyperextended.
-
-We computed the \textbf{abduction} component by adding up the absolute abduction/adduction angle for the finger, based on fact, that in our model a fully adducted finger has an abduction angle of 0.
+Based on the model mentioned above, we the assigned the components to either comfort or discomfort. We then designed our metrics to be the added up component values \begin{math}(RRP, IFA, ...)\end{math} multiplied with weighting coefficients \begin{math}(c_{RRP}, c_{IFA}, ...)\end{math}, that were guessed for the naive metric.
+	\[
+	Comfort(x) = c_{RRP}\cdot RRP(x)
+	\]
+	\[
+	Discomfort(x) = c_{IFA}\cdot IFA(x)  +  c_{HE}\cdot HE(x)  +  c_{FA}\cdot FA(x)
+	\]
 
 The resulting discomfort metric value is expected to grow proportionally with the perceived discomfort, with a value of 0 indicating the minimum discomfort. 
 
-\subsection{Improvement of the Naive Metric}
+\subsection{Improved Metric}
 
 Even though the naive metrics contain the causes for comfort and discomfort, that we identified in hands and probably would already suffice to get a coarse overview over the comfort and discomfort of a hand posture, it still lacks deeper consideration for the anatomical differences between the fingers.
-The concept of improvement extends the thought process already used for hyperextension: instead of applying the metrics to the whole hand, have a look at the contributions from the individual fingers and weight them with importance coefficients. 
+The concept of improvement extends the thought process already used for inter finger angles: instead of applying the metrics to the whole hand, have a look at the contributions from the individual fingers and weight them with importance coefficients. 
 
-In our case we have 5 comfort values and a total of 12 discomfort values. However, the exact weighting coefficients are generally unknown and hard to guess. To solve this problem, we reduced it to a curve fitting problem with 17 unknowns and used data, obtained from user evaluations to find the correct coefficients.
+	\[
+	Discomfort = c_{IFAindex}\cdot IFA(index)  +  c_{IFAmiddle}\cdot...
+	\]
+
+In our case we have 5 comfort values and a total of 12 discomfort values. 
+
+However, the exact weighting coefficients are generally unknown and hard to guess. To solve this problem, we reduced it to a curve fitting problem with 17 unknowns and used data, obtained from user evaluations to find the correct coefficients.
 
 \section{Methodology}
 
