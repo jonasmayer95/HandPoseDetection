@@ -1,9 +1,33 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=latex 2016.6.19)  27 JUN 2016 20:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=latex 2016.6.19)  28 JUN 2016 19:35
 entering extended mode
 **./handComfort.tex
 (handComfort.tex
 LaTeX2e <2015/10/01> patch level 2
 Babel <3.9n> and hyphenation patterns for 69 languages loaded.
+
+! LaTeX Error: \usepackage before \documentclass.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.47 \usepackage{
+                 subcaption}
+\usepackage may only appear in the document preamble, i.e.,
+between \documentclass and \begin{document}.
+
+
+! LaTeX Error: \usepackage before \documentclass.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.48 \usepackage{
+                 subfig}
+\usepackage may only appear in the document preamble, i.e.,
+between \documentclass and \begin{document}.
+
 (sig-alternate-05-2015.cls ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
@@ -206,25 +230,25 @@ File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 ))) (handComfort.aux)
 \openout1 = `handComfort.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
 
 Runaway argument?
 { \alignauthor Jonas A. Mayer\\ \affaddr {Technische Universit\"at M\"\ETC.
 ! Paragraph ended before \author was complete.
 <to be read again> 
                    \par 
-l.137 
+l.138 
       
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -233,7 +257,7 @@ My plan is to forget the whole thing and hope for the best.
 ! Misplaced \crcr.
 \endtabular ->\crcr 
                     \egroup \egroup $\egroup 
-l.139 \alignauthor
+l.140 \alignauthor
                   
 I can't figure out why you would want to use a tab mark
 or \cr or \span just now. If something like a right brace
@@ -244,7 +268,7 @@ might try typing `S' now just to see what is salvageable.
 ! Too many }'s.
 \endtabular ->\crcr \egroup 
                             \egroup $\egroup 
-l.139 \alignauthor
+l.140 \alignauthor
                   
 You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
@@ -252,21 +276,21 @@ Such booboos are generally harmless, so keep going.
 ! Too many }'s.
 \endtabular ->\crcr \egroup \egroup 
                                     $\egroup 
-l.139 \alignauthor
+l.140 \alignauthor
                   
 You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 139.
+LaTeX Font Info:    Try loading font information for U+msa on input line 140.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 139.
+LaTeX Font Info:    Try loading font information for U+msb on input line 140.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 139.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 140.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -274,7 +298,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 ! Extra }, or forgotten $.
 <recently read> \egroup 
                         
-l.139 \alignauthor
+l.140 \alignauthor
                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -289,7 +313,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.139 \alignauthor
+l.140 \alignauthor
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -298,7 +322,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.139 \alignauthor
+l.140 \alignauthor
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -309,14 +333,14 @@ my insertion and my current dilemma will both disappear.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.139 \alignauthor
+l.140 \alignauthor
                   
 Things are pretty mixed up, but I think the worst is over.
 
 ! Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.154 \maketitle
+l.155 \maketitle
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -327,7 +351,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.154 \maketitle
+l.155 \maketitle
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -338,14 +362,14 @@ my insertion and my current dilemma will both disappear.
 ! Missing \cr inserted.
 <inserted text> 
                 \cr 
-l.154 \maketitle
+l.155 \maketitle
                 
 I'm guessing that you meant to end an alignment here.
 
 ! Missing { inserted.
 <inserted text> 
                 {
-l.154 \maketitle
+l.155 \maketitle
                 
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -357,7 +381,7 @@ LaTeX Warning: No \author given.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.154 \maketitle
+l.155 \maketitle
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -368,7 +392,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.154 \maketitle
+l.155 \maketitle
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -379,7 +403,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.154 \maketitle
+l.155 \maketitle
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -387,31 +411,31 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 154.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 155.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 154.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 155.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 154.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
 
-Overfull \hbox (1.95572pt too wide) in paragraph at lines 139--155
+Overfull \hbox (1.95572pt too wide) in paragraph at lines 140--156
 [][]$$[]
  []
 
 Excluding 'CCSXML' comment.
-LaTeX Font Info:    Try loading font information for OMS+aer on input line 189.
+LaTeX Font Info:    Try loading font information for OMS+aer on input line 190.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\omsaer.fd"
 File: omsaer.fd 1999/12/27
 )
 LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 189.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 190.
 
-Overfull \hbox (25.26869pt too wide) in paragraph at lines 210--210
+Overfull \hbox (25.26869pt too wide) in paragraph at lines 211--211
 []\secfnt HAND POS-TURE COM-FORT/DISCOMFORT
  []
 
@@ -419,30 +443,95 @@ Overfull \hbox (25.26869pt too wide) in paragraph at lines 210--210
 
 
 ]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 222.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 223.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-File: placeholder1.eps Graphic file (type eps)
- <placeholder1.eps>
-Overfull \hbox (1.12338pt too wide) in paragraph at lines 256--258
-\T1/aer/m/it/9 tomed to\T1/aer/m/n/9 " [2] and there-fore causes dis-com-fort.[2] Even though
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.227 \begin{subfigure}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+File: Handanatomy2.eps Graphic file (type eps)
+<Handanatomy2.eps>
+
+! LaTeX Error: \begin{figure} on input line 225 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.229 \end{subfigure}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.230 \begin{subfigure}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+File: handanatomy.eps Graphic file (type eps)
+<handanatomy.eps>
+
+! LaTeX Error: \begin{figure} on input line 225 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.232 \end{subfigure}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+<recently read> \textcolor 
+                           
+l.240 ...extbf{\textcolor[rgb]{1,0,0}{(Figure Y)}}
+                                                  , resulting in a range of ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+File: abduction.eps Graphic file (type eps)
+<abduction.eps>
+Overfull \hbox (3.41814pt too wide) in paragraph at lines 269--271
+\T1/aer/m/n/9 [2] and there-fore causes dis-com-fort.[2] Even though this might
  []
 
-
-Overfull \hbox (1.14795pt too wide) in paragraph at lines 256--258
-\T1/aer/m/n/9 first sight, hy-per-ex-ten-sion takes a spe-cial po-si-tion as it causes
- []
-
-File: placeholder1.eps Graphic file (type eps)
-<placeholder1.eps> [2]
+[2]
 File: TrainingDataImproved.eps Graphic file (type eps)
  <TrainingDataImproved.eps>
 File: TestDataImproved.eps Graphic file (type eps)
  <TestDataImproved.eps>
 File: TestDataNaive.eps Graphic file (type eps)
  <TestDataNaive.eps>
-Overfull \hbox (11.50743pt too wide) in paragraph at lines 362--363
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (11.50743pt too wide) in paragraph at lines 366--367
 [][]\T1/aer/m/n/9 For one, the par-tic-i-pants prob-a-bly had dif-fer-ences in anatomy
  []
 
@@ -452,16 +541,19 @@ File: targetShootingImproved.eps Graphic file (type eps)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(handComfort.bbl) [4] [5
+
+Underfull \vbox (badness 1400) has occurred while \output is active []
+
+ (handComfort.bbl [4]) [5
 
 ] (handComfort.aux) ) 
 Here is how much of TeX's memory you used:
- 2311 strings out of 493635
- 27661 string characters out of 3141340
+ 2318 strings out of 493635
+ 27752 string characters out of 3141340
  99023 words of memory out of 3000000
- 5638 multiletter control sequences out of 15000+200000
+ 5643 multiletter control sequences out of 15000+200000
  47963 words of font info for 63 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  39i,12n,34p,978b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on handComfort.dvi (5 pages, 31216 bytes).
+Output written on handComfort.dvi (5 pages, 30956 bytes).
