@@ -113,6 +113,9 @@ SIG-ALTERNATE.CLS. Supported by ACM.}}
 % without further effort on your part as the last section in
 % the body of your article BEFORE References or any Appendices.
 
+
+
+
 \numberofauthors{2} %  in this sample file, there are a *total*
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
@@ -130,20 +133,19 @@ SIG-ALTERNATE.CLS. Supported by ACM.}}
 %
 % 1st. author
 \alignauthor
-Jonas A. Mayer\\
-       \affaddr{Technische Universit\"at M\"unchen}\\
+Jonas Mayer\\
+       \affaddr{Technical University of Munich}\\
        \affaddr{Arcisstra\ss e 21}\\
        \affaddr{Munich, Germany}\\
        \email{ga97qic@mytum.de}
-
-
+% 2nd. author
 \alignauthor
 Nicholas Katzakis\\
-       \affaddr{Technische Universit\"at M\"unchen}\\
+       \affaddr{Technical University of Munich}\\
        \affaddr{Arcisstra\ss e 21}\\
        \affaddr{Munich, Germany}\\
        \email{niko@tum.de}
-			}
+}
 % There's nothing stopping you putting the seventh, eighth, etc.
 % author on the opening page (as the 'third row') but we ask,
 % for aesthetic reasons that you place these 'additional authors'
@@ -237,11 +239,11 @@ The 21 DOF angle based hand model was futhermore simply handled as a vector of 2
 \subsection{Deviation from Range of Rest Posture}
 
 %rest on supports
-The \textbf{Range of Rest Posture (RRP)} is a range of angles for an articular joint\footnote{The word "articular joint" refers to the joints in the human body.}, where the joint "can be considered statistically in rest", caused by muscle relaxation and therefore creating a maximum of comfort in this particular joint.\cite{apostolico2014postural} In our case, we considered the human hand to have one RRP for each finger joint in a non-resting position with the palm facing downwards \textbf{\textcolor[rgb]{1,0,0}{(Figure Y)}}, resulting in a range of relaxed hand postures where the comfort is maximized. 
+The \textbf{Range of Rest Posture (RRP)} is a range of angles for an articular joint\footnote{The word "articular joint" refers to the joints in the human body.}, where the joint "can be considered statistically in rest", caused by muscle relaxation and therefore creating a maximum of comfort in this particular joint.\cite{apostolico2014postural} In our case, we considered the human hand to have one RRP for each finger joint in a non-resting position with the palm facing downwards, resulting in a range of relaxed hand postures where the comfort is maximized. 
 
 Perceived comfort decreases for articular joints when deviating from the RRP and minimizes at the bounds of the natural range of motion. Applying this to the whole hand leads to the conclusion, that hand posture comfort can be evaluated by adding up the individual joint angle distances to the RRP. \cite{naddeo2015proposal}
 
-In our implementation the RRP was represented by a set of 50 relaxed hand postures recorded with the Leap. The metric RRP(x) was simply computed by calculating the minimum euclidean distance of a Hand x to the RRP set, initially for the whole hand. 
+In our implementation the RRP was represented by a set of 50 relaxed hand postures recorded with the Leap. The metric \textbf{RRP(x)} was simply computed by calculating the minimum euclidean distance of a Hand x to the RRP set, initially for the whole hand. 
 For our metric we supposed the comfort to linearly decrease with distance to the RRP for simplicity.
 
 \subsection{The Inter Finger Angles}
@@ -253,11 +255,11 @@ The fingers, excluding the thumb, share \textsl{most} of their flexor and extend
 
 In conclusion of this, hand postures with high bending differences of adjacent fingers, excluding the thumb, should lead to stress of tendons and muscles, as well as cognitive stress, minimizing comfort and increasing perceived discomfort.
 
-The \textbf{inter finger angle component} IFA(x) was computed by first summing up the flexion/extension angles of MCP (\textit{metacarpophalangeal}), PIP(\textit{proximal interphalangeal}) and DIP (\textit{distal interphalangeal}) joints (Figure \ref{fig:handAnatomyTotal}) for each finger and adding up the differences in total bending of adjacent fingers (3 values). In order to compensate anatomical differences of the fingers, mostly affecting the ring finger, we added a ring finger bonus consisting of the difference of the ring finger's bending to both of his neighbors multiplied with an estimated weighting coefficient. The importance of this differentiation can be seen in when extending a the index finger from a closed fist as opposed to extending the ring finger. 
+The \textbf{inter finger angle component} \textbf{IFA(x)} was computed by first summing up the flexion/extension angles of MCP (\textit{metacarpophalangeal}), PIP(\textit{proximal interphalangeal}) and DIP (\textit{distal interphalangeal}) joints (Figure \ref{fig:handAnatomyTotal}) for each finger and adding up the differences in total bending of adjacent fingers (3 values). In order to compensate anatomical differences of the fingers, mostly affecting the ring finger, we added a ring finger bonus consisting of the difference of the ring finger's bending to both of his neighbors multiplied with an estimated weighting coefficient. The importance of this differentiation can be seen in when extending a the index finger from a closed fist as opposed to extending the ring finger. 
 
 \begin{figure}[b]
 \centering
-\includegraphics[width=8.45cm]{abduction}
+\includegraphics[width=7cm]{abduction}
 \vspace{-20pt}
 \caption{Hyperextension and Abduction}
 \label{fig:hyperabduction}
@@ -269,7 +271,7 @@ The \textbf{inter finger angle component} IFA(x) was computed by first summing u
 \textbf{Hyperextension} (Figure \ref{fig:hyperabduction}) "\textit{puts more strain on the }[MCP] \textit{joints and tendons than the hand is accustomed to}" \cite{laviola1999survey} and therefore causes discomfort.\cite{laviola1999survey}
 Even though this might seem redundant to the deviation from RRP on first sight, hyperextension takes a special position as it causes considerably more discomfort, compared to a full flexion of the fingers and compared to what the deviation from RRP would suggest.
 
-For the \textbf{hyper extension} component HE(x) we simply summed up the the flexion/extension angle of the fingers MCP that had a negative angle and were therefore hyperextended.
+For the \textbf{hyper extension} component \textbf{HE(x)} we simply summed up the the flexion/extension angle of the fingers MCP that had a negative angle and were therefore hyperextended.
 
 \subsection{Finger Abduction}
 
@@ -278,13 +280,13 @@ also causes stress on the MCP joint, the abduction muscles and tendons involved.
 
 It was therefore also considered, analogue to the hyperextension, due to full abduction creating substantially more discomfort than full adduction.
 
-We computed the \textbf{abduction} component FA(x) by adding up the absolute abduction/adduction angle for the finger, based on fact, that in our model a fully adducted finger has an abduction angle of 0.
+We computed the \textbf{abduction} component \textbf{FA(x)} by adding up the absolute abduction/adduction angle for the finger, based on fact, that in our model a fully adducted finger has an abduction angle of 0.
 
 
 \subsection{Naive Metric}
 
 
-Based on the model mentioned above, we the assigned the components to either comfort or discomfort. We then designed our metrics to be the added up component values \begin{math}(RRP, IFA, ...)\end{math} multiplied with weighting coefficients \begin{math}(c_{RRP(x)}, c_{IFA(x)}, ...)\end{math}, that were guessed for the naive metric.
+Based on the model mentioned above\cite{vink2012editorial}, we the assigned the components to either comfort or discomfort. We then designed our metrics to be the added up component values \begin{math}(RRP, IFA, ...)\end{math} multiplied with weighting coefficients \begin{math}(c_{RRP(x)}, c_{IFA(x)}, ...)\end{math}, that were guessed for the naive metric.
 	\[
 	Comfort(x) = c_{RRP}\cdot RRP(x)
 	\]
@@ -292,11 +294,12 @@ Based on the model mentioned above, we the assigned the components to either com
 	Discomfort(x) = c_{IFA}\cdot IFA(x)  +  c_{HE}\cdot HE(x)  +  c_{FA}\cdot FA(x)
 	\]
 
-The resulting discomfort metric value is expected to grow proportionally with the perceived discomfort, with a value of 0 indicating the minimum discomfort. 
+The resulting metrics are expected to correlate with user perception, having the value 0 as maximum comfort and minimum discomfort respectively.
+
 
 \subsection{Improved Metric}
 
-Even though the naive metrics contain the causes for comfort and discomfort, that we identified in hands and probably would already suffice to get a coarse overview over the comfort and discomfort of a hand posture, it still lacks deeper consideration for the anatomical differences between the fingers.
+Even though the naive metrics contain the causes for comfort and discomfort, it still lacks deeper consideration for the anatomical differences between the fingers.
 The concept of improvement extends the thought process already used for inter finger angles: instead of applying the metrics to the whole hand, have a look at the contributions from the individual fingers and weight them with importance coefficients. 
 
 	\[
@@ -369,7 +372,7 @@ That our improved metric is a good extrapolation of the training data, can be se
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=8.45cm]{targetShootingImproved}
+\includegraphics[width=8.45cm]{TargetShooting}
 \vspace{-20pt}
 \caption{Correlation between Improved Metric Value and Total Time in Target Shooting}
 \label{fig:targetShooting}
