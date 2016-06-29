@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=latex 2016.6.19)  21 JUN 2016 18:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=latex 2016.6.19)  29 JUN 2016 17:14
 entering extended mode
 **./sig-alternate-sample.tex
 (sig-alternate-sample.tex
@@ -218,91 +218,132 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
 LaTeX Font Info:    ... okay on input line 51.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
 LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Try loading font information for U+msa on input line 163.
+LaTeX Font Info:    Try loading font information for U+msa on input line 184.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 163.
+LaTeX Font Info:    Try loading font information for U+msb on input line 184.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 163.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 184.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 163.
+Overfull \hbox (10.71048pt too wide) in paragraph at lines 184--184
+ []\eaddfnt lleipuner@researchlabs.org| 
+ []
 
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 184.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 163.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 184.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 163.
-LaTeX Font Info:    Try loading font information for T1+aett on input line 164.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 184.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 185.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 ) Excluding 'CCSXML' comment.
+LaTeX Font Info:    Try loading font information for OMS+aer on input line 254.
 
-! LaTeX Error: \begin{document} ended by \end{CCSXML}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.188 \end{CCSXML}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.188 \end{CCSXML}
-                  
-Things are pretty mixed up, but I think the worst is over.
-
-LaTeX Font Info:    Try loading font information for OMS+aer on input line 200.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\omsaer.fd"
 File: omsaer.fd 1999/12/27
 )
 LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 200.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 254.
+ [1
 
-Overfull \hbox (13.0641pt too wide) in paragraph at lines 221--222
-\T1/aer/m/n/9 pos-ture eval-u-a-tion. For this, state of the art com-fort/discomfort
+
+]
+Underfull \hbox (badness 1360) in paragraph at lines 293--293
+[][]\T1/aer/m/n/9 Two of these, the \T1/aett/m/n/9 \num-bero-fau-thors \T1/aer/m/n/9 and \T1/aett/m/n/9 \alig-nau-
  []
 
 
-Overfull \hbox (3.73346pt too wide) in paragraph at lines 221--222
-\T1/aer/m/n/9 mod-els were ap-plied to cur-rent hand anatomy and er-gonomics
+LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input line 349.
+
+
+LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input line 364.
+
+
+LaTeX Warning: Citation `bowman:reasoning' on page \thepage  undefined on input line 391.
+
+
+LaTeX Warning: Citation `clark:pct' on page \thepage  undefined on input line 391.
+
+
+LaTeX Warning: Citation `braams:babel' on page \thepage  undefined on input line 391.
+
+
+LaTeX Warning: Citation `herlihy:methodology' on page \thepage  undefined on input line 391.
+
+
+LaTeX Warning: Citation `clark:pct' on page \thepage  undefined on input line 392.
+
+
+LaTeX Warning: Citation `salas:calculus' on page \thepage  undefined on input line 393.
+
+
+LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input line 393.
+
+
+LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input line 399.
+
+
+LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input line 410.
+
+[2]
+File: fly.eps Graphic file (type eps)
+ <fly.eps>
+File: fly.eps Graphic file (type eps)
+ <fly.eps>
+
+LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
+(Font)              using `T1/aett/m/n' instead on input line 495.
+
+File: flies.eps Graphic file (type eps)
+<flies.eps>
+File: rosette.eps Graphic file (type eps)
+ <rosette.eps>
+\c@theorem=\count110
+\c@definition=\count111
+
+Overfull \hbox (15.60826pt too wide) detected at line 572
+\OML/cmm/m/it/9 l \OT1/cmr/m/n/9 = [] \OML/cmm/m/it/9 f\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 ) = [] [] = [] \O
+ML/cmm/m/it/9 g\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 ) \OMS/cmsy/m/n/9  [] [] \OT1/cmr/m/n/9 = 0 \OMS/cmsy/m/
+n/9  \OML/cmm/m/it/9 L \OT1/cmr/m/n/9 = 0\OML/cmm/m/it/9 ;
  []
 
 
-Overfull \hbox (52.8917pt too wide) in paragraph at lines 238--238
-[]\secfnt THE HAND POS-TURE COM-FORT/DISCOMFORT
+LaTeX Warning: Citation `salas:calculus' on page \thepage  undefined on input line 582.
+
+[3] (sig-alternate-sample.bbl
+Overfull \hbox (21.02989pt too wide) in paragraph at lines 1--1
+\T1/aer/m/n/9 (The Kumquat Con-sor-tium, email: \T1/aett/bx/n/9 jp-kumquat@consortium.net\T1/aer/m/n/9 ). 
  []
 
-[1
+) [4] [5
 
+] (sig-alternate-sample.aux)
 
-] (sig-alternate-sample.bbl) [2
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-] (sig-alternate-sample.aux) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 2285 strings out of 493635
- 27304 string characters out of 3141340
- 96023 words of memory out of 3000000
- 5618 multiletter control sequences out of 15000+200000
- 48217 words of font info for 63 fonts, out of 3000000 for 9000
+ 2317 strings out of 493635
+ 27660 string characters out of 3141340
+ 100023 words of memory out of 3000000
+ 5645 multiletter control sequences out of 15000+200000
+ 49877 words of font info for 64 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 39i,12n,34p,624b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,12n,34p,647b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sig-alternate-sample.dvi (2 pages, 8044 bytes).
+Output written on sig-alternate-sample.dvi (5 pages, 34180 bytes).
