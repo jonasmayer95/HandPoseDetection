@@ -49,6 +49,14 @@
 \documentclass{sig-alternate-05-2015}
 
 
+\newlength{\blackoutwidth}
+\newcommand{\blackout}[1]
+{%necessary comment
+  \settowidth{\blackoutwidth}{#1}%necessary comment
+  \rule[-0.3em]{\blackoutwidth}{1.125em}%necessary comment
+}
+
+
 \begin{document}
 
 % Copyright
@@ -133,18 +141,18 @@ SIG-ALTERNATE.CLS. Supported by ACM.}}
 %
 % 1st. author
 \alignauthor
-Jonas Mayer\\
-       \affaddr{Technical University of Munich}\\
-       \affaddr{Arcisstra\ss e 21}\\
-       \affaddr{Munich, Germany}\\
-       \email{ga97qic@mytum.de}
+\blackout{Jonas Mayer}\\
+       \affaddr{\blackout{Technical University of Munich}}\\
+       \affaddr{\blackout{Arcisstra\ss e 21}}\\
+       \affaddr{\blackout{Munich, Germany}}\\
+       \email{\blackout{ga97qic@mytum.de}}
 % 2nd. author
 \alignauthor
-Nicholas Katzakis\\
-       \affaddr{Technical University of Munich}\\
-       \affaddr{Arcisstra\ss e 21}\\
-       \affaddr{Munich, Germany}\\
-       \email{niko@tum.de}
+\blackout{Nicholas Katzakis}\\
+       \affaddr{\blackout{Technical University of Munich}}\\
+       \affaddr{\blackout{Arcisstra\ss e 21}}\\
+       \affaddr{\blackout{Munich, Germany}}\\
+       \email{\blackout{niko@tum.de}}
 }
 % There's nothing stopping you putting the seventh, eighth, etc.
 % author on the opening page (as the 'third row') but we ask,
@@ -314,11 +322,20 @@ However, the exact weighting coefficients are generally unknown and hard to gues
 
 For the collection of data, we created a test environment using \textbf{Unity 3D} with a total of two tasks. In the fist task, the user would be shown a randomly generated hand posture on screen, using our naive metric to ensure a somehow homogenous distribution of expected comfort and discomfort. The participant was asked to mimic the hand posture with his or her dominant hand and afterward rate the hand. As we did not expect the subjects to be familiar with current comfort and discomfort models, we asked them to rate hand postures on intuitive scale ranging from 10 (very comfortable) to 0 (very uncomfortable). The user was told to rate the hand posture with 0 points if he or she was unable to reproduce it. Before the actual evaluation the users were shown two hand postures to get a reference. The first hand posture was a completely relaxed hand, the second hand posture was a randomly generated hand, that was impossible to mimic.
 
-In the second task, the participant was again given a randomly generated hand posture. Again the user had to mimic the hand posture with his dominant hand and give it a rating from 0 to 10. After confirming his or her rating, the subject had to perform a target shooting task. Therefore we tracked the back of the participant's hand using an \textbf{ART Hand Tracking Device}, giving the user a minimalistic representation of their palm position and indicating the forward direction of their hand with a rendered ray. The seated subject, with the elbow rested on a table, had to use this ray to aim down a total of 12 targets, appearing in random order, and shoot them, by pressing a button. By recording the hand posture before the trial using a Leap, and checking the hand posture during the test, we made sure that the user would not brake the posture. 
+In the second task, the participant was again given a randomly generated hand posture. Again the user had to mimic the hand posture with his dominant hand and give it a rating from 0 to 10. After confirming his or her rating, the subject had to perform a target shooting task (Figure \ref{fig:participant}). Therefore we tracked the back of the participant's hand using an \textbf{ART Hand Tracking Device}, giving the user a minimalistic representation of their hand position and indicating the forward direction of their hand with a rendered ray. The seated subject, with the elbow rested on a table, had to use this ray to aim down a total of 12 targets, appearing in random order, and shoot them, by pressing a button. By recording the hand posture before the trial using a Leap, and checking the hand posture during the test, we made sure that the user would not brake the posture. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=8.45cm]{Participant}
+\vspace{-20pt}
+\caption{A Participant performing the Target Shooting}
+\label{fig:participant}
+\vspace{-10pt}
+\end{figure}
 
 As a metric for precision and performance, we measured the total time taken for the test. In order to have this affected by precision, we made the targets rather small and told the participants to perform the test as quickly as possible.
 
-We conducted a total of two user studies involving 21 voluntary participants, that gained us 250 and 60 data sets for the metric and one study gaining us 35 data sets for the target shooting. The participants were compensated with refreshments and/or sweets.
+We conducted a total of two user studies involving 21 voluntary participants, that gained us 250 and 60 data sets for the metric and one study gaining us 35 data sets for the target shooting.
 The subjects were were informed over the aim of the study as well as their specific objectives beforehand.
 
 As we expected both comfort and discomfort to affect performance and due to the users only giving us one value for comfort and discomfort, we decided to combine comfort and discomfort in our model as well. As the finding of the best fitting coefficients can be reduced to a curve fitting problem, we used the least squares algorithm on the first 250 data sets to fit the comfort/discomfort values to the user ratings. Afterward we tested our results against the remaining 60 data sets to check them for correctness. 
@@ -326,6 +343,20 @@ As we expected both comfort and discomfort to affect performance and due to the 
 \section{Results \& Discussion}
 
 The results of our study are shown in Figure \ref{fig:trainingData} to \ref{fig:targetShooting}, with the dots representing the discrete samples and the line showing the smoothed conditional mean, calculated by the \texttt{geom\_smooth} function in R with standard parameters. The respective Pearson correlation coefficients and p-values can be taken from Table \ref{tab:correlations}.
+
+
+\begin{table}[b]
+\centering
+\begin{tabular}{|c|c|c|} \hline
+\#Figure & Correlation & p-value\\ \hline
+\ref{fig:trainingData} & -0.6453242 & < 2.2e-16\\ \hline
+\ref{fig:testData} & -0.748993 & 5.89e-12\\ \hline
+\ref{fig:testDataNaive} & -0.6651999 & 6.73e-9\\ \hline
+\ref{fig:targetShooting} & 0.4236101 & 0.01122\\ \hline
+\end{tabular}
+\caption{Pearson Correlations and P-values}
+\label{tab:correlations}
+\end{table}
 
 \begin{figure}[b]
 \centering
@@ -351,24 +382,12 @@ The results of our study are shown in Figure \ref{fig:trainingData} to \ref{fig:
 \vspace{-20pt}
 \end{figure}
 
-\begin{table}[h]
-\centering
-\begin{tabular}{|c|c|c|} \hline
-\#Figure & Correlation & p-value\\ \hline
-\ref{fig:trainingData} & -0.6453242 & < 2.2e-16\\ \hline
-\ref{fig:testData} & -0.748993 & 5.89e-12\\ \hline
-\ref{fig:testDataNaive} & -0.6651999 & 6.73e-9\\ \hline
-\ref{fig:targetShooting} & 0.4236101 & 0.01122\\ \hline
-\end{tabular}
-\caption{Frequency of Special Characters}
-\label{tab:correlations}
-\end{table}
 
-Unsurprisingly, there was a correlation in the training data between the user rating and our improved metric generated by this data as it can be seen in Figure \ref{fig:trainingData}. However, the correlation found is still a bit from perfect having a value of approx \textsl{-0,65}. This, we  suspect  to have  multiple  reasons: 
+Unsurprisingly, there was a correlation in the training data between the user rating and our improved metric generated with this data as it can be seen in Figure \ref{fig:trainingData}. However, the correlation found is still a bit from perfect having a value of approx. \textsl{-0,65}. For this we suspect multiple reasons: 
 
-For one, the participants probably had differences in anatomy and set of mind, witch caused them, to subjectively rate comparable postures differently. For another, the subjects gave their rating after a relative short amount of time, therefore long time discomfort symptoms, like pain or cramping, might not have been experienced. Finally, the users could only rate the hands of continuous comfort/discomfort on a scale with 11 discrete steps, witch probably created some additional error.
+For one, the participants probably had differences in anatomy and set of mind, witch caused them, to subjectively rate comparable postures differently. For another, the subjects were supposed to give their rating after a relative short amount of time, therefore long time discomfort symptoms, like pain or cramping, might not have been experienced. Finally, the users could only rate the hands of continuous comfort/discomfort on a scale with 11 discrete steps, witch probably created some additional error.
 
-That our improved metric is a good extrapolation of the training data, can be seen when applying it to the test data, as it provides an even better correlation, probably due to the reduced sample count and still maintains a decent p-value. Compared to the naive metric, there is only minor difference on first sight. However, the improved metric reduced the standard error, resulting in a better correlation and p-value.
+Even though the metric was created using a limited set of training data, it yielded a comparable correlation when applied to the test data. This therefore indicates that the improved metric is a decent extrapolation of the training data. Compared to the naive metric, there is only minor difference on first sight. However, the improved metric reduced the standard error, resulting in a better correlation and p-value.
 
 \begin{figure}[h]
 \centering

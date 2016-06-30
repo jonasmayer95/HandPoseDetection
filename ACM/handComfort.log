@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=latex 2016.6.19)  29 JUN 2016 17:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=latex 2016.6.19)  30 JUN 2016 12:24
 entering extended mode
 **./handComfort.tex
 (handComfort.tex
@@ -227,57 +227,59 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 LaTeX Font Info:    Try loading font information for T1+aer on input line 105.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-))) (handComfort.aux)
+)))
+\blackoutwidth=\skip44
+ (handComfort.aux)
 \openout1 = `handComfort.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Try loading font information for U+msa on input line 157.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Try loading font information for U+msa on input line 165.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 157.
+LaTeX Font Info:    Try loading font information for U+msb on input line 165.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 157.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 165.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 157.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 165.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 157.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 165.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 157.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 165.
  Excluding 'CCSXML' comment.
-LaTeX Font Info:    Try loading font information for OMS+aer on input line 192.
+LaTeX Font Info:    Try loading font information for OMS+aer on input line 200.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\omsaer.fd"
 File: omsaer.fd 1999/12/27
 )
 LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 192.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 200.
 
-Overfull \hbox (25.26869pt too wide) in paragraph at lines 213--213
+Overfull \hbox (25.26869pt too wide) in paragraph at lines 221--221
 []\secfnt HAND POS-TURE COM-FORT/DISCOMFORT
  []
 
@@ -285,7 +287,7 @@ Overfull \hbox (25.26869pt too wide) in paragraph at lines 213--213
 
 
 ]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 225.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 233.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
@@ -296,7 +298,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.229 \begin{subfigure}
+l.237 \begin{subfigure}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -305,13 +307,13 @@ or  <return>  to continue without it.
 File: Handanatomy2.eps Graphic file (type eps)
 <Handanatomy2.eps>
 
-! LaTeX Error: \begin{figure} on input line 227 ended by \end{subfigure}.
+! LaTeX Error: \begin{figure} on input line 235 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.231 \end{subfigure}
+l.239 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -324,7 +326,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.232 \begin{subfigure}
+l.240 \begin{subfigure}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -333,13 +335,13 @@ or  <return>  to continue without it.
 File: handanatomy.eps Graphic file (type eps)
 <handanatomy.eps>
 
-! LaTeX Error: \begin{figure} on input line 227 ended by \end{subfigure}.
+! LaTeX Error: \begin{figure} on input line 235 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.234 \end{subfigure}
+l.242 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -347,37 +349,46 @@ or  <return>  to continue without it.
 
 File: abduction.eps Graphic file (type eps)
 <abduction.eps>
-Overfull \hbox (3.41814pt too wide) in paragraph at lines 271--273
+Overfull \hbox (3.41814pt too wide) in paragraph at lines 279--281
 \T1/aer/m/n/9 [2] and there-fore causes dis-com-fort.[2] Even though this might
  []
 
 
-Overfull \hbox (3.32912pt too wide) in paragraph at lines 283--284
+Overfull \hbox (3.32912pt too wide) in paragraph at lines 291--292
 []\T1/aer/m/n/9 We com-puted the \T1/aer/bx/n/9 ab-duc-tion \T1/aer/m/n/9 com-po-nent \T1/aer/bx/n/9 FA(x) \T1/aer/m/n/9
  by adding
  []
 
 [2]
+File: Participant.eps Graphic file (type eps)
+ <Participant.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 File: TrainingDataImproved.eps Graphic file (type eps)
- <TrainingDataImproved.eps>
+<TrainingDataImproved.eps>
 File: TestDataImproved.eps Graphic file (type eps)
  <TestDataImproved.eps>
 File: TestDataNaive.eps Graphic file (type eps)
  <TestDataNaive.eps>
-Overfull \hbox (11.50743pt too wide) in paragraph at lines 369--370
+Overfull \hbox (11.50743pt too wide) in paragraph at lines 388--389
 []\T1/aer/m/n/9 For one, the par-tic-i-pants prob-a-bly had dif-fer-ences in anatomy
  []
 
 [3]
 File: TargetShooting.eps Graphic file (type eps)
- <TargetShooting.eps> (handComfort.bbl) [4] (handComfort.aux) ) 
+ <TargetShooting.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(handComfort.bbl) [4] (handComfort.aux) ) 
 Here is how much of TeX's memory you used:
- 2317 strings out of 493635
- 27727 string characters out of 3141340
+ 2322 strings out of 493635
+ 27795 string characters out of 3141340
  98023 words of memory out of 3000000
- 5642 multiletter control sequences out of 15000+200000
+ 5646 multiletter control sequences out of 15000+200000
  47963 words of font info for 63 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 39i,10n,34p,978b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,11n,34p,978b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on handComfort.dvi (4 pages, 28888 bytes).
+Output written on handComfort.dvi (4 pages, 28800 bytes).
