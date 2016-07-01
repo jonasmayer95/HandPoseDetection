@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=latex 2016.6.19)  30 JUN 2016 22:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=latex 2016.6.19)  1 JUL 2016 13:28
 entering extended mode
 **./handComfort.tex
 (handComfort.tex
@@ -290,11 +290,6 @@ File: omsaer.fd 1999/12/27
 LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 208.
 
-Overfull \hbox (3.73346pt too wide) in paragraph at lines 222--223
-\T1/aer/m/n/9 mod-els were ap-plied to cur-rent hand anatomy and er-gonomics
- []
-
-
 Overfull \hbox (25.26869pt too wide) in paragraph at lines 227--227
 []\secfnt HAND POS-TURE COM-FORT/DISCOMFORT
  []
@@ -365,23 +360,20 @@ or  <return>  to continue without it.
 
 File: abduction.eps Graphic file (type eps)
 <abduction.eps>
-Overfull \hbox (3.32912pt too wide) in paragraph at lines 296--297
-[]\T1/aer/m/n/9 We com-puted the \T1/aer/bx/n/9 ab-duc-tion \T1/aer/m/n/9 com-po-nent \T1/aer/bx/n/9 FA(x) \T1/aer/m/n/9
- by adding
+Overfull \hbox (3.32912pt too wide) in paragraph at lines 295--296
+[][]\T1/aer/m/n/9 We com-puted the \T1/aer/bx/n/9 ab-duc-tion \T1/aer/m/n/9 com-po-nent \T1/aer/bx/n/9 FA(x) \T1/aer/m/n
+/9 by adding
  []
 
 [2]
 File: Participant.eps Graphic file (type eps)
  <Participant.eps>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 File: TrainingDataImproved.eps Graphic file (type eps)
-<TrainingDataImproved.eps>
+ <TrainingDataImproved.eps>
 ! Argument of \@caption has an extra }.
 <inserted text> 
                 \par 
-l.368 ...the \texttt{geom\_smooth} Function in R.}
+l.367 ...the \texttt{geom\_smooth} Function in R.}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -395,7 +387,7 @@ Runaway argument?
 ! Paragraph ended before \@caption was complete.
 <to be read again> 
                    \par 
-l.368 ...the \texttt{geom\_smooth} Function in R.}
+l.367 ...the \texttt{geom\_smooth} Function in R.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -403,13 +395,13 @@ My plan is to forget the whole thing and hope for the best.
 
 
 LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
-(Font)              using `T1/aett/m/n' instead on input line 368.
+(Font)              using `T1/aett/m/n' instead on input line 367.
 
 File: TestDataImproved.eps Graphic file (type eps)
 <TestDataImproved.eps>
 File: TestDataNaive.eps Graphic file (type eps)
  <TestDataNaive.eps>
-Overfull \hbox (16.4318pt too wide) in paragraph at lines 391--392
+Overfull \hbox (16.4318pt too wide) in paragraph at lines 390--391
 \T1/aer/m/n/9 users could only rate the hands of con-tin-u-ous com-fort/discomfort
  []
 
@@ -427,10 +419,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  2327 strings out of 493635
  27850 string characters out of 3141340
- 98023 words of memory out of 3000000
+ 99023 words of memory out of 3000000
  5650 multiletter control sequences out of 15000+200000
  47963 words of font info for 63 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 39i,10n,34p,1038b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,10n,34p,1041b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on handComfort.dvi (4 pages, 27848 bytes).
+Output written on handComfort.dvi (4 pages, 29796 bytes).
