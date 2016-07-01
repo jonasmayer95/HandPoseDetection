@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=latex 2016.6.19)  1 JUL 2016 13:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=latex 2016.6.19)  1 JUL 2016 23:24
 entering extended mode
 **./handComfort.tex
 (handComfort.tex
@@ -290,7 +290,12 @@ File: omsaer.fd 1999/12/27
 LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 208.
 
-Overfull \hbox (25.26869pt too wide) in paragraph at lines 227--227
+Overfull \hbox (17.22415pt too wide) in paragraph at lines 220--221
+[]\T1/aer/m/n/9 We first ex-plain the the-o-ret-i-cal ba-sis of our com-fort/discomfort
+ []
+
+
+Overfull \hbox (25.26869pt too wide) in paragraph at lines 223--223
 []\secfnt HAND POS-TURE COM-FORT/DISCOMFORT
  []
 
@@ -298,7 +303,7 @@ Overfull \hbox (25.26869pt too wide) in paragraph at lines 227--227
 
 
 ]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 239.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 235.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
@@ -309,7 +314,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.243 \begin{subfigure}
+l.239 \begin{subfigure}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -318,13 +323,13 @@ or  <return>  to continue without it.
 File: Handanatomy2.eps Graphic file (type eps)
 <Handanatomy2.eps>
 
-! LaTeX Error: \begin{figure} on input line 241 ended by \end{subfigure}.
+! LaTeX Error: \begin{figure} on input line 237 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.245 \end{subfigure}
+l.241 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -337,7 +342,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.246 \begin{subfigure}
+l.242 \begin{subfigure}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -346,13 +351,13 @@ or  <return>  to continue without it.
 File: handanatomy.eps Graphic file (type eps)
 <handanatomy.eps>
 
-! LaTeX Error: \begin{figure} on input line 241 ended by \end{subfigure}.
+! LaTeX Error: \begin{figure} on input line 237 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.248 \end{subfigure}
+l.244 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -360,7 +365,7 @@ or  <return>  to continue without it.
 
 File: abduction.eps Graphic file (type eps)
 <abduction.eps>
-Overfull \hbox (3.32912pt too wide) in paragraph at lines 295--296
+Overfull \hbox (3.32912pt too wide) in paragraph at lines 293--294
 []\T1/aer/m/n/9 We com-puted the \T1/aer/bx/n/9 ab-duc-tion \T1/aer/m/n/9 com-po-nent \T1/aer/bx/n/9 FA(x) \T1/aer/m/n/9
  by adding
  []
@@ -368,12 +373,26 @@ Overfull \hbox (3.32912pt too wide) in paragraph at lines 295--296
 [2]
 File: Participant.eps Graphic file (type eps)
  <Participant.eps>
+! Undefined control sequence.
+l.339 ...icipants, that resulted in 250 and 60 \hl
+                                                  {hand posture} data sets f...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (12.77829pt too wide) in paragraph at lines 341--342
+\T1/aer/m/n/9 al-go-rithm on the first 250 data sets to fit the com-fort/discomfort
+ []
+
 File: TrainingDataImproved.eps Graphic file (type eps)
- <TrainingDataImproved.eps>
+<TrainingDataImproved.eps>
 ! Argument of \@caption has an extra }.
 <inserted text> 
                 \par 
-l.367 ...the \texttt{geom\_smooth} Function in R.}
+l.363 ...the \texttt{geom\_smooth} Function in R.}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -387,7 +406,7 @@ Runaway argument?
 ! Paragraph ended before \@caption was complete.
 <to be read again> 
                    \par 
-l.367 ...the \texttt{geom\_smooth} Function in R.}
+l.363 ...the \texttt{geom\_smooth} Function in R.}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -395,17 +414,12 @@ My plan is to forget the whole thing and hope for the best.
 
 
 LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
-(Font)              using `T1/aett/m/n' instead on input line 367.
+(Font)              using `T1/aett/m/n' instead on input line 363.
 
 File: TestDataImproved.eps Graphic file (type eps)
 <TestDataImproved.eps>
 File: TestDataNaive.eps Graphic file (type eps)
- <TestDataNaive.eps>
-Overfull \hbox (16.4318pt too wide) in paragraph at lines 390--391
-\T1/aer/m/n/9 users could only rate the hands of con-tin-u-ous com-fort/discomfort
- []
-
-[3]
+ <TestDataNaive.eps> [3]
 File: TargetShooting.eps Graphic file (type eps)
  <TargetShooting.eps>
 
@@ -419,10 +433,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  2327 strings out of 493635
  27850 string characters out of 3141340
- 98023 words of memory out of 3000000
+ 99023 words of memory out of 3000000
  5650 multiletter control sequences out of 15000+200000
  47963 words of font info for 63 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 39i,10n,34p,1041b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,10n,34p,1086b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on handComfort.dvi (4 pages, 27888 bytes).
+Output written on handComfort.dvi (4 pages, 28204 bytes).
