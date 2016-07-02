@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=latex 2016.6.19)  1 JUL 2016 23:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=latex 2016.6.19)  2 JUL 2016 10:03
 entering extended mode
 **./handComfort.tex
 (handComfort.tex
@@ -294,11 +294,6 @@ Overfull \hbox (17.22415pt too wide) in paragraph at lines 220--221
 []\T1/aer/m/n/9 We first ex-plain the the-o-ret-i-cal ba-sis of our com-fort/discomfort
  []
 
-
-Overfull \hbox (25.26869pt too wide) in paragraph at lines 223--223
-[]\secfnt HAND POS-TURE COM-FORT/DISCOMFORT
- []
-
 [1
 
 
@@ -373,16 +368,6 @@ Overfull \hbox (3.32912pt too wide) in paragraph at lines 293--294
 [2]
 File: Participant.eps Graphic file (type eps)
  <Participant.eps>
-! Undefined control sequence.
-l.339 ...icipants, that resulted in 250 and 60 \hl
-                                                  {hand posture} data sets f...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
 Overfull \hbox (12.77829pt too wide) in paragraph at lines 341--342
 \T1/aer/m/n/9 al-go-rithm on the first 250 data sets to fit the com-fort/discomfort
  []
@@ -392,7 +377,7 @@ File: TrainingDataImproved.eps Graphic file (type eps)
 ! Argument of \@caption has an extra }.
 <inserted text> 
                 \par 
-l.363 ...the \texttt{geom\_smooth} Function in R.}
+l.351 ...relation: -0.6453242, p-value: < 2.2e-16}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -406,7 +391,7 @@ Runaway argument?
 ! Paragraph ended before \@caption was complete.
 <to be read again> 
                    \par 
-l.363 ...the \texttt{geom\_smooth} Function in R.}
+l.351 ...relation: -0.6453242, p-value: < 2.2e-16}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -414,16 +399,83 @@ My plan is to forget the whole thing and hope for the best.
 
 
 LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
-(Font)              using `T1/aett/m/n' instead on input line 363.
+(Font)              using `T1/aett/m/n' instead on input line 351.
 
 File: TestDataImproved.eps Graphic file (type eps)
 <TestDataImproved.eps>
+! Argument of \@caption has an extra }.
+<inserted text> 
+                \par 
+l.361 ...orrelation: -0.748993, p-value: 5.89e-12}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@captype {\def \reserved@a *{\nobreak \@xcentercr }\reserved@a }\def \ETC.
+! Paragraph ended before \@caption was complete.
+<to be read again> 
+                   \par 
+l.361 ...orrelation: -0.748993, p-value: 5.89e-12}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
 File: TestDataNaive.eps Graphic file (type eps)
- <TestDataNaive.eps> [3]
+<TestDataNaive.eps>
+! Argument of \@caption has an extra }.
+<inserted text> 
+                \par 
+l.368 ...orrelation: -0.6651999, p-value: 6.73e-9}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@captype {\def \reserved@a *{\nobreak \@xcentercr }\reserved@a }\def \ETC.
+! Paragraph ended before \@caption was complete.
+<to be read again> 
+                   \par 
+l.368 ...orrelation: -0.6651999, p-value: 6.73e-9}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+[3]
 File: TargetShooting.eps Graphic file (type eps)
  <TargetShooting.eps>
+! Argument of \@caption has an extra }.
+<inserted text> 
+                \par 
+l.384 ...orrelation: -0.6651999, p-value: 6.73e-9}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Runaway argument?
+\@captype {\def \reserved@a *{\nobreak \@xcentercr }\reserved@a }\def \ETC.
+! Paragraph ended before \@caption was complete.
+<to be read again> 
+                   \par 
+l.384 ...orrelation: -0.6651999, p-value: 6.73e-9}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
 
 (handComfort.bbl) [4] (handComfort.aux)
 
@@ -431,12 +483,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 2327 strings out of 493635
- 27850 string characters out of 3141340
- 99023 words of memory out of 3000000
- 5650 multiletter control sequences out of 15000+200000
+ 2325 strings out of 493635
+ 27826 string characters out of 3141340
+ 97023 words of memory out of 3000000
+ 5648 multiletter control sequences out of 15000+200000
  47963 words of font info for 63 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  39i,10n,34p,1086b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on handComfort.dvi (4 pages, 28204 bytes).
+Output written on handComfort.dvi (4 pages, 27784 bytes).

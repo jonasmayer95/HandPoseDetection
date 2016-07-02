@@ -220,7 +220,7 @@ This work aims to support the creation and evaluation of a hand posture vocabula
 We first explain the theoretical basis of our comfort/discomfort model and then proceed to derive our naive metric. Following that, we explain the methodology used for optimizing and validating the metric as well as for showing the metric's influence on performance in a pointing task. Finally, the results will be analyzed and discussed, before our findings are evaluated and put in a greater context.
 
 
-\section{Hand Posture Comfort/Discomfort Metric}
+\section{Hand Posture Comfort/ Discomfort Metric}
 The structure of the metric proposed is based on current ergonomics models \cite{vink2012editorial}. These models define comfort as a ``pleasant state or relaxed feeling of a human being" mostly caused by subjective impressions and expectations. Discomfort is defined as ``an unpleasant state of the human body" resulting from physical stress. Using this information combined with knowledge of hand anatomy, we broke down hand comfort and discomfort in a non-resting hand into the following four components: 
 
 \begin{itemize}
@@ -270,7 +270,7 @@ The \textbf{inter finger angle component} \textbf{IFA(x)} was computed by first 
 \centering
 \vspace{-10pt}
 \includegraphics[width=7cm]{abduction}
-\vspace{-20pt}
+\vspace{-10pt}
 \caption{Hyperextension and Abduction}
 \label{fig:hyperabduction}
 \vspace{-10pt}
@@ -336,31 +336,19 @@ In the second task, the subjects were again given a randomly generated hand post
 
 As a metric for performance, we measured the total time taken for the test. In order to have this affected by precision, we made the targets small and told the subjects to perform the test as quickly as possible.
 
-We conducted a total of two user studies involving 21 participants, that resulted in 250 and 60 \hl{hand posture} data sets for the metric and 35 data sets for the target shooting. Subjects were informed about the aim of the study as well as their specific objectives beforehand.
+We conducted a total of two user studies involving 21 participants, that resulted in 250 and 60 data sets for the metric and 35 data sets for the target shooting. Subjects were informed about the aim of the study as well as their specific objectives beforehand.
 
 Finding the best fitting coefficients can be reduced to a curve fitting problem. Therefore we used the least squares algorithm on the first 250 data sets to fit the comfort/discomfort values to the user ratings. Afterwards we tested our results against the remaining 60 data sets to validate them. For this, we decided to combine comfort and discomfort, as we expected both comfort and discomfort to affect performance.
 
 \section{Results \& Discussion}
-
-\begin{table}[b]
-\centering
-\begin{tabular}{|c|c|c|} \hline
-\#Figure & Correlation & p-value\\ \hline
-\ref{fig:trainingData} & -0.6453242 & < 2.2e-16\\ \hline
-\ref{fig:testData} & -0.748993 & 5.89e-12\\ \hline
-\ref{fig:testDataNaive} & -0.6651999 & 6.73e-9\\ \hline
-\ref{fig:targetShooting} & 0.4236101 & 0.01122\\ \hline
-\end{tabular}
-\caption{Pearson Correlations and P-values}
-\label{tab:correlations}
-\end{table}
 
 \begin{figure}[b]
 \centering
 \includegraphics[width=8.45cm]{TrainingDataImproved}
 \vspace{-20pt}
 \caption{Improved Metric and User Rating in Training Data. \\
-The Line Shows the Smoothed Conditional Mean, Calculated by the \texttt{geom\_smooth} Function in R.}
+The Line Shows the Smoothed Conditional Mean, Calculated by the \texttt{geom\_smooth} Function in R. \\
+Pearson Correlation: -0.6453242, p-value: < 2.2e-16}
 \label{fig:trainingData}
 \vspace{-10pt}
 \end{figure}
@@ -369,30 +357,33 @@ The Line Shows the Smoothed Conditional Mean, Calculated by the \texttt{geom\_sm
 \centering
 \includegraphics[width=8.45cm]{TestDataImproved}
 \vspace{-20pt}
-\caption{Improved Metric and User Rating in Test Data}
+\caption{Improved Metric and User Rating in Test Data.\\
+Pearson Correlation: -0.748993, p-value: 5.89e-12}
 %\vspace{-5pt}
 \label{fig:testData}
 
 \includegraphics[width=8.45cm]{TestDataNaive}
 \vspace{-20pt}
-\caption{Naive Metric and User Rating in Test Data}
+\caption{Naive Metric and User Rating in Test Data.\\
+Pearson Correlation: -0.6651999, p-value: 6.73e-9}
 \label{fig:testDataNaive}
 \vspace{-10pt}
 \end{figure}
 
 
-Unsurprisingly, there was a correlation in the training data between the user rating and our improved metric, generated using this data (Figure \ref{fig:trainingData}). However, the correlation found was still not perfect, having a value of approx. \textsl{-0,65} (Table \ref{tab:correlations}). For this we suspect multiple reasons: 
+Unsurprisingly, there was a correlation in the training data between the user rating and our improved metric, generated using this data (Figure \ref{fig:trainingData}). However, the correlation found was still not perfect, having a value of approx. \textsl{-0,65}. For this we suspect multiple reasons: 
 The participants most likely had differences in anatomy and mindset, which caused them to subjectively rate comparable postures differently. In addition to that, there was little time for subjects to give their rating. Therefore long time discomfort symptoms, like pain or cramping, might not have been experienced. Finally, the subjects could only rate the hands of continuous comfort/discomfort on a scale with 11 discrete steps, which potentially introduced some additional error.
 
-Even though the improved metric was created using a limited set of training data, it yielded a comparable correlation when applied to the test data (Figure \ref{fig:testData}). This indicates that the improved metric is a good extrapolation of the training data. Compared to the naive metric (Figure \ref{fig:testDataNaive}), there is only minor difference on first sight. However, the improved metric reduced the standard error, resulting in a better correlation and p-value (Table \ref{tab:correlations}).
+Even though the improved metric was created using a limited set of training data, it yielded a comparable correlation when applied to the test data (Figure \ref{fig:testData}). This indicates that the improved metric is a good extrapolation of the training data. Compared to the naive metric (Figure \ref{fig:testDataNaive}), there is only minor difference on first sight. However, the improved metric reduced the standard error, resulting in a better correlation and p-value.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=8.45cm]{TargetShooting}
 \vspace{-20pt}
-\caption{Improved Metric Value and Total Task Time in Target Shooting}
+\caption{Improved Metric Value and Total Task Time in Target Shooting.\\\
+Pearson Correlation: -0.6651999, p-value: 6.73e-9}
 \label{fig:targetShooting}
-\vspace{-18pt}
+\vspace{-5pt}
 \end{figure}
 
 The results from the target shooting task (Figure \ref{fig:targetShooting}) indicate that comfort and discomfort, as measured by our metric, do affect the performance and precision in context of hand postures. This strengthens the conclusion of Short et al.~\cite{short1999precision}, that more comfortable postures generally create greater accuracy. However, the credibility of our results is limited by the relatively small number of participants. Further work is required before strong conclusions can be made.
