@@ -12,6 +12,28 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.1.1}Subsection}{1}{subsection.1.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Figures}{3}{chapter*.7}
+\contentsline {section}{\numberline {1.2}Introduction}{1}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Tables}{4}{chapter*.8}
+\contentsline {section}{\numberline {1.3}Hand Posture Comfort/ Discomfort Metric}{3}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.1}Deviation from Range of Rest Posture}{4}{subsection.1.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.2}The Inter Finger Angles}{5}{subsection.1.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.3}Finger Hyperextension}{5}{subsection.1.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.4}Finger Abduction}{6}{subsection.1.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.5}Naive Metric}{6}{subsection.1.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.6}Improved Metric}{6}{subsection.1.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}Methodology}{7}{section.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.5}Results \& Discussion}{8}{section.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.6}Conclusion \& Future Work}{9}{section.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline List of Figures}{10}{chapter*.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline List of Tables}{11}{chapter*.14}
