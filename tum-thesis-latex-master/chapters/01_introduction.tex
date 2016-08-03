@@ -2,89 +2,11 @@
 % Add the above to each chapter to make compiling the PDF easier in some editors.
 
 \chapter{Introduction}\label{chapter:introduction}
+\section{Motivation}
+Over the last two decades human-computer interaction in desktop computer environments has evolved .... resulting in the keyboard-mouse input standard. Using a WIMP interface and multiple macros users can complete a variety of tasks efficiently and effectively.
+However, for interaction contexts such as augmented reality, virtual reality and human-robot interaction 
+The nature of contexts such as virtual reality and human-robot interaction, however, does not allow for so many physical buttons or for accuracy when accessing context menus. In such contexts speech and hand gestures are common interaction concepts. Nonetheless speech interaction is limited when it comes to spatial navigation, such as when commanding a robot to execute some household task (Figure \ref{fig:Robot}). Pointing with hands is much more efficient in such situations and hand postures can be used to add additional expressiveness to pointing gestures. The main challenge for gestures and postures has been fighting physical forces that cause fatigue or discomfort. The latter limit user experience and precision~\cite{short1999precision}. Even though comfort and discomfort are often taken into consideration by designers, there are only a handful evaluation methods \cite{naddeo2015proposal}.
 
-\section{Section}
-Citation test~\parencite{latex}.
+This work aims to support the creation and evaluation of a hand posture vocabulary for efficient pointing-based posture interaction. For that we propose a hand posture comfort/discomfort metric that allows for quick and objective hand posture evaluation. We combined state of the art comfort/discomfort models with current hand anatomy and ergonomics knowledge to create models that can predict hand comfort and discomfort given a specific posture. Based on our model we created a naive metric, which we improved in a second step using data from a user study. Finally another user study was used to validate our metric and to show the impact of comfort and discomfort on performance in a hand pointing task.
 
-\subsection{Subsection}
-
-See~\autoref{tab:sample}, \autoref{fig:sample-drawing}, \autoref{fig:sample-plot}, \autoref{fig:sample-listing}.
-
-\begin{table}[htpb]
-  \caption[Example table]{An example for a simple table.}\label{tab:sample}
-  \centering
-  \begin{tabular}{l l l l}
-    \toprule
-      A & B & C & D \\
-    \midrule
-      1 & 2 & 1 & 2 \\
-      2 & 3 & 2 & 3 \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-\begin{figure}[htpb]
-  \centering
-  % This should probably go into a file in figures/
-  \begin{tikzpicture}[node distance=3cm]
-    \node (R0) {$R_1$};
-    \node (R1) [right of=R0] {$R_2$};
-    \node (R2) [below of=R1] {$R_4$};
-    \node (R3) [below of=R0] {$R_3$};
-    \node (R4) [right of=R1] {$R_5$};
-
-    \path[every node]
-      (R0) edge (R1)
-      (R0) edge (R3)
-      (R3) edge (R2)
-      (R2) edge (R1)
-      (R1) edge (R4);
-  \end{tikzpicture}
-  \caption[Example drawing]{An example for a simple drawing.}\label{fig:sample-drawing}
-\end{figure}
-
-\begin{figure}[htpb]
-  \centering
-
-  \pgfplotstableset{col sep=&, row sep=\\}
-  % This should probably go into a file in data/
-  \pgfplotstableread{
-    a & b    \\
-    1 & 1000 \\
-    2 & 1500 \\
-    3 & 1600 \\
-  }\exampleA
-  \pgfplotstableread{
-    a & b    \\
-    1 & 1200 \\
-    2 & 800 \\
-    3 & 1400 \\
-  }\exampleB
-  % This should probably go into a file in figures/
-  \begin{tikzpicture}
-    \begin{axis}[
-        ymin=0,
-        legend style={legend pos=south east},
-        grid,
-        thick,
-        ylabel=Y,
-        xlabel=X
-      ]
-      \addplot table[x=a, y=b]{\exampleA};
-      \addlegendentry{Example A};
-      \addplot table[x=a, y=b]{\exampleB};
-      \addlegendentry{Example B};
-    \end{axis}
-  \end{tikzpicture}
-  \caption[Example plot]{An example for a simple plot.}\label{fig:sample-plot}
-\end{figure}
-
-\begin{figure}[htpb]
-  \centering
-  \begin{tabular}{c}
-  \begin{lstlisting}[language=SQL]
-    SELECT * FROM tbl WHERE tbl.str = "str"
-  \end{lstlisting}
-  \end{tabular}
-  \caption[Example listing]{An example for a source code listing.}\label{fig:sample-listing}
-\end{figure}
+We first explain the theoretical basis of our comfort/discomfort model and then proceed to derive our naive metric. Following that, we explain the methodology used for optimizing and validating the metric as well as for showing the metric's influence on performance in a pointing task. Finally, the results will be analyzed and discussed, before our findings are evaluated and put in a greater context.
