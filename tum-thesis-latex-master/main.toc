@@ -2,38 +2,68 @@
 \defcounter {refsection}{0}\relax 
 \select@language {american}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Acknowledgments}{iv}{Doc-Start}
+\contentsline {chapter}{Acknowledgments}{iii}{Doc-Start}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Abstract}{v}{chapter*.1}
+\contentsline {chapter}{\nonumberline Abstract}{iv}{chapter*.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Section}{1}{section.1.1}
+\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.1}Subsection}{1}{subsection.1.1.1}
+\contentsline {section}{\numberline {1.2}Study Goals}{2}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Introduction}{1}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Create a Metric for Hand Posture Comfort/Discomfort}{2}{subsection.1.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Hand Posture Comfort/ Discomfort Metric}{3}{section.1.3}
+\contentsline {subsection}{\numberline {1.2.2}Show the Metric's Influence on User Performance}{2}{subsection.1.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.1}Deviation from Range of Rest Posture}{4}{subsection.1.3.1}
+\contentsline {chapter}{\numberline {2}Related Work}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.2}The Inter Finger Angles}{5}{subsection.1.3.2}
+\contentsline {section}{\numberline {2.1}Nick Schneider}{3}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.3}Finger Hyperextension}{5}{subsection.1.3.3}
+\contentsline {section}{\numberline {2.2}Comfort and Discomfort}{3}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.4}Finger Abduction}{6}{subsection.1.3.4}
+\contentsline {chapter}{\numberline {3}Theoretical Foundation}{4}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.5}Naive Metric}{6}{subsection.1.3.5}
+\contentsline {section}{\numberline {3.1}Problems: Nick Schneider}{4}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.6}Improved Metric}{6}{subsection.1.3.6}
+\contentsline {section}{\numberline {3.2}Hand Comfort and Discomfort Metric}{4}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.4}Methodology}{7}{section.1.4}
+\contentsline {section}{\numberline {3.3}Naive and Improved Metric}{4}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.5}Results \& Discussion}{8}{section.1.5}
+\contentsline {chapter}{\numberline {4}Implementation}{5}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.6}Conclusion \& Future Work}{9}{section.1.6}
+\contentsline {section}{\numberline {4.1}Unity and the Leap}{5}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Figures}{10}{chapter*.13}
+\contentsline {section}{\numberline {4.2}Hand Model}{5}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Tables}{11}{chapter*.14}
+\contentsline {section}{\numberline {4.3}Hand Posture Detection}{5}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Hand Posture Metrics}{5}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Random Hand Generator}{5}{section.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}User Study Tests}{5}{section.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.7}Problems}{5}{section.4.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.7.1}Leap Tracking}{5}{subsection.4.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.7.2}Hand Posture Detection}{5}{subsection.4.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}User Studies}{6}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}First User Study}{6}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Early Analysis and its Consequences}{6}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Second User Study}{6}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Results and Discussion}{7}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Results}{7}{section.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Discussion}{7}{section.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline List of Figures}{8}{chapter*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline List of Tables}{9}{chapter*.4}

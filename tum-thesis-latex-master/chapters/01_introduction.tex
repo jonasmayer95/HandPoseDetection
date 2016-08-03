@@ -2,11 +2,29 @@
 % Add the above to each chapter to make compiling the PDF easier in some editors.
 
 \chapter{Introduction}\label{chapter:introduction}
+
 \section{Motivation}
-Over the last two decades human-computer interaction in desktop computer environments has evolved .... resulting in the keyboard-mouse input standard. Using a WIMP interface and multiple macros users can complete a variety of tasks efficiently and effectively.
-However, for interaction contexts such as augmented reality, virtual reality and human-robot interaction 
-The nature of contexts such as virtual reality and human-robot interaction, however, does not allow for so many physical buttons or for accuracy when accessing context menus. In such contexts speech and hand gestures are common interaction concepts. Nonetheless speech interaction is limited when it comes to spatial navigation, such as when commanding a robot to execute some household task (Figure \ref{fig:Robot}). Pointing with hands is much more efficient in such situations and hand postures can be used to add additional expressiveness to pointing gestures. The main challenge for gestures and postures has been fighting physical forces that cause fatigue or discomfort. The latter limit user experience and precision~\cite{short1999precision}. Even though comfort and discomfort are often taken into consideration by designers, there are only a handful evaluation methods \cite{naddeo2015proposal}.
+Over the last two decades human-computer interaction in desktop computer environments has evolved .... resulting in the keyboard-mouse input standard. Using a WIMP interface and multiple keyboard macros users can complete a variety of tasks efficiently and effectively.
+However, in interaction contexts such as virtual reality and human-robot interaction which become more and more relevant, traditional interaction techniques are not a suitable solution. Speech is an intuitive way of interacting, even though it by nature requires the user to talk constantly which is not optimal for longer periods of time. Additionally, speech interaction is limited when it comes to contexts such as commanding a robot to execute different household tasks or playing a real-time strategy game in virtual reality, where spacial navigation is important. In such cases, pointing with hands is a much more efficient and intuitive solution. By using different hand postures different commands can be issued, which enhances interaction expressiveness similarly to key macros in a traditional environment.
+The main challenge for hand postures has been fighting physical forces that cause different symptoms like fatigue or discomfort. The latter are generally known to limit user experience and precision~\cite{short1999precision} in the task environment.
 
-This work aims to support the creation and evaluation of a hand posture vocabulary for efficient pointing-based posture interaction. For that we propose a hand posture comfort/discomfort metric that allows for quick and objective hand posture evaluation. We combined state of the art comfort/discomfort models with current hand anatomy and ergonomics knowledge to create models that can predict hand comfort and discomfort given a specific posture. Based on our model we created a naive metric, which we improved in a second step using data from a user study. Finally another user study was used to validate our metric and to show the impact of comfort and discomfort on performance in a hand pointing task.
+When designers create a hand posture interaction environment, they have to take these physical factors and hand posture comfort and discomfort into account. One goal is to choose an optimal set of hand postures that will ensure maximum task performance and comfort for the user while creating a minimum of discomfort. Especially for larger sets of commands that becomes challenging as there are no straight forward metrics that allows to compare hand postures quickly \cite{naddeo2015proposal}. So either a costly user study has to be organized to get objective feedback, or the designers have to rely on their own subjective impressions and assumptions.
 
-We first explain the theoretical basis of our comfort/discomfort model and then proceed to derive our naive metric. Following that, we explain the methodology used for optimizing and validating the metric as well as for showing the metric's influence on performance in a pointing task. Finally, the results will be analyzed and discussed, before our findings are evaluated and put in a greater context.
+Therefore, the main goal of this bachelor thesis is to support the creation and evaluation of a hand posture vocabulary for efficient pointing-based posture interaction.
+
+\section{Study Goals}
+
+The approach taken to solve the problem stated above, is based on the hypothesis that hand posture comfort and discomfort do affect the users performance in a specific task and obviously the user experience. Based on this, two main goals were formulated.
+
+\subsection{Create a Metric for Hand Posture Comfort/Discomfort}
+
+The objective was to create a metric, that allows designers to get a quick and objective evaluation of a hand posture regarding Comfort and Discomfort. The metric should be used to compare similar hand postures and to rule out bad ones directly. 
+
+For the creation of the metric state of the art comfort and discomfort models were taken into consideration. Looking at the human hand's complex anatomy, multiple influential factors for hand posture comfort and discomfort were identified. In order to compute a concrete metric value in real time, the identified factors were implemented in a Unity 3D environment. Finally the metrics correctness was verified in a user study.
+
+\subsection{Show the Metric's Influence on User Performance}
+
+While the correlation of Comfort/Discomfort and user experience is rather trivial, the influence of Comfort/Discomfort on user performance was only indicated for specific different contexts. Therefore the objective was to show this correlation in the context of hand posture comfort/discomfort as measured by the metric. This was also targeted in a user study. 
+
+
+This bachelor thesis aims to support the creation and evaluation of a hand posture vocabulary for efficient pointing-based posture interaction. For that we propose a hand posture comfort/discomfort metric that allows for quick and objective hand posture evaluation. We combined state of the art comfort/discomfort models with current hand anatomy and ergonomics knowledge to create models that can predict hand comfort and discomfort given a specific posture. Based on our model we created a naive metric, which we improved in a second step using data from a user study. Finally another user study was used to validate our metric and to show the impact of comfort and discomfort on performance in a hand pointing task.
