@@ -32,48 +32,46 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.2}The Inter Finger Angles}{6}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Finger Hyperextension}{6}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Finger Hyperextension}{7}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}Finger Abduction}{6}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}Finger Abduction}{7}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Naive and Improved Metric}{6}{section.3.3}
+\contentsline {section}{\numberline {3.3}Naive and Improved Metric}{7}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Implementation}{7}{chapter.4}
+\contentsline {chapter}{\numberline {4}Implementation}{8}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Unity and the Leap}{7}{section.4.1}
+\contentsline {section}{\numberline {4.1}Unity and the Leap}{8}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Hand Model}{7}{section.4.2}
+\contentsline {section}{\numberline {4.2}Hand Model}{8}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Hand Posture Detection}{7}{section.4.3}
+\contentsline {section}{\numberline {4.3}Hand Posture Detection}{8}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Hand Posture Metrics}{7}{section.4.4}
+\contentsline {section}{\numberline {4.4}Hand Posture Metrics}{8}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Random Hand Generator}{7}{section.4.5}
+\contentsline {section}{\numberline {4.5}Random Hand Generator}{8}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}User Study Tests}{7}{section.4.6}
+\contentsline {section}{\numberline {4.6}User Study Tests}{8}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}Problems}{7}{section.4.7}
+\contentsline {section}{\numberline {4.7}Problems}{8}{section.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.1}Leap Tracking}{7}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.1}Leap Tracking}{8}{subsection.4.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.2}Hand Posture Detection}{7}{subsection.4.7.2}
+\contentsline {subsection}{\numberline {4.7.2}Hand Posture Detection}{8}{subsection.4.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}User Studies}{8}{chapter.5}
+\contentsline {chapter}{\numberline {5}User Studies}{9}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}First User Study}{8}{section.5.1}
+\contentsline {section}{\numberline {5.1}First User Study}{9}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Early Analysis and its Consequences}{8}{section.5.2}
+\contentsline {section}{\numberline {5.2}Early Analysis and its Consequences}{9}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Second User Study}{8}{section.5.3}
+\contentsline {section}{\numberline {5.3}Second User Study}{9}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Results and Discussion}{9}{chapter.6}
+\contentsline {chapter}{\numberline {6}Results and Discussion}{10}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Results}{9}{section.6.1}
+\contentsline {section}{\numberline {6.1}Results}{10}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Discussion}{9}{section.6.2}
+\contentsline {section}{\numberline {6.2}Discussion}{10}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Figures}{10}{chapter*.3}
+\contentsline {chapter}{\nonumberline List of Figures}{11}{chapter*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Tables}{11}{chapter*.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{12}{chapter*.5}
+\contentsline {chapter}{\nonumberline List of Tables}{12}{chapter*.5}
