@@ -24,13 +24,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Theoretical Foundation}{5}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Problems: Nick Schneider}{5}{section.3.1}
+\contentsline {section}{\numberline {3.1}Comfort and Discomfort Definitions}{5}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Comfort and Discomfort Definitions}{5}{section.3.2}
+\contentsline {section}{\numberline {3.2}Hand Comfort and Discomfort Metric}{5}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Hand Comfort and Discomfort Metric}{5}{section.3.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Naive and Improved Metric}{5}{section.3.4}
+\contentsline {section}{\numberline {3.3}Naive and Improved Metric}{5}{section.3.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Implementation}{6}{chapter.4}
 \defcounter {refsection}{0}\relax 
@@ -69,3 +67,5 @@
 \contentsline {chapter}{\nonumberline List of Figures}{9}{chapter*.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline List of Tables}{10}{chapter*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Bibliography}{11}{chapter*.5}

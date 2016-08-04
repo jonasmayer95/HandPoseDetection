@@ -1,0 +1,204 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.7 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{anyt/global/}
+    \entry{apostolico2014postural}{article}{}
+      \name{author}{5}{}{%
+        {{uniquename=0,hash=5baeb9e90691882ce718bd4590516f13}{%
+           family={Apostolico},
+           family_i={A\bibinitperiod},
+           given={Alessandro},
+           given_i={A\bibinitperiod}}}%
+        {{uniquename=0,hash=1cf96271cf19e9fae53e56695e4470a7}{%
+           family={Cappetti},
+           family_i={C\bibinitperiod},
+           given={Nicola},
+           given_i={N\bibinitperiod}}}%
+        {{uniquename=0,hash=c519e77c8c0dbbba3224803c009664b1}{%
+           family={D’Oria},
+           family_i={D\bibinitperiod},
+           given={Carmine},
+           given_i={C\bibinitperiod}}}%
+        {{uniquename=0,hash=973029bbd7c959f278ca6d3e3740a3b1}{%
+           family={Naddeo},
+           family_i={N\bibinitperiod},
+           given={Alessandro},
+           given_i={A\bibinitperiod}}}%
+        {{uniquename=0,hash=be0ff6d2977d42e1c80c4753b9f6043a}{%
+           family={Sestri},
+           family_i={S\bibinitperiod},
+           given={Marco},
+           given_i={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{7783931a0dd1da4008f63db0a916cfee}
+      \strng{fullhash}{045760999136a14f5b9692b9c8c9056e}
+      \field{labelalpha}{Apo+14}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal on Interactive Design and Manufacturing (IJIDeM)}
+      \field{number}{2}
+      \field{title}{Postural comfort evaluation: experimental identification of Range of Rest Posture for human articular joints}
+      \field{volume}{8}
+      \field{year}{2014}
+      \field{pages}{109\bibrangedash 120}
+      \range{pages}{12}
+    \endentry
+    \entry{fagarasanu2004measurement}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=7ea1695b3c8c7b84c0a71f00bf129b2f}{%
+           family={Fagarasanu},
+           family_i={F\bibinitperiod},
+           given={Mircea},
+           given_i={M\bibinitperiod}}}%
+        {{uniquename=0,hash=0a673da905f7de3dc179f6f7e75d1143}{%
+           family={Kumar},
+           family_i={K\bibinitperiod},
+           given={Shrawan},
+           given_i={S\bibinitperiod}}}%
+        {{uniquename=0,hash=d38f1181b7db4b0d5ffb6fc7ef45a2a8}{%
+           family={Narayan},
+           family_i={N\bibinitperiod},
+           given={Yogesh},
+           given_i={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{cd62550ea55dc208fef5a9ca7a07af05}
+      \strng{fullhash}{cd62550ea55dc208fef5a9ca7a07af05}
+      \field{labelalpha}{FKN04}
+      \field{sortinit}{F}
+      \field{sortinithash}{c6a7d9913bbd7b20ea954441c0460b78}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Clinical Biomechanics}
+      \field{number}{7}
+      \field{title}{Measurement of angular wrist neutral zone and forearm muscle activity}
+      \field{volume}{19}
+      \field{year}{2004}
+      \field{pages}{671\bibrangedash 677}
+      \range{pages}{7}
+    \endentry
+    \entry{naddeo2015proposal}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=c03cc642fda0d3cbae3b6f3aad6760a8}{%
+           family={Naddeo},
+           family_i={N\bibinitperiod},
+           given={A},
+           given_i={A\bibinitperiod}}}%
+        {{uniquename=0,hash=37616b4fb3db6ec39c4b7eda843e1b9c}{%
+           family={Cappetti},
+           family_i={C\bibinitperiod},
+           given={N},
+           given_i={N\bibinitperiod}}}%
+        {{uniquename=0,hash=94a6a63b6f575f79195fa31f1af3331d}{%
+           family={D'Oria},
+           family_i={D\bibinitperiod},
+           given={C},
+           given_i={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{09a186c4e4aa1674c129775f7cd8fe7b}
+      \strng{fullhash}{09a186c4e4aa1674c129775f7cd8fe7b}
+      \field{labelalpha}{NCD15}
+      \field{sortinit}{N}
+      \field{sortinithash}{925374ca63e7594de7fafdb83e64d41d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Industrial Ergonomics}
+      \field{title}{Proposal of a new quantitative method for postural comfort evaluation}
+      \field{volume}{48}
+      \field{year}{2015}
+      \field{pages}{25\bibrangedash 35}
+      \range{pages}{11}
+    \endentry
+    \entry{short1999precision}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=1a4639320a8359c00e82147649eb5cdf}{%
+           family={Short},
+           family_i={S\bibinitperiod},
+           given={Martin\bibnamedelima W},
+           given_i={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{uniquename=0,hash=8a52528d0da40619012918acc1971f3b}{%
+           family={Cauraugh},
+           family_i={C\bibinitperiod},
+           given={James\bibnamedelima H},
+           given_i={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{6cc711b7e8b39a5a31f691145483364b}
+      \strng{fullhash}{6cc711b7e8b39a5a31f691145483364b}
+      \field{labelalpha}{SC99}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Acta psychologica}
+      \field{number}{3}
+      \field{title}{Precision hypothesis and the end-state comfort effect}
+      \field{volume}{100}
+      \field{year}{1999}
+      \field{pages}{243\bibrangedash 252}
+      \range{pages}{10}
+    \endentry
+    \entry{vink2012editorial}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=1259a28a020c178c595ed0f11e8a99b5}{%
+           family={Vink},
+           family_i={V\bibinitperiod},
+           given={P},
+           given_i={P\bibinitperiod}}}%
+        {{uniquename=0,hash=2a85e9b1dadef40cfd70027f6eb16d41}{%
+           family={Hallbeck},
+           family_i={H\bibinitperiod},
+           given={Susan},
+           given_i={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{a0044e936ff1b1c876a3bf69bcffdfee}
+      \strng{fullhash}{a0044e936ff1b1c876a3bf69bcffdfee}
+      \field{labelalpha}{VH12}
+      \field{sortinit}{V}
+      \field{sortinithash}{d18f5ce25ce0b5ca7f924e3f6c04870e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Applied ergonomics}
+      \field{number}{2}
+      \field{title}{Editorial: Comfort and discomfort studies demonstrate the need for a new model}
+      \field{volume}{43}
+      \field{year}{2012}
+      \field{pages}{271\bibrangedash 276}
+      \range{pages}{6}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+
