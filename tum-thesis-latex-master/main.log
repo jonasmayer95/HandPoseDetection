@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.4)  4 AUG 2016 19:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.4)  4 AUG 2016 21:28
 entering extended mode
 **./main.tex
 (main.tex
@@ -1806,22 +1806,22 @@ chapter 2.
 
 ]) (chapters/03_theoretical.tex [4]
 chapter 3.
-) (chapters/04_implementation.tex [5
+[5
 
 
-]
+]) (chapters/04_implementation.tex [6]
 chapter 4.
-) (chapters/05_userstudy.tex [6
+) (chapters/05_userstudy.tex [7
 
 
 ]
 chapter 5.
-) (chapters/06_results.tex [7
+) (chapters/06_results.tex [8
 
 
 ]
 chapter 6.
-) [8
+) [9
 
 
 ]
@@ -1830,7 +1830,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 52.
 \tf@lof=\write8
 \openout8 = `main.lof'.
 
- [9
+ [10
 
 
 ]
@@ -1839,13 +1839,13 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 53.
 \tf@lot=\write9
 \openout9 = `main.lot'.
 
- [10
+ [11
 
 
 ]
 chapter without number
 No complaints by nag.
-[11
+[12
 
 
 ]
@@ -1855,18 +1855,18 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 57.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9DB2C7A66BC9FB2930CC4F892F323B13;2178.
+(rerunfilecheck)             Checksum: F295A48C162E595B84BEBC7D8FA69C63;2505.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45571 strings out of 493336
- 1006510 string characters out of 3136707
- 1620263 words of memory out of 3000000
- 48441 multiletter control sequences out of 15000+200000
+ 45575 strings out of 493336
+ 1006582 string characters out of 3136707
+ 1621305 words of memory out of 3000000
+ 48445 multiletter control sequences out of 15000+200000
  26320 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,8n,83p,10458b,1893s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.dvi (18 pages, 60880 bytes).
+Output written on main.dvi (19 pages, 67168 bytes).

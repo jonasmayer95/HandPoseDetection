@@ -10,25 +10,29 @@
 \BOOKMARK [1][-]{section.2.2}{Comfort and Discomfort}{chapter.2}% 10
 \BOOKMARK [0][-]{chapter.3}{Theoretical Foundation}{}% 11
 \BOOKMARK [1][-]{section.3.1}{Comfort and Discomfort Definitions}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.2}{Hand Comfort and Discomfort Metric}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.3}{Naive and Improved Metric}{chapter.3}% 14
-\BOOKMARK [0][-]{chapter.4}{Implementation}{}% 15
-\BOOKMARK [1][-]{section.4.1}{Unity and the Leap}{chapter.4}% 16
-\BOOKMARK [1][-]{section.4.2}{Hand Model}{chapter.4}% 17
-\BOOKMARK [1][-]{section.4.3}{Hand Posture Detection}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.4}{Hand Posture Metrics}{chapter.4}% 19
-\BOOKMARK [1][-]{section.4.5}{Random Hand Generator}{chapter.4}% 20
-\BOOKMARK [1][-]{section.4.6}{User Study Tests}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.7}{Problems}{chapter.4}% 22
-\BOOKMARK [2][-]{subsection.4.7.1}{Leap Tracking}{section.4.7}% 23
-\BOOKMARK [2][-]{subsection.4.7.2}{Hand Posture Detection}{section.4.7}% 24
-\BOOKMARK [0][-]{chapter.5}{User Studies}{}% 25
-\BOOKMARK [1][-]{section.5.1}{First User Study}{chapter.5}% 26
-\BOOKMARK [1][-]{section.5.2}{Early Analysis and its Consequences}{chapter.5}% 27
-\BOOKMARK [1][-]{section.5.3}{Second User Study}{chapter.5}% 28
-\BOOKMARK [0][-]{chapter.6}{Results and Discussion}{}% 29
-\BOOKMARK [1][-]{section.6.1}{Results}{chapter.6}% 30
-\BOOKMARK [1][-]{section.6.2}{Discussion}{chapter.6}% 31
-\BOOKMARK [0][-]{chapter*.3}{List of Figures}{}% 32
-\BOOKMARK [0][-]{chapter*.4}{List of Tables}{}% 33
-\BOOKMARK [0][-]{chapter*.5}{Bibliography}{}% 34
+\BOOKMARK [1][-]{section.3.2}{Hand Comfort and Discomfort Metric Components}{chapter.3}% 13
+\BOOKMARK [2][-]{subsection.3.2.1}{Deviation from Range of Rest Posture}{section.3.2}% 14
+\BOOKMARK [2][-]{subsection.3.2.2}{The Inter Finger Angles}{section.3.2}% 15
+\BOOKMARK [2][-]{subsection.3.2.3}{Finger Hyperextension}{section.3.2}% 16
+\BOOKMARK [2][-]{subsection.3.2.4}{Finger Abduction}{section.3.2}% 17
+\BOOKMARK [1][-]{section.3.3}{Naive and Improved Metric}{chapter.3}% 18
+\BOOKMARK [0][-]{chapter.4}{Implementation}{}% 19
+\BOOKMARK [1][-]{section.4.1}{Unity and the Leap}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.2}{Hand Model}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.3}{Hand Posture Detection}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.4}{Hand Posture Metrics}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.5}{Random Hand Generator}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.6}{User Study Tests}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.7}{Problems}{chapter.4}% 26
+\BOOKMARK [2][-]{subsection.4.7.1}{Leap Tracking}{section.4.7}% 27
+\BOOKMARK [2][-]{subsection.4.7.2}{Hand Posture Detection}{section.4.7}% 28
+\BOOKMARK [0][-]{chapter.5}{User Studies}{}% 29
+\BOOKMARK [1][-]{section.5.1}{First User Study}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.2}{Early Analysis and its Consequences}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.3}{Second User Study}{chapter.5}% 32
+\BOOKMARK [0][-]{chapter.6}{Results and Discussion}{}% 33
+\BOOKMARK [1][-]{section.6.1}{Results}{chapter.6}% 34
+\BOOKMARK [1][-]{section.6.2}{Discussion}{chapter.6}% 35
+\BOOKMARK [0][-]{chapter*.3}{List of Figures}{}% 36
+\BOOKMARK [0][-]{chapter*.4}{List of Tables}{}% 37
+\BOOKMARK [0][-]{chapter*.5}{Bibliography}{}% 38
