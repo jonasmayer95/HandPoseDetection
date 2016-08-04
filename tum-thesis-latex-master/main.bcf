@@ -2053,6 +2053,11 @@
   <bcf:section number="0">
     <bcf:citekey order="1">short1999precision</bcf:citekey>
     <bcf:citekey order="2">naddeo2015proposal</bcf:citekey>
+    <bcf:citekey order="3">vink2012editorial</bcf:citekey>
+    <bcf:citekey order="4">fagarasanu2004measurement</bcf:citekey>
+    <bcf:citekey order="5">apostolico2014postural</bcf:citekey>
+    <bcf:citekey order="6">naddeo2015proposal</bcf:citekey>
+    <bcf:citekey order="7">short1999precision</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="anyt/global" type="entry" sortscheme="anyt" sortnamekeyscheme="global">
   <bcf:sorting>

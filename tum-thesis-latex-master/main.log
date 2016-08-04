@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=latex 2016.6.19)  3 AUG 2016 19:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=latex 2016.6.19)  4 AUG 2016 06:30
 entering extended mode
 **./main.tex
 (main.tex
@@ -1402,27 +1402,43 @@ LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <12> not available
 (Font)              Font shape `T1/pplx/b/n' tried instead on input line 19.
 ) (chapters/02_relatedWork.tex [2]
 chapter 2.
-) (chapters/03_theoretical.tex [3
+
+LaTeX Warning: Citation 'vink2012editorial' on page 3 undefined on input line 15.
+
+[3
 
 
 ]
+
+LaTeX Warning: Citation 'fagarasanu2004measurement' on page 4 undefined on input line 17.
+
+
+LaTeX Warning: Citation 'apostolico2014postural' on page 4 undefined on input line 17.
+
+
+LaTeX Warning: Citation 'naddeo2015proposal' on page 4 undefined on input line 17.
+
+
+LaTeX Warning: Citation 'short1999precision' on page 4 undefined on input line 19.
+
+) (chapters/03_theoretical.tex [4]
 chapter 3.
-) (chapters/04_implementation.tex [4
+) (chapters/04_implementation.tex [5
 
 
 ]
 chapter 4.
-) (chapters/05_userstudy.tex [5
+) (chapters/05_userstudy.tex [6
 
 
 ]
 chapter 5.
-) (chapters/06_results.tex [6
+) (chapters/06_results.tex [7
 
 
 ]
 chapter 6.
-) [7
+) [8
 
 
 ]
@@ -1431,7 +1447,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 52.
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [8
+ [9
 
 
 ]
@@ -1445,7 +1461,7 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 53.
 LaTeX Warning: Empty bibliography on input line 55.
 
 No complaints by nag.
-[9
+[10
 
 
 ]
@@ -1454,9 +1470,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
  (main.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 57.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5EAF7DFEAB6E497BD2A1FD419C0481D3;2115.
 
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: B4A5E7250B2BC777B715AD7DA61ADCF2;2118
+(rerunfilecheck)             After:  EBA0210ADA79C4D9123DF86C88500AB9;2200.
 
 LaTeX Warning: There were undefined references.
 
@@ -1472,10 +1494,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  37548 strings out of 493635
  841043 string characters out of 3141340
- 1452453 words of memory out of 3000000
+ 1452519 words of memory out of 3000000
  40311 multiletter control sequences out of 15000+200000
  26320 words of font info for 41 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 75i,8n,83p,863b,1897s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 75i,8n,83p,934b,1897s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.dvi (16 pages, 48660 bytes).
+Output written on main.dvi (17 pages, 54028 bytes).
