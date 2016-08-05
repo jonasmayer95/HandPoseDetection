@@ -1,13 +1,27 @@
 \chapter{Implementation}\label{chapter:implementation}
 
-\section{Unity and the Leap}
-aa
+This chapter will give some details about the implementation, the implementation process, the problems that occurred an how they were solved.
+
+\section{Basic Setup}
+
+\subsection{Unity}
+
+For the implementation of the hand tracking, the metric computation and the user study, Unity 3D 5.3 was chosen as a programming environment. Technically Unity 3D is a powerful game engine, that can be used for 3d or 2d applications and games. It allows users to easily create scenes with different objects whose behavior can be specified with \textsc{C\#} scripts and are rendered automatically. Due to its complex input manager, it allows the user to receive input from a multitude of input devices and supports most unconventional interaction devices like HMDs and also the Leap Motion Controller. In addition a built-in UI-Manager allows for quick prototyping of user interfaces. 
+
+\subsection{Leap Motion Controller}
+
+Similar to Nikolas Schneider's setup, a Leap Motion Controller was used for the actual hand tracking. The Leap Motion Controller, or simply Leap is an optical hand tracker using three IR-LEDs and two IR-Cameras to record the users hand. By providing an SDK and a Unity package, integration into Unity 3D works seamlessly. With the new Leap Orion SDK, the Leap allows for accurate and robust finger tracking in different lighting conditions and usage contexts. The Leap was chosen due to its easy integration combined with the solid tracking performance, that is unrivaled for hands-free hand trackers.  
+Instead of attaching it to the user's arm with a metal construction, potentially causing discomfort to the user, it was simply placed on a desk. 
+
+\subsection{Further Project Configuration}
+
+As using the AR-Rift did not seam to benefit the project substantially, it allowed to set up a clean 3D Unity project. The only imported assets were the Leap Motion Unity core assets which provide useful tools for interacting with the recorded hands. All work was based on the sample scene with two hand objects. 
 
 \section{Hand Model}
 aa
 \section{Hand Posture Detection}
 vsdv
-\section{Hand Posture Metrics}
+\section{Hand Posture Metrics}\label{chapter:handosturemetric}
 
 \section{Random Hand Generator}
 

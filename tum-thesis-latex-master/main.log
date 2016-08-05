@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.4)  5 AUG 2016 01:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.4)  5 AUG 2016 12:17
 entering extended mode
 **./main.tex
 (main.tex
@@ -1792,12 +1792,6 @@ LaTeX Font Info:    Font shape `T1/pplx/m/sl' in size <10.95> not available
 chapter 1.
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/pplx/b/n' tried instead on input line 6.
-
-LaTeX Warning: Citation 'short1999precision' on page 1 undefined on input line 9.
-
-
-LaTeX Warning: Citation 'naddeo2015proposal' on page 1 undefined on input line 11.
-
 [1
 
 
@@ -1807,26 +1801,10 @@ LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <12> not available
 (Font)              Font shape `T1/pplx/b/n' tried instead on input line 19.
 ) (chapters/02_relatedWork.tex [2]
 chapter 2.
-
-LaTeX Warning: Citation 'vink2012editorial' on page 3 undefined on input line 15.
-
 [3
 
 
-]
-
-LaTeX Warning: Citation 'fagarasanu2004measurement' on page 4 undefined on input line 17.
-
-
-LaTeX Warning: Citation 'apostolico2014postural' on page 4 undefined on input line 17.
-
-
-LaTeX Warning: Citation 'naddeo2015proposal' on page 4 undefined on input line 17.
-
-
-LaTeX Warning: Citation 'short1999precision' on page 4 undefined on input line 19.
-
-) (chapters/03_theoretical.tex
+]) (chapters/03_theoretical.tex
 
 ! LaTeX Error: Can be used only in preamble.
 
@@ -1842,24 +1820,10 @@ or  <return>  to continue without it.
 
 [4]
 chapter 3.
-
-LaTeX Warning: Citation 'vink2012editorial' on page 5 undefined on input line 8.
-
-
-LaTeX Warning: Citation 'apostolico2014postural' on page 5 undefined on input line 24.
-
 [5
 
 
 ]
-
-LaTeX Warning: Citation 'naddeo2015proposal' on page 6 undefined on input line 27.
-
-
-Overfull \hbox (20.80225pt too wide) in paragraph at lines 27--28
-[]\T1/pplx/m/n/10.95 When look-ing at pos-tures in-volv-ing mul-ti-ple joints, Nad-deo et al. [[]]
- []
-
 
 ! LaTeX Error: Environment subfigure undefined.
 
@@ -1916,19 +1880,24 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[6]) (chapters/04_implementation.tex [7]
+[6]
+File: abduction.eps Graphic file (type eps)
+ <abduction.eps> [7] [8]) (chapters/04_implementation.tex [9]
 chapter 4.
-) (chapters/05_userstudy.tex [8
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/pplx/m/sc/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+[10
 
 
-]
+]) (chapters/05_userstudy.tex [11]
 chapter 5.
-) (chapters/06_results.tex [9
+) (chapters/06_results.tex [12
 
 
 ]
 chapter 6.
-) [10
+) [13
 
 
 ]
@@ -1937,7 +1906,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 52.
 \tf@lof=\write8
 \openout8 = `main.lof'.
 
- [11
+ [14
 
 
 ]
@@ -1946,12 +1915,13 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 53.
 \tf@lot=\write9
 \openout9 = `main.lot'.
 
+ [15
 
 
-LaTeX Warning: Empty bibliography on input line 55.
-
+]
+chapter without number
 No complaints by nag.
-[12
+[16
 
 
 ]
@@ -1961,27 +1931,18 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 57.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DC52310686590296BCA0F44F8A86CCA9;2455.
-
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: AE9BD757D7D70210F338C0C20E30FCAD;2771.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45563 strings out of 493336
- 1006033 string characters out of 3136707
- 1621281 words of memory out of 3000000
- 48430 multiletter control sequences out of 15000+200000
- 26320 words of font info for 41 fonts, out of 3000000 for 9000
+ 45598 strings out of 493336
+ 1007013 string characters out of 3136707
+ 1620532 words of memory out of 3000000
+ 48463 multiletter control sequences out of 15000+200000
+ 29172 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,9n,83p,10458b,1893s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.dvi (19 pages, 63608 bytes).
+Output written on main.dvi (23 pages, 85800 bytes).
