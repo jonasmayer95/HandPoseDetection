@@ -25,18 +25,20 @@
 \BOOKMARK [1][-]{section.4.2}{Hand Model}{chapter.4}% 25
 \BOOKMARK [1][-]{section.4.3}{Hand Posture Classification}{chapter.4}% 26
 \BOOKMARK [1][-]{section.4.4}{Hand Posture Metrics}{chapter.4}% 27
-\BOOKMARK [1][-]{section.4.5}{Random Hand Generator}{chapter.4}% 28
-\BOOKMARK [1][-]{section.4.6}{User Study Tests}{chapter.4}% 29
-\BOOKMARK [1][-]{section.4.7}{Problems}{chapter.4}% 30
-\BOOKMARK [2][-]{subsection.4.7.1}{Serialization and Normalization of Vector3 and Quaternions}{section.4.7}% 31
-\BOOKMARK [2][-]{subsection.4.7.2}{Leap Tracking}{section.4.7}% 32
-\BOOKMARK [2][-]{subsection.4.7.3}{Hand Posture Detection}{section.4.7}% 33
-\BOOKMARK [0][-]{chapter.5}{User Studies}{}% 34
-\BOOKMARK [1][-]{section.5.1}{First User Study}{chapter.5}% 35
-\BOOKMARK [1][-]{section.5.2}{Early Analysis and its Consequences}{chapter.5}% 36
-\BOOKMARK [1][-]{section.5.3}{Second User Study}{chapter.5}% 37
-\BOOKMARK [0][-]{chapter.6}{Results and Discussion}{}% 38
-\BOOKMARK [1][-]{section.6.1}{Results}{chapter.6}% 39
-\BOOKMARK [1][-]{section.6.2}{Discussion}{chapter.6}% 40
-\BOOKMARK [0][-]{chapter*.5}{List of Figures}{}% 41
-\BOOKMARK [0][-]{chapter*.6}{List of Tables}{}% 42
+\BOOKMARK [2][-]{subsection.4.4.1}{Comfort}{section.4.4}% 28
+\BOOKMARK [2][-]{subsection.4.4.2}{Discomfort}{section.4.4}% 29
+\BOOKMARK [1][-]{section.4.5}{Random Hand Generator}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.6}{User Study Tests}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.7}{Problems}{chapter.4}% 32
+\BOOKMARK [2][-]{subsection.4.7.1}{Serialization and Normalization of Vector3 and Quaternions}{section.4.7}% 33
+\BOOKMARK [2][-]{subsection.4.7.2}{Leap Tracking}{section.4.7}% 34
+\BOOKMARK [2][-]{subsection.4.7.3}{Hand Posture Detection}{section.4.7}% 35
+\BOOKMARK [0][-]{chapter.5}{User Studies}{}% 36
+\BOOKMARK [1][-]{section.5.1}{First User Study}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.2}{Early Analysis and its Consequences}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.3}{Second User Study}{chapter.5}% 39
+\BOOKMARK [0][-]{chapter.6}{Results and Discussion}{}% 40
+\BOOKMARK [1][-]{section.6.1}{Results}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.2}{Discussion}{chapter.6}% 42
+\BOOKMARK [0][-]{chapter*.5}{List of Figures}{}% 43
+\BOOKMARK [0][-]{chapter*.6}{List of Tables}{}% 44

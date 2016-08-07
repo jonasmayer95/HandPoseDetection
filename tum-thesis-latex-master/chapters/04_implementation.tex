@@ -27,7 +27,7 @@ In conclusion, the implementation was based on a 21DOF angle based hand model, a
 
 The goal for the unity implementation was to create a universally usable and flexible class structure for hand postures, thus the \texttt{AngleBasedHandModel} class was created. The class has a reference to a thumb object of class \texttt{AngleBasedThumbModel} and four enumerated fingers of class \texttt{AngleBasedFingerModel}. In addition the hands position and rotation are stored for debugging. The class also provides a function to calculate the mathematical Euclidean distance to another hand posture, a function to interpolate between two hand postures, a toString function and multiple functions for loading and storing hand postures as CSV. 
 
-The \texttt{AngleBasedFingerModel} (and \texttt{AngleBasedThumbModel}) stores their 4 (and 5) DOFs as float angles. To ease computation the rotation of the MCP (and TMC) is redundantly stored as quaternion. Both classes also implement the same functions as \texttt{AngleBasedHandModel} and \texttt{AngleBasedFingerModel} additionally provides a function for computing the total bending of a finger (\textcolor[rgb]{1,0,0}{Figure ???}). The three classes are fully serializable to facilitate simple saving and loading of hand postures.
+The \texttt{AngleBasedFingerModel} (and \texttt{AngleBasedThumbModel}) stores their 4 (and 5) DOFs as float angles. To ease computation the rotation of the MCP (and TMC) is redundantly stored as quaternion. Both classes also implement the same functions as \texttt{AngleBasedHandModel} and \texttt{AngleBasedFingerModel} additionally provides a function for computing the total flexion of a finger (\textcolor[rgb]{1,0,0}{Figure ???}). The three classes are fully serializable to facilitate simple saving and loading of hand postures.
 %TODO: add figure?
 In order to obtain the hand posture data from the the Leap in realtime, a \texttt{HandObserver} script was attached to each Leap hand objects. The \texttt{HandObserver} extracted the hand posture data from the Leap and updated an \texttt{AngleBasedHandModel} object while taking the handedness into account.
 
@@ -54,7 +54,43 @@ In the implementation this is handled by the \texttt{ThreadedKNN} class. As the 
 
 In the context it was used, the k-NN implementation could differentiate between 10 postures with 50 recorded training samples each. The hand posture classification was performed on two hand robustly in real time without noticeable performance impact or lag. 
 
+
 \section{Hand Posture Metrics}\label{chapter:handosturemetric}
+
+Now that we have a representation for hand postures, the metric can be implemented. For that a \texttt{Comfort} and a \texttt{Discomfort} class were created. Both contain functions for computing the total metric value, the metric components for the whole hand and for the single fingers as well as functions for outputting the finger values to a .CSV file. 
+
+\subsection{Comfort}
+
+The only component, that is computed in \texttt{Comfort} is the distance to the RRP. Theoretically every DOF in the hand has an own RRP, that can be determined through experiments as done by Apostolico et al. \cite{apostolico2014postural}. However this turns out to be a costly and lengthy process, that had exceeded the focus of this thesis. Therefore some simplifications had to be made:
+
+\begin{enumerate}
+	\item The RRP would not be determined for every RRP separately but the whole hand simultaneously.
+	\item The RRP would not be defined as a continuous range but as a discrete set of samples.
+\end{enumerate}
+
+In conclusion of this, the RRP would be defined as a set of relaxed hand postures. To implement this, we simply used the 50 samples of the "idle" \texttt{Posture} stored in the \texttt{PostureDataHandler} to define our RRP. A correct implementation of the distance to the RRP would have been to compute the 21-dimensional bounding volume of the RRP, test a hand posture for collision with the volume and calculate the minimum distance to the volume. Again as a simplification, only the minimum Euclidean distance to any sample of the RRP set was computed. Strictly seen, a hand posture within the RRP could have an RRP value \begin{math}\not= 0\end{math}, 
+but early tests showed the error to be negligibly small.
+The result were two functions, one that calculated the minimum distance to the RRP for the whole hand, one that calculated it for every single finger individually.
+
+\subsection{Discomfort}
+
+In \texttt{Discomfort} the three discomfort components were computed: inter finger angles, hyperextension and abduction.
+
+For the whole-hand computation of inter finger angles, initially only the absolute flexing differences between the fingers were added up. However, it showed early that the anatomical differences between the individual fingers were so severely influencing the inter finger angle discomfort, that they already had to be compensated in the naive metric. Most of all, the ring finger showed to be incapable of having large flexion differences to its adjacent neighbors. However this only stood out when the ring finger had to stick out between its neighbors, not when it was between them. Therefore a ring finger bonus was added, that was computed as follows: 
+
+\texttt{Mathf.Abs((fingers[middle].getTotalFlexion() - fingers[ring].getTotalFlexion() )- (fingers[ring].getTotalFlexion() - fingers[pinky].getTotalFlexion()));}
+
+This way, the ring bonus only occurred, when the ring finger stuck out between it's neighbors. The ring bonus was multiplied with a weighting coefficient, that was estimated to 1.3.
+
+For computing the single-finger values, index and pinky received the angle differences to their only neighbors while the middle and ring finger values were computed similarly to the ring bonus. 
+
+The computation of the hyperextension was more straight forward. Hyper-extended fingers due to the nature of our hand model have negative extension angles in the MCP. Consequently the single finger hyper extension values are the absolute extension angle of the MCP if the finger is hyper-extended otherwise 0. 
+
+Due to the angle-based hand model, computing the single finger abduction component, comes down calculating the absolute of the fingers MCP abduction angle.
+
+For both hyperextension and finger abduction the whole hand metric value is simply the sum of the single finger values. 
+
+To get the total naive discomfort value, the 3 whole hand values were weighted with their importances and afterward added up.
 
 \section{Random Hand Generator}
 
