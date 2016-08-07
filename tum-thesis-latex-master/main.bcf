@@ -2110,6 +2110,8 @@
     <bcf:citekey order="10">naddeo2015proposal</bcf:citekey>
     <bcf:citekey order="11">laviola1999survey</bcf:citekey>
     <bcf:citekey order="12">laviola1999survey</bcf:citekey>
+    <bcf:citekey order="13">su1994logical</bcf:citekey>
+    <bcf:citekey order="14">laviola1999survey</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="anyt/global/" type="entry" sortscheme="anyt" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>

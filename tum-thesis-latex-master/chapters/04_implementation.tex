@@ -15,10 +15,22 @@ Instead of attaching it to the user's arm with a metal construction, potentially
 
 \subsection{Further Project Configuration}
 
-As using the AR-Rift did not seam to benefit the project substantially, it allowed to set up a clean 3D Unity project. The only imported assets were the Leap Motion Unity core assets which provide useful tools for interacting with the recorded hands. All work was based on the sample scene with two hand objects. 
+As using the AR-Rift did not seam to benefit the project substantially, it allowed to set up a clean 3D Unity project. The only imported assets were the Leap Motion Unity core assets which provide useful tools for interacting with the recorded hands. All work was based on the Leap sample scene with two basic hand objects. 
 
 \section{Hand Model}
-aa
+
+In order to make different computations with hands, considerations have to be made about how to represent a hand posture in a virtual environment. In the field of free hand computer interaction, two different hand models are commonly used: angle-based and point-based hand models.
+%add figure
+The point-based hand model describes a hand posture as a set of 6 6DOF (position and orientation) points. 5 of these represent the finger tips, one represents the palm. In the angle-based hand model, a hand posture is described by the hand's joint angles. Depending on the literature, the joints in the hand have a total of 22 \cite{su1994logical} or 23 DOFs \cite{laviola1999survey}, differentiating in the DOFs of the \textit{trapeziometacarpal} joint (TMC, Figure \ref{fig:handAnatomyTotal}).
+Even though the two models are almost interchangeable, the angle-based model was chosen, as it makes most computations of metric components trivial. A common simplification for angle-based hand models is to neglect the 2 DOFs, given by the \textit{metacarpocarpal} (MCC, Figure \ref{fig:handAnatomyTotal}) of the forth and fifth digit. This is done for example by the Leap, because the MCCs hardly move and are therefore are not noticeable for most applications. 
+In conclusion, the implementation was based on a 21DOF angle based hand model, as it can be seen in \textcolor[rgb]{1,0,0}{Figure ????}.
+
+The goal for the unity implementation was to create a universally usable and flexible class structure for hand postures, thus the \textsl{AngleBasedHandModel} class was created. The class has a reference to a thumb object of class AngleBasedThumbModel and four enumerated fingers of class AngleBasedFingerModel. In addition the hands position and rotation are stored for debugging. The class also provides a function to calculate the mathematical Euclidean distance to another hand posture, a function to interpolate between two hand postures, a toString function and multiple functions for loading and storing hand postures as CSV. 
+
+The AngleBasedFingerModel (and AngleBasedThumbModel) stores their 4 (and 5) DOFs as float angles. To ease computation the rotation of the MCP (and TMC) is redundantly stored as quaternion. Both classes also implement the same functions as AngleBasedHandModel and AngleBasedFingerModel additionally provides a function for computing the total bending of a finger (\textcolor[rgb]{1,0,0}{Figure ???}). The three classes are fully serializable to facilitate simple saving and loading of hand postures.
+%TODO: add figure?
+In order to optain the hand posture data from the the Leap in realtime, a HandObserver script was attached to each Leap hand objects. The HandObserver extracted the hand posture data from the Leap and updated an AngleBasedHandModel object.
+
 \section{Hand Posture Detection}
 vsdv
 \section{Hand Posture Metrics}\label{chapter:handosturemetric}
@@ -29,6 +41,9 @@ vsdv
 
 \section{Problems}
 
+\subsection{Serialization and Normalization of Vector3 and Quaternions}
+
 \subsection{Leap Tracking}
 
 \subsection{Hand Posture Detection}
+
