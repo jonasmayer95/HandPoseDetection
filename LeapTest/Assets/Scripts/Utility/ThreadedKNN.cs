@@ -56,7 +56,6 @@ public class ThreadedKNN{
 	{
 		public int Compare(poseCompareObject x, poseCompareObject y)
 		{
-
 			return x.distance.CompareTo(y.distance);
 		}
 	}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.7)  7 AUG 2016 16:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.7)  7 AUG 2016 20:26
 entering extended mode
 **./main.tex
 (main.tex
@@ -2162,14 +2162,23 @@ LaTeX Warning: Citation 'su1994logical' on page 11 undefined on input line 24.
 LaTeX Warning: Citation 'laviola1999survey' on page 11 undefined on input line 
 24.
 
-[11]) (chapters/05_userstudy.tex [12]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 28.
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+Package microtype Info: Loading generic settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+[11] [12]) (chapters/05_userstudy.tex [13]
 chapter 5.
-) (chapters/06_results.tex [13
+) (chapters/06_results.tex [14
 
 
 ]
 chapter 6.
-) [14
+) [15
 
 
 ]
@@ -2179,7 +2188,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 52
 \tf@lof=\write8
 \openout8 = `main.lof'.
 
- [15
+ [16
 
 
 ]
@@ -2194,7 +2203,7 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 53
 LaTeX Warning: Empty bibliography on input line 55.
 
 No complaints by nag.
-[16
+[17
 
 
 ]
@@ -2204,7 +2213,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 57.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1F1685BD6B24006545822236855A8375;2834.
+(rerunfilecheck)             Checksum: AFD11E5B86895FA365313D611594695E;2839.
 
 
 LaTeX Warning: There were undefined references.
@@ -2219,12 +2228,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45575 strings out of 493336
- 1013298 string characters out of 3130257
+ 45601 strings out of 493336
+ 1014056 string characters out of 3130257
  1620494 words of memory out of 3000000
- 48440 multiletter control sequences out of 15000+200000
- 29172 words of font info for 42 fonts, out of 3000000 for 9000
+ 48461 multiletter control sequences out of 15000+200000
+ 29486 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,8n,83p,10458b,1893s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.dvi (23 pages, 85048 bytes).
+Output written on main.dvi (24 pages, 90476 bytes).

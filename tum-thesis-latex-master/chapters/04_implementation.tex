@@ -6,7 +6,7 @@ This chapter will give some details about the implementation, the implementation
 
 \subsection{Unity}
 
-For the implementation of the hand tracking, the metric computation and the user study, Unity 3D 5.3 was chosen as a programming environment. Technically Unity 3D is a powerful game engine, that can be used for 3d or 2d applications and games. It allows users to easily create scenes with different objects whose behavior can be specified with \textsc{C\#} scripts and are rendered automatically. Due to its complex input manager, it allows the user to receive input from a multitude of input devices and supports most unconventional interaction devices like HMDs and also the Leap Motion Controller. In addition a built-in UI-Manager allows for quick prototyping of user interfaces. 
+For the implementation of the hand tracking, the metric computation and the user study, Unity 3D 5.3 was chosen as a programming environment. Technically Unity 3D is a powerful game engine, that can be used for 3d or 2d applications and games. It allows users to easily create scenes with different objects whose behavior can be specified with \texttt{C\#} scripts and are rendered automatically. Due to its complex input manager, it allows the user to receive input from a multitude of input devices and supports most unconventional interaction devices like HMDs and also the Leap Motion Controller. In addition a built-in UI-Manager allows for quick prototyping of user interfaces. 
 
 \subsection{Leap Motion Controller}
 
@@ -25,14 +25,35 @@ The point-based hand model describes a hand posture as a set of 6 6DOF (position
 Even though the two models are almost interchangeable, the angle-based model was chosen, as it makes most computations of metric components trivial. A common simplification for angle-based hand models is to neglect the 2 DOFs, given by the \textit{metacarpocarpal} (MCC, Figure \ref{fig:handAnatomyTotal}) of the forth and fifth digit. This is done for example by the Leap, because the MCCs hardly move and are therefore are not noticeable for most applications. 
 In conclusion, the implementation was based on a 21DOF angle based hand model, as it can be seen in \textcolor[rgb]{1,0,0}{Figure ????}.
 
-The goal for the unity implementation was to create a universally usable and flexible class structure for hand postures, thus the \textsl{AngleBasedHandModel} class was created. The class has a reference to a thumb object of class AngleBasedThumbModel and four enumerated fingers of class AngleBasedFingerModel. In addition the hands position and rotation are stored for debugging. The class also provides a function to calculate the mathematical Euclidean distance to another hand posture, a function to interpolate between two hand postures, a toString function and multiple functions for loading and storing hand postures as CSV. 
+The goal for the unity implementation was to create a universally usable and flexible class structure for hand postures, thus the \texttt{AngleBasedHandModel} class was created. The class has a reference to a thumb object of class \texttt{AngleBasedThumbModel} and four enumerated fingers of class \texttt{AngleBasedFingerModel}. In addition the hands position and rotation are stored for debugging. The class also provides a function to calculate the mathematical Euclidean distance to another hand posture, a function to interpolate between two hand postures, a toString function and multiple functions for loading and storing hand postures as CSV. 
 
-The AngleBasedFingerModel (and AngleBasedThumbModel) stores their 4 (and 5) DOFs as float angles. To ease computation the rotation of the MCP (and TMC) is redundantly stored as quaternion. Both classes also implement the same functions as AngleBasedHandModel and AngleBasedFingerModel additionally provides a function for computing the total bending of a finger (\textcolor[rgb]{1,0,0}{Figure ???}). The three classes are fully serializable to facilitate simple saving and loading of hand postures.
+The \texttt{AngleBasedFingerModel} (and \texttt{AngleBasedThumbModel}) stores their 4 (and 5) DOFs as float angles. To ease computation the rotation of the MCP (and TMC) is redundantly stored as quaternion. Both classes also implement the same functions as \texttt{AngleBasedHandModel} and \texttt{AngleBasedFingerModel} additionally provides a function for computing the total bending of a finger (\textcolor[rgb]{1,0,0}{Figure ???}). The three classes are fully serializable to facilitate simple saving and loading of hand postures.
 %TODO: add figure?
-In order to optain the hand posture data from the the Leap in realtime, a HandObserver script was attached to each Leap hand objects. The HandObserver extracted the hand posture data from the Leap and updated an AngleBasedHandModel object.
+In order to obtain the hand posture data from the the Leap in realtime, a \texttt{HandObserver} script was attached to each Leap hand objects. The \texttt{HandObserver} extracted the hand posture data from the Leap and updated an \texttt{AngleBasedHandModel} object while taking the handedness into account.
 
-\section{Hand Posture Detection}
-vsdv
+\section{Hand Posture Classification}
+
+In order to make sure, that the participant would hold the hand posture during the user study, some kind of hand posture classification system had to be implemented. While there are multiple different methods, that can be used for hand posture classification, the k-nearest neighbors (k-NN) algorithm has proven to be both suitable for hand posture classification and comparatively easy to implement. 
+
+The k-NN algorithm is a simple machine learning algorithm that can be applied to a multitude of problems with an n-dimensional feature vector. The basic idea is to test the membership of an object using training data. The membership of the vector is determined by the majority of it's k nearest neighbors. 
+
+In the case of hand posture classification, we have a 21-dimensional feature vector according to our hand model. The implementation here was based on Nikolas Schneider's implementation, but was refactored to be more versatile in use. Basically the k-NN implementation has two main objectives:
+
+\begin{enumerate}
+	\item Data Collection
+	\item Actual Posture Classification
+\end{enumerate}
+
+For \textbf{data collection} a set of training data, consisting of feature vectors with their classification has to be obtained. This was implemented by the \texttt{PostureDataHandler} class. The \texttt{PostureDataHandler} takes care of the training data, implemented as a list of \texttt{TrainingUnit} objects and provides functions to add and delete \texttt{TrainingUnit}s. A \texttt{TrainingUnit} consists of a \texttt{AngleBasedHandModel} object that is classified with a \texttt{Posture} enumerator. To achieve data persistence, the \texttt{PostureDataHandler} saves the data to the hard drive after every modification and automatically loads it when instantiated.
+
+A TrainingManager scene was created that allows the user to manipulate the training data using a GUI. The user can inspect \texttt{TrainingUnit}s, that are visualized with a \texttt{OutputHand} built from Unity primitives. The \texttt{TrainingUnit}s are grouped by \texttt{Posture} and can be deleted individually or as group. In order to add \texttt{TrainingUnit}s the user has to choose the desired \texttt{Posture}, form the hand posture over the Leap and press a button. 
+
+The \textbf{actual posture classification} classifies a hand posture based on the k nearest neighbors. For that, the distances of the hand posture to all training units has to be computed and the k closest have to be selected. In this case, k is set as the square root of the total training data size.
+
+In the implementation this is handled by the \texttt{ThreadedKNN} class. As the name suggest, the classification is done in parallel to the main program using threads. Each frame the \texttt{ThreadedKNN} starts a new thread which receives the \texttt{AngleBasedHandModel} that needs to be classified. The thread receives a list of \texttt{PoseCompareObject}s from the \texttt{PostureDataHandler} containing the Euclidian distance of every \texttt{TrainingUnit} to the \texttt{AngleBasedHandModel} and its classifying \texttt{Posture}. The thread then sorts the list by distance and counts the occurrences of the different \texttt{Posture}s among the k nearest \texttt{PoseCompareObject}s. The \texttt{AngleBasedHandModel} is then classified as the most frequent \texttt{Posture} and the result is written back to the \texttt{ThreadedKNN} object.
+
+In the context it was used, the k-NN implementation could differentiate between 10 postures with 50 recorded training samples each. The hand posture classification was performed on two hand robustly in real time without noticeable performance impact or lag. 
+
 \section{Hand Posture Metrics}\label{chapter:handosturemetric}
 
 \section{Random Hand Generator}
