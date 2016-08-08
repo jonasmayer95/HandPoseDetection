@@ -62,30 +62,40 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.5}Random Hand Generator}{15}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}User Study Tests}{15}{section.4.6}
+\contentsline {section}{\numberline {4.6}User Study Tests}{16}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}Problems}{15}{section.4.7}
+\contentsline {subsection}{\numberline {4.6.1}Hand Posture Evaluation}{16}{subsection.4.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.1}Serialization and Normalization of Vector3 and Quaternions}{15}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.6.2}Precision and Performance Tests}{16}{subsection.4.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.2}Leap Tracking}{15}{subsection.4.7.2}
+\contentsline {subsection}{\numberline {4.6.3}Target Shooting Test}{17}{subsection.4.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.3}Hand Posture Detection}{15}{subsection.4.7.3}
+\contentsline {subsection}{\numberline {4.6.4}Line Tracing Test}{17}{subsection.4.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}User Studies}{16}{chapter.5}
+\contentsline {subsection}{\numberline {4.6.5}The User Study Management}{18}{subsection.4.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}First User Study}{16}{section.5.1}
+\contentsline {section}{\numberline {4.7}Problems}{18}{section.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Early Analysis and its Consequences}{16}{section.5.2}
+\contentsline {subsection}{\numberline {4.7.1}Serialization and Normalization of Vector3 and Quaternions}{18}{subsection.4.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Second User Study}{16}{section.5.3}
+\contentsline {subsection}{\numberline {4.7.2}Leap Tracking}{18}{subsection.4.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Results and Discussion}{17}{chapter.6}
+\contentsline {subsection}{\numberline {4.7.3}Hand Posture Detection}{18}{subsection.4.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Results}{17}{section.6.1}
+\contentsline {chapter}{\numberline {5}User Studies}{19}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Discussion}{17}{section.6.2}
+\contentsline {section}{\numberline {5.1}First User Study}{19}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Figures}{18}{chapter*.5}
+\contentsline {section}{\numberline {5.2}Early Analysis and its Consequences}{19}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Tables}{19}{chapter*.6}
+\contentsline {section}{\numberline {5.3}Second User Study}{19}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Results and Discussion}{20}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Results}{20}{section.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Discussion}{20}{section.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline List of Figures}{21}{chapter*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline List of Tables}{22}{chapter*.6}

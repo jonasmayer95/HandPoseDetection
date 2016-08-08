@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.4)  5 AUG 2016 12:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.7)  8 AUG 2016 09:15
 entering extended mode
 **./handComfort.tex
 (handComfort.tex
@@ -28,28 +28,35 @@ l.48 \usepackage{
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
-(sig-alternate-05-2015.cls ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+(sig-alternate-05-2015.cls
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\epsfig.st
+y"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.
+sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.st
+y"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.
+sty"
 Package: graphics 2016/06/02 v1.0s Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\graphics.
+cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: dvips.def on input line 99.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvips.def"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\dvips.def
+"
 File: dvips.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen102
@@ -58,10 +65,12 @@ File: dvips.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 \epsfxsize=\dimen104
 \epsfysize=\dimen105
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amssymb.s
+ty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.
+sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks15
 \symAMSa=\mathgroup4
@@ -69,24 +78,30 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.st
+y"
 Package: amsmath 2016/03/10 v2.15b AMS math features
 \@mathmargin=\skip41
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amstext.st
+y"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty
+"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
 \ex@=\dimen106
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty
+"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen107
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty
+"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count79
@@ -127,21 +142,27 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
 )
-Document Class 'sig-alternate' <9th June '13>. Modified by G.K.M. Tobin/Gerry Murray/Boris Veytsman
+Document Class 'sig-alternate' <9th June '13>. Modified by G.K.M. Tobin/Gerry M
+urray/Boris Veytsman
 Based in part upon document Style `acmconf' <22 May 89>. Hacked 4/91 by
 shivers@cs.cmu.edu, 4/93 by theobald@cs.mcgill.ca
 Excerpts were taken from (Journal Style) 'esub2acm.cls'.
-****** Bugs/comments/suggestions/technicalities to Gerry Murray -- murray@hq.acm.org ******
+****** Bugs/comments/suggestions/technicalities to Gerry Murray -- murray@hq.ac
+m.org ******
 Questions on the style, SIGS policies, etc. to Adrienne Griscti griscti@acm.org
+
 \ACM@basesize=\count91
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\comment\comment.sty"
+
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\comment\comment.st
+y"
 \CommentStream=\write3
- Excluding comment 'comment')
-Excluding comment 'CCSXML'
+ Excluding comment 'comment') Excluding comment 'CCSXML'
 \footheight=\dimen115
 \@maxsep=\dimen116
 \@dblmaxsep=\dimen117
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.s
+ty"
 Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
 \aucount=\count92
@@ -165,8 +186,9 @@ Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 LaTeX Warning: You have requested document class `sig-alternate-05-2015',
                but the document class provides `sig-alternate'.
 
-Document Class: sig-alternate 2013/05/12 v2.7 based on acmproc.cls V1.3 <Nov. 30 '99>
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latexsym.sty"
+Document Class: sig-alternate 2013/05/12 v2.7 based on acmproc.cls V1.3 <Nov. 3
+0 '99>
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latexsym.sty"
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
@@ -197,17 +219,21 @@ LaTeX Info: Redefining \cite on input line 1408.
 \copyrtyr=\toks32
 \acmcopyr=\toks33
 \boilerplate=\toks34
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-) (acmcopyright.sty
+)
+(acmcopyright.sty
 Package: acmcopyright 2014/06/29 v1.2 Copyright statemens for ACM classes
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.st
+y"
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.
+tex"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkvutils
+.tex"
 \XKV@toks=\toks35
 \XKV@tempa@toks=\toks36
 )
@@ -216,19 +242,21 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )))
 \copyrightetc=\toks37
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 )
 LaTeX Font Info:    Try loading font information for T1+aer on input line 105.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
+
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))
 \blackoutwidth=\skip44
- (handComfort.aux)
+
+(handComfort.aux)
 \openout1 = `handComfort.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
@@ -251,46 +279,47 @@ You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
 
 LaTeX Font Info:    Try loading font information for U+msa on input line 166.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 166.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for U+lasy on input line 166.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 
 LaTeX Warning: No \author given.
 
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 166.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 166.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
+
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 166.
- Excluding 'CCSXML' comment.
+Excluding 'CCSXML' comment.
 File: Robot.eps Graphic file (type eps)
  <Robot.eps>
 LaTeX Font Info:    Try loading font information for OMS+aer on input line 208.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\omsaer.fd"
+
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\omsaer.fd"
 File: omsaer.fd 1999/12/27
 )
 LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 208.
 
 Overfull \hbox (17.22415pt too wide) in paragraph at lines 220--221
-[]\T1/aer/m/n/9 We first ex-plain the the-o-ret-i-cal ba-sis of our com-fort/discomfort
+[]\T1/aer/m/n/9 We first ex-plain the the-o-ret-i-cal ba-sis of our com-fort/di
+scomfort
  []
 
 [1
@@ -298,7 +327,8 @@ Overfull \hbox (17.22415pt too wide) in paragraph at lines 220--221
 
 ]
 LaTeX Font Info:    Try loading font information for T1+aett on input line 235.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
+
+ ("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 
@@ -360,15 +390,16 @@ or  <return>  to continue without it.
 File: abduction.eps Graphic file (type eps)
 <abduction.eps>
 Overfull \hbox (3.32912pt too wide) in paragraph at lines 293--294
-[]\T1/aer/m/n/9 We com-puted the \T1/aer/bx/n/9 ab-duc-tion \T1/aer/m/n/9 com-po-nent \T1/aer/bx/n/9 FA(x) \T1/aer/m/n/9
- by adding
+[]\T1/aer/m/n/9 We com-puted the \T1/aer/bx/n/9 ab-duc-tion \T1/aer/m/n/9 com-p
+o-nent \T1/aer/bx/n/9 FA(x) \T1/aer/m/n/9 by adding
  []
 
 [2]
 File: Participant.eps Graphic file (type eps)
  <Participant.eps>
 Overfull \hbox (12.77829pt too wide) in paragraph at lines 341--342
-\T1/aer/m/n/9 al-go-rithm on the first 250 data sets to fit the com-fort/discomfort
+\T1/aer/m/n/9 al-go-rithm on the first 250 data sets to fit the com-fort/discom
+fort
  []
 
 File: TrainingDataImproved.eps Graphic file (type eps)
@@ -483,7 +514,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
  2343 strings out of 493336
- 28014 string characters out of 3136707
+ 29094 string characters out of 3130257
  97520 words of memory out of 3000000
  5810 multiletter control sequences out of 15000+200000
  47963 words of font info for 63 fonts, out of 3000000 for 9000

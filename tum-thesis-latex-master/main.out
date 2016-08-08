@@ -29,16 +29,21 @@
 \BOOKMARK [2][-]{subsection.4.4.2}{Discomfort}{section.4.4}% 29
 \BOOKMARK [1][-]{section.4.5}{Random Hand Generator}{chapter.4}% 30
 \BOOKMARK [1][-]{section.4.6}{User Study Tests}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.7}{Problems}{chapter.4}% 32
-\BOOKMARK [2][-]{subsection.4.7.1}{Serialization and Normalization of Vector3 and Quaternions}{section.4.7}% 33
-\BOOKMARK [2][-]{subsection.4.7.2}{Leap Tracking}{section.4.7}% 34
-\BOOKMARK [2][-]{subsection.4.7.3}{Hand Posture Detection}{section.4.7}% 35
-\BOOKMARK [0][-]{chapter.5}{User Studies}{}% 36
-\BOOKMARK [1][-]{section.5.1}{First User Study}{chapter.5}% 37
-\BOOKMARK [1][-]{section.5.2}{Early Analysis and its Consequences}{chapter.5}% 38
-\BOOKMARK [1][-]{section.5.3}{Second User Study}{chapter.5}% 39
-\BOOKMARK [0][-]{chapter.6}{Results and Discussion}{}% 40
-\BOOKMARK [1][-]{section.6.1}{Results}{chapter.6}% 41
-\BOOKMARK [1][-]{section.6.2}{Discussion}{chapter.6}% 42
-\BOOKMARK [0][-]{chapter*.5}{List of Figures}{}% 43
-\BOOKMARK [0][-]{chapter*.6}{List of Tables}{}% 44
+\BOOKMARK [2][-]{subsection.4.6.1}{Hand Posture Evaluation}{section.4.6}% 32
+\BOOKMARK [2][-]{subsection.4.6.2}{Precision and Performance Tests}{section.4.6}% 33
+\BOOKMARK [2][-]{subsection.4.6.3}{Target Shooting Test}{section.4.6}% 34
+\BOOKMARK [2][-]{subsection.4.6.4}{Line Tracing Test}{section.4.6}% 35
+\BOOKMARK [2][-]{subsection.4.6.5}{The User Study Management}{section.4.6}% 36
+\BOOKMARK [1][-]{section.4.7}{Problems}{chapter.4}% 37
+\BOOKMARK [2][-]{subsection.4.7.1}{Serialization and Normalization of Vector3 and Quaternions}{section.4.7}% 38
+\BOOKMARK [2][-]{subsection.4.7.2}{Leap Tracking}{section.4.7}% 39
+\BOOKMARK [2][-]{subsection.4.7.3}{Hand Posture Detection}{section.4.7}% 40
+\BOOKMARK [0][-]{chapter.5}{User Studies}{}% 41
+\BOOKMARK [1][-]{section.5.1}{First User Study}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.2}{Early Analysis and its Consequences}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.3}{Second User Study}{chapter.5}% 44
+\BOOKMARK [0][-]{chapter.6}{Results and Discussion}{}% 45
+\BOOKMARK [1][-]{section.6.1}{Results}{chapter.6}% 46
+\BOOKMARK [1][-]{section.6.2}{Discussion}{chapter.6}% 47
+\BOOKMARK [0][-]{chapter*.5}{List of Figures}{}% 48
+\BOOKMARK [0][-]{chapter*.6}{List of Tables}{}% 49

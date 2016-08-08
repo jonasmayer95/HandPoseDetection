@@ -94,7 +94,63 @@ To get the total naive discomfort value, the 3 whole hand values were weighted w
 
 \section{Random Hand Generator}
 
+One possible weak spot, when comparing and examining hand postures is the process of choosing the hand postures to compare. In the context of this thesis, as many diverse hand postures as possible had to be compared in order to get universally valid picture. To solve this, one possible approach is to randomly generate hand postures. 
+For this, a \texttt{RandomHandGenerator} was created. The class provides a function that returns a random \texttt{AngleBasedHandModel}. Internally the function again chooses from 4 different random hand generators randomly. The different functions are: \texttt{createRandomRandom(), createRandomFromSaved(), createRandomFromSavedMorph(), createRandomProcedural()}. 
+
+The \texttt{createRandomRandom()} function was the first method to be created. It uses maximum and minimum joint angle values, defining the Range of Motion (ROM) \cite{apostolico2014postura}. For each individual finger an individual flexion and abduction within the predefined ROM is computed.
+
+In the \texttt{createRandomFromSaved()} a hand posture is composed by randomly picking finger postures from the training data. For every finger a random TrainingUnit is picked from the PostureDataHandler and that specific finger is taken over by the new random hand. This way, many interesting hand posture combinations can be created of the 10 different training data postures.
+
+\texttt{createRandomFromSavedMorph()} also works using the training data. For the creation of a random hand, two random \texttt{TrainingUnits} are again picked. The resulting hand is created, by interpolating the two hand postures, with the weight varying between the fingers. 
+
+Finally the \texttt{createRandomProcedural()} had a set of predefined finger states, similar as described in the paper of Su et al. \cite{su1994logical}. For the thumb the states \texttt{Under, Downward, Aligned} and \texttt{Sideways} were defined, the remaining fingers had the possible states \texttt{HyperExtended, Flat, Fist} and \texttt{ForwardFist}. Each of the hand's fingers is assigned one state randomly and a random global abduction value is generated, defining the total fanning of the fingers, before assembling the actual hand posture from predefined finger configurations corresponding to the finger states.
+
+To guarantee a homogenous distribution of comfort and discomfort among the randomly generated hand postures, a random range of possible naive comfort/discomfort metric values for the hand posture is defined beforehand. The random hand generation process is repeated until the calculated naive metric value of the hand posture lies within the specified range.
+
 \section{User Study Tests}
+
+For investigating the main questions of the thesis, a test environment had to be created. In order to verify and to improve the metric, the idea was to let participants rate different hand postures and compare the ratings with the computed metric values. Additionally, the objective was to show the impact of comfort and discomfort on precision and performance in different tasks, for that a target shooting test and a line tracing test were implemented.
+The user study was designed for a seated participant in front of a desk, with the elbow of the dominant hand resting on the edge. For interaction a controller and a monitor were placed on the desk. Additionally a Leap Motion controller was attached to the desk.  
+
+\subsection{Hand Posture Evaluation}
+
+For the hand posture evaluation, a \texttt{UserStudyComfortEvaluation} scene was created. To begin the test, a random hand posture was generated and visualized using the \texttt{OutputHand} known from the \texttt{TrainingManager} scene. Afterwards the participant had to imitate the hand posture and rate the hand posture on an intuitive comfort/discomfort scale ranging from 0 (extremely uncomfortable) to 10 (extremely comfortable). If the participant was unable to mimic the hand posture due to its complexity, the posture was supposed to be rated with a 0. After confirming his or her choice, the results were logged to a .CSV file. For that, the naive and improved metric components were computed and logged together with the participants rating and name. In addition the whole randomly generated hand was logged, in order to be able to do further calculations later on if necessary.
+
+Before the first hand posture evaluation the participant was shown two different randomly generated hand postures, to get a reference on what to expect in terms of comfort and discomfort. The first hand posture was supposed to be a relaxed one that could be rated with a 10, therefore with a metric value close to 0. The second hand posture should represent an extremely uncomfortable hand posture resulting in a 0 rating, therefore the metric value should be as high as possible.
+
+\subsection{Precision and Performance Tests}
+
+Before the target shooting and the line tracing test. The participant was again shown a randomly generated hand posture, that was meant to be tested. Again the user had to mimic the hand posture with the dominant hand and again the user had to rate the hand. After rating, the subject had to hold his hand over the Leap while holding the posture. In order to track the hand posture during the tests, the hand posture had to be learned by the k-NN. For that the Leap recorded 50 samples of the hand and the hand posture data was saved as \texttt{TrainingUnit}s by the \texttt{PostureDataHandler}. 
+
+After that the actual tests started. If the participants broke the hand posture they were kindly asked to correct it. During both tests the participants were shown a visualization of the given hand posture in the bottom right corner as a reminder. They had to perform different tasks using their dominant hand while maintaining the hand posture. 
+For that, the subjects were shown a minimalistic representation of their hand position that was recorded with the Leap. In favor of comparability, the pointing direction was universally set independent of the hand posture as the forward direction of the hand base, and was visualized with a laser beam. 
+
+\subsection{Target Shooting Test}
+
+The target shooting test was chosen to test the performance impact in context of quick punctual pointing. This specific test was chosen due to its similarity to real world tasks, such as giving a robot quick spatial commands or commanding units to perform some action somewhere in space in a RTS game. To implement this, the \texttt{UserStudyTargetShooting} scene was created.
+
+The scene featured an \texttt{OutputHand} visualizing a total of 18 targets which appeared individually in a random order. The participant then had to aim down the individual targets with their hand and shoot them with the press of a button.
+Once a target was hit, the distance of the hit to the target's center was computed as a metric for accuracy. The accuracy value, the time to hit as well as the different metric components and the whole hand were then logged in a .CSV file.  
+
+When the participants broke the hand posture, shooting was locked, until the hand posture was corrected. 
+
+\subsection{Line Tracing Test}
+
+The line tracing test was chosen due to its similarity to real world tasks such as drawing a route to be traversed by a robot or patrolled by units in a RTS.
+For this, the \texttt{UserStudyLineTracing} scene was created.
+
+In the test, the participant was shown a blue curve on a drawing plane, that had to be traced. For that the user had to use the ray, to draw his own line on the drawing plane as close to the given curve as possible by holding a controller button. If the participant broke the hand posture, the drawing was interrupted, if the user released the drawing button, the test was ended after a certain timeout.
+After the test was ended, the total accuracy was calculated and was logged together with the total task completion time, hand posture metric values and the whole hand in a .CSV file.
+
+The curves were implemented as discrete sets of \texttt{LinePoint}s that were connected to their neighbors with line segments. In order to get a smooth curve 12 random points were generated on the drawing plane and a bezier curve was fitted through them. The bezier curve was then discretized in 75 \texttt{LinePoint}s. For drawing the line, a \texttt{LinePoint} was set at the starting point and a second was moved with the ray on the drawing plane. As soon as the second \texttt{LinePoint} moved too far away from the previous \texttt{LinePoint}, it was fixed to its position and a new \texttt{LinePoint} was added in and moved further instead.
+
+The accuracy could be determined by calculating the average minimum distance of every drawn \texttt{LinePoint} to the given curve defined by its \texttt{LinePoint}s. The same was done the other way around and added up to the total line accuracy value. 
+
+\subsection{The User Study Management}
+
+In order to automate the user study process, a \texttt{UserStudyDevScreen} scene was added in. The scene showed a GUI, that can be used configure a whole user study for one participant. The experimenter can set the name of the participant, his handedness and choose a \texttt{Pose} to be overwritten by the users hand recordings. Further it can be selected which of the three user study test have to be performed and how often these will be repeated for different hand postures. 
+
+After confirming the setting, the user study will start with the desired number of hand posture evaluations and automatically switch to the precision and performance tests. After finishing the complete user study, the participant is shown a ending screen, thanking him for participating in the study and giving him the opportunity to play around with the standard leap hand visualization. 
 
 \section{Problems}
 
