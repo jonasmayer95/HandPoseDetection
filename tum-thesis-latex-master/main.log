@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.7)  8 AUG 2016 12:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.7)  8 AUG 2016 20:17
 entering extended mode
 **./main.tex
 (main.tex
@@ -2194,14 +2194,19 @@ ine 100.
 LaTeX Warning: Citation 'su1994logical' on page 15 undefined on input line 106.
 
 
-[15] [16] [17]) (chapters/05_userstudy.tex [18]
+[15] [16] [17] [18]
+
+LaTeX Warning: Citation 'fig:anatomytotal' on page 19 undefined on input line 1
+65.
+
+[19]) (chapters/05_userstudy.tex [20]
 chapter 5.
-) (chapters/06_results.tex [19
+) (chapters/06_results.tex [21
 
 
 ]
 chapter 6.
-) [20
+) [22
 
 
 ]
@@ -2211,7 +2216,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 52
 \tf@lof=\write8
 \openout8 = `main.lof'.
 
- [21
+ [23
 
 
 ]
@@ -2226,7 +2231,7 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 53
 LaTeX Warning: Empty bibliography on input line 55.
 
 No complaints by nag.
-[22
+[24
 
 
 ]
@@ -2235,15 +2240,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
  (main.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 57.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 641861F2947C04DFA703F8EE87DD4D37;3365.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 521D720C356705B440CDC1A8086DD75A;3277
-(rerunfilecheck)             After:  622BB8A4D7DBF10DD7B535703EB6E8E2;3357.
 
 LaTeX Warning: There were undefined references.
 
@@ -2257,12 +2256,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45604 strings out of 493336
- 1014112 string characters out of 3130257
- 1620575 words of memory out of 3000000
- 48465 multiletter control sequences out of 15000+200000
+ 45605 strings out of 493336
+ 1014130 string characters out of 3130257
+ 1620609 words of memory out of 3000000
+ 48466 multiletter control sequences out of 15000+200000
  26634 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,8n,83p,10458b,1893s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.dvi (29 pages, 116116 bytes).
+Output written on main.dvi (31 pages, 125776 bytes).

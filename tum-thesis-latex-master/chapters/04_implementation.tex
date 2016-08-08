@@ -150,13 +150,40 @@ The accuracy could be determined by calculating the average minimum distance of 
 
 In order to automate the user study process, a \texttt{UserStudyDevScreen} scene was added in. The scene showed a GUI, that can be used configure a whole user study for one participant. The experimenter can set the name of the participant, his handedness and choose a \texttt{Pose} to be overwritten by the users hand recordings. Further it can be selected which of the three user study test have to be performed and how often these will be repeated for different hand postures. 
 
-After confirming the setting, the user study will start with the desired number of hand posture evaluations and automatically switch to the precision and performance tests. After finishing the complete user study, the participant is shown a ending screen, thanking him for participating in the study and giving him the opportunity to play around with the standard leap hand visualization. 
+After confirming the setting, the user study will start with the desired number of hand posture evaluations and automatically switch to the precision and performance tests. After finishing the complete user study, the participant is shown a ending screen, thanking him for participating in the study and giving him the opportunity to play around with the standard Leap hand visualization. 
 
-\section{Problems}
+\section{Stumbling Blocks}
+
+During implementation, a variety of unexpected problems occurred and different concepts turned out to not work in the context as expected. The following section describes different stumbling blocks that can commonly be found in similar contexts or were severe threats to the project. 
 
 \subsection{Serialization and Normalization of Vector3 and Quaternions}
 
+Since a \texttt{BinaryFormatter} was used for saving and loading the training data in the \texttt{PostureDataHandler}, all saved objects had to be serializable. For this \texttt{TrainingUnit} had to be serializale, consequently a \texttt{AngleBasedHandModel} and a \texttt{AngleBasedFinger}- and -\texttt{ThumbModel} had to serializable. As \texttt{float}s and \texttt{Enum}s are both serializable, the only problems were \texttt{Vector3} and \texttt{Quaternion}, the standard Unity classes, that for some reason are not serializable. The only solution for this was to create a custom struct for vectors and quaternions. 
+
+Thus, the \texttt{sVector3} and \texttt{sQuaternions} were created. Both \texttt{struct}s basically implement their unserializable counterparts, in both cases operators were defined to enable implicit typecasting to the unserializable form and back. For logging, both \texttt{struct}s also received additional functions for printing and parsing into .CSV files.
+
+When extracting the MCP and TMC angles (Figure \cite{fig:anatomytotal}) of the fingers, it was necessary to compute the relative rotations of the finger joints compared to their parents. The first idea, was to use the different functions of the Unity \texttt{Transform} class, but it turned out, that this class was unable to be instantiated without being a component of a game object. Therefore direct quaternion multiplication was used, as defined in the standard Unity class. After a while it became clear, that the standard quaternion multiplication would not automatically normalize the result, which caused several bugs when trying to do further computations with the \texttt{Quaternion}s. Obviously the standard unity functions do not check if a \texttt{Quaternion} is normalized before doing further computations. 
+
+The bug was even harder to track, as it could not be visualized due to the \texttt{Transform} class automatically normalizing a \texttt{Quaternion} when applied to it as rotation.
+
+As a consequence of this, the \texttt{sQuaternion} also received a function for normalization and length computation, as the standard \texttt{Quaternion} class implements neither.
+
+Finally, creating a ambidextrous hand posture classification environment required to be able to transform a left handed hand posture to a right handed one and vice versa. Thus, functions for mirroring \texttt{sQuaternion}s around different axes had to be implemented as \texttt{Quaternion} did not provide any.
+
 \subsection{Leap Tracking}
+
+The Leap Motion Orion SDK was a big step forward for the tracking of the Leap. It enabled tracking of awkward postures such as pinching, that were not possible to track before, it improved the finger pose estimation for occluded fingers and overall massively improved the range and robustness at different lighting conditions. However, due to its intended field of use, the Leap tracking is focused on quick and fluent hand and finger tracking, that provides the precision needed to create a reasonable visual parity. However, for contexts that require high precision, the Leap struggles to deliver usable data. 
+
+While this characteristic of the Leap was no problem for the hand posture classification, it lead to unacceptable impact for pointing, especially for unconventional hand postures. Using the ray to aim down targets or to trace a line magnified the inaccuracies of the hand tracking, resulting in accuracy loss in the user studies. Because the tracking inaccuracies exceeded the expected accuracy loss by hand postures, an alternative hand tracking solution had to be found.
+
+For precise hand tracking a optical outside-in solution was used, the ART system. Using four cameras the system can detect a marker attached to the back of the user's hand. By attaching a marker to the user study desk, the ART hand position could be calibrated to the same coordinate system as used by the leap. The tracking data of the ART was implemented to only be used for hand rotation and position in the target shooting and line tracing task. When ART tracking fails for some reason, the system automatically switches back to the legacy Leap hand tracking.  
+
+The result was a much higher tracking precision that allowed meaningful user accuracy observation.  
+
+However the need for the user to wear a hand tracker yielded yet another problem. The tracker's black rubber strap, wrapped around the user's hand was visible for the Leap. In some cases this inferred with the hand detection, causing the Leap to detect a small closed fist in the lower stump of the hand. However, this problem could be solved by wrapping occluding the strap with something with a similar IR signature as skin. For the user study this was realized by wrapping a paper towel around the strap. 
 
 \subsection{Hand Posture Detection}
 
+The hand posture detection as implemented by the k-NN algorithm was supposed to differentiate between a relatively small set of predefined hand postures. Through the addition of the random hand generator, samples of random hand postures were added with a "custom" \texttt{Posture} to the training data set. Problems occurred, when the randomly generated posture was similar or identical to a predefined hand posture by coincidence. This caused problems in the user studies, when the predefined posture was detected instead of the custom one and the user was notified to correct his hand posture even though he had the right hand posture. 
+
+As a consequence the misuse of the k-NN was ended, instead only the minimum Euclidean distance to the "custom" \texttt{TrainingUnit}s is computed, similar as it is computed for the RRP component. If the minimum distance is smaller than a certain threshold, the hand is considered to hold the hand posture.
