@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.7)  8 AUG 2016 20:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.7)  9 AUG 2016 12:20
 entering extended mode
 **./main.tex
 (main.tex
@@ -2201,26 +2201,47 @@ LaTeX Warning: Citation 'fig:anatomytotal' on page 19 undefined on input line 1
 
 [19]) (chapters/05_userstudy.tex [20]
 chapter 5.
-) (chapters/06_results.tex [21
+[21
 
 
-]
+]) (chapters/06_results.tex [22]
 chapter 6.
-) [22
+File: TestDataNaive.eps Graphic file (type eps)
+<TestDataNaive.eps> [23
 
 
 ]
-Package tocbasic Info: character protrusion at lof deactivated on input line 52
+File: TrainingDataImproved.eps Graphic file (type eps)
+ <TrainingDataImproved.eps> [24]
+File: TestDataImproved.eps Graphic file (type eps)
+
+<TestDataImproved.eps>
+File: TargetShooting.eps Graphic file (type eps)
+ <TargetShooting.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Citation 'short1999precision' on page 25 undefined on input line
+ 60.
+
+) (chapters/07_conclusion.tex [25] [26]
+chapter 7.
+) [27
+
+
+] [28]
+Package tocbasic Info: character protrusion at lof deactivated on input line 53
 .
  (main.lof)
 \tf@lof=\write8
 \openout8 = `main.lof'.
 
- [23
+ [29
 
 
 ]
-Package tocbasic Info: character protrusion at lot deactivated on input line 53
+Package tocbasic Info: character protrusion at lot deactivated on input line 54
 .
  (main.lot)
 \tf@lot=\write9
@@ -2228,20 +2249,20 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 53
 
 
 
-LaTeX Warning: Empty bibliography on input line 55.
+LaTeX Warning: Empty bibliography on input line 56.
 
 No complaints by nag.
-[24
+[30
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 57.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
  (main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 57.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 58.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 641861F2947C04DFA703F8EE87DD4D37;3365.
+(rerunfilecheck)             Checksum: CB5DAB3D3821BF8F022E390B787D3997;3317.
 
 
 LaTeX Warning: There were undefined references.
@@ -2256,12 +2277,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45605 strings out of 493336
- 1014130 string characters out of 3130257
- 1620609 words of memory out of 3000000
- 48466 multiletter control sequences out of 15000+200000
+ 45625 strings out of 493336
+ 1014554 string characters out of 3130257
+ 1621102 words of memory out of 3000000
+ 48479 multiletter control sequences out of 15000+200000
  26634 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,8n,83p,10458b,1893s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 75i,9n,83p,10458b,1893s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.dvi (31 pages, 125776 bytes).
+Output written on main.dvi (37 pages, 148340 bytes).
