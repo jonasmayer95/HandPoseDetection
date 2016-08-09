@@ -10,26 +10,46 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces Nikolas Schneider: Comparing 3 different Postures\relax }}{4}{figure.caption.4}
+\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces Nikolas Schneider: Pointing, Spiderman and Pinching Posture\relax }}{4}{figure.caption.4}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Hand Anatomy\relax }}{7}{figure.caption.5}
+\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces A relaxed Hand Posture recorded with the Leap.\relax }}{7}{figure.caption.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Hyperextension and Abduction\relax }}{9}{figure.caption.6}
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Hand Anatomy (from \cite {laviola1999survey})\relax }}{8}{figure.caption.6}
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Hyperextension and Abduction (from \cite {laviola1999survey})\relax }}{9}{figure.caption.7}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Naive Metric and User Rating in Test Data.\relax }}{24}{figure.caption.7}
+\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Point-based and Angle-based Hand Models (from \cite {su1994logical}).\relax }}{14}{figure.caption.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Improved Metric and User Rating in Training Data.\relax }}{25}{figure.caption.9}
+\contentsline {figure}{\numberline {\relax 4.2}{\ignorespaces Used Hand Model showing Joints with DOFs\relax }}{15}{figure.caption.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces Improved Metric and User Rating in Test Data.\relax }}{26}{figure.caption.10}
+\contentsline {figure}{\numberline {\relax 4.3}{\ignorespaces Inspecting a pointing \texttt {TrainingUnit} in the \texttt {TrainingManager}.\relax }}{16}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 6.4}{\ignorespaces Improved Metric Value and Total Task Time in Target Shooting.\relax }}{27}{figure.caption.11}
+\contentsline {figure}{\numberline {\relax 4.4}{\ignorespaces The Hand Posture Comfort Evaluation Scene.\relax }}{20}{figure.caption.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 4.5}{\ignorespaces The Target Shooting Test.\relax }}{22}{figure.caption.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 4.6}{\ignorespaces The Line Tracing Test.\relax }}{23}{figure.caption.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 4.7}{\ignorespaces The User Study DevScreen.\relax }}{24}{figure.caption.14}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces A Participant performing the Target Shooting Test.\relax }}{27}{figure.caption.15}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Naive Metric and User Rating in Test Data.\relax }}{30}{figure.caption.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Improved Metric and User Rating in Training Data.\relax }}{31}{figure.caption.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces Improved Metric and User Rating in Test Data.\relax }}{32}{figure.caption.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 6.4}{\ignorespaces Improved Metric Value and Total Task Time in Target Shooting.\relax }}{33}{figure.caption.20}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }

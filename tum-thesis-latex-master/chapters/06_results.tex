@@ -1,6 +1,6 @@
 \chapter{Results and Discussion}\label{chapter:results}
 
-When testing the naive metric in the test data, obtained from the hand posture evaluation of the pilot study, it can be seen that the computed metric values do correlate with the user rating. Figure \ref{fig:testDataNaive} shows an \texttt{R} plot of the data. The dots represent the individual hand posture ratings and the line shows the smoothed conditional mean, calculated by the \texttt{geom\_smooth} function. The computed Pearson correlation of -0.6651999 confirms this and the p-value of 6.73e-9 shows that the correlation is highly significant (taking 0.01 as a threshold for p-value significance). 
+When testing the naive metric against the test data, obtained from the hand posture evaluation of the pilot study, it can be seen that the computed metric values do correlate with the user rating. Figure \ref{fig:testDataNaive} shows an \texttt{R} plot of the data. The dots represent the individual hand posture ratings and the line shows the smoothed conditional mean, calculated by the \texttt{geom\_smooth} function. The computed Pearson correlation of -0.6651999 confirms this and the p-value of 6.73e-9 shows that the correlation is highly significant (taking 0.01 as a threshold for p-value significance). 
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{TestDataNaive}
@@ -8,7 +8,7 @@ When testing the naive metric in the test data, obtained from the hand posture e
 \label{fig:testDataNaive}
 \end{figure}
 
-For improving the metric, finding the best fitting 17 weighting coefficients can be reduced to a curve fitting problem with 17 unknowns. Therefore we used the least squares algorithm on the first 250 data sets from the second user study to fit the comfort/discomfort metric values to the user ratings. This was done with the \texttt{lsfit} function in \texttt{R}. Afterwards we tested our results against the remaining 60 data sets from the pilot study to validate them. For this, we decided to combine comfort and discomfort, as we suspected both comfort and discomfort to affect performance. 
+For improving the metric, finding the best fitting 17 weighting coefficients can be reduced to a curve fitting problem with 17 unknowns. Therefore we used the least squares algorithm on the first 250 data sets from the second user study to fit the comfort/discomfort metric values to the user ratings. This was done with the \texttt{lsfit} function in \texttt{R}. Afterwards we tested our results against the remaining 60 data sets from the pilot study to validate them. For this, we decided to combine comfort and discomfort, as we suspected both comfort and discomfort to affect performance.
 
 \begin{table}
 \centering
@@ -37,9 +37,13 @@ The computed coefficients can be taken from Table \ref{tab:coeff}. When looking 
 \label{fig:trainingData}
 \end{figure}
 
-Unsurprisingly, there was a correlation in the training data between the user rating and our improved metric, generated using this very data (Figure \ref{fig:trainingData}). Despite it high significance due to a p-value of < 2.2e-16, the correlation found was still not perfect, having a value of -0.6453242. For this we suspect multiple reasons: 
+Unsurprisingly, there was a correlation in the training data between the user rating and our improved metric, generated using this very data (Figure \ref{fig:trainingData}). Despite its high significance due to a p-value of < 2.2e-16, the correlation found was still not perfect, having a value of -0.6453242. For this we suspect multiple reasons: 
 
-The participants most likely had differences in anatomy and mindset, which caused them to subjectively rate comparable postures differently. In addition to that, there was little time for subjects to give their rating. Therefore long time discomfort symptoms, like pain or cramping, might not have been experienced. Finally, the subjects could only rate the hands of continuous comfort/discomfort on a scale with 11 discrete steps, which potentially introduced some additional error.
+\begin{itemize}
+	\item The participants most likely had differences in anatomy and mindset, which caused them to subjectively rate comparable postures differently. 
+	\item There was little time for subjects to give their rating. Therefore long time discomfort symptoms, like pain or cramping, might not have been experienced. 
+	\item The subjects could only rate the hands of continuous comfort/discomfort on a scale with 11 discrete steps, which potentially introduced some additional error.
+\end{itemize}
 
 \begin{figure}[h]
 \centering
@@ -57,4 +61,4 @@ Even though the improved metric was created using a limited set of training data
 \label{fig:targetShooting}
 \end{figure}
 
-The results from the target shooting task (Figure \ref{fig:targetShooting}) show a significant correlation of -0.66519 (p-value: 6.73e-9) that indicates that comfort and discomfort, as measured by our metric, do affect the performance and precision in context of hand postures. This strengthens the conclusion of Short et al.~\cite{short1999precision}, that more comfortable postures generally create greater accuracy. However, the credibility of our results is limited by the relatively small number of participants. Further work is required before strong conclusions can be made.
+The results from the target shooting task (Figure \ref{fig:targetShooting}) show a significant correlation of -0.66519 (p-value: 6.73e-9) that indicates that comfort and discomfort, as measured by our metric, do affect the performance and precision in context of hand postures. This strengthens the conclusion of Short et al. \cite{short1999precision}, that more comfortable postures generally create greater accuracy. However, the credibility of our results is limited by the relatively small number of participants. Thus further work is required before strong conclusions can be made.

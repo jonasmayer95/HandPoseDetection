@@ -2100,23 +2100,31 @@
   <bcf:section number="0">
     <bcf:citekey order="1">short1999precision</bcf:citekey>
     <bcf:citekey order="2">naddeo2015proposal</bcf:citekey>
-    <bcf:citekey order="3">vink2012editorial</bcf:citekey>
-    <bcf:citekey order="4">fagarasanu2004measurement</bcf:citekey>
-    <bcf:citekey order="5">apostolico2014postural</bcf:citekey>
-    <bcf:citekey order="6">naddeo2015proposal</bcf:citekey>
-    <bcf:citekey order="7">short1999precision</bcf:citekey>
-    <bcf:citekey order="8">vink2012editorial</bcf:citekey>
-    <bcf:citekey order="9">apostolico2014postural</bcf:citekey>
-    <bcf:citekey order="10">naddeo2015proposal</bcf:citekey>
-    <bcf:citekey order="11">laviola1999survey</bcf:citekey>
+    <bcf:citekey order="3">schneider_2016</bcf:citekey>
+    <bcf:citekey order="4">vink2012editorial</bcf:citekey>
+    <bcf:citekey order="5">fagarasanu2004measurement</bcf:citekey>
+    <bcf:citekey order="6">apostolico2014postural</bcf:citekey>
+    <bcf:citekey order="7">naddeo2015proposal</bcf:citekey>
+    <bcf:citekey order="8">short1999precision</bcf:citekey>
+    <bcf:citekey order="9">vink2012editorial</bcf:citekey>
+    <bcf:citekey order="10">apostolico2014postural</bcf:citekey>
+    <bcf:citekey order="11">naddeo2015proposal</bcf:citekey>
     <bcf:citekey order="12">laviola1999survey</bcf:citekey>
-    <bcf:citekey order="13">su1994logical</bcf:citekey>
+    <bcf:citekey order="13">laviola1999survey</bcf:citekey>
     <bcf:citekey order="14">laviola1999survey</bcf:citekey>
-    <bcf:citekey order="15">apostolico2014postural</bcf:citekey>
-    <bcf:citekey order="16">apostolico2014postura</bcf:citekey>
-    <bcf:citekey order="17">su1994logical</bcf:citekey>
-    <bcf:citekey order="18">fig:anatomytotal</bcf:citekey>
-    <bcf:citekey order="19">short1999precision</bcf:citekey>
+    <bcf:citekey order="15">laviola1999survey</bcf:citekey>
+    <bcf:citekey order="16">laviola1999survey</bcf:citekey>
+    <bcf:citekey order="17">laviola1999survey</bcf:citekey>
+    <bcf:citekey order="18">su1994logical</bcf:citekey>
+    <bcf:citekey order="19">su1994logical</bcf:citekey>
+    <bcf:citekey order="20">su1994logical</bcf:citekey>
+    <bcf:citekey order="21">laviola1999survey</bcf:citekey>
+    <bcf:citekey order="22">gardner20143d</bcf:citekey>
+    <bcf:citekey order="23">apostolico2014postural</bcf:citekey>
+    <bcf:citekey order="24">apostolico2014postural</bcf:citekey>
+    <bcf:citekey order="25">su1994logical</bcf:citekey>
+    <bcf:citekey order="26">short1999precision</bcf:citekey>
+    <bcf:citekey order="27">short1999precision</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="anyt/global/" type="entry" sortscheme="anyt" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>

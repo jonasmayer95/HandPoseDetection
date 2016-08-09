@@ -14,7 +14,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.2.1}Create a Metric for Hand Posture Comfort/Discomfort}{2}{subsection.1.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.2}Show the Metric's Influence on User Performance}{2}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.2}Show the Metric's Influence on User Performance}{3}{subsection.1.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Related Work}{4}{chapter.2}
 \defcounter {refsection}{0}\relax 
@@ -32,68 +32,70 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.2}The Inter Finger Angles}{8}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Finger Hyperextension}{8}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Finger Hyperextension}{9}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}Finger Abduction}{8}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}Finger Abduction}{9}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Naive Metrics}{9}{section.3.3}
+\contentsline {section}{\numberline {3.3}Naive Metrics}{10}{section.3.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.4}Improved Metrics}{10}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Implementation}{11}{chapter.4}
+\contentsline {chapter}{\numberline {4}Implementation}{12}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Basic Setup}{11}{section.4.1}
+\contentsline {section}{\numberline {4.1}Basic Setup}{12}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Unity}{11}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.1}Unity}{12}{subsection.4.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.2}Leap Motion Controller}{11}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.2}Leap Motion Controller}{12}{subsection.4.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.3}Further Project Configuration}{11}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.3}Further Project Configuration}{12}{subsection.4.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Hand Model}{12}{section.4.2}
+\contentsline {section}{\numberline {4.2}Hand Model}{13}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Hand Posture Classification}{13}{section.4.3}
+\contentsline {section}{\numberline {4.3}Hand Posture Classification}{15}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Hand Posture Metrics}{14}{section.4.4}
+\contentsline {section}{\numberline {4.4}Hand Posture Metrics}{17}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}Comfort}{14}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.1}Comfort}{17}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}Discomfort}{15}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.2}Discomfort}{18}{subsection.4.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Random Hand Generator}{16}{section.4.5}
+\contentsline {section}{\numberline {4.5}Random Hand Generator}{19}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}User Study Tests}{17}{section.4.6}
+\contentsline {section}{\numberline {4.6}User Study Tests}{20}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.1}Hand Posture Evaluation}{17}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.1}Hand Posture Evaluation}{20}{subsection.4.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.2}Precision and Performance Tests}{17}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.2}Precision and Performance Tests}{21}{subsection.4.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.3}Target Shooting Test}{18}{subsection.4.6.3}
+\contentsline {subsection}{\numberline {4.6.3}Target Shooting Test}{21}{subsection.4.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.4}Line Tracing Test}{18}{subsection.4.6.4}
+\contentsline {subsection}{\numberline {4.6.4}Line Tracing Test}{22}{subsection.4.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.5}The User Study Management}{19}{subsection.4.6.5}
+\contentsline {subsection}{\numberline {4.6.5}The User Study Management}{23}{subsection.4.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}Stumbling Blocks}{19}{section.4.7}
+\contentsline {section}{\numberline {4.7}Stumbling Blocks}{24}{section.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.1}Serialization and Normalization of Vector3 and Quaternions}{19}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.1}Serialization and Normalization of Vector3 and Quaternions}{24}{subsection.4.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.2}Leap Tracking}{20}{subsection.4.7.2}
+\contentsline {subsection}{\numberline {4.7.2}Leap Tracking}{25}{subsection.4.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.3}Hand Posture Detection}{21}{subsection.4.7.3}
+\contentsline {subsection}{\numberline {4.7.3}Hand Posture Detection}{26}{subsection.4.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}User Studies}{22}{chapter.5}
+\contentsline {chapter}{\numberline {5}User Studies}{27}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Pilot User Study}{22}{section.5.1}
+\contentsline {section}{\numberline {5.1}Pilot User Study}{27}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Early Analysis and its Consequences}{22}{section.5.2}
+\contentsline {section}{\numberline {5.2}Early Analysis and its Consequences}{28}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Second User Study}{23}{section.5.3}
+\contentsline {section}{\numberline {5.3}Second User Study}{28}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Results and Discussion}{24}{chapter.6}
+\contentsline {chapter}{\numberline {6}Results and Discussion}{30}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{28}{chapter.7}
+\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{34}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Figures}{30}{chapter*.12}
+\contentsline {chapter}{\nonumberline List of Figures}{36}{chapter*.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Tables}{31}{chapter*.13}
+\contentsline {chapter}{\nonumberline List of Tables}{37}{chapter*.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Bibliography}{38}{chapter*.23}

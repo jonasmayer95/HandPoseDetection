@@ -26,9 +26,14 @@ Due to anatomical differences between different humans, it makes more sense to l
 
 When looking at postures involving multiple joints, Naddeo et al. \cite{naddeo2015proposal} state that comfort can be determined by combining the comfort values of the single joints.
 
-In our case, we considered the human hand to have one RRP for each finger joint in a non-resting position with the palm facing downwards, resulting in a range of relaxed hand postures \colorbox[rgb]{1,0,0}{(Figure ???)}
-%add figure
-, where the comfort is maximized. For a particular hand posture denoted by "x" the RRP component \textit{RRP(x)} can be computed by determining the angular distances to the RRP for every joint and adding them up.
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{relaxed}
+\caption{A relaxed Hand Posture recorded with the Leap.}
+\label{fig:relaxed}
+\end{figure}
+
+In our case, we considered the human hand to have one RRP for each finger joint in a non-resting position with the palm facing downwards, resulting in a range of relaxed hand postures, similar to Figure \ref{fig:relaxed}, where the comfort is maximized. For a particular hand posture denoted by "x" the RRP component \textit{RRP(x)} can be computed by determining the angular distances to the RRP for every joint and adding them up.
 
 \subsection{The Inter Finger Angles}
 
@@ -40,27 +45,27 @@ In our case, we considered the human hand to have one RRP for each finger joint 
 \begin{subfigure}
 \includegraphics[width=0.4\textwidth]{handanatomy}
 \end{subfigure}
-\caption{Hand Anatomy}
+\caption{Hand Anatomy (from \cite{laviola1999survey})}
 \label{fig:handAnatomyTotal}
 \end{figure}
+
 As it can be seen in Figure \ref{fig:handAnatomyTotal} the hand has a very compact and highly connected system of muscles, tendons and soft tissue that limits the individual movement of fingers.
 The fingers, excluding the thumb, share \textbf{most} of their flexor and extendor muscles. However minor individual flexion and extension of adjacent fingers is still possible due to finger tendons originating from different areas of the muscles. In the case of the \textit{Extensor digitorum communis} (EDC in Figure \ref{fig:handAnatomyTotal}) the finger tendons are even interconnected on the back of the hand.
 
 In addition to this only three principal nerves serve the muscles of the hand, which makes it even harder for the motory system to fully differentiate between the individual fingers.
-%Add figure and proof
 
 In conclusion of this, hand postures with high bending differences between the fingers should not only cause physical stress on both tendons and muscles, but also cognitive stress. This is due to the human trying to achieve and hold a complex posture with limited cognitive and physical means.
 This can lead to severe discomfort, which is manifested in cramping up the hand and pain.
-For a specific hand posture the inter finger angle component \textit{IFA(x)} can be computed, by computing the total angular bending differences of adjacent fingers and adding them up.
+For a specific hand posture the inter finger angle component \textit{IFA(x)} can be computed, by computing the total angular flexion (Figure \ref{fig:hyperabduction}) differences of adjacent fingers and adding them up.
 
 \subsection{Finger Hyperextension}
 
-As highlighted by LaViola \cite{laviola1999survey} \textbf{hyperextension} (Figure \ref{fig:hyperabduction}), "\textit{puts more strain on the }[metacarpophalangeal] \textit{joints and tendons than the hand is accustomed to}" \cite{laviola1999survey}. Consequently extending the fingers beyond their natural range of motion creates noticeable amounts of discomfort. Even though this might seem redundant to the deviation from RRP on first sight, hyperextension takes a special position as it causes considerably more discomfort, compared to a full flexion of the fingers and compared to what the deviation from RRP would suggest. The hyperextension component \textit{HE(x)} can be computed by simply finding all hyperextended fingers and adding up the hyperextension angle of the MCP. 
+As highlighted by LaViola \cite{laviola1999survey} \textbf{hyperextension} (Figure \ref{fig:hyperabduction}), "\textit{puts more strain on the }[metacarpophalangeal, MCP in Figure \ref{fig:handAnatomyTotal}] \textit{joints and tendons than the hand is accustomed to}" \cite{laviola1999survey}. Consequently extending the fingers beyond their natural range of motion creates noticeable amounts of discomfort. Even though this might seem redundant to the deviation from RRP on first sight, hyperextension takes a special position as it causes considerably more discomfort, compared to a full flexion of the fingers and compared to what the deviation from RRP would suggest. The hyperextension component \textit{HE(x)} can be computed by simply finding all hyperextended fingers and adding up the hyperextension angle of the MCP. 
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{abduction}
-\caption{Hyperextension and Abduction}
+\caption{Hyperextension and Abduction (from \cite{laviola1999survey})}
 \label{fig:hyperabduction}
 \end{figure}
 
@@ -69,13 +74,13 @@ As highlighted by LaViola \cite{laviola1999survey} \textbf{hyperextension} (Figu
 Finger \textbf{abduction} (Figure \ref{fig:hyperabduction}) is the act of fanning out the fingers using the \textit{interosseus} muscles located within the hand. 
 High abduction also causes stress on the MCP joints (Figure \ref{fig:handAnatomyTotal}), the muscles and tendons involved as well as the soft tissue in between the fingers.
 
-Abduction was taken into consideration as a discomfort factor, analogue to the hyperextension, because full abduction creates substantially more discomfort than full adduction (Figure \ref{fig:hyperabduction} ). By summing all absolute abduction angles of the fingers, the finger abduction component \textit{FA(x)} can be computed.
+Abduction was taken into consideration as a discomfort factor, analogue to the hyperextension, because full abduction creates substantially more discomfort than full adduction (Figure \ref{fig:hyperabduction}). By summing all absolute abduction angles of the fingers, the finger abduction component \textit{FA(x)} can be computed.
 
 \section{Naive Metrics}
 
 Now that the different components most influential to comfort and discomfort are known and assumed to be computable (concrete implementation given in section \ref{chapter:handosturemetric}), it is important to think about how to combine the different factors into one metric value. 
 
-A naive approach would be to simply sum up the single comfort and discomfort components for the whole hand. In order to compensate potential differences in intensity scales of the components, it makes sense to balance the component values with weighting coefficients \begin{math}(c_{RRP}, c_{IFA}, ...)\end{math}. The concrete weighting coefficients can be estimated and verified by experimental testing. When assigning the different components to either comfort or discomfort, following functions for a hand posture denoted by "x" can be derived.
+A naive approach would be to simply sum up the single comfort and discomfort components for the whole hand. In order to compensate potential differences in intensity scales of the components, it makes sense to balance the component values with weighting coefficients \begin{math}(c_{RRP}, c_{IFA}, ...)\end{math}. The concrete weighting coefficients can be estimated and verified with experimental testing. When assigning the different components to either comfort or discomfort, following functions for a hand posture denoted by "x" can be derived.
 
 	\[
 	Comfort(x) = c_{RRP}\cdot RRP(x)
@@ -105,6 +110,6 @@ The concept of improvement is straight forward: instead of applying the metrics 
 	\vspace{5pt}
 
 
-In our case we have five comfort values and a total of twelve discomfort values, as the discomfort metric components neglect the thumb. 
+In this context there are five comfort values and a total of twelve discomfort values, as the discomfort metric components neglect the thumb. 
 
 However, finding the exact weighting coefficients turns out to be rather tricky, as they are generally unknown and due to their number hard to estimate. In order to solve this problem, data from a user study will be processed by a machine learning algorithm in order to compute the best fitting coefficients. In our case, the problem can be reduced to a curve fitting problem that can be solved with for example the least-squares algorithm.
