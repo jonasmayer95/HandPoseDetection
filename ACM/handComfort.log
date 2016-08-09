@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.7)  8 AUG 2016 09:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.7)  9 AUG 2016 14:11
 entering extended mode
 **./handComfort.tex
 (handComfort.tex
@@ -271,14 +271,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
 LaTeX Font Info:    ... okay on input line 60.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
 LaTeX Font Info:    ... okay on input line 60.
-
-! Too many }'s.
-l.157 }
-       
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
 LaTeX Font Info:    Try loading font information for U+msa on input line 166.
+
 ("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -290,10 +284,8 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 166.
 ("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-
-LaTeX Warning: No \author given.
-
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 166.
+
 ("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
@@ -521,4 +513,4 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  39i,10n,34p,1086b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on handComfort.dvi (4 pages, 27784 bytes).
+Output written on handComfort.dvi (4 pages, 28224 bytes).

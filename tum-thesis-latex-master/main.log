@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.7)  9 AUG 2016 12:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.7)  9 AUG 2016 15:23
 entering extended mode
 **./main.tex
 (main.tex
@@ -1827,7 +1827,23 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip80
-)))
+))
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+\c@KVtest=\count367
+\sf@farskip=\skip81
+\sf@captopadj=\dimen284
+\sf@capskip=\skip82
+\sf@nearskip=\skip83
+\c@subfigure=\count368
+\c@subfigure@save=\count369
+\c@lofdepth=\count370
+\c@subtable=\count371
+\c@subtable@save=\count372
+\c@lotdepth=\count373
+\sf@top=\skip84
+\sf@bottom=\skip85
+))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package biblatex Info: Trying to load language 'american'...
@@ -1864,12 +1880,14 @@ LaTeX Font Info:    Try loading font information for T1+pplx on input line 22.
 ("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1pplx.fd"
 File: t1pplx.fd 2004/09/06 font definitions for T1/pplx.
 )
+Package nag Info: Attempting subfig hack.
+Package nag Info: OK, equivalent to subfig 1.3, redefining \sf@@@subfloat.
 Package nag Info: pgf.sty is broken: disabling dollar check on input line 22.
 Package nag Info: Command \RaggedLeft not defined, skipping amendment on input 
 line 22.
 Package nag Info: Command \RaggedRight not defined, skipping amendment on input
  line 22.
-\big@size=\dimen284
+\big@size=\dimen285
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -1880,7 +1898,7 @@ Package biblatex Info: ... file 'main.bbl' found.
 (main.bbl)
 Package biblatex Info: Reference section=0 on input line 22.
 Package biblatex Info: Reference segment=0 on input line 22.
-\c@lstlisting=\count367
+\c@lstlisting=\count374
 Package scrhack Info: undefining \float@addtolists on input line 22.
  ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': you might b
@@ -1900,6 +1918,7 @@ fg"
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box58
@@ -1913,7 +1932,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 estring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count368
+\c@section@level=\count375
 )
 LaTeX Info: Redefining \ref on input line 22.
 LaTeX Info: Redefining \pageref on input line 22.
@@ -2001,77 +2020,70 @@ LaTeX Font Info:    Font shape `T1/pplx/m/sl' in size <10.95> not available
 chapter 1.
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/pplx/b/n' tried instead on input line 6.
+File: Robot.eps Graphic file (type eps)
+<Robot.eps>
 
 LaTeX Warning: Citation 'short1999precision' on page 1 undefined on input line 
-9.
-
-
-LaTeX Warning: Citation 'naddeo2015proposal' on page 1 undefined on input line 
-11.
+17.
 
 [1
 
 
 
 ]
+
+LaTeX Warning: Citation 'naddeo2015proposal' on page 2 undefined on input line 
+19.
+
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <12> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 19.
-) (chapters/02_relatedWork.tex [2]
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 27.
+) (chapters/02_relatedWork.tex [2] [3]
 chapter 2.
+File: nick.eps Graphic file (type eps)
+<nick.eps>
 
-LaTeX Warning: Citation 'vink2012editorial' on page 3 undefined on input line 1
-5.
+LaTeX Warning: Reference `fig:Nick' on page 4 undefined on input line 12.
 
-[3
+[4
 
 
 ]
 
-LaTeX Warning: Citation 'fagarasanu2004measurement' on page 4 undefined on inpu
-t line 17.
+LaTeX Warning: Citation 'vink2012editorial' on page 5 undefined on input line 2
+2.
 
 
-LaTeX Warning: Citation 'apostolico2014postural' on page 4 undefined on input l
-ine 17.
-
-
-LaTeX Warning: Citation 'naddeo2015proposal' on page 4 undefined on input line 
-17.
-
-
-LaTeX Warning: Citation 'short1999precision' on page 4 undefined on input line 
-19.
-
-) (chapters/03_theoretical.tex
-
-! LaTeX Error: Can be used only in preamble.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 \usepackage
-               {subfig}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[4]
-chapter 3.
-
-LaTeX Warning: Citation 'vink2012editorial' on page 5 undefined on input line 8
-.
+LaTeX Warning: Citation 'fagarasanu2004measurement' on page 5 undefined on inpu
+t line 24.
 
 
 LaTeX Warning: Citation 'apostolico2014postural' on page 5 undefined on input l
 ine 24.
 
-[5
+
+LaTeX Warning: Citation 'naddeo2015proposal' on page 5 undefined on input line 
+24.
+
+
+LaTeX Warning: Citation 'short1999precision' on page 5 undefined on input line 
+26.
+
+) (chapters/03_theoretical.tex [5]
+chapter 3.
+
+LaTeX Warning: Citation 'vink2012editorial' on page 6 undefined on input line 8
+.
+
+
+LaTeX Warning: Citation 'apostolico2014postural' on page 6 undefined on input l
+ine 24.
+
+[6
 
 
 ]
 
-LaTeX Warning: Citation 'naddeo2015proposal' on page 6 undefined on input line 
+LaTeX Warning: Citation 'naddeo2015proposal' on page 7 undefined on input line 
 27.
 
 
@@ -2136,17 +2148,17 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[6]
+[7]
 
-LaTeX Warning: Citation 'laviola1999survey' on page 7 undefined on input line 5
+LaTeX Warning: Citation 'laviola1999survey' on page 8 undefined on input line 5
 8.
 
 
-LaTeX Warning: Citation 'laviola1999survey' on page 7 undefined on input line 5
+LaTeX Warning: Citation 'laviola1999survey' on page 8 undefined on input line 5
 8.
 
 File: abduction.eps Graphic file (type eps)
-<abduction.eps> [7] [8]) (chapters/04_implementation.tex [9]
+<abduction.eps> [8] [9]) (chapters/04_implementation.tex [10]
 chapter 4.
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 9.
 ("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
@@ -2157,23 +2169,23 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-[10
+[11
 
 
 ]
 
-LaTeX Warning: Citation 'su1994logical' on page 11 undefined on input line 24.
+LaTeX Warning: Citation 'su1994logical' on page 12 undefined on input line 24.
 
 
-LaTeX Warning: Citation 'laviola1999survey' on page 11 undefined on input line 
+LaTeX Warning: Citation 'laviola1999survey' on page 12 undefined on input line 
 24.
 
-[11] [12]
+[12] [13]
 
-LaTeX Warning: Citation 'apostolico2014postural' on page 13 undefined on input 
+LaTeX Warning: Citation 'apostolico2014postural' on page 14 undefined on input 
 line 64.
 
-[13]
+[14]
 Overfull \hbox (32.91571pt too wide) in paragraph at lines 81--82
 []\T1/cmtt/m/n/10.95 Mathf.Abs((fingers[middle].getTotalFlexion() - fingers[rin
 g].getTotalFlexion()
@@ -2185,34 +2197,34 @@ Overfull \hbox (29.577pt too wide) in paragraph at lines 97--99
 eRandomProcedural()\T1/pplx/m/n/10.95 . 
  []
 
-[14]
+[15]
 
-LaTeX Warning: Citation 'apostolico2014postura' on page 15 undefined on input l
+LaTeX Warning: Citation 'apostolico2014postura' on page 16 undefined on input l
 ine 100.
 
 
-LaTeX Warning: Citation 'su1994logical' on page 15 undefined on input line 106.
+LaTeX Warning: Citation 'su1994logical' on page 16 undefined on input line 106.
 
 
-[15] [16] [17] [18]
+[16] [17] [18] [19]
 
-LaTeX Warning: Citation 'fig:anatomytotal' on page 19 undefined on input line 1
+LaTeX Warning: Citation 'fig:anatomytotal' on page 20 undefined on input line 1
 65.
 
-[19]) (chapters/05_userstudy.tex [20]
+[20]) (chapters/05_userstudy.tex [21]
 chapter 5.
-[21
+[22
 
 
-]) (chapters/06_results.tex [22]
+]) (chapters/06_results.tex [23]
 chapter 6.
 File: TestDataNaive.eps Graphic file (type eps)
-<TestDataNaive.eps> [23
+<TestDataNaive.eps> [24
 
 
 ]
 File: TrainingDataImproved.eps Graphic file (type eps)
- <TrainingDataImproved.eps> [24]
+ <TrainingDataImproved.eps> [25]
 File: TestDataImproved.eps Graphic file (type eps)
 
 <TestDataImproved.eps>
@@ -2222,22 +2234,22 @@ File: TargetShooting.eps Graphic file (type eps)
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Citation 'short1999precision' on page 25 undefined on input line
+LaTeX Warning: Citation 'short1999precision' on page 26 undefined on input line
  60.
 
-) (chapters/07_conclusion.tex [25] [26]
+) (chapters/07_conclusion.tex [26] [27]
 chapter 7.
-) [27
+) [28
 
 
-] [28]
+] [29]
 Package tocbasic Info: character protrusion at lof deactivated on input line 53
 .
  (main.lof)
 \tf@lof=\write8
 \openout8 = `main.lof'.
 
- [29
+ [30
 
 
 ]
@@ -2252,7 +2264,7 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 54
 LaTeX Warning: Empty bibliography on input line 56.
 
 No complaints by nag.
-[30
+[31
 
 
 ]
@@ -2261,11 +2273,20 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
  (main.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 58.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CB5DAB3D3821BF8F022E390B787D3997;3317.
 
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 59F7DFFE7F798B5A14644BE31870F31B;3317
+(rerunfilecheck)             After:  68514DF6A1CF86A22558413DCB54C3BE;3317.
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package biblatex Warning: Please (re)run Biber on the file:
@@ -2277,12 +2298,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45625 strings out of 493336
- 1014554 string characters out of 3130257
- 1621102 words of memory out of 3000000
- 48479 multiletter control sequences out of 15000+200000
+ 45779 strings out of 493336
+ 1017188 string characters out of 3130257
+ 1625281 words of memory out of 3000000
+ 48627 multiletter control sequences out of 15000+200000
  26634 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,9n,83p,10458b,1893s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.dvi (37 pages, 148340 bytes).
+Output written on main.dvi (38 pages, 151232 bytes).

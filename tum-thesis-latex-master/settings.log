@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.4)  5 AUG 2016 09:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.7)  9 AUG 2016 15:16
 entering extended mode
 **./settings.tex
 (settings.tex
@@ -205,13 +205,26 @@ Type  H <return>  for immediate help.
                                                   
 l.27 \usepackage[hidelinks]{
                             hyperref} % hidelinks removes colored boxes arou...
+
+\usepackage may only appear in the document preamble, i.e.,
+between \documentclass and \begin{document}.
+
+
+! LaTeX Error: \usepackage before \documentclass.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 \usepackage{
+                 subfig}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
 \bibdata{bibliography}
 No file settings.bbl.
 ! Undefined control sequence.
-l.32 \setkomafont
+l.31 \setkomafont
                  {disposition}{\normalfont\bfseries} % use serif font for he...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -226,8 +239,9 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.32 \setkomafont{d
+l.31 \setkomafont{d
                    isposition}{\normalfont\bfseries} % use serif font for he...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -243,12 +257,12 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 32--34
+Overfull \hbox (20.0pt too wide) in paragraph at lines 31--33
 []
  []
 
 ! Undefined control sequence.
-l.36 \pgfplotsset
+l.35 \pgfplotsset
                  {compat=1.9} % TODO: adjust to your installed version
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -263,7 +277,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.36 \pgfplotsset{c
+l.35 \pgfplotsset{c
                    ompat=1.9} % TODO: adjust to your installed version
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -279,7 +293,7 @@ Missing character: There is no 1 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 9 in font nullfont!
 ! Undefined control sequence.
-l.37 \pgfplotsset
+l.36 \pgfplotsset
                  {
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -341,12 +355,12 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no , in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 36--41
+Overfull \hbox (20.0pt too wide) in paragraph at lines 35--40
 []
  []
 
 ! Undefined control sequence.
-l.43 \lstset
+l.42 \lstset
             {%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -361,7 +375,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.44   b
+l.43   b
         asicstyle=\ttfamily,
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -378,9 +392,9 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no = in font nullfont!
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 47.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 46.
 ! Undefined control sequence.
-l.47   keywordstyle=\bfseries\color
+l.46   keywordstyle=\bfseries\color
                                    {MediumBlue},
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -389,7 +403,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.48   stringstyle=\color
+l.47   stringstyle=\color
                          {DarkGreen}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -406,7 +420,7 @@ and I'll forget about whatever was undefined.
  
 Here is how much of TeX's memory you used:
  14 strings out of 493336
- 172 string characters out of 3136707
+ 172 string characters out of 3130257
  53222 words of memory out of 3000000
  3640 multiletter control sequences out of 15000+200000
  4116 words of font info for 16 fonts, out of 3000000 for 9000
