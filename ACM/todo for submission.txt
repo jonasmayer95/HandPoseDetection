@@ -1,0 +1,56 @@
+awkward english
+	-> niko will fix
+
+likert: non numeric values											//done
+scale from 0 to 10: equidistant numerical values, that can be used for computations				//done
+
+shooting test: explicitly link shooting to task environment (quick and precise spatial pointing)		//done
+
+effect size: pearson correlation										//done
+p-value significance: 0.01 footnote										//done
+	-> talk about significant correlation with strong effect						//done
+
+
+small sample size: 
+title: lower expectations, couple more with actual topic
+	-> modify introduction to lower expectations
+	->"An Approach on Hand Comfort/Discomfort Quantification"
+	-> state that results are noisy, BUT manage to deliver impressing results				//done
+
+user studies: 1 user study for improving, pilot study-> verificating second user study
+what is training data, what is testdata?
+Add age, gender for each user study
+
+throw out: Figure 7 (naive metric- test data), show cor vals instead
+add in table with coefficients											//done
+
+naive metric is an extension of the work ... with addition of IFA 						//partially done
+improved metric is naive metric differentiating between fingers							//done, kinda
+
+bullet points to sentence
+
+what is the naive metric? Throw comfort and discomfort together.						//TODO: explain explicitly in text
+	-> unify in one metric											//done
+	-> future work: look at comfort and discomfort seperately 						//done
+
+add reference to laviola for figure 2 and 3 									//done
+
+add adduction reference (figure 3) 										//done
+
+copyright
+
+
+
+
+changelog:
+
+- added authors
+- fixed typos in references
+- abstract: "we propose a basic, straightforward metric"
+- added references for figure 2 and 3
+- added reference to figure 3 for first use of adduction
+- added explicit names to RRP and HE to make origin clear
+- added explanation, why no likert-like scale was used
+- added in an explenation, why the target shooting test was chosen
+- modified results and discussion, future work to explain data andshow pioneer approach 
+- unified comfort and discomfort metric as they create too much uhh...

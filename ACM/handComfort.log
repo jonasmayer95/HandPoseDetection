@@ -1,33 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2016.8.7)  9 AUG 2016 14:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.9)  10 AUG 2016 19:57
 entering extended mode
 **./handComfort.tex
 (handComfort.tex
 LaTeX2e <2016/03/31> patch level 1
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
-
-! LaTeX Error: \usepackage before \documentclass.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.47 \usepackage{
-                 subcaption}
-\usepackage may only appear in the document preamble, i.e.,
-between \documentclass and \begin{document}.
-
-
-! LaTeX Error: \usepackage before \documentclass.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.48 \usepackage{
-                 subfig}
-\usepackage may only appear in the document preamble, i.e.,
-between \documentclass and \begin{document}.
-
 (sig-alternate-05-2015.cls
 ("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\epsfig.st
 y"
@@ -53,11 +29,21 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: dvips.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\dvips.def
-"
-File: dvips.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.
+def"
+File: pdftex.def 2016/06/17 v0.06h Graphics/color for pdfTeX
+
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infware
+rr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds
+.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count79
 ))
 \Gin@req@height=\dimen102
 \Gin@req@width=\dimen103
@@ -104,13 +90,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 "
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count79
+\inf@bad=\count80
 LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count80
-\leftroot@=\count81
+\uproot@=\count81
+\leftroot@=\count82
 LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count82
-\DOTSCASE@=\count83
+\classnum@=\count83
+\DOTSCASE@=\count84
 LaTeX Info: Redefining \ldots on input line 394.
 LaTeX Info: Redefining \dots on input line 397.
 LaTeX Info: Redefining \cdots on input line 518.
@@ -119,15 +105,15 @@ LaTeX Info: Redefining \cdots on input line 518.
 \big@size=\dimen108
 LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
-\macc@depth=\count84
-\c@MaxMatrixCols=\count85
+\macc@depth=\count85
+\c@MaxMatrixCols=\count86
 \dotsspace@=\muskip10
-\c@parentequation=\count86
-\dspbrk@lvl=\count87
+\c@parentequation=\count87
+\dspbrk@lvl=\count88
 \tag@help=\toks17
-\row@=\count88
-\column@=\count89
-\maxfields@=\count90
+\row@=\count89
+\column@=\count90
+\maxfields@=\count91
 \andhelp@=\toks18
 \eqnshift@=\dimen109
 \alignsep@=\dimen110
@@ -151,7 +137,7 @@ Excerpts were taken from (Journal Style) 'esub2acm.cls'.
 m.org ******
 Questions on the style, SIGS policies, etc. to Adrienne Griscti griscti@acm.org
 
-\ACM@basesize=\count91
+\ACM@basesize=\count92
 
 ("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\comment\comment.st
 y"
@@ -165,22 +151,22 @@ y"
 ty"
 Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
-\aucount=\count92
-\originalaucount=\count93
+\aucount=\count93
+\originalaucount=\count94
 \auwidth=\dimen118
 \auskip=\dimen119
-\auskipcount=\count94
+\auskipcount=\count95
 \auskip=\dimen120
 \allauboxes=\dimen121
 \addauthors=\toks21
-\addauflag=\count95
+\addauflag=\count96
 \subtitletext=\toks22
-\savesection=\count96
-\sectioncntr=\count97
-\c@figure=\count98
-\c@table=\count99
+\savesection=\count97
+\sectioncntr=\count98
+\c@figure=\count99
+\c@table=\count100
 \titleboxnotes=\toks23
-\titleboxnoteflag=\count100
+\titleboxnoteflag=\count101
 
 
 LaTeX Warning: You have requested document class `sig-alternate-05-2015',
@@ -195,26 +181,26 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
 )
 \@acmtitlebox=\box28
-\titlenotecount=\count101
+\titlenotecount=\count102
 \tntoks=\toks24
 \tntokstwo=\toks25
 \tntoksthree=\toks26
 \tntoksfour=\toks27
 \tntoksfive=\toks28
-\catcount=\count102
+\catcount=\count103
 \copyrightnotice=\toks29
 \conf=\toks30
 \confinfo=\toks31
-\c@part=\count103
-\c@section=\count104
-\c@subsection=\count105
-\c@subsubsection=\count106
-\c@paragraph=\count107
+\c@part=\count104
+\c@section=\count105
+\c@subsection=\count106
+\c@subsubsection=\count107
+\c@paragraph=\count108
 
 Using 'Abbrev' bibliography style
 LaTeX Info: Redefining \cite on input line 1408.
 \bibindent=\dimen122
-\colcntr=\count108
+\colcntr=\count109
 \saveb@x=\box29
 \copyrtyr=\toks32
 \acmcopyr=\toks33
@@ -237,7 +223,7 @@ tex"
 \XKV@toks=\toks35
 \XKV@tempa@toks=\toks36
 )
-\XKV@depth=\count109
+\XKV@depth=\count110
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )))
 \copyrightetc=\toks37
@@ -254,73 +240,143 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 105.
 ("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))
-\blackoutwidth=\skip44
-
 (handComfort.aux)
 \openout1 = `handComfort.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Try loading font information for U+msa on input line 166.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
+ii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count111
+\scratchdimen=\dimen123
+\scratchbox=\box30
+\nofMPsegments=\count112
+\nofMParguments=\count113
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count114
+\MPscratchDim=\dimen124
+\MPnumerator=\count115
+\makeMPintoPDFobject=\count116
+\everyMPtoPDFconversion=\toks39
+)
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdftexc
+mds.sty"
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifluate
+x.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
+base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.st
+y"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvdefin
+ekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptions
+.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvsetke
+ys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etexcmd
+s.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 140.
 
 ("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 166.
+LaTeX Font Info:    Try loading font information for U+msb on input line 140.
 ("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 166.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 140.
 ("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 166.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 140.
 
 ("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 166.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 140.
 
 
 ("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 166.
-Excluding 'CCSXML' comment.
-File: Robot.eps Graphic file (type eps)
- <Robot.eps>
-LaTeX Font Info:    Try loading font information for OMS+aer on input line 208.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 140.
+Package epstopdf Info: Source file: <Robot.eps>
+(epstopdf)                    date: 2016-07-01 20:19:44
+(epstopdf)                    size: 4393179 bytes
+(epstopdf)             Output file: <Robot-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-08-10 12:27:23
+(epstopdf)                    size: 121412 bytes
+(epstopdf)             Command: <epstopdf --outfile=Robot-eps-converted-to.pdf 
+Robot.eps>
+(epstopdf)             \includegraphics on input line 168.
+Package epstopdf Info: Output file is already uptodate.
+<Robot-eps-converted-to.pdf, id=1, 1205.50375pt x 663.47874pt>
+File: Robot-eps-converted-to.pdf Graphic file (type pdf)
 
+<use Robot-eps-converted-to.pdf>
+Package pdftex.def Info: Robot-eps-converted-to.pdf used on input line 168.
+(pdftex.def)             Requested size: 240.42569pt x 132.3188pt.
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\omsaer.fd"
-File: omsaer.fd 1999/12/27
-)
-LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 208.
-
-Overfull \hbox (17.22415pt too wide) in paragraph at lines 220--221
+Overfull \hbox (17.22415pt too wide) in paragraph at lines 194--195
 []\T1/aer/m/n/9 We first ex-plain the the-o-ret-i-cal ba-sis of our com-fort/di
 scomfort
  []
 
-[1
+[1{C:/Users/Jonas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 235.
+ <./Robot-eps-converted-to.pdf>]
+LaTeX Font Info:    Try loading font information for T1+aett on input line 209.
 
- ("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
+
+("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 
@@ -330,22 +386,38 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.239 \begin{subfigure}
+l.213 \begin{subfigure}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-File: Handanatomy2.eps Graphic file (type eps)
-<Handanatomy2.eps>
+Package epstopdf Info: Source file: <Handanatomy2.eps>
+(epstopdf)                    date: 2016-07-01 20:19:44
+(epstopdf)                    size: 295989 bytes
+(epstopdf)             Output file: <Handanatomy2-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-08-10 12:36:09
+(epstopdf)                    size: 35485 bytes
+(epstopdf)             Command: <epstopdf --outfile=Handanatomy2-eps-converted-
+to.pdf Handanatomy2.eps>
+(epstopdf)             \includegraphics on input line 214.
+Package epstopdf Info: Output file is already uptodate.
+<Handanatomy2-eps-converted-to.pdf, id=19, 270.00874pt x 339.2675pt>
+File: Handanatomy2-eps-converted-to.pdf Graphic file (type pdf)
 
-! LaTeX Error: \begin{figure} on input line 237 ended by \end{subfigure}.
+<use Handanatomy2-eps-converted-to.pdf>
+Package pdftex.def Info: Handanatomy2-eps-converted-to.pdf used on input line 2
+14.
+(pdftex.def)             Requested size: 113.81102pt x 143.00388pt.
+
+
+! LaTeX Error: \begin{figure} on input line 211 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.241 \end{subfigure}
+l.215 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -358,48 +430,109 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.242 \begin{subfigure}
+l.216 \begin{subfigure}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-File: handanatomy.eps Graphic file (type eps)
-<handanatomy.eps>
+Package epstopdf Info: Source file: <handanatomy.eps>
+(epstopdf)                    date: 2016-07-01 20:19:44
+(epstopdf)                    size: 572935 bytes
+(epstopdf)             Output file: <handanatomy-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-08-10 12:27:25
+(epstopdf)                    size: 70922 bytes
+(epstopdf)             Command: <epstopdf --outfile=handanatomy-eps-converted-t
+o.pdf handanatomy.eps>
+(epstopdf)             \includegraphics on input line 217.
+Package epstopdf Info: Output file is already uptodate.
+<handanatomy-eps-converted-to.pdf, id=20, 527.9725pt x 665.48625pt>
+File: handanatomy-eps-converted-to.pdf Graphic file (type pdf)
 
-! LaTeX Error: \begin{figure} on input line 237 ended by \end{subfigure}.
+<use handanatomy-eps-converted-to.pdf>
+Package pdftex.def Info: handanatomy-eps-converted-to.pdf used on input line 21
+7.
+(pdftex.def)             Requested size: 113.81102pt x 143.45247pt.
+
+
+! LaTeX Error: \begin{figure} on input line 211 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.244 \end{subfigure}
+l.218 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-File: abduction.eps Graphic file (type eps)
-<abduction.eps>
-Overfull \hbox (3.32912pt too wide) in paragraph at lines 293--294
+<abduction.png, id=21, 311.66437pt x 171.64125pt>
+File: abduction.png Graphic file (type png)
+ <use abduction.png>
+Package pdftex.def Info: abduction.png used on input line 246.
+(pdftex.def)             Requested size: 199.16928pt x 109.68762pt.
+
+Overfull \hbox (3.32912pt too wide) in paragraph at lines 267--268
 []\T1/aer/m/n/9 We com-puted the \T1/aer/bx/n/9 ab-duc-tion \T1/aer/m/n/9 com-p
 o-nent \T1/aer/bx/n/9 FA(x) \T1/aer/m/n/9 by adding
  []
 
-[2]
-File: Participant.eps Graphic file (type eps)
- <Participant.eps>
-Overfull \hbox (12.77829pt too wide) in paragraph at lines 341--342
+[2 <./Handanatomy2-eps-converted-to.pdf> <./handanatomy-eps-converted-to.pdf> <
+./abduction.png>]
+Overfull \hbox (34.96443pt too wide) detected at line 276
+\OML/cmm/m/it/9 Naive\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 ) = \OML/c
+mm/m/it/9 c[] \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 RRP\OT1/cmr/m/n/9 (\OML/cmm/m/i
+t/9 x\OT1/cmr/m/n/9 ) + \OML/cmm/m/it/9 c[] \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 I
+FA\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 ) + \OML/cmm/m/it/9 c[] \OMS/
+cmsy/m/n/9  \OML/cmm/m/it/9 HE\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 
+) + \OML/cmm/m/it/9 c[] \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 FA\OT1/cmr/m/n/9 (\OM
+L/cmm/m/it/9 x\OT1/cmr/m/n/9 )
+ []
+
+
+Overfull \hbox (61.1683pt too wide) detected at line 287
+\OML/cmm/m/it/9 Improved\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 ) = \OM
+L/cmm/m/it/9 c[] \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 IFA\OT1/cmr/m/n/9 (\OML/cmm/
+m/it/9 index\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 )) + \OML/cmm/m/it/
+9 c[] \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 IFA\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 midd
+le\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 )) + \OML/cmm/m/it/9 :::
+ []
+
+Package epstopdf Info: Source file: <Participant.eps>
+(epstopdf)                    date: 2016-07-01 20:19:44
+(epstopdf)                    size: 2266848 bytes
+(epstopdf)             Output file: <Participant-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-08-10 12:27:28
+(epstopdf)                    size: 80723 bytes
+(epstopdf)             Command: <epstopdf --outfile=Participant-eps-converted-t
+o.pdf Participant.eps>
+(epstopdf)             \includegraphics on input line 303.
+Package epstopdf Info: Output file is already uptodate.
+<Participant-eps-converted-to.pdf, id=37, 1806.75pt x 904.37875pt>
+File: Participant-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Participant-eps-converted-to.pdf>
+Package pdftex.def Info: Participant-eps-converted-to.pdf used on input line 30
+3.
+(pdftex.def)             Requested size: 240.42569pt x 120.34709pt.
+
+Overfull \hbox (12.77829pt too wide) in paragraph at lines 314--315
 \T1/aer/m/n/9 al-go-rithm on the first 250 data sets to fit the com-fort/discom
 fort
  []
 
-File: TrainingDataImproved.eps Graphic file (type eps)
-<TrainingDataImproved.eps>
+<TrainingDataImproved.pdf, id=38, 433.62pt x 216.81pt>
+File: TrainingDataImproved.pdf Graphic file (type pdf)
+
+<use TrainingDataImproved.pdf>
+Package pdftex.def Info: TrainingDataImproved.pdf used on input line 320.
+(pdftex.def)             Requested size: 240.42569pt x 120.21518pt.
+
 ! Argument of \@caption has an extra }.
 <inserted text> 
                 \par 
-l.351 ...relation: -0.6453242, p-value: < 2.2e-16}
+l.323 ... Coefficient: -0.645, p-value: < 2.2e-16}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -413,22 +546,23 @@ Runaway argument?
 ! Paragraph ended before \@caption was complete.
 <to be read again> 
                    \par 
-l.351 ...relation: -0.6453242, p-value: < 2.2e-16}
+l.323 ... Coefficient: -0.645, p-value: < 2.2e-16}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
+[3 <./Participant-eps-converted-to.pdf> <./TrainingDataImproved.pdf>]
+<TestDataImproved.pdf, id=55, 433.62pt x 216.81pt>
+File: TestDataImproved.pdf Graphic file (type pdf)
+ <use TestDataImproved.pdf>
+Package pdftex.def Info: TestDataImproved.pdf used on input line 348.
+(pdftex.def)             Requested size: 240.42569pt x 120.21518pt.
 
-LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
-(Font)              using `T1/aett/m/n' instead on input line 351.
-
-File: TestDataImproved.eps Graphic file (type eps)
-<TestDataImproved.eps>
 ! Argument of \@caption has an extra }.
 <inserted text> 
                 \par 
-l.361 ...orrelation: -0.748993, p-value: 5.89e-12}
+l.351 ...n Coefficient: -0.748, p-value: 5.89e-12}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -442,18 +576,62 @@ Runaway argument?
 ! Paragraph ended before \@caption was complete.
 <to be read again> 
                    \par 
-l.361 ...orrelation: -0.748993, p-value: 5.89e-12}
+l.351 ...n Coefficient: -0.748, p-value: 5.89e-12}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-File: TestDataNaive.eps Graphic file (type eps)
-<TestDataNaive.eps>
+<TestDataNaive.pdf, id=56, 433.62pt x 216.81pt>
+File: TestDataNaive.pdf Graphic file (type pdf)
+ <use TestDataNaive.pdf>
+Package pdftex.def Info: TestDataNaive.pdf used on input line 361.
+(pdftex.def)             Requested size: 240.42569pt x 120.21518pt.
+
+! Undefined control sequence.
+\\->\let \reserved@e 
+                     \relax \let \reserved@f \relax \@ifstar {\let \reserved...
+l.364 ...on Coefficient: -0.665, p-value: 6.73e-9}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 ! Argument of \@caption has an extra }.
 <inserted text> 
                 \par 
-l.368 ...orrelation: -0.6651999, p-value: 6.73e-9}
+l.364 ...on Coefficient: -0.665, p-value: 6.73e-9}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@captype {\def \reserved@a *{\let \reserved@e \vadjust \let \reserved@f \ETC.
+! Paragraph ended before \@caption was complete.
+<to be read again> 
+                   \par 
+l.364 ...on Coefficient: -0.665, p-value: 6.73e-9}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+<TargetShooting.pdf, id=57, 433.62pt x 216.81pt>
+File: TargetShooting.pdf Graphic file (type pdf)
+ <use TargetShooting.pdf>
+Package pdftex.def Info: TargetShooting.pdf used on input line 373.
+(pdftex.def)             Requested size: 240.42569pt x 120.21518pt.
+
+! Argument of \@caption has an extra }.
+<inserted text> 
+                \par 
+l.376 ...on Coefficient: -0.665, p-value: 6.73e-9}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -467,50 +645,51 @@ Runaway argument?
 ! Paragraph ended before \@caption was complete.
 <to be read again> 
                    \par 
-l.368 ...orrelation: -0.6651999, p-value: 6.73e-9}
+l.376 ...on Coefficient: -0.665, p-value: 6.73e-9}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-[3]
-File: TargetShooting.eps Graphic file (type eps)
- <TargetShooting.eps>
-! Argument of \@caption has an extra }.
-<inserted text> 
-                \par 
-l.384 ...orrelation: -0.6651999, p-value: 6.73e-9}
-                                                  
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
 
-Runaway argument?
-\@captype {\def \reserved@a *{\nobreak \@xcentercr }\reserved@a }\def \ETC.
-! Paragraph ended before \@caption was complete.
-<to be read again> 
-                   \par 
-l.384 ...orrelation: -0.6651999, p-value: 6.73e-9}
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-(handComfort.bbl) [4] (handComfort.aux)
+(handComfort.bbl [4 <./TestDataImproved.pdf> <./TestDataNaive.pdf> <./TargetSho
+oting.pdf>]) [5
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
- ) 
+] (handComfort.aux) ) 
 Here is how much of TeX's memory you used:
- 2343 strings out of 493336
- 29094 string characters out of 3130257
- 97520 words of memory out of 3000000
- 5810 multiletter control sequences out of 15000+200000
- 47963 words of font info for 63 fonts, out of 3000000 for 9000
+ 3297 strings out of 493335
+ 44383 string characters out of 3130231
+ 116534 words of memory out of 3000000
+ 6694 multiletter control sequences out of 15000+200000
+ 60300 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,10n,34p,1086b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,10n,37p,1226b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/en
+c/dvips/fontname/8r.enc}<C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Jonas/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Jonas/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/U
+sers/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+6.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmr8.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr9.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmsl9.pfb><C:/Users/Jonas/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Jonas/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Jonas
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:
+/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mtt9.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helv
+etic/uhvb8a.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/u
+rw/helvetic/uhvr8a.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/urw/times/utmb8a.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/urw/times/utmr8a.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on handComfort.pdf (5 pages, 614971 bytes).
+PDF statistics:
+ 144 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on handComfort.dvi (4 pages, 28224 bytes).

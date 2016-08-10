@@ -44,47 +44,21 @@
 % ===============================================================
 %
 % For tracking purposes - this is V2.0 - May 2012
-\usepackage{subcaption}
-\usepackage{subfig}
+
 \documentclass{sig-alternate-05-2015}
+%\usepackage{subfig}
 
-
-\newlength{\blackoutwidth}
-\newcommand{\blackout}[1]
-{%necessary comment
-  \settowidth{\blackoutwidth}{#1}%necessary comment
-  \rule[-0.3em]{\blackoutwidth}{1.125em}%necessary comment
-}
 
 
 \begin{document}
 
-% Copyright
-\setcopyright{acmcopyright}
-%\setcopyright{acmlicensed}
-%\setcopyright{rightsretained}
-%\setcopyright{usgov}
-%\setcopyright{usgovmixed}
-%\setcopyright{cagov}
-%\setcopyright{cagovmixed}
-
-
-% DOI
-\doi{10.475/123_4}
-
-% ISBN
-\isbn{123-4567-24-567/08/06}
-
-%Conference
-\conferenceinfo{PLDI '13}{June 16--19, 2013, Seattle, WA, USA}
-
-\acmPrice{\$15.00}
-
 %
 % --- Author Metadata here ---
-\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
-%\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
-%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
+\setcopyright{acmlicensed}
+\conferenceinfo{SUI '16,}{October 15--16, 2016, Tokyo, Japan.}
+\isbn{978-1-4503-4068-7/16/10}
+\acmPrice{\$15.00}
+\doi{http://dx.doi.org/XXXX.XXXX}
 % --- End of Author Metadata ---
 
 \title{A Metric for Hand Comfort/Discomfort Evaluation} 
@@ -167,7 +141,7 @@ Nicholas Katzakis\\
 
 
 \begin{abstract}
-We propose a straightforward metric for quick comfort and discomfort evaluation of non-resting hand postures. The metric is further improved using data from user studies. Comparing subjective user ratings with the metric indicates the metric to be a fitting model for perceived comfort and discomfort. Our results also indicate that there is an effect of hand comfort and discomfort on precision and performance in a 3D target pointing task.
+We propose a basic, straightforward metric for quick comfort and discomfort evaluation of non-resting hand postures. The metric is further improved using data from user studies. Comparing subjective user ratings with the metric indicates the metric to be a fitting model for perceived comfort and discomfort. Our results also indicate that there is an effect of hand comfort and discomfort on precision and performance in a 3D target pointing task.
 \end{abstract}
 
 
@@ -176,17 +150,17 @@ We propose a straightforward metric for quick comfort and discomfort evaluation 
 % http://dl.acm.org/ccs.cfm
 % Please copy and paste the code instead of the example below. 
 %
-\begin{CCSXML}
-<ccs2012>
-<concept>
-<concept_id>10003120.10003123.10011758</concept_id>
-<concept_desc>Human-centered computing~Interaction design theory, concepts and paradigms</concept_desc>
-<concept_significance>500</concept_significance>
-</concept>
-</ccs2012>
-\end{CCSXML}
+%\begin{CCSXML}
+%<ccs2012>
+%<concept>
+%<concept_id>10003120.10003123.10011758</concept_id>
+%<concept_desc>Human-centered computing~Interaction design theory, concepts and paradigms</concept_desc>
+%<concept_significance>500</concept_significance>
+%</concept>
+%</ccs2012>
+%\end{CCSXML}
 
-\ccsdesc[500]{Human-centered computing~Interaction design theory, concepts and paradigms}
+%\ccsdesc[500]{Human-centered computing~Interaction design theory, concepts and paradigms}
 
 
 \begin{figure}
@@ -242,7 +216,7 @@ Furthermore, the 21 DOF angle based hand model was simply handled as a vector of
 \begin{subfigure}
 \includegraphics[width=4cm]{handanatomy}
 \end{subfigure}
-\caption{Hand Anatomy}
+\caption{Hand Anatomy (taken from \cite{laviola1999survey})}
 \label{fig:handAnatomyTotal}
 \vspace{-15pt}
 \end{figure}
@@ -250,7 +224,7 @@ Furthermore, the 21 DOF angle based hand model was simply handled as a vector of
 \subsection{Deviation from Range of Rest Posture}
 
 %rest on supports
-\textbf{Range of Rest Posture (RRP)} is a range of angles for an articular joint\footnote{The word ``articular joint" refers to joints in the human body.}, where the joint ``can be considered statistically in rest"\cite{apostolico2014postural}. The resulting relaxation of muscles and tendons creates maximum comfort in this particular joint. In our case, we considered the non-resting human hand to have a specific RRP for each finger joint, when the palm is facing downwards. Combining the RRPs of each finger joint for the entire hand results in a set of relaxed hand postures where comfort is maximized.
+\textbf{Range of Rest Posture (RRP)}, as defined by Apostolico et al. \cite{apostolico2014postural}, is a range of angles for an articular joint\footnote{The word ``articular joint" refers to joints in the human body.}, where the joint ``can be considered statistically in rest". The resulting relaxation of muscles and tendons creates maximum comfort in this particular joint. In our case, we considered the non-resting human hand to have a specific RRP for each finger joint, when the palm is facing downwards. Combining the RRPs of each finger joint for the entire hand results in a set of relaxed hand postures where comfort is maximized.
 
 For articular joints perceived comfort decreases when deviating from the RRP and it minimizes at the bounds of the total range of motion. Applying this to the whole hand leads to the conclusion, that hand posture comfort can be evaluated by adding up the individual joint angle distances to the RRP~\cite{naddeo2015proposal}.
 
@@ -262,7 +236,7 @@ For simplicity we assumed comfort to linearly decrease with distance to the RRP 
 The hand has a very compact and highly connected system of muscles and tendons that limits the individual movement of fingers (Figure \ref{fig:handAnatomyTotal}).
 Aside from the thumb, fingers share \textsl{most} of their flexor and extendor muscles. Despite that minor individual flexion and extension (Figure \ref{fig:hyperabduction}) of adjacent fingers is still possible due to finger tendons originating from different areas of the muscles. In the case of the EDC (\textit{Extensor digitorum communis}) the finger tendons are even interconnected on the back of the hand (Figure \ref{fig:handAnatomyTotal}). 
 
-Based on this, hand postures with high bending differences of adjacent fingers should lead to stress of tendons and muscles, resulting in discomfort.
+Based on this, we expect hand postures with high bending differences of adjacent fingers to cause stress of tendons and muscles, resulting in discomfort.
 
 The \textbf{inter finger angle component} \textbf{IFA(x)} was computed by first adding up the flexion/extension angles of MCP (\textit{metacarpophalangeal}, PIP(\textit{proximal interphalangeal}) and DIP (\textit{distal interphalangeal}) joints (Figure \ref{fig:handAnatomyTotal}) for each finger. We then added up the differences in total bending of adjacent fingers (3 values). In order to compensate anatomical differences of the fingers, mostly affecting the ring finger, we added a ring finger bonus consisting of the difference of the ring finger's bending to both of its neighbors multiplied with an estimated weight coefficient. The importance of this differentiation can be seen when the fist is closed. Extending the ring finger from a closed fist is much harder than extending the index finger. 
 
@@ -271,14 +245,14 @@ The \textbf{inter finger angle component} \textbf{IFA(x)} was computed by first 
 \vspace{-10pt}
 \includegraphics[width=7cm]{abduction}
 \vspace{-10pt}
-\caption{Hyperextension and Abduction}
+\caption{Hyperextension and Abduction (from \cite{laviola1999survey})}
 \label{fig:hyperabduction}
 \vspace{-10pt}
 \end{figure}
 
 \subsection{Finger Hyperextension}
 
-\textbf{Hyperextension} (Figure \ref{fig:hyperabduction}) ``\textit{puts more strain on the }[MCP] \textit{joints and tendons than the hand is accustomed to}" and therefore causes discomfort \cite{laviola1999survey}.
+As stated by LaViola, \textbf{hyperextension} (Figure \ref{fig:hyperabduction}) ``\textit{puts more strain on the }[MCP] \textit{joints and tendons than the hand is accustomed to}" and therefore causes discomfort \cite{laviola1999survey}.
 Even though this might seem redundant to the deviation from RRP on first sight, hyperextension takes an increased toll as it causes considerably more discomfort, compared to a full flexion of the fingers and compared to what the deviation from RRP would suggest.
 
 For the \textbf{hyper extension} component \textbf{HE(x)} we simply added up the flexion/extension angles of the fingers' MCPs that had a negative angle and were therefore hyperextended.
@@ -288,31 +262,28 @@ For the \textbf{hyper extension} component \textbf{HE(x)} we simply added up the
 Finger \textbf{abduction} (Figure \ref{fig:hyperabduction})
 also causes stress on the MCP joint, the abduction muscles and tendons involved.
 
-Abduction was taken into consideration, analogue to the hyperextension, as full abduction creates substantially more discomfort than full adduction.
+Abduction was taken into consideration, analogue to the hyperextension, as full abduction creates substantially more discomfort than full adduction (Figure \ref{fig:hyperabduction}).
 
 We computed the \textbf{abduction} component \textbf{FA(x)} by adding up the absolute abduction/adduction angle for the finger. This is possible as a fully adducted finger has an abduction angle of 0 in our model.
 
 
 \subsection{Naive Metric}
 
+After determining the single components, we designed our metric to be the added up component values \begin{math}(RRP, IFA, ...)\end{math} multiplied with weighting coefficients \begin{math}(c_{RRP(x)}, c_{IFA(x)}, ...)\end{math}. These weighting coefficients were estimated for the \textbf{naive metric.} 
 
-Based on the model mentioned above \cite{vink2012editorial}, we then assigned the components to either comfort or discomfort. We then designed our metrics to be the added up component values \begin{math}(RRP, IFA, ...)\end{math} multiplied with weighting coefficients \begin{math}(c_{RRP(x)}, c_{IFA(x)}, ...)\end{math}. These weighting coefficients were estimated for the \textbf{naive metric.} 
 	\[
-	Comfort(x) = c_{RRP}\cdot RRP(x)
-	\]
-	\[
-	Discomfort(x) = c_{IFA}\cdot IFA(x)  +  c_{HE}\cdot HE(x)  +  c_{FA}\cdot FA(x)
+	Naive(x) = c_{RRP}\cdot RRP(x) + c_{IFA}\cdot IFA(x)  +  c_{HE}\cdot HE(x)  +  c_{FA}\cdot FA(x)
 	\]
 
-We hypothesize that the resulting metrics will correlate with user perception, having the value 0 as maximum  for comfort and minimum for discomfort.
+We hypothesize that the resulting metric will correlate with user perception, having the value 0 as maximum for comfort and minimum for discomfort.
 
 \subsection{Improved Metric}
 
-Even though the naive metrics contain the causes of comfort and discomfort, they still lack deeper consideration for the anatomical differences between the fingers.
-The concept of improvement extends the thought process already used for inter finger angles: instead of applying the metrics to the whole hand, we consider the contributions from individual fingers and weight them with importance coefficients. 
+Even though the naive metric contains the causes of comfort and discomfort, it still lacks deeper consideration for the anatomical differences between the fingers.
+The concept of improvement extends the thought process already used for inter finger angles: instead of applying the metric to the whole hand, we consider the contributions from individual fingers and weight them with importance coefficients. 
 
 	\[
-	Discomfort = c_{IFAindex}\cdot IFA(index)  +  c_{IFAmiddle}\cdot...
+	Improved(x) = c_{IFAindex}\cdot IFA(index(x))  +  c_{IFAmiddle}\cdot IFA(middle(x)) + ...
 	\]
 
 In our case we have five comfort values and a total of twelve discomfort values. 
@@ -321,9 +292,11 @@ However, the exact weighting coefficients are generally unknown and hard to esti
 
 \section{Methodology}
 
-For the collection of data, we created a test environment using \textbf{Unity 3D} with a total of two tasks. In the first task, the subject would be shown a randomly generated hand posture on screen. We used our naive metric to ensure a homogenous distribution of expected comfort and discomfort. The subject was asked to mimic the hand posture with his or her dominant hand and then rate the posture. As we did not expect the subjects to be familiar with current comfort and discomfort models, we asked them to rate hand postures on an intuitive scale ranging from 0 (very uncomfortable) to 10 (very comfortable). The subject was told to rate the hand posture with 0 points if he or she was unable to reproduce it. Before beginning the evaluation, subjects were asked to form two hand postures so that they have a comfort/discomfort reference for the actual test. The first hand posture was a completely relaxed hand, the second hand posture was a randomly generated hand, that was challenging to mimic (such as the posture in figure \ref{fig:Robot}).
+For the collection of data, we created a test environment using \textbf{Unity 3D} with a total of two tasks. In the first task, the subject would be shown a randomly generated hand posture on screen. We used our naive metric to ensure a homogenous distribution of expected comfort and discomfort. The subject was asked to mimic the hand posture with his or her dominant hand and then rate the posture. As we did not expect the subjects to be familiar with current comfort and discomfort models, we asked them to rate hand postures on an intuitive scale ranging from 0 (very uncomfortable) to 10 (very comfortable). This was chosen over an ordinal Likert-like scale, because numerical values were needed for the metric's improvement and it's verification. The subject was told to rate the hand posture with 0 points if he or she was unable to reproduce it. Before beginning the evaluation, subjects were asked to form two hand postures so that they have a comfort/discomfort reference for the actual test. The first hand posture was a completely relaxed hand, the second hand posture was a randomly generated hand, that was challenging to mimic (such as the posture in figure \ref{fig:Robot}).
 
-In the second task, the subjects were again given a randomly generated hand posture. Again the subject had to mimic the hand posture with his dominant hand and give it a rating from 0 to 10. After confirming his or her rating, the subject had to perform a target shooting task (Figure \ref{fig:participant}) with that specific posture. We tracked the subject's hand using an \textbf{ART Tracking Device}. The software showed subjects a minimalistic representation of their hand position and indicated the forward direction of their hand with a ray. Subjects were seated, with the elbow rested on a table. They had to use this ray to aim down a total of 12 targets, appearing in random order, and shoot them, by pressing a button with the off-hand. By recording the hand posture before the trial using a Leap, and checking the hand posture during the test, we made sure that the subject would not break the posture. 
+In the second task, the subjects were again given a randomly generated hand posture. Again the subject had to mimic the hand posture with his dominant hand and give it a rating from 0 to 10. After confirming his or her rating, the subject had to perform a target shooting task (Figure \ref{fig:participant}) with that specific posture. 
+This specific task was chosen due to its similarity to real world tasks, where quick and precise spacial commands have to be issued.
+We tracked the subject's hand using an \textbf{ART Tracking Device}. The software showed subjects a minimalistic representation of their hand position and indicated the forward direction of their hand with a ray. Subjects were seated, with the elbow rested on a table. They had to use this ray to aim down a total of 12 targets, appearing in random order, and shoot them, by pressing a button with the off-hand. By recording the hand posture before the trial using a Leap, and checking the hand posture during the test, we made sure that the subject would not break the posture. 
 
 \begin{figure}[h]
 \centering
@@ -344,56 +317,73 @@ Finding the best fitting coefficients can be reduced to a curve fitting problem.
 
 \begin{figure}[b]
 \centering
-\includegraphics[width=8.45cm]{TrainingDataImproved}
+\includegraphics[width=8.45cm]{TrainingDataImproved.pdf}
 \vspace{-20pt}
-\caption{Improved Metric and User Rating in Training Data. \\
-The Line Shows the Smoothed Conditional Mean, Calculated by the \texttt{geom\_smooth} Function in R. \\
-Pearson Correlation: -0.6453242, p-value: < 2.2e-16}
+\caption{Improved Metric and User Rating in Training Data.\\
+Correlation Coefficient: -0.645, p-value: < 2.2e-16}
 \label{fig:trainingData}
 \vspace{-10pt}
 \end{figure}
 
+For statistical analysis of the results, the Pearson correlation was used\footnote{The effect size is determined by the correlation coefficient. A correlation is significant if p < 0.01}.
+The results are displayed in Figure \ref{fig:trainingData}-\ref{fig:targetShooting}, with the single samples shown as dots and the line indicating the smoothed conditional mean, calculated by the \texttt{geom\_smooth} function in R.
+Unsurprisingly, the calculated values for the improved metric strongly affect the users comfort ratings, that were used to generate this metric (Figure \ref{fig:trainingData}). However, differences in anatomy and mindset of the participants and the limitation of hand posture ratings to 11 discrete steps introduced some noise to the data.
+
+\begin{table}[t]
+\centering
+\caption{Weighting Coefficients of Improved Metric}
+\label{tab:coeff}
+\begin{tabular}{|c|l|l|l|l|l|} \hline
+ &Thumb&Index&Middle&Ring&Pinky\\ \hline
+RRP&0.631&-1.837&1.176&-3.021&1.288\\ \hline
+IFA&-&0.547&0.216&1.670&-0.864\\ \hline
+HE&-&-1.637&-2.685&10.401&-1.837\\ \hline
+FA&-&-0.864&-3.857&0.0388&2.517\\
+\hline\end{tabular}
+\vspace{-10pt}
+\end{table}
+
 \begin{figure}[t]
 \centering
-\includegraphics[width=8.45cm]{TestDataImproved}
+\includegraphics[width=8.45cm]{TestDataImproved.pdf}
 \vspace{-20pt}
 \caption{Improved Metric and User Rating in Test Data.\\
-Pearson Correlation: -0.748993, p-value: 5.89e-12}
-%\vspace{-5pt}
+Correlation Coefficient: -0.748, p-value: 5.89e-12}
+\vspace{-10pt}
 \label{fig:testData}
+\end{figure}
 
-\includegraphics[width=8.45cm]{TestDataNaive}
+The computed weighting coefficients for the improved metric can be taken from Table \ref{tab:coeff}. Due to the small number of participants, the coefficients are very noisy and don't seem to make much sense. It can also be seen that the IFA coefficients are generally less noisy than those of HE or FA. This indicates, that the different components are perceived differently and that the metric has room for improvement.
+
+Despite the noise, the created metric also holds its large effect on the user ratings even when applied to the test data (Figure \ref{fig:testData}). This shows, that the improved metric is a valid extrapolation of the training data and can be used to predict the perceived user comfort and discomfort of a certain hand posture.
+
+\begin{figure}[b]
+\includegraphics[width=8.45cm]{TestDataNaive.pdf}
 \vspace{-20pt}
 \caption{Naive Metric and User Rating in Test Data.\\
-Pearson Correlation: -0.6651999, p-value: 6.73e-9}
+Correlation Coefficient: -0.665, p-value: 6.73e-9}
 \label{fig:testDataNaive}
 \vspace{-10pt}
 \end{figure}
 
-
-Unsurprisingly, there was a correlation in the training data between the user rating and our improved metric, generated using this data (Figure \ref{fig:trainingData}). However, the correlation found was still not perfect, having a value of approx. \textsl{-0,65}. For this we suspect multiple reasons: 
-The participants most likely had differences in anatomy and mindset, which caused them to subjectively rate comparable postures differently. In addition to that, there was little time for subjects to give their rating. Therefore long time discomfort symptoms, like pain or cramping, might not have been experienced. Finally, the subjects could only rate the hands of continuous comfort/discomfort on a scale with 11 discrete steps, which potentially introduced some additional error.
-
-Even though the improved metric was created using a limited set of training data, it yielded a comparable correlation when applied to the test data (Figure \ref{fig:testData}). This indicates that the improved metric is a good extrapolation of the training data. Compared to the naive metric (Figure \ref{fig:testDataNaive}), there is only minor difference on first sight. However, the improved metric reduced the standard error, resulting in a better correlation and p-value.
+When looking at the naive metric, it can be seen that it predicts the user ratings in a similar way (Figure \ref{fig:testDataNaive}). However the improved metric creates a better prediction, as it reduces the metric values standard error.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=8.45cm]{TargetShooting}
+\includegraphics[width=8.45cm]{TargetShooting.pdf}
 \vspace{-20pt}
-\caption{Improved Metric Value and Total Task Time in Target Shooting.\\\
-Pearson Correlation: -0.6651999, p-value: 6.73e-9}
+\caption{Improved Metric Value and Total Task Time in Target Shooting.\\
+Correlation Coefficient: -0.665, p-value: 6.73e-9}
 \label{fig:targetShooting}
 \vspace{-5pt}
 \end{figure}
 
-The results from the target shooting task (Figure \ref{fig:targetShooting}) indicate that comfort and discomfort, as measured by our metric, do affect the performance and precision in context of hand postures. This strengthens the conclusion of Short et al.~\cite{short1999precision}, that more comfortable postures generally create greater accuracy. However, the credibility of our results is limited by the relatively small number of participants. Further work is required before strong conclusions can be made.
-
-Even though the results of this paper only apply to hand posture comfort/discomfort, the process of creating and testing a comfort/discomfort metric and its influence on performance/precision, as shown in this paper, can be transferred to other parts of the body. 
+The results from the target shooting task (Figure \ref{fig:targetShooting}) shows that participants with harder hand postures generally took longer to finish. The large effect size is also confirmed by the Pearson correlation. This indicates that comfort and discomfort, as measured by our metric, significantly affect the performance and precision in context of hand postures. This strengthens the conclusion of Short et al.~\cite{short1999precision}, that more comfortable postures generally create greater accuracy. However, the credibility of our results is limited by the relatively small number of participants. Further work is required before strong conclusions can be made.
 
 \section{Conclusion \& Future Work}
-The main goal of this paper was to create a metric for quick and objective evaluation of hand posture comfort and discomfort. Furthermore we demonstrated the metric's relevance for design of hand postures, by proving its influence on precision and performance in a 3D pointing task. For the creation of the metrics we applied knowledge of hand anatomy and state of the art comfort and discomfort models and used data from a user study to improve it. Results from the testing user study suggest the improved metric to be a valid extrapolation of the training data. In addition, the outcome of a small target shooting test indicate the existence of a correlation between comfort/discomfort and precision/performance, as already suggested for different contexts in other papers.
+The main goal of this paper was to create a basic metric for quick and objective evaluation of hand posture comfort and discomfort. Furthermore we demonstrated the metric's relevance for design of hand postures, by proving its influence on precision and performance in a 3D pointing task. For the creation of the metrics we applied knowledge of hand anatomy and state of the art comfort and discomfort models and used data from a user study to improve it. Results from the testing user study suggest the improved metric to be a valid extrapolation of the training data. In addition, the outcome of a small target shooting test indicate the existence of a correlation between comfort/discomfort and precision/performance, as already suggested for different contexts in other papers.
 
-This work neglected long term effects of a hand posture on the perceived comfort and discomfort because our envisioned usage did not assume holding the postures beyond what was necessary for issuing the command. Other contexts might need holding postures for longer and this is a potential target for future work. It would additionally be useful to determine other factors that might influence performance in a single hand task, so that we are able to design an optimum set of hand postures.
+This work was only a first step for exploring hand posture comfort and discomfort. The metric created is still primitive and has some room for improvement. Furthermore only the short-term effects of comfort and discomfort combined were studied. An important next step would be to investigate the long- and short-term effects of comfort and discomfort separately in order to create more sophisticated models and metrics.
 %\end{document}  % This is where a 'short' article might terminate
 
 %
