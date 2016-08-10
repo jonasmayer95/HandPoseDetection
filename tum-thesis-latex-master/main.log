@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.5)  9 AUG 2016 20:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.5)  10 AUG 2016 21:04
 entering extended mode
 **./main.tex
 (main.tex
@@ -1697,7 +1697,20 @@ Package biblatex Info: ... file 'main.bbl' found.
 Package biblatex Info: Reference section=0 on input line 22.
 Package biblatex Info: Reference segment=0 on input line 22.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count374
+\scratchdimen=\dimen286
+\scratchbox=\box58
+\nofMPsegments=\count375
+\nofMParguments=\count376
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count377
+\MPscratchDim=\dimen287
+\MPnumerator=\count378
+\makeMPintoPDFobject=\count379
+\everyMPtoPDFconversion=\toks39
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
@@ -1708,7 +1721,7 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\c@lstlisting=\count374
+\c@lstlisting=\count380
 Package scrhack Info: undefining \float@addtolists on input line 22.
  ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.13} (cu
@@ -1731,7 +1744,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box58
+\AtBeginShipoutBox=\box59
 Package hyperref Info: Link coloring OFF on input line 22.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
@@ -1740,7 +1753,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count375
+\c@section@level=\count381
 )
 LaTeX Info: Redefining \ref on input line 22.
 LaTeX Info: Redefining \pageref on input line 22.
@@ -1994,7 +2007,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 [7 <./relaxed.jpg>] [8 <./Handanatomy2-eps-converted-to.pdf> <./handanatomy-eps-converted-to.pdf>]
-<abduction.png, id=371, 311.66437pt x 171.64125pt>
+<abduction.png, id=370, 311.66437pt x 171.64125pt>
 File: abduction.png Graphic file (type png)
  <use abduction.png>
 Package pdftex.def Info: abduction.png used on input line 67.
@@ -2013,13 +2026,13 @@ Package microtype Info: Loading generic settings for font family
  [12
 
 
-] <anglepoint.png, id=399, 700.86844pt x 817.55438pt>
+] <anglepoint.png, id=398, 700.86844pt x 817.55438pt>
 File: anglepoint.png Graphic file (type png)
 
 <use anglepoint.png>
 Package pdftex.def Info: anglepoint.png used on input line 26.
 (pdftex.def)             Requested size: 418.25555pt x 487.90422pt.
- <anglehand.png, id=408, 519.44063pt x 724.95844pt>
+ <anglehand.png, id=407, 519.44063pt x 724.95844pt>
 File: anglehand.png Graphic file (type png)
  <use anglehand.png>
 Package pdftex.def Info: anglehand.png used on input line 37.
@@ -2028,7 +2041,7 @@ Package pdftex.def Info: anglehand.png used on input line 37.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13] [14 <./anglepoint.png>] [15 <./anglehand.png>] <trianing.png, id=431, 910.15031pt x 452.4403pt>
+[13] [14 <./anglepoint.png>] [15 <./anglehand.png>] <trianing.png, id=430, 910.15031pt x 452.4403pt>
 File: trianing.png Graphic file (type png)
  <use trianing.png>
 Package pdftex.def Info: trianing.png used on input line 67.
@@ -2040,25 +2053,25 @@ Overfull \hbox (29.52225pt too wide) in paragraph at lines 121--123
 0) . 
  []
 
-[18] [19] <evaluation.png, id=458, 909.3975pt x 453.94594pt>
+[18] [19] <evaluation.png, id=457, 909.3975pt x 453.94594pt>
 File: evaluation.png Graphic file (type png)
  <use evaluation.png>
 Package pdftex.def Info: evaluation.png used on input line 144.
 (pdftex.def)             Requested size: 418.25555pt x 208.78302pt.
  [20 <./evaluation.png>]
-<targetshootingt.png, id=469, 910.15031pt x 453.94594pt>
+<targetshootingt.png, id=468, 910.15031pt x 453.94594pt>
 File: targetshootingt.png Graphic file (type png)
  <use targetshootingt.png>
 Package pdftex.def Info: targetshootingt.png used on input line 166.
 (pdftex.def)             Requested size: 418.25555pt x 208.60986pt.
  [21]
-<linetracing.png, id=477, 904.1278pt x 441.90094pt>
+<linetracing.png, id=476, 904.1278pt x 441.90094pt>
 File: linetracing.png Graphic file (type png)
  <use linetracing.png>
 Package pdftex.def Info: linetracing.png used on input line 183.
 (pdftex.def)             Requested size: 418.25555pt x 204.42317pt.
  [22 <./targetshootingt.png>]
-<devscreen.png, id=484, 911.65594pt x 453.19313pt>
+<devscreen.png, id=483, 911.65594pt x 453.19313pt>
 File: devscreen.png Graphic file (type png)
  <use devscreen.png>
 Package pdftex.def Info: devscreen.png used on input line 201.
@@ -2066,7 +2079,7 @@ Package pdftex.def Info: devscreen.png used on input line 201.
  [23 <./linetracing.png>] [24 <./devscreen.png>]
 [25]) (chapters/05_userstudy.tex [26]
 chapter 5.
-<baschde.jpg, id=508, 1710.39pt x 1062.97125pt>
+<baschde.jpg, id=507, 1710.39pt x 1062.97125pt>
 File: baschde.jpg Graphic file (type jpg)
  <use baschde.jpg>
 Package pdftex.def Info: baschde.jpg used on input line 7.
@@ -2075,23 +2088,23 @@ Package pdftex.def Info: baschde.jpg used on input line 7.
 
 
  <./baschde.jpg>]) (chapters/06_results.tex
-[28] [29]
+[28]
 chapter 6.
-<TestDataNaive.pdf, id=523, 433.62pt x 216.81pt>
+<TestDataNaive.pdf, id=518, 433.62pt x 216.81pt>
 File: TestDataNaive.pdf Graphic file (type pdf)
  <use TestDataNaive.pdf>
 Package pdftex.def Info: TestDataNaive.pdf used on input line 6.
 (pdftex.def)             Requested size: 418.25555pt x 209.13762pt.
- [30
+ [29
 
 
  <./TestDataNaive.pdf>]
-<TrainingDataImproved.pdf, id=540, 433.62pt x 216.81pt>
+<TrainingDataImproved.pdf, id=534, 433.62pt x 216.81pt>
 File: TrainingDataImproved.pdf Graphic file (type pdf)
  <use TrainingDataImproved.pdf>
 Package pdftex.def Info: TrainingDataImproved.pdf used on input line 35.
 (pdftex.def)             Requested size: 418.25555pt x 209.13762pt.
- [31 <./TrainingDataImproved.pdf>]
+ [30 <./TrainingDataImproved.pdf>]
 LaTeX Font Info:    Try loading font information for OMS+pplx on input line 43.
 LaTeX Font Info:    No file OMSpplx.fd. on input line 43.
 
@@ -2099,13 +2112,13 @@ LaTeX Font Warning: Font shape `OMS/pplx/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbullet' on input line 43.
 
-<TestDataImproved.pdf, id=560, 433.62pt x 216.81pt>
+<TestDataImproved.pdf, id=555, 433.62pt x 216.81pt>
 File: TestDataImproved.pdf Graphic file (type pdf)
  <use TestDataImproved.pdf>
 Package pdftex.def Info: TestDataImproved.pdf used on input line 50.
 (pdftex.def)             Requested size: 418.25555pt x 209.13762pt.
 
-<TargetShooting.pdf, id=563, 433.62pt x 216.81pt>
+<TargetShooting.pdf, id=558, 433.62pt x 216.81pt>
 File: TargetShooting.pdf Graphic file (type pdf)
  <use TargetShooting.pdf>
 Package pdftex.def Info: TargetShooting.pdf used on input line 59.
@@ -2114,18 +2127,18 @@ Package pdftex.def Info: TargetShooting.pdf used on input line 59.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (chapters/07_conclusion.tex [32 <./TestDataImproved.pdf>] [33 <./TargetShooting.pdf>]
+) (chapters/07_conclusion.tex [31 <./TestDataImproved.pdf>] [32 <./TargetShooting.pdf>]
 chapter 7.
-) [34
+) [33
 
 
-] [35]
+] [34]
 Package tocbasic Info: character protrusion at lof deactivated on input line 53.
  (main.lof)
 \tf@lof=\write8
 \openout8 = `main.lof'.
 
- [36
+ [35
 
 
 ]
@@ -2134,13 +2147,13 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 54.
 \tf@lot=\write9
 \openout9 = `main.lot'.
 
- [37
+ [36
 
 
 ]
 chapter without number
 No complaints by nag.
-[38
+[37
 
 
 ]
@@ -2160,11 +2173,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46573 strings out of 493335
- 1021966 string characters out of 3136681
- 1627771 words of memory out of 3000000
- 48990 multiletter control sequences out of 15000+200000
- 51237 words of font info for 244 fonts, out of 3000000 for 9000
+ 46873 strings out of 493335
+ 1025972 string characters out of 3136681
+ 1627753 words of memory out of 3000000
+ 49280 multiletter control sequences out of 15000+200000
+ 51657 words of font info for 250 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,9n,83p,10458b,2331s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Jonas\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk>{C:/Program Files (x86)/MiKTe
@@ -2172,9 +2185,9 @@ X 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
 w/palatino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files (x86)/MiK
 TeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (45 pages, 3261431 bytes).
+Output written on main.pdf (44 pages, 3260479 bytes).
 PDF statistics:
- 743 PDF objects out of 1000 (max. 8388607)
- 129 named destinations out of 1000 (max. 500000)
+ 738 PDF objects out of 1000 (max. 8388607)
+ 128 named destinations out of 1000 (max. 500000)
  27641 words of extra memory for PDF output out of 29859 (max. 10000000)
 
