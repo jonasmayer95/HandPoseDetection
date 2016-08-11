@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.9)  10 AUG 2016 19:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.9)  11 AUG 2016 17:43
 entering extended mode
 **./handComfort.tex
 (handComfort.tex
@@ -369,16 +369,15 @@ Overfull \hbox (17.22415pt too wide) in paragraph at lines 194--195
 scomfort
  []
 
-[1{C:/Users/Jonas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
-
-
- <./Robot-eps-converted-to.pdf>]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 209.
-
+LaTeX Font Info:    Try loading font information for T1+aett on input line 201.
 
 ("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
+[1{C:/Users/Jonas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+ <./Robot-eps-converted-to.pdf>]
 
 ! LaTeX Error: Environment subfigure undefined.
 
@@ -386,7 +385,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.213 \begin{subfigure}
+l.205 \begin{subfigure}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -400,24 +399,24 @@ Package epstopdf Info: Source file: <Handanatomy2.eps>
 (epstopdf)                    size: 35485 bytes
 (epstopdf)             Command: <epstopdf --outfile=Handanatomy2-eps-converted-
 to.pdf Handanatomy2.eps>
-(epstopdf)             \includegraphics on input line 214.
+(epstopdf)             \includegraphics on input line 206.
 Package epstopdf Info: Output file is already uptodate.
-<Handanatomy2-eps-converted-to.pdf, id=19, 270.00874pt x 339.2675pt>
+<Handanatomy2-eps-converted-to.pdf, id=18, 270.00874pt x 339.2675pt>
 File: Handanatomy2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Handanatomy2-eps-converted-to.pdf>
 Package pdftex.def Info: Handanatomy2-eps-converted-to.pdf used on input line 2
-14.
+06.
 (pdftex.def)             Requested size: 113.81102pt x 143.00388pt.
 
 
-! LaTeX Error: \begin{figure} on input line 211 ended by \end{subfigure}.
+! LaTeX Error: \begin{figure} on input line 203 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.215 \end{subfigure}
+l.207 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -430,7 +429,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.216 \begin{subfigure}
+l.208 \begin{subfigure}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -444,43 +443,42 @@ Package epstopdf Info: Source file: <handanatomy.eps>
 (epstopdf)                    size: 70922 bytes
 (epstopdf)             Command: <epstopdf --outfile=handanatomy-eps-converted-t
 o.pdf handanatomy.eps>
-(epstopdf)             \includegraphics on input line 217.
+(epstopdf)             \includegraphics on input line 209.
 Package epstopdf Info: Output file is already uptodate.
-<handanatomy-eps-converted-to.pdf, id=20, 527.9725pt x 665.48625pt>
+<handanatomy-eps-converted-to.pdf, id=19, 527.9725pt x 665.48625pt>
 File: handanatomy-eps-converted-to.pdf Graphic file (type pdf)
 
 <use handanatomy-eps-converted-to.pdf>
-Package pdftex.def Info: handanatomy-eps-converted-to.pdf used on input line 21
-7.
+Package pdftex.def Info: handanatomy-eps-converted-to.pdf used on input line 20
+9.
 (pdftex.def)             Requested size: 113.81102pt x 143.45247pt.
 
 
-! LaTeX Error: \begin{figure} on input line 211 ended by \end{subfigure}.
+! LaTeX Error: \begin{figure} on input line 203 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.218 \end{subfigure}
+l.210 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<abduction.png, id=21, 311.66437pt x 171.64125pt>
+<abduction.png, id=20, 311.66437pt x 171.64125pt>
 File: abduction.png Graphic file (type png)
  <use abduction.png>
-Package pdftex.def Info: abduction.png used on input line 246.
+Package pdftex.def Info: abduction.png used on input line 238.
 (pdftex.def)             Requested size: 199.16928pt x 109.68762pt.
 
-Overfull \hbox (3.32912pt too wide) in paragraph at lines 267--268
+Overfull \hbox (3.32912pt too wide) in paragraph at lines 259--260
 []\T1/aer/m/n/9 We com-puted the \T1/aer/bx/n/9 ab-duc-tion \T1/aer/m/n/9 com-p
 o-nent \T1/aer/bx/n/9 FA(x) \T1/aer/m/n/9 by adding
  []
 
-[2 <./Handanatomy2-eps-converted-to.pdf> <./handanatomy-eps-converted-to.pdf> <
-./abduction.png>]
-Overfull \hbox (34.96443pt too wide) detected at line 276
+
+Overfull \hbox (34.96443pt too wide) detected at line 268
 \OML/cmm/m/it/9 Naive\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 ) = \OML/c
 mm/m/it/9 c[] \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 RRP\OT1/cmr/m/n/9 (\OML/cmm/m/i
 t/9 x\OT1/cmr/m/n/9 ) + \OML/cmm/m/it/9 c[] \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 I
@@ -490,15 +488,8 @@ cmsy/m/n/9  \OML/cmm/m/it/9 HE\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9
 L/cmm/m/it/9 x\OT1/cmr/m/n/9 )
  []
 
-
-Overfull \hbox (61.1683pt too wide) detected at line 287
-\OML/cmm/m/it/9 Improved\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 ) = \OM
-L/cmm/m/it/9 c[] \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 IFA\OT1/cmr/m/n/9 (\OML/cmm/
-m/it/9 index\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 )) + \OML/cmm/m/it/
-9 c[] \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 IFA\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 midd
-le\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 )) + \OML/cmm/m/it/9 :::
- []
-
+[2 <./Handanatomy2-eps-converted-to.pdf> <./handanatomy-eps-converted-to.pdf> <
+./abduction.png>]
 Package epstopdf Info: Source file: <Participant.eps>
 (epstopdf)                    date: 2016-07-01 20:19:44
 (epstopdf)                    size: 2266848 bytes
@@ -507,32 +498,31 @@ Package epstopdf Info: Source file: <Participant.eps>
 (epstopdf)                    size: 80723 bytes
 (epstopdf)             Command: <epstopdf --outfile=Participant-eps-converted-t
 o.pdf Participant.eps>
-(epstopdf)             \includegraphics on input line 303.
+(epstopdf)             \includegraphics on input line 295.
 Package epstopdf Info: Output file is already uptodate.
+
 <Participant-eps-converted-to.pdf, id=37, 1806.75pt x 904.37875pt>
 File: Participant-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Participant-eps-converted-to.pdf>
-Package pdftex.def Info: Participant-eps-converted-to.pdf used on input line 30
-3.
+Package pdftex.def Info: Participant-eps-converted-to.pdf used on input line 29
+5.
 (pdftex.def)             Requested size: 240.42569pt x 120.34709pt.
 
-Overfull \hbox (12.77829pt too wide) in paragraph at lines 314--315
-\T1/aer/m/n/9 al-go-rithm on the first 250 data sets to fit the com-fort/discom
-fort
- []
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 <TrainingDataImproved.pdf, id=38, 433.62pt x 216.81pt>
 File: TrainingDataImproved.pdf Graphic file (type pdf)
 
 <use TrainingDataImproved.pdf>
-Package pdftex.def Info: TrainingDataImproved.pdf used on input line 320.
+Package pdftex.def Info: TrainingDataImproved.pdf used on input line 314.
 (pdftex.def)             Requested size: 240.42569pt x 120.21518pt.
 
 ! Argument of \@caption has an extra }.
 <inserted text> 
                 \par 
-l.323 ... Coefficient: -0.645, p-value: < 2.2e-16}
+l.317 ... Coefficient: -0.645, p-value: < 2.2e-16}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -546,52 +536,52 @@ Runaway argument?
 ! Paragraph ended before \@caption was complete.
 <to be read again> 
                    \par 
-l.323 ... Coefficient: -0.645, p-value: < 2.2e-16}
+l.317 ... Coefficient: -0.645, p-value: < 2.2e-16}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+<TestDataImproved.pdf, id=39, 433.62pt x 216.81pt>
+File: TestDataImproved.pdf Graphic file (type pdf)
+ <use TestDataImproved.pdf>
+Package pdftex.def Info: TestDataImproved.pdf used on input line 342.
+(pdftex.def)             Requested size: 240.42569pt x 120.21518pt.
+
+! Argument of \@caption has an extra }.
+<inserted text> 
+                \par 
+l.345 ...n Coefficient: -0.748, p-value: 5.89e-12}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@captype {\def \reserved@a *{\nobreak \@xcentercr }\reserved@a }\def \ETC.
+! Paragraph ended before \@caption was complete.
+<to be read again> 
+                   \par 
+l.345 ...n Coefficient: -0.748, p-value: 5.89e-12}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 [3 <./Participant-eps-converted-to.pdf> <./TrainingDataImproved.pdf>]
-<TestDataImproved.pdf, id=55, 433.62pt x 216.81pt>
-File: TestDataImproved.pdf Graphic file (type pdf)
- <use TestDataImproved.pdf>
-Package pdftex.def Info: TestDataImproved.pdf used on input line 348.
-(pdftex.def)             Requested size: 240.42569pt x 120.21518pt.
-
-! Argument of \@caption has an extra }.
-<inserted text> 
-                \par 
-l.351 ...n Coefficient: -0.748, p-value: 5.89e-12}
-                                                  
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-\@captype {\def \reserved@a *{\nobreak \@xcentercr }\reserved@a }\def \ETC.
-! Paragraph ended before \@caption was complete.
-<to be read again> 
-                   \par 
-l.351 ...n Coefficient: -0.748, p-value: 5.89e-12}
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
 <TestDataNaive.pdf, id=56, 433.62pt x 216.81pt>
 File: TestDataNaive.pdf Graphic file (type pdf)
  <use TestDataNaive.pdf>
-Package pdftex.def Info: TestDataNaive.pdf used on input line 361.
+Package pdftex.def Info: TestDataNaive.pdf used on input line 355.
 (pdftex.def)             Requested size: 240.42569pt x 120.21518pt.
 
 ! Undefined control sequence.
 \\->\let \reserved@e 
                      \relax \let \reserved@f \relax \@ifstar {\let \reserved...
-l.364 ...on Coefficient: -0.665, p-value: 6.73e-9}
+l.358 ...on Coefficient: -0.665, p-value: 6.73e-9}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -602,7 +592,7 @@ and I'll forget about whatever was undefined.
 ! Argument of \@caption has an extra }.
 <inserted text> 
                 \par 
-l.364 ...on Coefficient: -0.665, p-value: 6.73e-9}
+l.358 ...on Coefficient: -0.665, p-value: 6.73e-9}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -616,7 +606,7 @@ Runaway argument?
 ! Paragraph ended before \@caption was complete.
 <to be read again> 
                    \par 
-l.364 ...on Coefficient: -0.665, p-value: 6.73e-9}
+l.358 ...on Coefficient: -0.665, p-value: 6.73e-9}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -625,13 +615,13 @@ My plan is to forget the whole thing and hope for the best.
 <TargetShooting.pdf, id=57, 433.62pt x 216.81pt>
 File: TargetShooting.pdf Graphic file (type pdf)
  <use TargetShooting.pdf>
-Package pdftex.def Info: TargetShooting.pdf used on input line 373.
+Package pdftex.def Info: TargetShooting.pdf used on input line 367.
 (pdftex.def)             Requested size: 240.42569pt x 120.21518pt.
 
 ! Argument of \@caption has an extra }.
 <inserted text> 
                 \par 
-l.376 ...on Coefficient: -0.665, p-value: 6.73e-9}
+l.370 ...on Coefficient: -0.665, p-value: 6.73e-9}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -645,7 +635,7 @@ Runaway argument?
 ! Paragraph ended before \@caption was complete.
 <to be read again> 
                    \par 
-l.376 ...on Coefficient: -0.665, p-value: 6.73e-9}
+l.370 ...on Coefficient: -0.665, p-value: 6.73e-9}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -654,42 +644,40 @@ My plan is to forget the whole thing and hope for the best.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(handComfort.bbl [4 <./TestDataImproved.pdf> <./TestDataNaive.pdf> <./TargetSho
-oting.pdf>]) [5
-
-] (handComfort.aux) ) 
+(handComfort.bbl) [4 <./TestDataImproved.pdf> <./TestDataNaive.pdf> <./TargetSh
+ooting.pdf>] (handComfort.aux) ) 
 Here is how much of TeX's memory you used:
  3297 strings out of 493335
  44383 string characters out of 3130231
- 116534 words of memory out of 3000000
+ 117534 words of memory out of 3000000
  6694 multiletter control sequences out of 15000+200000
  60300 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,37p,1226b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/en
-c/dvips/fontname/8r.enc}<C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Jonas/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Jonas/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/U
-sers/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-6.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr8.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr9.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmsl9.pfb><C:/Users/Jonas/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Jonas/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Jonas
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:
-/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mtt9.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helv
-etic/uhvb8a.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/u
-rw/helvetic/uhvr8a.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/urw/times/utmb8a.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/urw/times/utmr8a.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on handComfort.pdf (5 pages, 614971 bytes).
+ 41i,10n,37p,1265b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2
+.9/fonts/enc/dvips/fontname/8r.enc}<C:/Users/Jonas/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Jonas/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Jonas/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/User
+s/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib1
+0.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmr6.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr8.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Jonas/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl9.pfb><C:/Users/Jonas/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Jonas/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/
+Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+ti9.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmtt9.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/urw/helvetic/uhvb8a.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Jonas/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Jonas/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on handComfort.pdf (4 pages, 614171 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
+ 141 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

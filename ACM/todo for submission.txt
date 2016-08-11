@@ -1,4 +1,4 @@
-awkward english
+awkward english													//niko, pliz
 	-> niko will fix
 
 likert: non numeric values											//done
@@ -12,22 +12,22 @@ p-value significance: 0.01 footnote										//done
 
 
 small sample size: 
-title: lower expectations, couple more with actual topic							//
-	-> modify introduction to lower expectations								//
-	->"An Approach on Hand Comfort/Discomfort Quantification"						//
+title: lower expectations, couple more with actual topic							//done
+	-> modify introduction to lower expectations								//done
+	->"An Approach on Hand Comfort/Discomfort Quantification"						//done
 	-> state that results are noisy, BUT manage to deliver impressing results				//done
 
-user studies: 1 user study for improving, pilot study-> verificating second user study				//
-what is training data, what is testdata?									//
-Add age, gender for each user study										//
+user studies: 1 user study for improving, pilot study-> verificating second user study				//done
+what is training data, what is testdata?									//done
+Add age, gender for each user study										//done
 
-throw out: Figure 7 (naive metric- test data), show cor vals instead						//
+throw out: Figure 7 (naive metric- test data), show cor vals instead						//not needed
 add in table with coefficients											//done
 
 naive metric is an extension of the work ... with addition of IFA 						//partially done
-improved metric is naive metric differentiating between fingers							//done, kinda
+improved metric is naive metric differentiating between fingers							//done
 
-bullet points to sentence											//
+bullet points to sentence											//done
 
 what is the naive metric? Throw comfort and discomfort together.						//TODO: explain explicitly in text
 	-> unify in one metric											//done
@@ -46,6 +46,7 @@ copyright
 
 changelog:
 
+- high quality vector graphic plots
 - added authors
 - fixed typos in references
 - abstract: "we propose an early, straightforward metric"
@@ -56,3 +57,6 @@ changelog:
 - added in an explenation, why the target shooting test was chosen
 - modified results and discussion, future work to explain data andshow pioneer approach 
 - unified comfort and discomfort metric as they create too much uhh...
+- added word "short-term" in many cases
+- changed description of user studies
+- took out justification of hand model, cause nobody cares m8

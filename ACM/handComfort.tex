@@ -61,8 +61,8 @@
 \doi{http://dx.doi.org/XXXX.XXXX}
 % --- End of Author Metadata ---
 
-\title{A Metric for Hand Comfort/Discomfort Evaluation} 
-\subtitle{Towards Expressivity in Spatial Control}
+\title{A Basic Metric for Hand Comfort/Discomfort Evaluation} 
+\subtitle{Exploring Short-Term Hand Posture Comfort and Discomfort}
 %\titlenote{(Produces the permission block, and
 %copyright information). For use with
 %SIG-ALTERNATE.CLS. Supported by ACM.}}
@@ -141,7 +141,7 @@ Nicholas Katzakis\\
 
 
 \begin{abstract}
-We propose an early, straightforward metric for quick comfort and discomfort evaluation of non-resting hand postures. The metric is further improved using data from user studies. Comparing subjective user ratings with the metric indicates the metric to be a fitting model for perceived comfort and discomfort. Our results also indicate that there is an effect of hand comfort and discomfort on precision and performance in a 3D target pointing task.
+We propose an early, straightforward metric for quick short-term comfort and discomfort evaluation of non-resting hand postures. The metric is further improved using data from user studies. Comparing subjective user ratings with the metric indicates the metric to be a fitting model for perceived comfort and discomfort. Our results also indicate that there is an effect of hand comfort and discomfort on precision and performance in a 3D target pointing task.
 \end{abstract}
 
 
@@ -195,17 +195,9 @@ We first explain the theoretical basis of our comfort/discomfort model and then 
 
 
 \section{Hand Posture Comfort/ Discomfort Metric}
-The structure of the metric proposed is based on current ergonomics models \cite{vink2012editorial}. These models define comfort as a ``pleasant state or relaxed feeling of a human being" mostly caused by subjective impressions and expectations. Discomfort is defined as ``an unpleasant state of the human body" resulting from physical stress. Using this information combined with knowledge of hand anatomy, we broke down hand comfort and discomfort in a non-resting hand into the following four components: 
+The structure of the metric proposed is based on current ergonomics models \cite{vink2012editorial}. These models define comfort as a ``pleasant state or relaxed feeling of a human being" mostly caused by subjective impressions and expectations. Discomfort is defined as ``an unpleasant state of the human body" resulting from physical stress. Using this information combined with knowledge of hand anatomy, we broke down hand comfort and discomfort in a non-resting hand into the following four components: Deviation from Range of Rest Posture (RRP), Inter Finger Angles (IFA), Finger Hyperextension (HE) and Finger Abduction (FA). These components will be explained in the following sections. 
 
-\begin{itemize}
-	\item Deviation from Range of Rest Posture (RRP)
-	\item Inter Finger Angles (IFA)
-	\item Finger Hyperextension (HE)
-	\item Finger Abduction (FA)
-\end{itemize}
-
-These components will be explained in the following sections. For the computation of our metric we used an angle based hand model, similar to the model described by Su et al.~\cite{su1994logical}, as it makes reading joint angles trivial. Instead of the full 23 degrees of freedom, described by LaViola et al.~\cite{laviola1999survey}, we used a simplified model that neglects the MCC (metacarpocarpal joint) of the fourth and fifth digit (Figure \ref{fig:handAnatomyTotal}). This simplification was applied because the \textbf{Leap} uses the same model for posture representation and due to the fact that the MCC generally does not influence hand postures noticeably.
-
+For the computation of our metric we used a simplified 21 degree of freedom angle based hand model, similar to the model described by Su et al.~\cite{su1994logical}, as it makes reading joint angles trivial.
 Furthermore, the 21 DOF angle based hand model was simply handled as a vector of 21 \texttt{float}s. 
 
 \begin{figure}
@@ -228,7 +220,7 @@ Furthermore, the 21 DOF angle based hand model was simply handled as a vector of
 
 For articular joints perceived comfort decreases when deviating from the RRP and it minimizes at the bounds of the total range of motion. Applying this to the whole hand leads to the conclusion, that hand posture comfort can be evaluated by adding up the individual joint angle distances to the RRP~\cite{naddeo2015proposal}.
 
-In our implementation the RRP was represented by a set of 50 relaxed hand postures recorded with the Leap. The metric \textbf{RRP(x)} was simply computed by calculating the minimum euclidean distance of a hand denoted as a multi-dimensional vector ``x" to the RRP set.
+In our implementation the RRP was represented by a set of 50 relaxed hand postures recorded with the Leap Motion Controller. The metric \textbf{RRP(x)} was simply computed by calculating the minimum euclidean distance of a hand denoted as a multi-dimensional vector ``x" to the RRP set.
 For simplicity we assumed comfort to linearly decrease with distance to the RRP in our metric.
 
 \subsection{The Inter Finger Angles}
@@ -272,7 +264,7 @@ We computed the \textbf{abduction} component \textbf{FA(x)} by adding up the abs
 After determining the single components, we designed our metric to be the added up component values \begin{math}(RRP, IFA, ...)\end{math} multiplied with weighting coefficients \begin{math}(c_{RRP(x)}, c_{IFA(x)}, ...)\end{math}. These weighting coefficients were estimated for the \textbf{naive metric.} 
 
 	\[
-	Naive(x) = c_{RRP}\cdot RRP(x) + c_{IFA}\cdot IFA(x)  +  c_{HE}\cdot HE(x)  +  c_{FA}\cdot FA(x)
+	Naive(x) = c_{RRP}\cdot RRP(x) + c_{IFA}\cdot IFA(x) + c_{HE}\cdot HE(x) + c_{FA}\cdot FA(x)
 	\]
 
 We hypothesize that the resulting metric will correlate with user perception, having the value 0 as maximum for comfort and minimum for discomfort.
@@ -283,7 +275,7 @@ Even though the naive metric contains the causes of comfort and discomfort, it s
 The concept of improvement extends the thought process already used for inter finger angles: instead of applying the metric to the whole hand, we consider the contributions from individual fingers and weight them with importance coefficients. 
 
 	\[
-	Improved(x) = c_{IFAindex}\cdot IFA(index(x))  +  c_{IFAmiddle}\cdot IFA(middle(x)) + ...
+	Improved(x) = c_{IFAindex}\cdot IFA(index(x))  +  c_{IFAmiddle}\cdot ...
 	\]
 
 In our case we have five comfort values and a total of twelve discomfort values. 
@@ -292,9 +284,9 @@ However, the exact weighting coefficients are generally unknown and hard to esti
 
 \section{Methodology}
 
-For the collection of data, we created a test environment using \textbf{Unity 3D} with a total of two tasks. In the first task, the subject would be shown a randomly generated hand posture on screen. We used our naive metric to ensure a homogenous distribution of expected comfort and discomfort. The subject was asked to mimic the hand posture with his or her dominant hand and then rate the posture. As we did not expect the subjects to be familiar with current comfort and discomfort models, we asked them to rate hand postures on an intuitive scale ranging from 0 (very uncomfortable) to 10 (very comfortable). This was chosen over an ordinal Likert-like scale, because numerical values were needed for the metric's improvement and it's verification. The subject was told to rate the hand posture with 0 points if he or she was unable to reproduce it. Before beginning the evaluation, subjects were asked to form two hand postures so that they have a comfort/discomfort reference for the actual test. The first hand posture was a completely relaxed hand, the second hand posture was a randomly generated hand, that was challenging to mimic (such as the posture in figure \ref{fig:Robot}).
+For the collection of data, we created a test environment using \textbf{Unity 3D} with a total of two tasks. In the first task (hand posture evaluation), the subject would be shown a randomly generated hand posture on screen. We used our naive metric to ensure a homogenous distribution of expected comfort and discomfort. The subject was asked to mimic the hand posture with his or her dominant hand and then rate the posture. As we did not expect the subjects to be familiar with current comfort and discomfort models, we asked them to rate hand postures on an intuitive scale ranging from 0 (very uncomfortable) to 10 (very comfortable). This was chosen over an ordinal Likert-like scale, because numerical values were needed for the metric's improvement and it's verification. The subject was told to rate the hand posture with 0 points if he or she was unable to reproduce it. Before beginning the hand posture evaluation, subjects were asked to form two hand postures so that they have a comfort/discomfort reference for the actual test. The first hand posture was a completely relaxed hand, the second hand posture was a randomly generated hand, that was challenging to mimic (such as the posture in figure \ref{fig:Robot}).
 
-In the second task, the subjects were again given a randomly generated hand posture. Again the subject had to mimic the hand posture with his dominant hand and give it a rating from 0 to 10. After confirming his or her rating, the subject had to perform a target shooting task (Figure \ref{fig:participant}) with that specific posture. 
+In the second task (target shooting), the subjects were again given a randomly generated hand posture. Again the subject had to mimic the hand posture with his dominant hand and give it a rating from 0 to 10. After confirming his or her rating, the subject had to perform a target shooting task (Figure \ref{fig:participant}) with that specific posture. 
 This specific task was chosen due to its similarity to real world tasks, where quick and precise spacial commands have to be issued.
 We tracked the subject's hand using an \textbf{ART Tracking Device}. The software showed subjects a minimalistic representation of their hand position and indicated the forward direction of their hand with a ray. Subjects were seated, with the elbow rested on a table. They had to use this ray to aim down a total of 12 targets, appearing in random order, and shoot them, by pressing a button with the off-hand. By recording the hand posture before the trial using a Leap, and checking the hand posture during the test, we made sure that the subject would not break the posture. 
 
@@ -302,16 +294,18 @@ We tracked the subject's hand using an \textbf{ART Tracking Device}. The softwar
 \centering
 \includegraphics[width=8.45cm]{Participant}
 \vspace{-20pt}
-\caption{A Participant performing the Target Shooting (Best in Color)}
+\caption{A Participant performing Target Shooting}
 \label{fig:participant}
 \vspace{-10pt}
 \end{figure}
 
 As a metric for performance, we measured the total time taken for the test. In order to have this affected by precision, we made the targets small and told the subjects to perform the test as quickly as possible.
 
-We conducted a total of two user studies involving 21 participants, that resulted in 250 and 60 data sets for the metric and 35 data sets for the target shooting. Subjects were informed about the aim of the study as well as their specific objectives beforehand. 
+We conducted a total of two user studies, a pilot study featuring the hand posture evaluation only and the main study, where both target shooting and hand posture evaluation were tested. 
+The studies were conducted with 12 and 15 participants respectively, whereof 2 and 5 were female. The participants' mean age was ??? and 21.
+Subjects were informed about the aim of the study as well as their specific objectives beforehand. 
 
-Finding the best fitting coefficients can be reduced to a curve fitting problem. Therefore we used the least squares algorithm on the first 250 data sets to fit the comfort/discomfort values to the user ratings. Afterwards we tested our results against the remaining 60 data sets to validate them. For this, we decided to combine comfort and discomfort, as we expected both comfort and discomfort to affect performance.
+For improving the metric the main goal was to fit the calculated metric values to the user evaluations as closely as possible. For this, a least squares algorithm was used to find the optimal weighting coefficients based on the 250 data sets from the main study (training data). Afterwards, the metric was tested against the 60 data sets of the pilot study (test data).
 
 \section{Results \& Discussion}
 
@@ -375,7 +369,7 @@ When looking at the naive metric, it can be seen that it predicts the user ratin
 \caption{Improved Metric Value and Total Task Time in Target Shooting.\\
 Correlation Coefficient: -0.665, p-value: 6.73e-9}
 \label{fig:targetShooting}
-\vspace{-5pt}
+\vspace{-10pt}
 \end{figure}
 
 The results from the target shooting task (Figure \ref{fig:targetShooting}) shows that participants with harder hand postures generally took longer to finish. The large effect size is also confirmed by the Pearson correlation. This indicates that comfort and discomfort, as measured by our metric, significantly affect the performance and precision in context of hand postures. This strengthens the conclusion of Short et al.~\cite{short1999precision}, that more comfortable postures generally create greater accuracy. However, the credibility of our results is limited by the relatively small number of participants. Further work is required before strong conclusions can be made.
