@@ -12,22 +12,22 @@ p-value significance: 0.01 footnote										//done
 
 
 small sample size: 
-title: lower expectations, couple more with actual topic
-	-> modify introduction to lower expectations
-	->"An Approach on Hand Comfort/Discomfort Quantification"
+title: lower expectations, couple more with actual topic							//
+	-> modify introduction to lower expectations								//
+	->"An Approach on Hand Comfort/Discomfort Quantification"						//
 	-> state that results are noisy, BUT manage to deliver impressing results				//done
 
-user studies: 1 user study for improving, pilot study-> verificating second user study
-what is training data, what is testdata?
-Add age, gender for each user study
+user studies: 1 user study for improving, pilot study-> verificating second user study				//
+what is training data, what is testdata?									//
+Add age, gender for each user study										//
 
-throw out: Figure 7 (naive metric- test data), show cor vals instead
+throw out: Figure 7 (naive metric- test data), show cor vals instead						//
 add in table with coefficients											//done
 
 naive metric is an extension of the work ... with addition of IFA 						//partially done
 improved metric is naive metric differentiating between fingers							//done, kinda
 
-bullet points to sentence
+bullet points to sentence											//
 
 what is the naive metric? Throw comfort and discomfort together.						//TODO: explain explicitly in text
 	-> unify in one metric											//done
@@ -38,6 +38,8 @@ add reference to laviola for figure 2 and 3 									//done
 add adduction reference (figure 3) 										//done
 
 copyright
+	-> In-paper shith											//
+	-> online form												//
 
 
 
@@ -46,7 +48,7 @@ changelog:
 
 - added authors
 - fixed typos in references
-- abstract: "we propose a basic, straightforward metric"
+- abstract: "we propose an early, straightforward metric"
 - added references for figure 2 and 3
 - added reference to figure 3 for first use of adduction
 - added explicit names to RRP and HE to make origin clear
