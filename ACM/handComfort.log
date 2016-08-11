@@ -1,46 +1,37 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.9)  11 AUG 2016 17:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.5)  11 AUG 2016 17:57
 entering extended mode
 **./handComfort.tex
 (handComfort.tex
 LaTeX2e <2016/03/31> patch level 1
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
-(sig-alternate-05-2015.cls
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\epsfig.st
-y"
+(sig-alternate-05-2015.cls ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.
-sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.st
-y"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.
-sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2016/06/02 v1.0s Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\graphics.
-cfg"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.
-def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2016/06/17 v0.06h Graphics/color for pdfTeX
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infware
-rr.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds
-.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count79
@@ -51,12 +42,10 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \epsfxsize=\dimen104
 \epsfysize=\dimen105
 )
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amssymb.s
-ty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.
-sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks15
 \symAMSa=\mathgroup4
@@ -64,30 +53,24 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.st
-y"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2016/03/10 v2.15b AMS math features
 \@mathmargin=\skip41
 
 For additional information on amsmath, use the `?' option.
-
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amstext.st
-y"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty
-"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
 \ex@=\dimen106
 ))
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty
-"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen107
 )
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty
-"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count80
@@ -128,27 +111,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
 )
-Document Class 'sig-alternate' <9th June '13>. Modified by G.K.M. Tobin/Gerry M
-urray/Boris Veytsman
+Document Class 'sig-alternate' <9th June '13>. Modified by G.K.M. Tobin/Gerry Murray/Boris Veytsman
 Based in part upon document Style `acmconf' <22 May 89>. Hacked 4/91 by
 shivers@cs.cmu.edu, 4/93 by theobald@cs.mcgill.ca
 Excerpts were taken from (Journal Style) 'esub2acm.cls'.
-****** Bugs/comments/suggestions/technicalities to Gerry Murray -- murray@hq.ac
-m.org ******
+****** Bugs/comments/suggestions/technicalities to Gerry Murray -- murray@hq.acm.org ******
 Questions on the style, SIGS policies, etc. to Adrienne Griscti griscti@acm.org
-
 \ACM@basesize=\count92
-
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\comment\comment.st
-y"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\comment\comment.sty"
 \CommentStream=\write3
- Excluding comment 'comment') Excluding comment 'CCSXML'
+ Excluding comment 'comment')
+Excluding comment 'CCSXML'
 \footheight=\dimen115
 \@maxsep=\dimen116
 \@dblmaxsep=\dimen117
-
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.s
-ty"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
 \aucount=\count93
@@ -172,9 +149,8 @@ Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 LaTeX Warning: You have requested document class `sig-alternate-05-2015',
                but the document class provides `sig-alternate'.
 
-Document Class: sig-alternate 2013/05/12 v2.7 based on acmproc.cls V1.3 <Nov. 3
-0 '99>
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latexsym.sty"
+Document Class: sig-alternate 2013/05/12 v2.7 based on acmproc.cls V1.3 <Nov. 30 '99>
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latexsym.sty"
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
@@ -205,21 +181,17 @@ LaTeX Info: Redefining \cite on input line 1408.
 \copyrtyr=\toks32
 \acmcopyr=\toks33
 \boilerplate=\toks34
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-(acmcopyright.sty
+) (acmcopyright.sty
 Package: acmcopyright 2014/06/29 v1.2 Copyright statemens for ACM classes
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.st
-y"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.
-tex"
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkvutils
-.tex"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex"
 \XKV@toks=\toks35
 \XKV@tempa@toks=\toks36
 )
@@ -228,19 +200,17 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )))
 \copyrightetc=\toks37
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 )
 LaTeX Font Info:    Try loading font information for T1+aer on input line 105.
-
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-)))
-(handComfort.aux)
+))) (handComfort.aux)
 \openout1 = `handComfort.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -255,9 +225,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
-
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
-ii"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count111
 \scratchdimen=\dimen123
@@ -270,14 +238,10 @@ ii"
 \MPnumerator=\count115
 \makeMPintoPDFobject=\count116
 \everyMPtoPDFconversion=\toks39
-)
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdftexc
-mds.sty"
-Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
-)
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO)
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifluate
-x.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -286,95 +250,84 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
-base.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.st
-y"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvdefin
-ekeys.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 ))
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptions
-.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvsetke
-ys.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etexcmd
-s.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 438.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 140.
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 140.
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for U+lasy on input line 140.
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 140.
 
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 140.
 
-
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 140.
 Package epstopdf Info: Source file: <Robot.eps>
-(epstopdf)                    date: 2016-07-01 20:19:44
-(epstopdf)                    size: 4393179 bytes
+(epstopdf)                    date: 2016-06-30 22:01:53
+(epstopdf)                    size: 4334592 bytes
 (epstopdf)             Output file: <Robot-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-08-10 12:27:23
+(epstopdf)                    date: 2016-08-10 20:23:15
 (epstopdf)                    size: 121412 bytes
-(epstopdf)             Command: <epstopdf --outfile=Robot-eps-converted-to.pdf 
-Robot.eps>
+(epstopdf)             Command: <epstopdf --outfile=Robot-eps-converted-to.pdf Robot.eps>
 (epstopdf)             \includegraphics on input line 168.
 Package epstopdf Info: Output file is already uptodate.
+
 <Robot-eps-converted-to.pdf, id=1, 1205.50375pt x 663.47874pt>
 File: Robot-eps-converted-to.pdf Graphic file (type pdf)
-
-<use Robot-eps-converted-to.pdf>
+ <use Robot-eps-converted-to.pdf>
 Package pdftex.def Info: Robot-eps-converted-to.pdf used on input line 168.
 (pdftex.def)             Requested size: 240.42569pt x 132.3188pt.
 
 Overfull \hbox (17.22415pt too wide) in paragraph at lines 194--195
-[]\T1/aer/m/n/9 We first ex-plain the the-o-ret-i-cal ba-sis of our com-fort/di
-scomfort
+[]\T1/aer/m/n/9 We first ex-plain the the-o-ret-i-cal ba-sis of our com-fort/discomfort
  []
 
 LaTeX Font Info:    Try loading font information for T1+aett on input line 201.
-
-("C:\Users\Jonas\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
-[1{C:/Users/Jonas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+) [1{C:/Users/Jonas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
  <./Robot-eps-converted-to.pdf>]
@@ -392,21 +345,18 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 Package epstopdf Info: Source file: <Handanatomy2.eps>
-(epstopdf)                    date: 2016-07-01 20:19:44
-(epstopdf)                    size: 295989 bytes
+(epstopdf)                    date: 2016-07-01 13:23:48
+(epstopdf)                    size: 291526 bytes
 (epstopdf)             Output file: <Handanatomy2-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-08-10 12:36:09
+(epstopdf)                    date: 2016-08-10 20:23:15
 (epstopdf)                    size: 35485 bytes
-(epstopdf)             Command: <epstopdf --outfile=Handanatomy2-eps-converted-
-to.pdf Handanatomy2.eps>
+(epstopdf)             Command: <epstopdf --outfile=Handanatomy2-eps-converted-to.pdf Handanatomy2.eps>
 (epstopdf)             \includegraphics on input line 206.
 Package epstopdf Info: Output file is already uptodate.
 <Handanatomy2-eps-converted-to.pdf, id=18, 270.00874pt x 339.2675pt>
 File: Handanatomy2-eps-converted-to.pdf Graphic file (type pdf)
-
-<use Handanatomy2-eps-converted-to.pdf>
-Package pdftex.def Info: Handanatomy2-eps-converted-to.pdf used on input line 2
-06.
+ <use Handanatomy2-eps-converted-to.pdf>
+Package pdftex.def Info: Handanatomy2-eps-converted-to.pdf used on input line 206.
 (pdftex.def)             Requested size: 113.81102pt x 143.00388pt.
 
 
@@ -436,21 +386,18 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 Package epstopdf Info: Source file: <handanatomy.eps>
-(epstopdf)                    date: 2016-07-01 20:19:44
-(epstopdf)                    size: 572935 bytes
+(epstopdf)                    date: 2016-06-28 19:02:03
+(epstopdf)                    size: 564302 bytes
 (epstopdf)             Output file: <handanatomy-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-08-10 12:27:25
+(epstopdf)                    date: 2016-08-10 20:23:15
 (epstopdf)                    size: 70922 bytes
-(epstopdf)             Command: <epstopdf --outfile=handanatomy-eps-converted-t
-o.pdf handanatomy.eps>
+(epstopdf)             Command: <epstopdf --outfile=handanatomy-eps-converted-to.pdf handanatomy.eps>
 (epstopdf)             \includegraphics on input line 209.
 Package epstopdf Info: Output file is already uptodate.
 <handanatomy-eps-converted-to.pdf, id=19, 527.9725pt x 665.48625pt>
 File: handanatomy-eps-converted-to.pdf Graphic file (type pdf)
-
-<use handanatomy-eps-converted-to.pdf>
-Package pdftex.def Info: handanatomy-eps-converted-to.pdf used on input line 20
-9.
+ <use handanatomy-eps-converted-to.pdf>
+Package pdftex.def Info: handanatomy-eps-converted-to.pdf used on input line 209.
 (pdftex.def)             Requested size: 113.81102pt x 143.45247pt.
 
 
@@ -473,40 +420,34 @@ Package pdftex.def Info: abduction.png used on input line 238.
 (pdftex.def)             Requested size: 199.16928pt x 109.68762pt.
 
 Overfull \hbox (3.32912pt too wide) in paragraph at lines 259--260
-[]\T1/aer/m/n/9 We com-puted the \T1/aer/bx/n/9 ab-duc-tion \T1/aer/m/n/9 com-p
-o-nent \T1/aer/bx/n/9 FA(x) \T1/aer/m/n/9 by adding
+[]\T1/aer/m/n/9 We com-puted the \T1/aer/bx/n/9 ab-duc-tion \T1/aer/m/n/9 com-po-nent \T1/aer/bx/n/9 FA(x) \T1/aer/m/n/9
+ by adding
  []
 
 
 Overfull \hbox (34.96443pt too wide) detected at line 268
-\OML/cmm/m/it/9 Naive\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 ) = \OML/c
-mm/m/it/9 c[] \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 RRP\OT1/cmr/m/n/9 (\OML/cmm/m/i
-t/9 x\OT1/cmr/m/n/9 ) + \OML/cmm/m/it/9 c[] \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 I
-FA\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 ) + \OML/cmm/m/it/9 c[] \OMS/
-cmsy/m/n/9  \OML/cmm/m/it/9 HE\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 
-) + \OML/cmm/m/it/9 c[] \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 FA\OT1/cmr/m/n/9 (\OM
-L/cmm/m/it/9 x\OT1/cmr/m/n/9 )
+\OML/cmm/m/it/9 Naive\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 ) = \OML/cmm/m/it/9 c[] \OMS/cmsy/m/n/9  \OML/cmm/
+m/it/9 RRP\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 ) + \OML/cmm/m/it/9 c[] \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 IFA\
+OT1/cmr/m/n/9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 ) + \OML/cmm/m/it/9 c[] \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 HE\OT1/cmr/m/n/
+9 (\OML/cmm/m/it/9 x\OT1/cmr/m/n/9 ) + \OML/cmm/m/it/9 c[] \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 FA\OT1/cmr/m/n/9 (\OML/cmm/
+m/it/9 x\OT1/cmr/m/n/9 )
  []
 
-[2 <./Handanatomy2-eps-converted-to.pdf> <./handanatomy-eps-converted-to.pdf> <
-./abduction.png>]
+[2 <./Handanatomy2-eps-converted-to.pdf> <./handanatomy-eps-converted-to.pdf> <./abduction.png>]
 Package epstopdf Info: Source file: <Participant.eps>
-(epstopdf)                    date: 2016-07-01 20:19:44
-(epstopdf)                    size: 2266848 bytes
+(epstopdf)                    date: 2016-06-30 12:09:14
+(epstopdf)                    size: 2236171 bytes
 (epstopdf)             Output file: <Participant-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-08-10 12:27:28
+(epstopdf)                    date: 2016-08-10 20:23:15
 (epstopdf)                    size: 80723 bytes
-(epstopdf)             Command: <epstopdf --outfile=Participant-eps-converted-t
-o.pdf Participant.eps>
+(epstopdf)             Command: <epstopdf --outfile=Participant-eps-converted-to.pdf Participant.eps>
 (epstopdf)             \includegraphics on input line 295.
 Package epstopdf Info: Output file is already uptodate.
 
 <Participant-eps-converted-to.pdf, id=37, 1806.75pt x 904.37875pt>
 File: Participant-eps-converted-to.pdf Graphic file (type pdf)
-
-<use Participant-eps-converted-to.pdf>
-Package pdftex.def Info: Participant-eps-converted-to.pdf used on input line 29
-5.
+ <use Participant-eps-converted-to.pdf>
+Package pdftex.def Info: Participant-eps-converted-to.pdf used on input line 295.
 (pdftex.def)             Requested size: 240.42569pt x 120.34709pt.
 
 
@@ -514,8 +455,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 <TrainingDataImproved.pdf, id=38, 433.62pt x 216.81pt>
 File: TrainingDataImproved.pdf Graphic file (type pdf)
-
-<use TrainingDataImproved.pdf>
+ <use TrainingDataImproved.pdf>
 Package pdftex.def Info: TrainingDataImproved.pdf used on input line 314.
 (pdftex.def)             Requested size: 240.42569pt x 120.21518pt.
 
@@ -571,10 +511,10 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-[3 <./Participant-eps-converted-to.pdf> <./TrainingDataImproved.pdf>]
-<TestDataNaive.pdf, id=56, 433.62pt x 216.81pt>
+[3 <./Participant-eps-converted-to.pdf> <./TrainingDataImproved.pdf>] <TestDataNaive.pdf, id=56, 433.62pt x 216.81pt>
 File: TestDataNaive.pdf Graphic file (type pdf)
- <use TestDataNaive.pdf>
+
+<use TestDataNaive.pdf>
 Package pdftex.def Info: TestDataNaive.pdf used on input line 355.
 (pdftex.def)             Requested size: 240.42569pt x 120.21518pt.
 
@@ -644,37 +584,27 @@ My plan is to forget the whole thing and hope for the best.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(handComfort.bbl) [4 <./TestDataImproved.pdf> <./TestDataNaive.pdf> <./TargetSh
-ooting.pdf>] (handComfort.aux) ) 
+(handComfort.bbl) [4 <./TestDataImproved.pdf> <./TestDataNaive.pdf> <./TargetShooting.pdf>] (handComfort.aux) ) 
 Here is how much of TeX's memory you used:
  3297 strings out of 493335
- 44383 string characters out of 3130231
+ 42958 string characters out of 3136681
  117534 words of memory out of 3000000
  6694 multiletter control sequences out of 15000+200000
  60300 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,10n,37p,1265b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2
-.9/fonts/enc/dvips/fontname/8r.enc}<C:/Users/Jonas/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Jonas/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Jonas/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/User
-s/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib1
-0.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr6.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr8.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Jonas/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl9.pfb><C:/Users/Jonas/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Jonas/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/
-Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-ti9.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmtt9.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/urw/helvetic/uhvb8a.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Jonas/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Jonas/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Jonas/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+{C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.
+pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mtt9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
 Output written on handComfort.pdf (4 pages, 614171 bytes).
 PDF statistics:
  141 PDF objects out of 1000 (max. 8388607)
