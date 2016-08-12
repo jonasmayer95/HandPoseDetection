@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.5)  11 AUG 2016 17:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.5)  12 AUG 2016 12:55
 entering extended mode
 **./handComfort.tex
 (handComfort.tex
@@ -353,7 +353,7 @@ Package epstopdf Info: Source file: <Handanatomy2.eps>
 (epstopdf)             Command: <epstopdf --outfile=Handanatomy2-eps-converted-to.pdf Handanatomy2.eps>
 (epstopdf)             \includegraphics on input line 206.
 Package epstopdf Info: Output file is already uptodate.
-<Handanatomy2-eps-converted-to.pdf, id=18, 270.00874pt x 339.2675pt>
+<Handanatomy2-eps-converted-to.pdf, id=19, 270.00874pt x 339.2675pt>
 File: Handanatomy2-eps-converted-to.pdf Graphic file (type pdf)
  <use Handanatomy2-eps-converted-to.pdf>
 Package pdftex.def Info: Handanatomy2-eps-converted-to.pdf used on input line 206.
@@ -394,7 +394,7 @@ Package epstopdf Info: Source file: <handanatomy.eps>
 (epstopdf)             Command: <epstopdf --outfile=handanatomy-eps-converted-to.pdf handanatomy.eps>
 (epstopdf)             \includegraphics on input line 209.
 Package epstopdf Info: Output file is already uptodate.
-<handanatomy-eps-converted-to.pdf, id=19, 527.9725pt x 665.48625pt>
+<handanatomy-eps-converted-to.pdf, id=20, 527.9725pt x 665.48625pt>
 File: handanatomy-eps-converted-to.pdf Graphic file (type pdf)
  <use handanatomy-eps-converted-to.pdf>
 Package pdftex.def Info: handanatomy-eps-converted-to.pdf used on input line 209.
@@ -413,7 +413,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<abduction.png, id=20, 311.66437pt x 171.64125pt>
+<abduction.png, id=21, 311.66437pt x 171.64125pt>
 File: abduction.png Graphic file (type png)
  <use abduction.png>
 Package pdftex.def Info: abduction.png used on input line 238.
@@ -605,7 +605,7 @@ msfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
 mtt9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x8
 6)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on handComfort.pdf (4 pages, 614171 bytes).
+Output written on handComfort.pdf (4 pages, 614517 bytes).
 PDF statistics:
  141 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

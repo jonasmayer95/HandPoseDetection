@@ -195,7 +195,7 @@ We first explain the theoretical basis of our comfort/discomfort model and then 
 
 
 \section{Hand Posture Comfort/ Discomfort Metric}
-The structure of the metric proposed is based on current ergonomics models \cite{vink2012editorial}. These models define comfort as a ``pleasant state or relaxed feeling of a human being" mostly caused by subjective impressions and expectations. Discomfort is defined as ``an unpleasant state of the human body" resulting from physical stress. Using this information combined with knowledge of hand anatomy, we broke down hand comfort and discomfort in a non-resting hand into the following four components: Deviation from Range of Rest Posture (RRP), Inter Finger Angles (IFA), Finger Hyperextension (HE) and Finger Abduction (FA). These components will be explained in the following sections. 
+The structure of the metric proposed is based on current ergonomics models \cite{vink2012editorial}. These models define comfort as a ``\textit{pleasant state or relaxed feeling of a human being}" mostly caused by subjective impressions and expectations. Discomfort is defined as ``\textit{an unpleasant state of the human body}" resulting from physical stress. Using this information combined with knowledge of hand anatomy, we broke down hand comfort and discomfort in a non-resting hand into the following four components: Deviation from Range of Rest Posture (RRP), Inter Finger Angles (IFA), Finger Hyperextension (HE) and Finger Abduction (FA). These components will be explained in the following sections. 
 
 For the computation of our metric we used a simplified 21 degree of freedom angle based hand model, similar to the model described by Su et al.~\cite{su1994logical}, as it makes reading joint angles trivial.
 Furthermore, the 21 DOF angle based hand model was simply handled as a vector of 21 \texttt{float}s. 
@@ -216,11 +216,11 @@ Furthermore, the 21 DOF angle based hand model was simply handled as a vector of
 \subsection{Deviation from Range of Rest Posture}
 
 %rest on supports
-\textbf{Range of Rest Posture (RRP)}, as defined by Apostolico et al. \cite{apostolico2014postural}, is a range of angles for an articular joint\footnote{The word ``articular joint" refers to joints in the human body.}, where the joint ``can be considered statistically in rest". The resulting relaxation of muscles and tendons creates maximum comfort in this particular joint. In our case, we considered the non-resting human hand to have a specific RRP for each finger joint, when the palm is facing downwards. Combining the RRPs of each finger joint for the entire hand results in a set of relaxed hand postures where comfort is maximized.
+\textbf{Range of Rest Posture (RRP)}, as defined by Apostolico et al. \cite{apostolico2014postural}, is a range of angles for an articular joint\footnote{The word ``articular joint" refers to joints in the human body.}, where the joint ``\textit{can be considered statistically in rest}". The resulting relaxation of muscles and tendons creates maximum comfort in this particular joint. In our case, we considered the non-resting human hand to have a specific RRP for each finger joint, when the palm is facing downwards. Combining the RRPs of each finger joint for the entire hand results in a set of relaxed hand postures where comfort is maximized.
 
 For articular joints perceived comfort decreases when deviating from the RRP and it minimizes at the bounds of the total range of motion. Applying this to the whole hand leads to the conclusion, that hand posture comfort can be evaluated by adding up the individual joint angle distances to the RRP~\cite{naddeo2015proposal}.
 
-In our implementation the RRP was represented by a set of 50 relaxed hand postures recorded with the Leap Motion Controller. The metric \textbf{RRP(x)} was simply computed by calculating the minimum euclidean distance of a hand denoted as a multi-dimensional vector ``x" to the RRP set.
+In our implementation the RRP was represented by a set of 50 relaxed hand postures recorded with the Leap Motion Controller. The metric \textbf{RRP(x)} was simply computed by calculating the minimum euclidean distance of a hand posture denoted as a multi-dimensional vector ``x" to the RRP set.
 For simplicity we assumed comfort to linearly decrease with distance to the RRP in our metric.
 
 \subsection{The Inter Finger Angles}
@@ -256,7 +256,7 @@ also causes stress on the MCP joint, the abduction muscles and tendons involved.
 
 Abduction was taken into consideration, analogue to the hyperextension, as full abduction creates substantially more discomfort than full adduction (Figure \ref{fig:hyperabduction}).
 
-We computed the \textbf{abduction} component \textbf{FA(x)} by adding up the absolute abduction/adduction angle for the finger. This is possible as a fully adducted finger has an abduction angle of 0 in our model.
+We computed the \textbf{abduction} component \textbf{FA(x)} by adding up the absolute abduction angle for the finger. This is possible as a fully adducted finger has an abduction angle of 0 in our model.
 
 
 \subsection{Naive Metric}
@@ -301,7 +301,7 @@ We tracked the subject's hand using an \textbf{ART Tracking Device}. The softwar
 
 As a metric for performance, we measured the total time taken for the test. In order to have this affected by precision, we made the targets small and told the subjects to perform the test as quickly as possible.
 
-We conducted a total of two user studies, a pilot study featuring the hand posture evaluation only and the main study, where both target shooting and hand posture evaluation were tested. 
+We conducted a total of two user studies, a pilot study featuring multiple hand posture evaluations only and the main study, where both target shooting and hand posture evaluation were tested multiple times. 
 The studies were conducted with 12 and 15 participants respectively, whereof 2 and 5 were female. The participants' mean age was ??? and 21.
 Subjects were informed about the aim of the study as well as their specific objectives beforehand. 
 
@@ -347,7 +347,7 @@ Correlation Coefficient: -0.748, p-value: 5.89e-12}
 \label{fig:testData}
 \end{figure}
 
-The computed weighting coefficients for the improved metric can be taken from Table \ref{tab:coeff}. Due to the small number of participants, the coefficients are very noisy and don't seem to make much sense. It can also be seen that the IFA coefficients are generally less noisy than those of HE or FA. This indicates, that the different components are perceived differently and that the metric has room for improvement.
+The computed weighting coefficients for the improved metric can be taken from Table \ref{tab:coeff}. Due to the small number of participants, the coefficients are very noisy and don't seem to make much sense on first sight. It can also be seen that the IFA coefficients are generally less noisy than those of HE or FA. This indicates, that the different components are perceived differently and that the metric has room for improvement.
 
 Despite the noise, the created metric also holds its large effect on the user ratings even when applied to the test data (Figure \ref{fig:testData}). This shows, that the improved metric is a valid extrapolation of the training data and can be used to predict the perceived user comfort and discomfort of a certain hand posture.
 
