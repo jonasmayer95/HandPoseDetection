@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.5)  12 AUG 2016 12:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.5)  12 AUG 2016 14:43
 entering extended mode
 **./handComfort.tex
 (handComfort.tex
@@ -210,7 +210,50 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 LaTeX Font Info:    Try loading font information for T1+aer on input line 105.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-))) (handComfort.aux)
+))) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen123
+\captionmargin@=\dimen124
+\captionwidth=\dimen125
+\caption@tempdima=\dimen126
+\caption@indent=\dimen127
+\caption@parindent=\dimen128
+\caption@hangindent=\dimen129
+\abovecaptionskip=\skip44
+\belowcaptionskip=\skip45
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2-> \vskip 10pt \setbox \@tempboxa \hbox {\textbf {#1: #2}} \ifdim 
+\wd \@tempboxa >\hsize \textbf {#1: #2}\par \else \hbox to\hsize {\hfil \box \@tempboxa \hfil } \fi .
+\c@ContinuedFloat=\count111
+)
+\c@KVtest=\count112
+\sf@farskip=\skip46
+\sf@captopadj=\dimen130
+\sf@capskip=\skip47
+\sf@nearskip=\skip48
+\c@subfigure=\count113
+\c@subfigure@save=\count114
+\c@lofdepth=\count115
+\c@subtable=\count116
+\c@subtable@save=\count117
+\c@lotdepth=\count118
+\sf@top=\skip49
+\sf@bottom=\skip50
+) (handComfort.aux)
 \openout1 = `handComfort.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -227,16 +270,16 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count111
-\scratchdimen=\dimen123
+\scratchcounter=\count119
+\scratchdimen=\dimen131
 \scratchbox=\box30
-\nofMPsegments=\count112
-\nofMParguments=\count113
+\nofMPsegments=\count120
+\nofMParguments=\count121
 \everyMPshowfont=\toks38
-\MPscratchCnt=\count114
-\MPscratchDim=\dimen124
-\MPnumerator=\count115
-\makeMPintoPDFobject=\count116
+\MPscratchCnt=\count122
+\MPscratchDim=\dimen132
+\MPnumerator=\count123
+\makeMPintoPDFobject=\count124
 \everyMPtoPDFconversion=\toks39
 ) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO)
@@ -277,6 +320,9 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Try loading font information for U+msa on input line 140.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
@@ -353,7 +399,7 @@ Package epstopdf Info: Source file: <Handanatomy2.eps>
 (epstopdf)             Command: <epstopdf --outfile=Handanatomy2-eps-converted-to.pdf Handanatomy2.eps>
 (epstopdf)             \includegraphics on input line 206.
 Package epstopdf Info: Output file is already uptodate.
-<Handanatomy2-eps-converted-to.pdf, id=19, 270.00874pt x 339.2675pt>
+<Handanatomy2-eps-converted-to.pdf, id=18, 270.00874pt x 339.2675pt>
 File: Handanatomy2-eps-converted-to.pdf Graphic file (type pdf)
  <use Handanatomy2-eps-converted-to.pdf>
 Package pdftex.def Info: Handanatomy2-eps-converted-to.pdf used on input line 206.
@@ -394,7 +440,7 @@ Package epstopdf Info: Source file: <handanatomy.eps>
 (epstopdf)             Command: <epstopdf --outfile=handanatomy-eps-converted-to.pdf handanatomy.eps>
 (epstopdf)             \includegraphics on input line 209.
 Package epstopdf Info: Output file is already uptodate.
-<handanatomy-eps-converted-to.pdf, id=20, 527.9725pt x 665.48625pt>
+<handanatomy-eps-converted-to.pdf, id=19, 527.9725pt x 665.48625pt>
 File: handanatomy-eps-converted-to.pdf Graphic file (type pdf)
  <use handanatomy-eps-converted-to.pdf>
 Package pdftex.def Info: handanatomy-eps-converted-to.pdf used on input line 209.
@@ -413,7 +459,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<abduction.png, id=21, 311.66437pt x 171.64125pt>
+<abduction.png, id=20, 311.66437pt x 171.64125pt>
 File: abduction.png Graphic file (type png)
  <use abduction.png>
 Package pdftex.def Info: abduction.png used on input line 238.
@@ -459,155 +505,50 @@ File: TrainingDataImproved.pdf Graphic file (type pdf)
 Package pdftex.def Info: TrainingDataImproved.pdf used on input line 314.
 (pdftex.def)             Requested size: 240.42569pt x 120.21518pt.
 
-! Argument of \@caption has an extra }.
-<inserted text> 
-                \par 
-l.317 ... Coefficient: -0.645, p-value: < 2.2e-16}
-                                                  
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-\@captype {\def \reserved@a *{\nobreak \@xcentercr }\reserved@a }\def \ETC.
-! Paragraph ended before \@caption was complete.
-<to be read again> 
-                   \par 
-l.317 ... Coefficient: -0.645, p-value: < 2.2e-16}
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
 <TestDataImproved.pdf, id=39, 433.62pt x 216.81pt>
 File: TestDataImproved.pdf Graphic file (type pdf)
  <use TestDataImproved.pdf>
 Package pdftex.def Info: TestDataImproved.pdf used on input line 342.
 (pdftex.def)             Requested size: 240.42569pt x 120.21518pt.
-
-! Argument of \@caption has an extra }.
-<inserted text> 
-                \par 
-l.345 ...n Coefficient: -0.748, p-value: 5.89e-12}
-                                                  
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-\@captype {\def \reserved@a *{\nobreak \@xcentercr }\reserved@a }\def \ETC.
-! Paragraph ended before \@caption was complete.
-<to be read again> 
-                   \par 
-l.345 ...n Coefficient: -0.748, p-value: 5.89e-12}
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-[3 <./Participant-eps-converted-to.pdf> <./TrainingDataImproved.pdf>] <TestDataNaive.pdf, id=56, 433.62pt x 216.81pt>
+ [3 <./Participant-eps-converted-to.pdf> <./TrainingDataImproved.pdf>] <TestDataNaive.pdf, id=55, 433.62pt x 216.81pt>
 File: TestDataNaive.pdf Graphic file (type pdf)
-
-<use TestDataNaive.pdf>
+ <use TestDataNaive.pdf>
 Package pdftex.def Info: TestDataNaive.pdf used on input line 355.
 (pdftex.def)             Requested size: 240.42569pt x 120.21518pt.
 
-! Undefined control sequence.
-\\->\let \reserved@e 
-                     \relax \let \reserved@f \relax \@ifstar {\let \reserved...
-l.358 ...on Coefficient: -0.665, p-value: 6.73e-9}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Argument of \@caption has an extra }.
-<inserted text> 
-                \par 
-l.358 ...on Coefficient: -0.665, p-value: 6.73e-9}
-                                                  
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-\@captype {\def \reserved@a *{\let \reserved@e \vadjust \let \reserved@f \ETC.
-! Paragraph ended before \@caption was complete.
-<to be read again> 
-                   \par 
-l.358 ...on Coefficient: -0.665, p-value: 6.73e-9}
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-<TargetShooting.pdf, id=57, 433.62pt x 216.81pt>
+<TargetShooting.pdf, id=56, 433.62pt x 216.81pt>
 File: TargetShooting.pdf Graphic file (type pdf)
  <use TargetShooting.pdf>
 Package pdftex.def Info: TargetShooting.pdf used on input line 367.
 (pdftex.def)             Requested size: 240.42569pt x 120.21518pt.
-
-! Argument of \@caption has an extra }.
-<inserted text> 
-                \par 
-l.370 ...on Coefficient: -0.665, p-value: 6.73e-9}
-                                                  
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-\@captype {\def \reserved@a *{\nobreak \@xcentercr }\reserved@a }\def \ETC.
-! Paragraph ended before \@caption was complete.
-<to be read again> 
-                   \par 
-l.370 ...on Coefficient: -0.665, p-value: 6.73e-9}
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 (handComfort.bbl) [4 <./TestDataImproved.pdf> <./TestDataNaive.pdf> <./TargetShooting.pdf>] (handComfort.aux) ) 
 Here is how much of TeX's memory you used:
- 3297 strings out of 493335
- 42958 string characters out of 3136681
- 117534 words of memory out of 3000000
- 6694 multiletter control sequences out of 15000+200000
+ 4528 strings out of 493335
+ 64931 string characters out of 3136681
+ 141373 words of memory out of 3000000
+ 7915 multiletter control sequences out of 15000+200000
  60300 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,37p,1265b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 61i,10n,96p,1265b,487s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Progr
 am Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.
-pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mtt9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
-/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on handComfort.pdf (4 pages, 614517 bytes).
+ 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb
+><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl9.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on handComfort.pdf (4 pages, 603213 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
+ 137 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
